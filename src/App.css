@@ -219,10 +219,56 @@ main {
 footer {
   background-color: var(--footer-color);
   width: 100vw;
-  height: 100px;
+}
+
+#footer-container {
+  width: 75vw;
+  /* height: 100px; */
   display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-between;
+  width: 75vw;
+  margin: 0 auto;
+}
+
+/* #footer-container {
+  width: 75vw;
+} */
+
+#redes-sociais {
+  /* display: flex; */
+  border: 1px solid red;
+  padding: 20px;
+}
+
+#logo-composto-footer {
+  display: flex;
+}
+
+#logo-composto-footer p {
+  margin: auto 0;
+  font-size: 30px;
+}
+
+#redes-sociais-icones {
+  display: flex;
+  font-size: 50px;
+  justify-content: center;
+  column-gap: 50px;
 }
 
 #logo-footer {
   filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
+  width: 50px;
+}
+
+.links-uteis-sobre-nos {
+  border: 1px solid red;
+  padding: 20px;
+}
+
+.links-uteis-sobre-nos a {
+  color: white;
+  text-decoration: none;
 }
