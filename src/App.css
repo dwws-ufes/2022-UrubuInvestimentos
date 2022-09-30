@@ -1,38 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+:root {
+  --fundo-primario: #0F1923;
+  --fundo-secundario: #1A242D;
+  --cor-secundaria: #f12c4c;
+  --cor-borda: #323b45;
+
+  --search-bar-fundo: #1D2730;
+  --search-bar-border: #323B45;
+
+  --cor-terciaria: #00BA75; 
+
+  --footer-color: #1a242d;
+
+  --default-border-radius: 7px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  margin-top: 100px;
+  padding: 0;
+  background-color: var(--fundo-primario);
+
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  /* height: 40vmin; */
+  /* height: 100vw; */
   pointer-events: none;
+  animation: la-vem 0.5s infinite alternate;  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+#header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--fundo-primario);
+  border-bottom: 1px solid var(--cor-borda);
+  position: fixed;
+  /* margin-top: 0; */
+  width: 100vw;
+  top: 0;
+}
+
+#header-centro {
+  display: flex;
+  /* border: 2px solid green; */
+}
+
+#header-direito {
+  display: flex;
+  column-gap: 5px;
+  margin: auto 0;
+  margin-right: 10px;
+}
+
+#logo {
+  /* border: 2px solid red; */
+  width: 2.5vw;
+  filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
+}
+
+.Urubu-svg{
+  font-size: 10px;
+  
+}
+
+#nome-empresa{
+  color: whitesmoke;
+  font-size: 20px;
+  padding: 10px 10px;
+  /* border: 2px solid blue; */
+  text-align: center;
+  margin: auto 0;
+
+}
+
+/* BOTAO GENERICO */
+.botao-generico {
+  background-color: var(--cor-secundaria, #fff);
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  max-width: 150px;  
+}
+
+.botao-generico:hover {
+  cursor: pointer;
+}
+
+.botao-generico p {
+  margin: 0;
+}
+
+.botao-generico a {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+}
+
+#bar-icon {
+  color: white;
+  margin: auto 0;
+  /* border: 2px solid red; */
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+#bar-icon:hover {
+  cursor: pointer;
+}
+
+/* @keyframes la-vem{
+  from{
+    filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
+    transform: rotate3d(0deg,0deg,0deg);
   }
+  to{
+    transform: rotate3d(360deg,360deg,360deg)
+  }
+} */
+
+
+/* SIDEBAR STUFF */
+#sidebar {
+  min-width: 150px;
+  width: 20vw;
+  padding-right: 20px;
+  height: 100vh;
+  background-color: var(--fundo-primario);
+  border-right: 1px solid var(--cor-borda);
+  margin-top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#parceiro-oficial {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--fundo-secundario);
+  border-radius: var(--default-border-radius);
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+#parceiro-oficial img {
+  display: flex;
+  /* background-color: var(--fundo-secundario); */
+  width: 70px;
+}
+
+#parceiro-oficial p {
+  margin: auto 0;
+  margin-left: 10px;
+}
+
+/* MAIN */
+main {
+  display: flex;
+  column-gap: 20px;
+  margin: 20px;
+}
+
+/* MAIN CARD STUFF */
+#main-card {
+  width: 75vw;
+  background-color: var(--cor-terciaria);
+  border-radius: var(--default-border-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* SEARCHBAR */
+#search-bar {
+  display: flex;
+  border: 1px solid var(--search-bar-border);
+  border-radius: var(--default-border-radius);
+  padding: 20px;
+  background-color: var(--search-bar-fundo);
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#search-bar p {
+  margin: auto 0;
+  margin-left: 20px;
+}
+
+/* SMALL CARDS SECTION */
+#small-cards-section {
+  display: flex;
+  margin-top: 20px;
+  /* border: 1px solid red; */
+  flex-wrap: wrap;
+  column-gap: 20px;
+  gap: 20px;
+  /* flex: 33% 33% 33%; */
+}
+
+/* SMALL CARDS */
+.small-card {
+  background-color: var(--cor-terciaria);
+  border-radius: var(--default-border-radius);
+  padding: 10px;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--footer-color);
+  width: 100vw;
+  height: 100px;
+  display: flex;
+}
+
+#logo-footer {
+  filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
 }
