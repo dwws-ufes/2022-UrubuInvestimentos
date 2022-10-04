@@ -5,16 +5,24 @@
   --fundo-primario: #0F1923;
   --fundo-secundario: #1A242D;
   --cor-secundaria: #f12c4c;
+  --cor-terciaria: #00BA75; 
   --cor-borda: #323b45;
 
   --search-bar-fundo: #1D2730;
   --search-bar-border: #323B45;
 
-  --cor-terciaria: #00BA75; 
 
   --footer-color: #1a242d;
 
+  --x-button-color: #bcbfc7;
+  --input-field-color: #0f1923;
+
   --default-border-radius: 7px;
+  --small-border-radius: 5px;
+
+  --main-min-width: 420px;
+  --main-max-width: 1100px;
+
 }
 
 *{
@@ -137,10 +145,12 @@ body {
   min-width: 150px;
   width: 20vw;
   padding-right: 20px;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: var(--fundo-primario);
   border-right: 1px solid var(--cor-borda);
   margin-top: 0;
+  text-decoration: none;
+  color: white;
 }
 
 #parceiro-oficial {
@@ -151,12 +161,14 @@ body {
   border-radius: 10px;
   padding: 5px;
   margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
 }
 
 #parceiro-oficial img {
   display: flex;
   /* background-color: var(--fundo-secundario); */
-  width: 70px;
+  width: 40px;
 }
 
 #parceiro-oficial p {
@@ -171,15 +183,31 @@ main {
   margin: 20px;
 }
 
+/* MAIN CONTENT */
+#main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 /* MAIN CARD STUFF */
 #main-card {
-  width: 75vw;
+  /* width: 75vw; */
   background-color: var(--cor-terciaria);
   border-radius: var(--default-border-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
+  max-width: var(--main-max-width);
+  min-width: var(--main-min-width);
+
+  /* border: 1px solid red; */
+}
+
+#main-card:hover {
+  cursor: pointer;
 }
 
 /* SEARCHBAR */
@@ -189,7 +217,10 @@ main {
   border-radius: var(--default-border-radius);
   padding: 20px;
   background-color: var(--search-bar-fundo);
-  margin-top: 20px;
+  /* margin-top: 20px; */
+
+  max-width: var(--main-max-width);
+  min-width: var(--main-min-width);
 }
 
 #search-bar p {
@@ -199,20 +230,47 @@ main {
 
 /* SMALL CARDS SECTION */
 #small-cards-section {
-  display: flex;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  /* columns: 33% 33%; */
+  /* margin-top: 20px; */
   /* border: 1px solid red; */
   flex-wrap: wrap;
-  column-gap: 20px;
-  gap: 20px;
+  /* column-gap: 20px; */
+  /* gap: 20px; */
   /* flex: 33% 33% 33%; */
+  row-gap: 20px;
+  column-gap: 20px;
+  max-width: var(--main-max-width);
+  min-width: var(--main-min-width);
+  margin: 0 auto;
 }
 
 /* SMALL CARDS */
 .small-card {
   background-color: var(--cor-terciaria);
   border-radius: var(--default-border-radius);
-  padding: 10px;
+  /* padding: 10px; */
+  /* margin: 20px; */
+  /* width: 200px; */
+  /* height: 230px; */
+  /* background-image: url("/images/img1.png"); */
+}
+
+.small-card:hover {
+  cursor: pointer;
+}
+
+.small-card img {
+  width: 100%;
+  height: 100%; 
+  object-fit: contain;
+  /* margin: 0; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* z-index: -1; */
 }
 
 /* FOOTER */
@@ -238,7 +296,7 @@ footer {
 
 #redes-sociais {
   /* display: flex; */
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 20px;
 }
 
@@ -264,11 +322,63 @@ footer {
 }
 
 .links-uteis-sobre-nos {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 20px;
 }
 
 .links-uteis-sobre-nos a {
   color: white;
   text-decoration: none;
+}
+
+
+/* CADASTRO */
+#cadastro {
+  background-color: var(--fundo-secundario);
+  /* background-color: red; */
+  width: 726px;
+  height: 658px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--default-border-radius);
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid green; */
+}
+
+#cadastro img {
+  border-bottom-left-radius: var(--default-border-radius);
+  border-top-left-radius: var(--default-border-radius);
+}
+
+#cadastro-x {
+  color: var(--x-button-color);
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+#cadastro-info {
+  border: 1px solid green;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+#cadastro-info input {
+  background-color: var(--input-field-color);
+  padding: 5px;
+  border-radius: var(--small-border-radius);
+  color: white;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+#cadastro-info input:focus {
+  border: none;
+  outline: none;
 }

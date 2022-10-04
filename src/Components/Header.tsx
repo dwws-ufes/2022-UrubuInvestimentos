@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import { BotaoGenerico } from "../components/BotaoGenerico"
+import { BotaoGenerico } from "./BotaoGenerico"
 
 interface propsType {
     className: string
@@ -22,8 +22,16 @@ export const Header = (props: propsType) => {
             </div>
 
             <div id="header-direito">
-                <BotaoGenerico text="Cadastre-se" href="https://google.com"/>
-                <BotaoGenerico text="Entrar" href="https://blaze.com/pt/games/crash" />
+                <BotaoGenerico
+                    texto="Cadastre-se"
+                    href="https://google.com"
+                    fundo={true}
+                />
+                <BotaoGenerico
+                    texto="Entrar"
+                    href="https://blaze.com/pt/games/crash"
+                    fundo={false}
+                />
             </div>
         </div>
     );

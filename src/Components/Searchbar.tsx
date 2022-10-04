@@ -12,7 +12,7 @@ export const Searchbar = (props: propsType) => {
     return(
         <div id="search-bar">
             <FontAwesomeIcon icon={faMagnifyingGlass}/>
-            <p>Procure Jogos ou Provedores</p>
+            <p>Procure Jogos</p>
         </div>
     );
 }

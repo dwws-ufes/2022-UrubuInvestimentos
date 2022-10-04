@@ -15,7 +15,11 @@ export const MainCard = (props: propsType) => {
             <h2>{titulo}</h2>
             <p>{descricao}</p>
 
-            <BotaoGenerico text="Cadastre-se" href="#"/>
+            <BotaoGenerico
+                texto="Cadastre-se"
+                href="#"
+                fundo={true}
+            />
         </div>
     );
 }
