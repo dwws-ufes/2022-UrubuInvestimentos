@@ -23,6 +23,7 @@ export const Sidebar = (props: propsType) => {
                 texto="💵 Ganhe $ Grátis"
                 href="#"
                 fundo={true}
+                callback={() => null}
             />
         </div>
     );

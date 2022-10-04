@@ -7,10 +7,13 @@ import { BotaoGenerico } from './BotaoGenerico';
 import { Logo } from './Logo'
 
 interface propsType {
+    fechaCadastro: () => void;
 
 }
 
 export const Cadastro = (props: propsType) => {
+    const { fechaCadastro } = props;
+
     return(
         <div id="cadastro">
             <img src="./images/cadastro.svg" alt="cadastro" />
@@ -26,12 +29,12 @@ export const Cadastro = (props: propsType) => {
 
                     <p id="termos-condicoes">Ao se inscrever, você concorda com os <a href=".logo">Termos de serviço</a>.</p>
 
-                    <BotaoGenerico texto="Começe já! &rarr;" href="#" fundo={true}/>
+                    <BotaoGenerico texto="Começe já! &rarr;" href="#" fundo={true} callback={() => null}/>
                 </form>
 
                 <p id="ja-investidor">Já é um investidor? <a href=".logo">Entre</a>.</p>
             </div>
-        <FontAwesomeIcon icon={faXmark} id="cadastro-x"/>
+        <FontAwesomeIcon icon={faXmark} id="cadastro-x" onClick={fechaCadastro}/>
         </div>
     );
 }

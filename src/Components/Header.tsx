@@ -5,11 +5,15 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { BotaoGenerico } from "./BotaoGenerico"
 
 interface propsType {
-    className: string
+    className: string;
+    abreCadastro: () => void;
+    fechaCadastro: () => void;
+    abreEntrar: () => void;
+    fechaEntrar: () => void;
 }
 
 export const Header = (props: propsType) => {
-    const { className } = props;
+    const { className, abreCadastro, fechaCadastro, abreEntrar, fechaEntrar } = props;
 
     return(
         <div id="header" className={className}>
@@ -26,11 +30,19 @@ export const Header = (props: propsType) => {
                     texto="Cadastre-se"
                     href="https://google.com"
                     fundo={true}
+                    callback={() => {
+                        fechaEntrar();
+                        abreCadastro();
+                    }}
                 />
                 <BotaoGenerico
                     texto="Entrar"
                     href="https://blaze.com/pt/games/crash"
                     fundo={false}
+                    callback={() => {
+                        fechaCadastro();
+                        abreEntrar();
+                    }}
                 />
             </div>
         </div>

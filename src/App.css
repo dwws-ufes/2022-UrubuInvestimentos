@@ -419,6 +419,11 @@ footer {
   font-size: 13px;
 }
 
+/* ENTRAR */
+#entrar {
+  background-color: var(--fundo-secundario);
+}
+
 /* LOGO */
 .logo {
   display: flex;

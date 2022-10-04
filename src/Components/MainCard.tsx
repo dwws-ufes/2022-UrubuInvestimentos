@@ -19,6 +19,7 @@ export const MainCard = (props: propsType) => {
                 texto="Cadastre-se"
                 href="#"
                 fundo={true}
+                callback={() => null}
             />
         </div>
     );
