@@ -8,6 +8,8 @@
   --cor-terciaria: #00BA75; 
   --cor-borda: #323b45;
 
+  --cor-texto-cadastro: #bcbfc7;
+
   --search-bar-fundo: #1D2730;
   --search-bar-border: #323B45;
 
@@ -101,11 +103,14 @@ body {
 
 /* BOTAO GENERICO */
 .botao-generico {
-  background-color: var(--cor-secundaria, #fff);
+  background-color: var(--cor-secundaria);
+  font-weight: bold;
+  font-size: 12px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 12px;
   color: white;
-  max-width: 150px;  
+  max-width: 150px;
+  margin: 0 auto;
 }
 
 .botao-generico:hover {
@@ -402,6 +407,16 @@ footer {
 #cadastro-info input:focus {
   border: none;
   outline: none;
+}
+
+#termos-condicoes {
+  color: var(--cor-texto-cadastro);
+  font-size: 12px;
+}
+
+#ja-investidor {
+  color: var(--cor-texto-cadastro);
+  font-size: 13px;
 }
 
 /* LOGO */
