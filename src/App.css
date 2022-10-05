@@ -432,6 +432,48 @@ footer {
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: var(--default-border-radius);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#entrar form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#entrar input {
+  background-color: var(--input-field-color);
+  padding: 5px;
+  border-radius: var(--small-border-radius);
+  color: white;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  width: 100%;
+  padding: 20px;
+}
+
+#entrar input:focus {
+  border: none;
+  outline: none;
+}
+
+#entrar p {
+  color: var(--cor-texto-cadastro);
+  /* color: blue; */
+}
+
+#entrar-esqueceu-senha {
+  font-size: 11px;
+  text-align: left;
+  color: var(--cor-texto-cadastro);
+}
+
+#ainda-nao-investidor {
+  color: var(--cor-texto-cadastro);
 }
 
 #entrar-x {

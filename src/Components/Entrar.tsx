@@ -31,10 +31,12 @@ export const Entrar = (props: propsType) => {
                     placeholder="Senha"
                 />
 
-                <p>Esqueceu a senha?</p>
+                <a id="entrar-esqueceu-senha" href=".">Esqueceu a senha?</a>
 
                 <BotaoGenerico texto="Entrar &rarr;" href="#" fundo={true} callback={() => null}/>
             </form>
+
+            <p id="ainda-nao-investidor">Ainda não é investidor? <a href=".">Cadastre-se agora!</a></p>
 
             <FontAwesomeIcon icon={faXmark} id="entrar-x" onClick={fechaEntrar}/>
         </div>
