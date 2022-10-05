@@ -28,7 +28,7 @@ export const Header = (props: propsType) => {
             <div id="header-direito">
                 <BotaoGenerico
                     texto="Cadastre-se"
-                    href="https://google.com"
+                    href="#"
                     fundo={true}
                     callback={() => {
                         fechaEntrar();
@@ -37,7 +37,7 @@ export const Header = (props: propsType) => {
                 />
                 <BotaoGenerico
                     texto="Entrar"
-                    href="https://blaze.com/pt/games/crash"
+                    href="#"
                     fundo={false}
                     callback={() => {
                         fechaCadastro();

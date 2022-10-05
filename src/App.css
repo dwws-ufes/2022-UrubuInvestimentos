@@ -25,6 +25,9 @@
   --main-min-width: 420px;
   --main-max-width: 1100px;
 
+  --entrar-width: 390px;
+  --entrar-height: 511px;
+
 }
 
 *{
@@ -422,6 +425,22 @@ footer {
 /* ENTRAR */
 #entrar {
   background-color: var(--fundo-secundario);
+  width: var(--entrar-width);
+  height: var(--entrar-height);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--default-border-radius);
+}
+
+#entrar-x {
+  color: var(--x-button-color);
+  cursor: pointer;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
 }
 
 /* LOGO */

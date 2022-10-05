@@ -15,7 +15,7 @@ export const BotaoGenerico = (props: propsType) => {
 
     return(
         <div className={className} onClick={callback}>
-            <a href={href} target="_blank">
+            <a href={href} target="_self">
                 <p>{texto}</p>
             </a>
         </div>

@@ -15,7 +15,7 @@ import { smallcards } from "./smallcards"
 
 function App() {
 
-  const [ showCadastro, setCadastro ] = useState(true);
+  const [ showCadastro, setCadastro ] = useState(false);
   const [ showEntrar, setEntrar ] = useState(true);
 
 
@@ -66,8 +66,8 @@ function App() {
       </main>
       <Footer />
 
-      { showCadastro && <Cadastro fechaCadastro={fechaCadastro}/> }
       { showEntrar && <Entrar fechaEntrar={fechaEntrar}/>}
+      { showCadastro && <Cadastro fechaCadastro={fechaCadastro}/> }
 
     </div>
   );
