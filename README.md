@@ -1,4 +1,4 @@
-https://prod.liveshare.vsengsaas.visualstudio.com/join?02576EA18E2F1A7CBE8B6909721C0AE4B6D6
+https://prod.liveshare.vsengsaas.visualstudio.com/join?7F6C9BAD0CA64C4B256A78C6CD5B819F242E
 
 # Getting Started with Create React App
 
