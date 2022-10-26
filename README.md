@@ -1,4 +1,5 @@
-https://prod.liveshare.vsengsaas.visualstudio.com/join?7F6C9BAD0CA64C4B256A78C6CD5B819F242E
+Diagramas
+https://lucid.app/lucidchart/38f4846f-e38e-41db-9301-df6aa0826d8d/edit?viewport_loc=-143%2C83%2C2219%2C1107%2C0_0&invitationId=inv_e9ace645-d750-48af-b1a5-e031c2eb264e
 
 # Getting Started with Create React App
 
