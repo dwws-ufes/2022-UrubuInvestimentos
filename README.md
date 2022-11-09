@@ -1,6 +1,9 @@
 Diagramas
 https://lucid.app/lucidchart/38f4846f-e38e-41db-9301-df6aa0826d8d/edit?viewport_loc=-143%2C83%2C2219%2C1107%2C0_0&invitationId=inv_e9ace645-d750-48af-b1a5-e031c2eb264e
 
+Figma
+https://www.figma.com/file/hTajDGlU1eh8fsxGydatls/Urubu-Investimentos?node-id=21%3A2
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
