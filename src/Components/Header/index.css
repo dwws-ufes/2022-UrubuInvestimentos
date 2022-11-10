@@ -1,0 +1,98 @@
+:root {
+    --cor-dropdown: #1A242D;
+    --cor-escura: #0F1923;
+
+    --border-radius-padrao: 7px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--fundo-primario);
+    border-bottom: 1px solid var(--cor-borda);
+    position: fixed;
+    /* margin-top: 0; */
+    width: 100vw;
+    height: 65px;
+    top: 0;
+}
+
+#header-centro {
+    display: flex;
+    /*border: 2px solid green;*/
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#header-direito {
+    display: flex;
+    column-gap: 5px;
+    margin: auto 0;
+    margin-right: 10px;
+}
+
+#logo {
+  /* border: 2px solid red; */
+    width: 2.5vw;
+    filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
+}
+
+.Urubu-svg{
+    font-size: 10px;
+}
+
+#nome-empresa{
+    color: whitesmoke;
+    font-size: 20px;
+    padding: 10px 10px;
+    /* border: 2px solid blue; */
+    text-align: center;
+    margin: auto 0;
+}
+
+.nome-usuario {
+    font-size: 1em;
+}
+
+.icone-usuario {
+    /*border: 1px solid white;*/
+    margin: auto 10px;
+    font-size: 22px;
+}
+
+.pop-up-opcoes-login:hover {
+    cursor: pointer;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    background-color: var(--cor-dropdown);
+    padding: 0 0px;
+    border-radius: var(--border-radius-padrao);
+}
+
+.dropdown p {
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.dropdown p:hover {
+    background-color: var(--cor-escura);
+    width: 100%;
+    cursor: pointer;
+}
+
+.p1 {
+    border-radius: var(--border-radius-padrao) var(--border-radius-padrao) 0 0;
+}
+
+.p3 {
+    border-radius: 0 0 var(--border-radius-padrao) var(--border-radius-padrao);
+}

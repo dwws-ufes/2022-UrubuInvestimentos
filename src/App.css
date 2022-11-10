@@ -105,6 +105,7 @@ body {
 }
 
 /* BOTAO GENERICO */
+/*
 .botao-generico {
   background-color: var(--cor-secundaria);
   font-weight: bold;
@@ -133,7 +134,7 @@ body {
 #bar-icon {
   color: white;
   margin: auto 0;
-  /* border: 2px solid red; */
+  /* border: 2px solid red;
   margin-left: 20px;
   font-size: 25px;
 }

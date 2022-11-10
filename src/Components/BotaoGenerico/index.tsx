@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./index.css"
+
 interface propsType {
     texto: string;
     href: string;

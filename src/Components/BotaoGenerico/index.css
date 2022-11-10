@@ -1,0 +1,36 @@
+.botao-generico {
+    background-color: var(--cor-secundaria);
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 12px;
+    color: blue;
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.botao-generico p {
+    margin: 0;
+}
+
+.botao-generico a {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+}
+
+.botao-generico:hover {
+    margin: 0;
+}
+
+#bar-icon {
+    color: white;
+    margin: auto 0;
+    /* border: 2px solid red; */
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+#bar-icon:hover {
+    cursor: pointer;
+}
