@@ -1,8 +1,5 @@
 import React from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark } from "@fortawesome/sharp-solid-svg-icons";
-
 import { Logo } from './Logo';
 import { BotaoGenerico } from './BotaoGenerico';
 
@@ -38,7 +35,7 @@ export const Entrar = (props: propsType) => {
 
             <p id="ainda-nao-investidor">Ainda não é investidor? <a href=".">Cadastre-se agora!</a></p>
 
-            <FontAwesomeIcon icon={faXmark} id="entrar-x" onClick={fechaEntrar}/>
+            {/*<FontAwesomeIcon icon={faXmark} id="entrar-x" onClick={fechaEntrar}/>*/}
         </div>
     );
 }

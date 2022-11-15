@@ -1,8 +1,5 @@
 import React from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
-
 
 interface propsType {
 
@@ -18,8 +15,8 @@ export const Footer = (props: propsType) => {
                         <p>Urubu Investimentos</p>
                     </div>
                     <div id="redes-sociais-icones">
-                        <FontAwesomeIcon icon={faInstagram}/>
-                        <FontAwesomeIcon icon={faTwitter}/>
+                        {/*<FontAwesomeIcon icon={faInstagram}/>
+                        <FontAwesomeIcon icon={faTwitter}/>*/}
                     </div>
                 </div>
 

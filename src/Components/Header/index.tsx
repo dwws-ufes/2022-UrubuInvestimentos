@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
- 
+
 import { Dropdown } from "./Dropdown";
 import { BotaoGenerico } from "../BotaoGenerico";
-
 
 import "./index.css";
 
@@ -32,7 +28,7 @@ export const Header = (props: propsType) => {
     return(
         <div id="header" className={className}>
 
-            <FontAwesomeIcon icon={faBars} id="bar-icon"/>
+            {/*<FontAwesomeIcon icon={faBars} id="bar-icon"/>*/}
 
             <div id="header-centro">
                 <img src="/images/urubuzado.svg" alt="" className="Urubu-svg" id="logo"/>
@@ -48,11 +44,12 @@ export const Header = (props: propsType) => {
                     >
                         {nomeUsuario}
                     </p>
-                    <FontAwesomeIcon
+                    
+                    {/*<FontAwesomeIcon
                         icon={faUser}
                         className="icone-usuario pop-up-opcoes-login"
                         onClick={() => setMostraDropDown(anterior => !anterior)}
-                    />
+                    />*/}
 
                     { mostraDropDown && <Dropdown sair={() => {console.log("cool"); setLogado(false)}}/> }
                 </div>
