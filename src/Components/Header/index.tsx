@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Dropdown } from "./Dropdown";
 import { BotaoGenerico } from "../BotaoGenerico";
 
+import { FaBars, FaRegUser } from 'react-icons/fa';
+
 import "./index.css";
 
 interface propsType {
@@ -28,7 +30,9 @@ export const Header = (props: propsType) => {
     return(
         <div id="header" className={className}>
 
-            {/*<FontAwesomeIcon icon={faBars} id="bar-icon"/>*/}
+            <FaBars
+                className="bar-icon"
+            />
 
             <div id="header-centro">
                 <img src="/images/urubuzado.svg" alt="" className="Urubu-svg" id="logo"/>

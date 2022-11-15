@@ -17,6 +17,18 @@
     top: 0;
 }
 
+.bar-icon {
+    color: white;
+    margin: auto 0;
+    /* border: 2px solid red; */
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+.bar-icon:hover {
+    cursor: pointer;
+}
+
 #header-centro {
     display: flex;
     /*border: 2px solid green;*/
