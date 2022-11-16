@@ -1,6 +1,8 @@
 import React from "react";
 
-import { BotaoGenerico } from "./BotaoGenerico"
+import { BotaoGenerico } from "../BotaoGenerico";
+
+import './index.css';
 
 interface propsType {
 
@@ -8,9 +10,9 @@ interface propsType {
 
 export const Sidebar = (props: propsType) => {
     return(
-        <div id="sidebar">
+        <div className="sidebar">
             <a
-                id="parceiro-oficial"
+                className="parceiro-oficial"
                 href="https://www.flamengo.com.br/"
                 target="_blank"
                 rel="noreferrer"

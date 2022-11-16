@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 
 import './App.css';
 
-import { Header } from './Components/Header';
-import { Sidebar } from './Components/Sidebar';
-import { MainCard } from './Components/MainCard';
-import { Searchbar } from './Components/Searchbar';
-import { SmallCard } from './Components/SmallCard';
-import { Footer } from './Components/Footer';
-import { Cadastro } from './Popups/Cadastro'
-import { Entrar } from './Popups/Entrar';
+import { Header } from '../Components/Header';
+import { Sidebar } from '../Components/Sidebar';
+import { MainCard } from '../Components/MainCard';
+import { Searchbar } from '../Components/Searchbar';
+import { SmallCard } from '../Components/SmallCard';
+import { Footer } from '../Components/Footer';
+import { Cadastro } from '../Popups/Cadastro'
+import { Entrar } from '../Popups/Entrar';
 
-import { smallcards } from "./smallcards"
+//import { smallcards } from "./smallcards"
 
-function App() {
+import "./index.css";
+
+function Main() {
 
   const [ showCadastro, setCadastro ] = useState(false);
   const [ showEntrar, setEntrar ] = useState(false);
@@ -73,4 +75,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;

@@ -1,0 +1,69 @@
+@import url("../../constantes.css");
+
+.cadastro {
+    background-color: var(--fundo-secundario);
+    width: 726px;
+    height: 658px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: var(--default-border-radius);
+    display: flex;
+    justify-content: space-around;
+}
+
+.cadastro img {
+    border-bottom-left-radius: var(--default-border-radius);
+    border-top-left-radius: var(--default-border-radius);
+}
+
+.cadastro-x {
+    color: var(--x-button-color);
+    cursor: pointer;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+.cadastro-info {
+    display: flex;
+    flex-direction: column; 
+    padding: 30px;
+    justify-content: center;
+}
+
+.cadastro-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cadastro-info input {
+    background-color: var(--input-field-color);
+    padding: 5px;
+    border-radius: var(--small-border-radius);
+    color: white;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    width: 100%;
+    padding: 20px;
+}
+
+.cadastro-info input:focus {
+    border: none;
+    outline: none;
+}
+
+.termos-condicoes {
+    color: var(--cor-texto-cadastro);
+    font-size: 12px;
+}
+
+.ja-investidor {
+    color: var(--cor-texto-cadastro);
+    font-size: 13px;
+}

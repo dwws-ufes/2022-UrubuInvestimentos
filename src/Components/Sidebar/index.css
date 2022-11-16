@@ -1,0 +1,35 @@
+@import url("../../constantes.css");
+
+.sidebar {
+    min-width: 150px;
+    width: 20vw;
+    padding-right: 20px;
+    background-color: var(--fundo-primario);
+    border-right: 1px solid var(--cor-borda);
+    margin-top: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.parceiro-oficial {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--fundo-secundario);
+    border-radius: var(--default-border-radius);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.parceiro-oficial img {
+    display: flex;
+    width: 40px;
+}
+
+.parceiro-oficial p {
+    margin: auto 0;
+    margin-left: 10px;
+}
+

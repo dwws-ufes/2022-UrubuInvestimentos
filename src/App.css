@@ -59,21 +59,19 @@ body {
   pointer-events: none;
   animation: la-vem 0.5s infinite alternate;  
 }
-
+/*
 #header {
   display: flex;
   justify-content: space-between;
   background-color: var(--fundo-primario);
   border-bottom: 1px solid var(--cor-borda);
   position: fixed;
-  /* margin-top: 0; */
   width: 100vw;
   top: 0;
 }
 
 #header-centro {
   display: flex;
-  /* border: 2px solid green; */
 }
 
 #header-direito {
@@ -84,7 +82,6 @@ body {
 }
 
 #logo {
-  /* border: 2px solid red; */
   width: 2.5vw;
   filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
 }
@@ -98,12 +95,11 @@ body {
   color: whitesmoke;
   font-size: 20px;
   padding: 10px 10px;
-  /* border: 2px solid blue; */
   text-align: center;
   margin: auto 0;
 
 }
-
+*/
 /* BOTAO GENERICO */
 /*
 .botao-generico {
@@ -155,11 +151,8 @@ body {
 
 
 /* SIDEBAR STUFF */
+/*
 #sidebar {
-  min-width: 150px;
-  width: 20vw;
-  padding-right: 20px;
-  /* height: 100vh; */
   background-color: var(--fundo-primario);
   border-right: 1px solid var(--cor-borda);
   margin-top: 0;
@@ -181,7 +174,6 @@ body {
 
 #parceiro-oficial img {
   display: flex;
-  /* background-color: var(--fundo-secundario); */
   width: 40px;
 }
 
@@ -189,6 +181,7 @@ body {
   margin: auto 0;
   margin-left: 10px;
 }
+*/
 
 /* MAIN */
 main {
@@ -347,9 +340,9 @@ footer {
 
 
 /* CADASTRO */
+/*
 #cadastro {
   background-color: var(--fundo-secundario);
-  /* background-color: red; */
   width: 726px;
   height: 658px;
   position: fixed;
@@ -359,7 +352,6 @@ footer {
   border-radius: var(--default-border-radius);
   display: flex;
   justify-content: space-around;
-  /* border: 1px solid green; */
 }
 
 #cadastro img {
@@ -377,15 +369,8 @@ footer {
 }
 
 #cadastro-info {
-  /* border: 1px solid green; */
-  /* justify-content: center; */
-  /* align-items: center; */
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
-  /*flex-direction: column; */
-  /* width: 100%;
-  height: 100%; */
   padding: 30px;
   justify-content: center;
 }
@@ -422,8 +407,10 @@ footer {
   color: var(--cor-texto-cadastro);
   font-size: 13px;
 }
+*/
 
 /* ENTRAR */
+/*
 #entrar {
   background-color: var(--fundo-secundario);
   width: var(--entrar-width);
@@ -464,7 +451,6 @@ footer {
 
 #entrar p {
   color: var(--cor-texto-cadastro);
-  /* color: blue; */
 }
 
 #entrar-esqueceu-senha {
@@ -487,10 +473,10 @@ footer {
 }
 
 /* LOGO */
+/*
 .logo {
   display: flex;
   gap: 10px;
-  /* border: 1px solid red; */
   justify-content: center;
 }
 
@@ -498,3 +484,4 @@ footer {
   filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
   width: 30px;
 }
+*/
