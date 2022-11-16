@@ -5,7 +5,7 @@ Figma
 https://www.figma.com/file/hTajDGlU1eh8fsxGydatls/Urubu-Investimentos?node-id=21%3A2
 
 Paginas sendo feitas no momento/aguardando serem feitas
-[planilha dos responsaveis pelas paginas](www.shorturl.at/gsyIT)
+[planilha dos responsaveis pelas paginas](https://shorturl.at/gsyIT)
 
 # Getting Started with Create React App
 
