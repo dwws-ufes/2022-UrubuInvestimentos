@@ -4,6 +4,9 @@ https://lucid.app/lucidchart/38f4846f-e38e-41db-9301-df6aa0826d8d/edit?viewport_
 Figma
 https://www.figma.com/file/hTajDGlU1eh8fsxGydatls/Urubu-Investimentos?node-id=21%3A2
 
+Paginas sendo feitas no momento/aguardando serem feitas
+shorturl.at/gsyIT
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
