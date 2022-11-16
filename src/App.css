@@ -31,34 +31,34 @@
 }
 
 *{
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
-  color: var(--cor-secundaria);
+    text-decoration: none;
+    color: var(--cor-secundaria);
 }
 
 body {
-  margin: 0;
-  margin-top: 100px;
-  padding: 0;
-  background-color: var(--fundo-primario);
+    margin: 0;
+    margin-top: 100px;
+    padding: 0;
+    background-color: var(--fundo-primario);
 
-  font-family: 'Roboto', sans-serif;
-  color: white;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
+/*
 .App {
   text-align: center;
 }
 
 .App-logo {
-  /* height: 40vmin; */
-  /* height: 100vw; */
   pointer-events: none;
   animation: la-vem 0.5s infinite alternate;  
 }
+*/
 /*
 #header {
   display: flex;
