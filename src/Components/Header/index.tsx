@@ -25,14 +25,12 @@ export const Header = (props: propsType) => {
     const [ nomeUsuario, setNomeUsuario ] = useState("David Messias");
     
     // decide se o dropdown de opcoes de login eh mostrado ou nao
-    const [ mostraDropDown, setMostraDropDown ] = useState(true);
+    const [ mostraDropDown, setMostraDropDown ] = useState(false);
 
     return(
         <div className="header">
 
-            <FaBars
-                className="bar-icon"
-            />
+            <FaBars className="bar-icon"/>
 
             <div className="header-centro">
                 <img src="/images/urubuzado.svg" alt="" className="urubu-logo"/>
@@ -54,7 +52,7 @@ export const Header = (props: propsType) => {
                         onClick={() => setMostraDropDown(anterior => !anterior)}
                     />
 
-                    { mostraDropDown && <Dropdown sair={() => {console.log("cool"); setLogado(false)}}/> }
+                    { mostraDropDown && <Dropdown sair={() => setLogado(false)}/> }
                 </div>
             :
                 <div className="header-direito">

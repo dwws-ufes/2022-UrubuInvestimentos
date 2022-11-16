@@ -1,3 +1,5 @@
+@import url("../../constantes.css");
+
 :root {
     --cor-dropdown: #1A242D;
     --cor-escura: #0F1923;
@@ -31,15 +33,16 @@
 
 .header-centro {
     display: flex;
-    /*border: 2px solid green;*/
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    height: 100%;
+    justify-content: center;
 }
 
 .urubu-logo {
-    width: 2.5vw;
+    width: 2.5v;
     
     /* torna o logo branco */
     filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
@@ -52,6 +55,7 @@
     column-gap: 5px;
     margin: auto 0;
     margin-right: 10px;
+    position: relative;
 }
 
 .nome-empresa{
@@ -87,6 +91,7 @@
     background-color: var(--cor-dropdown);
     padding: 0 0px;
     border-radius: var(--border-radius-padrao);
+    width: 100%;
 }
 
 .dropdown p {

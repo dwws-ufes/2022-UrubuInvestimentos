@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+:root {
+  --fundo-primario: #0F1923;
+  --fundo-secundario: #1A242D;
+  --cor-secundaria: #f12c4c;
+  --cor-terciaria: #00BA75; 
+  --cor-borda: #323b45;
+
+  --cor-texto-cadastro: #bcbfc7;
+
+  --search-bar-fundo: #1D2730;
+  --search-bar-border: #323B45;
+
+
+  --footer-color: #1a242d;
+
+  --x-button-color: #bcbfc7;
+  --input-field-color: #0f1923;
+
+  --default-border-radius: 7px;
+  --small-border-radius: 5px;
+
+  --main-min-width: 420px;
+  --main-max-width: 1100px;
+
+  --entrar-width: 390px;
+  --entrar-height: 511px;
+
+}
