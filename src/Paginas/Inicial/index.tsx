@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 
-import './App.css';
-
-import { Header } from '../Components/Header';
-import { Sidebar } from '../Components/Sidebar';
-import { MainCard } from '../Components/MainCard';
-import { Searchbar } from '../Components/Searchbar';
-import { SmallCard } from '../Components/SmallCard';
-import { Footer } from '../Components/Footer';
-import { Cadastro } from '../Popups/Cadastro'
-import { Entrar } from '../Popups/Entrar';
-
-//import { smallcards } from "./smallcards"
+import { Header } from '../../Componentes/Header';
+import { Sidebar } from '../../Componentes/Sidebar';
+import { MainCard } from '../../Componentes/MainCard';
+import { Searchbar } from '../../Componentes/Searchbar';
+import { Footer } from '../../Componentes/Footer';
+import { Cadastro } from '../../Popups/Cadastro'
+import { Entrar } from '../../Popups/Entrar';
 
 import "./index.css";
 
-function Main() {
+export const Inicial = () => {
 
   const [ showCadastro, setCadastro ] = useState(false);
   const [ showEntrar, setEntrar ] = useState(false);
@@ -52,8 +47,8 @@ function Main() {
           <MainCard titulo="Pacote de Boas Vindas" descricao='Ganhe coisas legais'/>
 
           <Searchbar />
-
-          <div id='small-cards-section'>
+        
+        {/*  <div id='small-cards-section'>
             {smallcards.map((card, index) => {
               const { titulo, descricao, imagem } = card;
               return <SmallCard
@@ -64,6 +59,7 @@ function Main() {
                       />
             })}
           </div>
+        */}
         </div>
       </main>
       <Footer />
@@ -74,5 +70,3 @@ function Main() {
     </div>
   );
 }
-
-export default Main;

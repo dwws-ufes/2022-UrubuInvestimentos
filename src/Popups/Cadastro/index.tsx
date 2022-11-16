@@ -1,7 +1,7 @@
 import React from "react";
 
-import { BotaoGenerico } from '../../Components/BotaoGenerico';
-import { Logo } from '../../Components/Logo';
+import { BotaoGenerico } from '../../Componentes/BotaoGenerico';
+import { Logo } from '../../Componentes/Logo';
 
 import { CgClose } from 'react-icons/cg';
 
