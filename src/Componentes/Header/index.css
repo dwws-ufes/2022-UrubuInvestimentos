@@ -15,7 +15,7 @@
     position: fixed;
     /* margin-top: 0; */
     width: 100vw;
-    height: 65px;
+    height: var(--altura-header);
     top: 0;
 }
 

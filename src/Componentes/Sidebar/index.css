@@ -3,22 +3,31 @@
 .sidebar {
     min-width: 150px;
     width: 20vw;
-    padding-right: 20px;
+    
     background-color: var(--fundo-primario);
     border-right: 1px solid var(--cor-borda);
-    margin-top: 0;
+    
     text-decoration: none;
     color: white;
+    border: 2px solid red;
+
+    /* posicionamento na tela */
+    position: fixed;
+    left: 0;
+    top: var(--altura-header);
+
+    height: calc(100vh - var(--altura-header));
 }
 
 .parceiro-oficial {
     display: flex;
     justify-content: space-between;
+
     background-color: var(--fundo-secundario);
     border-radius: var(--default-border-radius);
     border-radius: 10px;
     padding: 5px;
-    margin-bottom: 20px;
+
     text-decoration: none;
     color: white;
 }
@@ -33,3 +42,8 @@
     margin-left: 10px;
 }
 
+.ganhe-dinheiro {
+    background-image: url("../../../public/imagens/dinheiro.png");
+    border-radius: var(--default-border-radius);
+    height: 50%;
+}

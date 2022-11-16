@@ -1,6 +1,7 @@
 import React from "react";
 
 import { BotaoGenerico } from "../BotaoGenerico";
+import { GanheDinheiro } from './GanheDinheiro';
 
 import './index.css';
 
@@ -20,13 +21,8 @@ export const Sidebar = (props: propsType) => {
                 <p>Parceiro Oficial</p>
                 <img src="/images/flamengo-logo-2020.svg" alt="Logo do Flamengo" />
             </a>
-
-            <BotaoGenerico
-                texto="💵 Ganhe $ Grátis"
-                href="#"
-                fundo={true}
-                callback={() => null}
-            />
+            
+            <GanheDinheiro />
         </div>
     );
 }

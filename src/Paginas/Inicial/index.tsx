@@ -44,11 +44,13 @@ export const Inicial = () => {
 
             <Sidebar />
             
+            {/*
 			<main>
 				<div id="main-content">
 					<MainCard titulo="Pacote de Boas Vindas" descricao='Ganhe coisas legais'/>		
 				</div>
 			</main>
+            */}
 
 			{ showEntrar && <Entrar fechaEntrar={fechaEntrar}/>}
 			{ showCadastro && <Cadastro fechaCadastro={fechaCadastro}/> }
