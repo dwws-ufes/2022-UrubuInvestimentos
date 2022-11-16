@@ -48,14 +48,8 @@
     filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
  
     font-size: 10px;
-}
 
-.header-direito {
-    display: flex;
-    column-gap: 5px;
-    margin: auto 0;
-    margin-right: 10px;
-    position: relative;
+    cursor: pointer;
 }
 
 .nome-empresa{
@@ -65,8 +59,16 @@
     /* border: 2px solid blue; */
     text-align: center;
     margin: auto 0;
+    cursor: pointer;
 }
 
+.header-direito {
+    display: flex;
+    column-gap: 5px;
+    margin: auto 0;
+    margin-right: 10px;
+    position: relative;
+}
 .nome-usuario {
     font-size: 1em;
 }
