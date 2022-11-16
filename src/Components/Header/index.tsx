@@ -28,20 +28,20 @@ export const Header = (props: propsType) => {
     const [ mostraDropDown, setMostraDropDown ] = useState(true);
 
     return(
-        <div id="header" className={className}>
+        <div className="header">
 
             <FaBars
                 className="bar-icon"
             />
 
-            <div id="header-centro">
-                <img src="/images/urubuzado.svg" alt="" className="Urubu-svg" id="logo"/>
-                <h1 id="nome-empresa">Urubu Investimentos</h1>
+            <div className="header-centro">
+                <img src="/images/urubuzado.svg" alt="" className="urubu-logo"/>
+                <h1 className="nome-empresa">Urubu Investimentos</h1>
             </div>
             
             {/* caso nao logado mostra botoes de logar, caso contrario mostra botoes de perfil */}
             {logado ?
-                <div id="header-direito">
+                <div className="header-direito">
                     <p 
                         className="nome-usuario pop-up-opcoes-login"
                         onClick={() => setMostraDropDown(anterior => !anterior)}
@@ -49,16 +49,15 @@ export const Header = (props: propsType) => {
                         {nomeUsuario}
                     </p>
                     
-                    {/*<FontAwesomeIcon
-                        icon={faUser}
+                    <FaRegUser
                         className="icone-usuario pop-up-opcoes-login"
                         onClick={() => setMostraDropDown(anterior => !anterior)}
-                    />*/}
+                    />
 
                     { mostraDropDown && <Dropdown sair={() => {console.log("cool"); setLogado(false)}}/> }
                 </div>
             :
-                <div id="header-direito">
+                <div className="header-direito">
                     <BotaoGenerico
                         texto="Cadastre-se"
                         href="#"
