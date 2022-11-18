@@ -75,8 +75,14 @@ input::placeholder{
 }
 
 .val-cvv input{
-    flex: 0 1 44%;
+    flex: 0 1 43%;
     /* margin: 0 auto; */
+}
+
+.val-cvv .fi-calendar{
+    position: relative;
+    left: -10%;
+    top: 30%;
 }
 
 .val-cvv input + input{

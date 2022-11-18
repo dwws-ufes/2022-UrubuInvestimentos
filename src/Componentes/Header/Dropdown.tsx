@@ -14,7 +14,7 @@ export const Dropdown = (props: propsType) => {
             <div className="dropdown">
                 <p className="p1"><Link className="link" to='/cadastro'>Meu perfil</Link></p>
                 <p className="p2">Investir</p>
-                <p className="p3" onClick={sair}>Sair</p>
+                <p className="p3" onClick={sair}><Link className="link" to='/'>Sair</Link></p>
             </div>
         );
 }

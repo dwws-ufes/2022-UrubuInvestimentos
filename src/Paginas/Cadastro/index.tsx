@@ -4,7 +4,7 @@ import { Header } from '../../Componentes/Header';
 import { Sidebar } from '../../Componentes/Sidebar';
 import { Footer } from '../../Componentes/Footer';
 
-import { FiTriangle } from 'react-icons/fi'
+import { FiTriangle, FiCalendar } from 'react-icons/fi';
 
 import './index.css';
 
@@ -29,6 +29,8 @@ export default function Cadastro (){
                                 placeholder='CPF'
                                 pattern='([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})' 
                                 required
+                                maxLength={15}
+                                minLength={11}
                             />
                             <input 
                                 placeholder='Apelido'
@@ -64,7 +66,7 @@ export default function Cadastro (){
                                 <option value="Sergipe - SE">Sergipe - SE</option>
                                 <option value="Tocantins - TO">Tocantins - TO</option>
                             </select>
-                            <FiTriangle className='fi-triangle'/>
+                            <FiTriangle className='fi-triangle' fill='white'/>
                         </section>
                         <section>
                             <h2>Adicione um cartão</h2>
@@ -81,6 +83,7 @@ export default function Cadastro (){
                                     placeholder='Validade'
                                     pattern='[0-9]{2}/[0-9]{2}'
                                 />
+                                <FiCalendar className='fi-calendar' fill='white' fillOpacity={0.5} height={100} />
                                 <input 
                                     placeholder='CVV'
                                     pattern='[0-9]{3}'
