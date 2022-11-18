@@ -1,0 +1,85 @@
+@import url("../../constantes.css");
+
+*{
+    box-sizing: border-box;
+}
+
+input, select{
+    height: 3rem;
+    width: 90%;
+    border-radius: var(--default-border-radius);
+    background-color: var(--search-bar-fundo);
+    color: var(--cor-texto-cadastro);
+    padding-left: 1.2rem;
+    outline: none;
+    border: none;
+}
+
+select, select:hover{
+    appearance: none;
+}
+
+form button{
+    color: #FFF;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    border-radius: var(--default-border-radius);
+    background-color: var(--cor-secundaria);
+    border: none;
+    box-shadow: 3px 3px 10px black;
+}
+
+input::placeholder{
+    color: var(--cor-texto-cadastro);
+}
+
+.Cadastro > h1{
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 8rem;
+}
+
+.Cadastro .form form{
+    margin: 0 30%;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+}
+
+.Cadastro .form form .inputs{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Cadastro .form form button{
+    width: 23rem;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.inputs section{
+    padding: 0;
+    flex: 1 0 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .8rem 0;
+    /* border: 2px solid greenyellow; */
+}
+
+.val-cvv{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    /* gap: 0 10px; */
+}
+
+.val-cvv input{
+    flex: 0 1 44%;
+    /* margin: 0 auto; */
+}
+
+.val-cvv input + input{
+    margin-left: 2%;
+}
