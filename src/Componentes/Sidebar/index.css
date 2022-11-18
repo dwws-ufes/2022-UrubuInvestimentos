@@ -27,6 +27,11 @@
 .parte-superior {
     /* border: 2px solid green; */
     padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    row-gap: 40px;
 }
 
 .parceiro-oficial {
@@ -60,6 +65,17 @@
     background-position: center;
 }
 
+.ganhe-dinheiro p {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    margin: 0;
+    border-radius: var(--default-border-radius);
+    background-color: FFFFF;
+
+}
+
 .links {
     border-top: 1px solid var(--cor-borda);
 }
@@ -71,5 +87,5 @@
 
 .links li {
     list-style-type: none;
-    /* border: 2px solid red; */
+    margin-top: 20px;
 }
