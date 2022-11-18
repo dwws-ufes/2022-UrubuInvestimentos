@@ -4,7 +4,6 @@
     font-size: 12px;
     border-radius: 5px;
     padding: 12px;
-    color: blue;
     max-width: 150px;
     margin: 0 auto;
 }
@@ -21,4 +20,12 @@
 
 .botao-generico:hover {
     cursor: pointer;
+}
+
+.botao-com-fundo {
+    background-color: var(--cor-secundaria);;
+}
+
+.botao-sem-fundo {
+    background-color: transparent;
 }

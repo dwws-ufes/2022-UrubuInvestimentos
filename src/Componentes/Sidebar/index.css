@@ -9,7 +9,7 @@
     
     text-decoration: none;
     color: white;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 
     /* posicionamento na tela */
     position: fixed;
@@ -17,6 +17,8 @@
     top: var(--altura-header);
 
     height: calc(100vh - var(--altura-header));
+
+    padding: 20px;
 }
 
 .parceiro-oficial {
@@ -45,5 +47,21 @@
 .ganhe-dinheiro {
     background-image: url("../../../public/imagens/dinheiro.png");
     border-radius: var(--default-border-radius);
-    height: 50%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.links {
+    /* border-top: 1px solid red; */
+}
+
+.barra-horizontal {
+    color: white;
+    width: 100%;
+}
+
+.links li {
+    list-style-type: none;
+    /* border: 2px solid red; */
 }
