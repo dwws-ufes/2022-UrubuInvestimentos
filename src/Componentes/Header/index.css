@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 
-.header-centro {
+.header-centro .link-home{
     display: flex;
     position: absolute;
     left: 50%;
@@ -98,6 +98,7 @@
 .dropdown p {
     padding: 10px 20px;
     margin: 0;
+    color: var(--cor-texto-cadastro);
 }
 
 .dropdown p:hover {
@@ -112,4 +113,9 @@
 
 .p3 {
     border-radius: 0 0 var(--border-radius-padrao) var(--border-radius-padrao);
+}
+
+p .link{
+    text-decoration: none;
+    color: var(--cor-texto-cadastro);
 }
