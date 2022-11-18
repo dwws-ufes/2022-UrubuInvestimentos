@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { Dropdown } from "./Dropdown";
+
 import { BotaoGenerico } from "../BotaoGenerico";
+import { Logo } from '../Logo';
 
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
@@ -34,8 +36,7 @@ export const Header = (props: propsType) => {
 
             <div className="header-centro">
                 <Link className="link-home" to='/'>
-                    <img src="/images/urubuzado.svg" alt="" className="urubu-logo"/>
-                    <h1 className="nome-empresa">Urubu Investimentos</h1>
+                    <Logo />
                 </Link>
             </div>
             

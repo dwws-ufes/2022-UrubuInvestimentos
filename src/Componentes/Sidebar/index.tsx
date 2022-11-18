@@ -41,7 +41,7 @@ export const Sidebar = (props: propsType) => {
             </div>
             <div className="links">
                 <ul>
-                    <li>INDIQUE UM</li>
+                    <li>INDIQUE UM AMIGO</li>
                     <li>REGRAS DE INVESTIMENTO</li>
                     <li>SUPORTE AO VIVO</li>
                     <li>PERGUNTAS FREQUENTES</li>
