@@ -18,6 +18,14 @@
 
     height: calc(100vh - var(--altura-header));
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.parte-superior {
+    /* border: 2px solid green; */
     padding: 20px;
 }
 
@@ -53,7 +61,7 @@
 }
 
 .links {
-    /* border-top: 1px solid red; */
+    border-top: 1px solid var(--cor-borda);
 }
 
 .barra-horizontal {
