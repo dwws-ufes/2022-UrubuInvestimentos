@@ -1,11 +1,10 @@
 Diagramas
-https://lucid.app/lucidchart/38f4846f-e38e-41db-9301-df6aa0826d8d/edit?viewport_loc=-143%2C83%2C2219%2C1107%2C0_0&invitationId=inv_e9ace645-d750-48af-b1a5-e031c2eb264e
+[Modelo de navegação e de entidade](https://lucid.app/lucidchart/e5d984a2-d083-4996-bd51-0f3b672e4be3/edit?viewport_loc=-40%2C-394%2C5355%2C2792%2C0_0&invitationId=inv_31866d38-b324-4c43-8880-5a43622e0f63)
+[Modelo de aplicação e arquitetura](https://lucid.app/lucidchart/a1a19507-79b5-4887-82b8-21d6a6f4c9e6/edit?viewport_loc=-640%2C280%2C3069%2C1600%2C0_0&invitationId=inv_ac4c4016-93f5-49cf-8f02-be0fef09f489)
 
-Figma
-https://www.figma.com/file/hTajDGlU1eh8fsxGydatls/Urubu-Investimentos?node-id=21%3A2
+[Figma](https://www.figma.com/file/hTajDGlU1eh8fsxGydatls/Urubu-Investimentos?node-id=21%3A2)
 
-Paginas sendo feitas no momento/aguardando serem feitas
-[planilha dos responsaveis pelas paginas](https://shorturl.at/gsyIT)
+[Planilha das páginas já feitas e seus responsáveis](https://shorturl.at/gsyIT)
 
 # Getting Started with Create React App
 
