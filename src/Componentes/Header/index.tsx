@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from 'react-router-dom';
 import { Dropdown } from "./Dropdown";
 import { BotaoGenerico } from "../BotaoGenerico";
 
@@ -33,8 +33,10 @@ export const Header = (props: propsType) => {
             <FaBars className="bar-icon"/>
 
             <div className="header-centro">
-                <img src="/images/urubuzado.svg" alt="" className="urubu-logo"/>
-                <h1 className="nome-empresa">Urubu Investimentos</h1>
+                <Link className="link-home" to='/'>
+                    <img src="/images/urubuzado.svg" alt="" className="urubu-logo"/>
+                    <h1 className="nome-empresa">Urubu Investimentos</h1>
+                </Link>
             </div>
             
             {/* caso nao logado mostra botoes de logar, caso contrario mostra botoes de perfil */}
