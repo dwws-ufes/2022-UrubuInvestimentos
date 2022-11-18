@@ -64,6 +64,7 @@ export default function Cadastro (){
                                 <option value="Sergipe - SE">Sergipe - SE</option>
                                 <option value="Tocantins - TO">Tocantins - TO</option>
                             </select>
+                            <FiTriangle className='fi-triangle'/>
                         </section>
                         <section>
                             <h2>Adicione um cartão</h2>
@@ -94,7 +95,7 @@ export default function Cadastro (){
                     <button type="submit">Completar cadastro!</button>
                 </form>
             </div>
-            {/* <Sidebar/> */}
+            <Sidebar/>
             {/* <Footer/> */}
         </div>
     )

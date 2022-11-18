@@ -72,7 +72,6 @@ input::placeholder{
     display: flex;
     justify-content: center;
     margin: auto;
-    /* gap: 0 10px; */
 }
 
 .val-cvv input{
@@ -82,4 +81,11 @@ input::placeholder{
 
 .val-cvv input + input{
     margin-left: 2%;
+}
+
+section .fi-triangle{
+    position: relative;
+    top: -15%;
+    left: 40%;
+    transform: rotate(180deg);
 }
