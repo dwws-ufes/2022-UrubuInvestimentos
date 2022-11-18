@@ -60,21 +60,21 @@ export const Header = (props: propsType) => {
             :
                 <div className="header-direito">
                     <BotaoGenerico
-                        texto="Cadastre-se"
-                        href="#"
-                        fundo={true}
-                        callback={() => {
-                            fechaEntrar();
-                            abreCadastro();
-                        }}
-                    />
-                    <BotaoGenerico
                         texto="Entrar"
                         href="#"
                         fundo={false}
                         callback={() => {
                             fechaCadastro();
                             abreEntrar();
+                        }}
+                    />
+                    <BotaoGenerico
+                        texto="Cadastre-se"
+                        href="#"
+                        fundo={true}
+                        callback={() => {
+                            fechaEntrar();
+                            abreCadastro();
                         }}
                     />
                 </div> 
