@@ -1,7 +1,7 @@
 @import url("../../constantes.css");
 
 .ultimo-resultado {
-    width: var(--main-view-width);
+    width: var(--main-width);
     max-width: var(--main-max-width);
     min-width: var(--main-min-width);
 

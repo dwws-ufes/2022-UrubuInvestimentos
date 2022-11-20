@@ -7,11 +7,15 @@
     padding: 20px;
     background-color: var(--search-bar-fundo);
 
-    width:  var(--main-view-width);
+    width:  var(--main-width);
     max-width: var(--main-max-width);
     min-width: var(--main-min-width);
 
     margin: 1em auto;
+}
+
+.lupa {
+    font-size: 2em;
 }
 
 .search-bar p {

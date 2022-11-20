@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BotaoGenerico } from "../BotaoGenerico";
-import { Resultado } from "../Resultado";
+import { ResultadoInfo } from "../ResultadoInfo";
 import { ProximoResultado } from "../ProximoResultado";
 
 
@@ -9,10 +9,12 @@ import "./index.css";
 
 interface propsType {
     fotoSrc: string;
+    animal: string;
+    milhares: string[] | number[]
 }
 
 export const UltimoResultado = (props: propsType) => {
-    const { fotoSrc } = props;
+    const { fotoSrc, animal, milhares } = props;
 
     return(
         <div
@@ -20,9 +22,9 @@ export const UltimoResultado = (props: propsType) => {
             style={{backgroundImage: `url(${fotoSrc})`}}
         >        
             {/*<img src="" alt="animal sorteado"/>*/}
-            <Resultado
-                animal="cágado"
-                milhares={["1234", "4567", "8901", "2345"]}
+            <ResultadoInfo
+                animal={animal}
+                milhares={milhares}
             />
             <div className="proximo-jogo">
                 <ProximoResultado />

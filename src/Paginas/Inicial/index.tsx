@@ -4,6 +4,7 @@ import { Header } from "../../Componentes/Header";
 import { Sidebar } from "../../Componentes/Sidebar";
 import { UltimoResultado } from "../../Componentes/UltimoResultado";
 import { Searchbar } from "../../Componentes/Searchbar";
+import { Resultado } from "../../Componentes/Resultado";
 
 import { Cadastro } from "../../Popups/Cadastro"
 import { Entrar } from "../../Popups/Entrar";
@@ -45,8 +46,14 @@ export const Inicial = () => {
             <main>
                 { sidebar && <Sidebar />}
                 <section className="conteudo-principal">
-                   <UltimoResultado fotoSrc="imagens/animais/cagado.jpeg"/>
+                   <UltimoResultado
+                        fotoSrc="imagens/animais/cagado.jpeg"
+                        animal={"cágado"}
+                        milhares={["1234", "4567", "8901", "2345"]}
+                    />
                    <Searchbar />
+                   <div className="resultados-anteriores">
+                   </div>
                 </section>
             </main> 
             

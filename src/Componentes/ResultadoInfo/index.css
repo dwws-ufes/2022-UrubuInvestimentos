@@ -1,0 +1,53 @@
+@import url("../../constantes.css");
+
+.resultado-info {
+    width: 30%;
+    height: calc(100% - 40px);
+    
+    margin: auto 0 auto 20px;
+
+    border-radius: var(--default-border-radius);
+    background-color: var(--fundo-secundario-transparente);
+
+    text-align: center;
+
+    text-shadow: 1px 1px 1px black;
+
+    /*display: flex;
+    flex-direction: column;
+    justify-content: space-between;*/
+
+}
+
+.ultimo-jogo {
+    border: 2px solid green;
+    margin: 0;
+}
+
+.animal {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    border: 2px solid red;
+}
+
+.numeros {
+    margin: 0;
+    width: 100%;
+    border: 2px solid blue;
+}
+
+.milhar {
+    font-size: 1.8em;
+    font-weight: bold;
+
+    /* user esta variavel para espacamento para corrigir bug do firefox */
+    --espacamento: 1em;
+    
+    letter-spacing: var(--espacamento);
+    text-align: center;
+    text-indent: var(--espacamento);
+
+    margin: 0;
+    border: 2px solid green;
+}

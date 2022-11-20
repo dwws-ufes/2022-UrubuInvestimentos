@@ -1,30 +1,29 @@
 import React from "react";
+import { ResultadoInfoPequeno } from "../ResultadoInfoPequeno";
+
 
 import "./index.css";
 
 interface propsType {
+    src: string;
+    dia: string;
     animal: string;
-    milhares: string[] | number[];
+    milhares: string[] | number[] 
 }
 
 export const Resultado = (props: propsType) => {
-    const { animal, milhares } = props;
+    const { src, dia, animal, milhares } = props;
 
     return(
-        <div className="resultado">
-            <p className="ultimo-jogo">ÚLTIMO RESULTADO</p>
-            <h3 className="animal">{animal.toUpperCase()}!</h3>
-            
-            <div>
-                {milhares.map((milhar, index) => 
-                    <p
-                        key={index}
-                        className="milhar"
-                    >
-                        {milhar}
-                    </p>
-                )}
-            </div>
+        <div
+            className="resultado"
+            style={{backgroundImage: `url(${src})`}}
+        >
+            <ResultadoInfoPequeno
+                dia={dia}
+                animal={animal}
+                milhares={milhares}
+            />            
         </div>
     );
 }
