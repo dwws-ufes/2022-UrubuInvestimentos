@@ -17,7 +17,7 @@ export const Cadastro = (props: propsType) => {
 
     return(
         <div className="cadastro">
-            <img src="./images/cadastro.svg" alt="cadastro" />
+            <img src="./imagens/cadastro.svg" alt="cadastro" />
 
             <div className="cadastro-info">
                 <Logo />

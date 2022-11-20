@@ -3,6 +3,8 @@ import React from "react";
 import { BotaoGenerico } from "../BotaoGenerico";
 import { GanheDinheiro } from './GanheDinheiro';
 
+import { FaMoneyCheckAlt } from 'react-icons/fa';
+
 import './index.css';
 
 interface propsType {
@@ -27,6 +29,7 @@ export const Sidebar = (props: propsType) => {
 
                 <BotaoGenerico
                     texto="Invista agora!"
+                    icon={<FaMoneyCheckAlt />}
                     href="#"
                     fundo={true}
                     callback={() => null}
