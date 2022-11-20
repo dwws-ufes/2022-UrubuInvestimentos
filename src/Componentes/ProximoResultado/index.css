@@ -1,0 +1,19 @@
+@import url("../../constantes.css");
+
+.proximo-resultado {
+    background-color: var(--cor-terciaria);
+    border-radius: var(--default-border-radius);
+    text-align: center;
+    padding: 10px;
+    height: fit-content;
+}
+
+.relogio {
+    font-size: 3em;
+}
+
+.proximo-resultado p {
+    font-size: 1.5em;
+    margin: 10px auto 0 auto;
+}
+

@@ -1,0 +1,33 @@
+@import url("../../constantes.css");
+
+.resultado {
+    
+    width: 35%;
+    height: calc(100% - 40px);
+    
+    margin: auto 0 auto 20px;
+
+    border-radius: var(--default-border-radius);
+    background-color: var(--fundo-secundario-transparente);
+
+    text-align: center;
+}
+
+.ultimo-jogo {
+
+}
+
+.animal {
+    font-size: 2em;
+}
+
+.milhar {
+    font-size: 1.8em;
+
+    /* user esta variavel para espacamento para corrigir bug do firefox */
+    --espacamento: 1em;
+    
+    letter-spacing: var(--espacamento);
+    text-align: center;
+    text-indent: var(--espacamento);
+}

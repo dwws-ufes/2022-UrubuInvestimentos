@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 
 import { Header } from '../../Componentes/Header';
 import { Sidebar } from '../../Componentes/Sidebar';
+import { UltimoResultado } from '../../Componentes/UltimoResultado';
+
 import { Cadastro } from '../../Popups/Cadastro'
 import { Entrar } from '../../Popups/Entrar';
+
+
 
 import "./index.css";
 
@@ -42,7 +46,7 @@ export const Inicial = () => {
             <main>
                 { sidebar && <Sidebar />}
                 <section className="conteudo-principal">
-                    
+                   <UltimoResultado fotoSrc="imagens/animais/cagado.jpeg"/> 
                 </section>
             </main> 
 

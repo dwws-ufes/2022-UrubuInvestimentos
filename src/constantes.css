@@ -4,7 +4,10 @@
 :root {
     /* cores universais */
 	--fundo-primario: #0F1923;
+
 	--fundo-secundario: #1A242D;
+    --fundo-secundario-transparente: #1A242D85; 
+
 	--cor-secundaria: #f12c4c;
 	--cor-terciaria: #00BA75; 
 	--cor-borda: #323b45;

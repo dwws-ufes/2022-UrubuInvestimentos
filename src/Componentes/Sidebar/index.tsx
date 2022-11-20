@@ -33,6 +33,7 @@ export const Sidebar = (props: propsType) => {
                     href="#"
                     fundo={true}
                     callback={() => null}
+                    className="botao"
                 />
 
                 <BotaoGenerico
@@ -41,6 +42,7 @@ export const Sidebar = (props: propsType) => {
                     href="#"
                     fundo={true}
                     callback={() => null}
+                    className="botao"
                 />
             </div>
             <div className="links">
