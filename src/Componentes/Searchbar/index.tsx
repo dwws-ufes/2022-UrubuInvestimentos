@@ -1,14 +1,15 @@
 import React from "react";
 
+
+import "./index.css";
+
 interface propsType {
 
 }
 
-import "./index.css";
-
 export const Searchbar = (props: propsType) => {
     return(
-        <div id="search-bar">
+        <div className="search-bar">
             {/*<FontAwesomeIcon icon={faMagnifyingGlass}/> */}
             <p>Procure Jogos</p>
         </div>

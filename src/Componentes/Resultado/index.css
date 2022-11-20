@@ -1,8 +1,7 @@
 @import url("../../constantes.css");
 
 .resultado {
-    
-    width: 35%;
+    width: 30%;
     height: calc(100% - 40px);
     
     margin: auto 0 auto 20px;
@@ -11,18 +10,23 @@
     background-color: var(--fundo-secundario-transparente);
 
     text-align: center;
-}
 
-.ultimo-jogo {
+    text-shadow: 1px 1px 1px black;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .animal {
     font-size: 2em;
+    font-weight: bold;
+    margin: 0;
 }
 
 .milhar {
     font-size: 1.8em;
+    font-weight: bold;
 
     /* user esta variavel para espacamento para corrigir bug do firefox */
     --espacamento: 1em;

@@ -27,8 +27,9 @@
 	--default-border-radius: 7px;
 	--small-border-radius: 5px;
 
+    --main-width: 60vw;
 	--main-min-width: 420px;
-	--main-max-width: 1100px;
+	--main-max-width: 800px;
 
 	--entrar-width: 390px;
 	--entrar-height: 511px;

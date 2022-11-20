@@ -12,17 +12,19 @@ export const Resultado = (props: propsType) => {
 
     return(
         <div className="resultado">
-            <p className="ultimo-jogo">ÚLTIMO JOGO</p>
+            <p className="ultimo-jogo">ÚLTIMO RESULTADO</p>
             <h3 className="animal">{animal.toUpperCase()}!</h3>
-
-            {milhares.map((milhar, index) => 
-                <p
-                    key={index}
-                    className="milhar"
-                >
-                    {milhar}
-                </p>
-            )}
+            
+            <div>
+                {milhares.map((milhar, index) => 
+                    <p
+                        key={index}
+                        className="milhar"
+                    >
+                        {milhar}
+                    </p>
+                )}
+            </div>
         </div>
     );
 }

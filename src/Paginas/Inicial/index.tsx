@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Header } from '../../Componentes/Header';
-import { Sidebar } from '../../Componentes/Sidebar';
-import { UltimoResultado } from '../../Componentes/UltimoResultado';
+import { Header } from "../../Componentes/Header";
+import { Sidebar } from "../../Componentes/Sidebar";
+import { UltimoResultado } from "../../Componentes/UltimoResultado";
+import { Searchbar } from "../../Componentes/Searchbar";
 
-import { Cadastro } from '../../Popups/Cadastro'
-import { Entrar } from '../../Popups/Entrar';
-
-
+import { Cadastro } from "../../Popups/Cadastro"
+import { Entrar } from "../../Popups/Entrar";
 
 import "./index.css";
 
@@ -46,10 +45,11 @@ export const Inicial = () => {
             <main>
                 { sidebar && <Sidebar />}
                 <section className="conteudo-principal">
-                   <UltimoResultado fotoSrc="imagens/animais/cagado.jpeg"/> 
+                   <UltimoResultado fotoSrc="imagens/animais/cagado.jpeg"/>
+                   <Searchbar />
                 </section>
             </main> 
-
+            
 			{ showEntrar && <Entrar fechaEntrar={fechaEntrar}/>}
 			{ showCadastro && <Cadastro fechaCadastro={fechaCadastro}/> }
 
