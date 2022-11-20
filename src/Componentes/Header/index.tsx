@@ -10,15 +10,15 @@ import { FaBars, FaRegUser } from 'react-icons/fa';
 import "./index.css";
 
 interface propsType {
-    className: string;
     abreCadastro: () => void;
     fechaCadastro: () => void;
     abreEntrar: () => void;
     fechaEntrar: () => void;
+    toggleSidebar?: () => void;
 }
 
 export const Header = (props: propsType) => {
-    const { className, abreCadastro, fechaCadastro, abreEntrar, fechaEntrar } = props;
+    const { abreCadastro, fechaCadastro, abreEntrar, fechaEntrar } = props;
     
     // controla se eh mostrado login/entrar ou as informacoes do usuario
     const [ logado, setLogado ] = useState(true);
@@ -32,7 +32,7 @@ export const Header = (props: propsType) => {
     return(
         <div className="header">
 
-            <FaBars className="bar-icon"/>
+            <FaBars className="bar-icon" onClick={props?.toggleSidebar}/>
 
             <div className="header-centro">
                 <Link className="link-home" to='/'>

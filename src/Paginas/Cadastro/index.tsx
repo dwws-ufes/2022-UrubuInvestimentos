@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Header } from '../../Componentes/Header';
 import { Sidebar } from '../../Componentes/Sidebar';
-import { Footer } from '../../Componentes/Footer';
-
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
 
 import './index.css';
@@ -12,7 +10,6 @@ export default function Cadastro (){
     return (
         <div className="Cadastro">
             <Header
-                className='header'
                 abreCadastro={() => null}
                 fechaCadastro={() => null}
                 abreEntrar={() => null}
@@ -99,7 +96,6 @@ export default function Cadastro (){
                 </form>
             </div>
             <Sidebar/>
-            {/* <Footer/> */}
         </div>
     )
 }

@@ -1,97 +1,36 @@
 @import url("../../constantes.css");
 
 main {
-  display: flex;
-  column-gap: 20px;
-  margin: 20px;
+	position: relative;
+
+	height: calc(100vh - var(--altura-header));
+	width: 100vw;
+
+	margin-top: var(--altura-header);
+
+	display: flex;
+    flex-direction: row;
 }
 
-/* MAIN CONTENT */
-#main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* MAIN CARD STUFF */
-#main-card {
-  /* width: 75vw; */
-  background-color: var(--cor-terciaria);
-  border-radius: var(--default-border-radius);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-
-  max-width: var(--main-max-width);
-  min-width: var(--main-min-width);
-
-  /* border: 1px solid red; */
-}
-
-#main-card:hover {
-  cursor: pointer;
+.conteudo-principal {
+    border: 2px solid green;
+    width: 100%;
 }
 
 /* SEARCHBAR */
 #search-bar {
-  display: flex;
-  border: 1px solid var(--search-bar-border);
-  border-radius: var(--default-border-radius);
-  padding: 20px;
-  background-color: var(--search-bar-fundo);
-  /* margin-top: 20px; */
+	display: flex;
+	border: 1px solid var(--search-bar-border);
+	border-radius: var(--default-border-radius);
+	padding: 20px;
+	background-color: var(--search-bar-fundo);
+	/* margin-top: 20px; */
 
-  max-width: var(--main-max-width);
-  min-width: var(--main-min-width);
+	max-width: var(--main-max-width);
+	min-width: var(--main-min-width);
 }
 
 #search-bar p {
-  margin: auto 0;
-  margin-left: 20px;
-}
-
-/* SMALL CARDS SECTION */
-#small-cards-section {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  justify-content: space-between;
-  /* columns: 33% 33%; */
-  /* margin-top: 20px; */
-  /* border: 1px solid red; */
-  flex-wrap: wrap;
-  /* column-gap: 20px; */
-  /* gap: 20px; */
-  /* flex: 33% 33% 33%; */
-  row-gap: 20px;
-  column-gap: 20px;
-  max-width: var(--main-max-width);
-  min-width: var(--main-min-width);
-  margin: 0 auto;
-}
-
-/* SMALL CARDS */
-.small-card {
-  background-color: var(--cor-terciaria);
-  border-radius: var(--default-border-radius);
-  /* padding: 10px; */
-  /* margin: 20px; */
-  /* width: 200px; */
-  /* height: 230px; */
-  /* background-image: url("/images/img1.png"); */
-}
-
-.small-card:hover {
-  cursor: pointer;
-}
-
-.small-card img {
-  width: 100%;
-  height: 100%; 
-  object-fit: contain;
-  /* margin: 0; */
-  position: absolute;
-  top: 0;
-  right: 0;
-  /* z-index: -1; */
+	margin: auto 0;
+	margin-left: 20px;
 }

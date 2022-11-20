@@ -14,9 +14,7 @@
     /* border: 2px solid red; */
 
     /* posicionamento na tela */
-    position: fixed;
-    left: 0;
-    top: var(--altura-header);
+    position: relative;
 
     height: calc(100vh - var(--altura-header));
 
@@ -24,6 +22,7 @@
     flex-direction: column;
     justify-content: space-between;
 
+    margin: 0;
 }
 
 .parte-superior {

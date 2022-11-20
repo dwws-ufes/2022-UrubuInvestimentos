@@ -4,6 +4,8 @@ interface propsType {
 
 }
 
+import "./index.css";
+
 export const Searchbar = (props: propsType) => {
     return(
         <div id="search-bar">
