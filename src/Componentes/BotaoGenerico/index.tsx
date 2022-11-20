@@ -1,11 +1,10 @@
 import React from "react";
-import { IconType } from "react-icons";
 
 import "./index.css"
 
 interface propsType {
     texto: string;
-    icon?: JSX.Element;
+    icone?: JSX.Element;
     className?: string;
     href: string;
     fundo: boolean;
@@ -22,7 +21,7 @@ export const BotaoGenerico = (props: propsType) => {
         <div className={`${classeDeFundo} ${props?.className}`} onClick={callback}>
             <a href={href} target="_self">
                 <p className="texto">{texto}</p>
-                {props?.icon && <div className="icone">{props?.icon}</div>}
+                {props?.icone && <div className="icone">{props?.icone}</div>}
             </a>
         </div>
     );

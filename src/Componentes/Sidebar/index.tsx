@@ -3,7 +3,7 @@ import React from "react";
 import { BotaoGenerico } from "../BotaoGenerico";
 import { GanheDinheiro } from './GanheDinheiro';
 
-import { FaMoneyCheckAlt } from 'react-icons/fa';
+import { FaMoneyCheckAlt, FaCalendar } from 'react-icons/fa';
 
 import './index.css';
 
@@ -29,7 +29,7 @@ export const Sidebar = (props: propsType) => {
 
                 <BotaoGenerico
                     texto="Invista agora!"
-                    icon={<FaMoneyCheckAlt />}
+                    icone={<FaMoneyCheckAlt />}
                     href="#"
                     fundo={true}
                     callback={() => null}
@@ -37,6 +37,7 @@ export const Sidebar = (props: propsType) => {
 
                 <BotaoGenerico
                     texto="Jogos Passados"
+                    icone={<FaCalendar />}
                     href="#"
                     fundo={true}
                     callback={() => null}
