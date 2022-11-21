@@ -1,7 +1,10 @@
 @import url("../../constantes.css");
 
 .resultado-info-pequeno {
-
+    background-color: var(--fundo-secundario-transparente);
+    width: 40%;
+    border-radius: var(--default-border-radius);
+    margin: 0.5em 0.5em;
 }
 
 .dia {

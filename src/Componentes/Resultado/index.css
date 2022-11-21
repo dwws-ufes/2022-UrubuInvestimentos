@@ -1,5 +1,16 @@
 @import url("../../constantes.css");
 
 .resultado {
+    /* border: 2px solid blue; */
+    text-align: center;
 
+    display: flex;
+    flex-direction: column;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: var(--default-border-radius);
+    width: 100%;
 }

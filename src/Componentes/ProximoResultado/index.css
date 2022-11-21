@@ -1,7 +1,7 @@
 @import url("../../constantes.css");
 
 .proximo-resultado {
-    background-color: var(--cor-terciaria);
+    background-color: var(--cor-terciaria-transparente);
     border-radius: var(--default-border-radius);
     text-align: center;
     padding: 10px;
@@ -16,4 +16,3 @@
     font-size: 1.2em;
     margin: 10px auto 0 auto;
 }
-

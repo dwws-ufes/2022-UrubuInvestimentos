@@ -21,7 +21,7 @@ export const Header = (props: propsType) => {
     const { abreCadastro, fechaCadastro, abreEntrar, fechaEntrar } = props;
     
     // controla se eh mostrado login/entrar ou as informacoes do usuario
-    const [ logado, setLogado ] = useState(true);
+    const [ logado, setLogado ] = useState(false);
     
     // nome de usuario mostrado no header
     const [ nomeUsuario, setNomeUsuario ] = useState("David Messias");

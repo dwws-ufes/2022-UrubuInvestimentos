@@ -9,7 +9,10 @@
     --fundo-secundario-transparente: #1A242D85; 
 
 	--cor-secundaria: #f12c4c;
-	--cor-terciaria: #00BA75; 
+
+	--cor-terciaria: #00BA75;
+	--cor-terciaria-transparente: #00BA7580;
+	
 	--cor-borda: #323b45;
 
 	--cor-texto-cadastro: #bcbfc7;

@@ -13,16 +13,17 @@ main {
 }
 
 .conteudo-principal {
-
     width: 100%;
 
-    border: 2px solid green;
+    /* border: 2px solid green; */
     
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     padding: 20px 0;
+
+    overflow: scroll;
 }
 
 .resultados-anteriores {
@@ -32,5 +33,9 @@ main {
 
     margin: 0 auto;
     height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
 }

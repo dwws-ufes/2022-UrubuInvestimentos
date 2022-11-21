@@ -44,7 +44,7 @@ export const Inicial = () => {
 			/>
 
             <main>
-                { sidebar && <Sidebar />}
+                { sidebar && <Sidebar /> }
                 <section className="conteudo-principal">
                    <UltimoResultado
                         fotoSrc="imagens/animais/cagado.jpeg"
@@ -53,6 +53,19 @@ export const Inicial = () => {
                     />
                    <Searchbar />
                    <div className="resultados-anteriores">
+						<Resultado
+							src="imagens/animais/cagado.jpeg"
+							dia="ONTEM"
+							animal="CÁGADO"
+							milhares={["1234", "5678", "9012", "3456"]}
+						/>
+
+						<Resultado
+							src="imagens/animais/cagado.jpeg"
+							dia="ONTEM"
+							animal="CÁGADO"
+							milhares={["1234", "5678", "9012", "3456"]}
+						/>
                    </div>
                 </section>
             </main> 
