@@ -37,5 +37,5 @@ main {
 
     display: grid;
     grid-template-columns: auto auto;
-    grid-column-gap: 1em;
+    gap: 1em;
 }
