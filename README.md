@@ -5,6 +5,7 @@
 [Figma](https://www.figma.com/file/hTajDGlU1eh8fsxGydatls/Urubu-Investimentos?node-id=21%3A2)
 
 login figma: yolenif426@migonom.com
+
 senha: urubu_investimentos_123
 
 [Planilha das páginas já feitas e seus responsáveis](https://shorturl.at/gsyIT)
