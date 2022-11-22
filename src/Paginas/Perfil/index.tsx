@@ -44,7 +44,13 @@ export const Perfil = () => {
             <main>
                 { sidebar && <Sidebar /> }
                 <section className="conteudo-principal">
-                    <CardPerfil /> 
+                    <CardPerfil
+                        nome="David Messias"
+                        saldo="10,00"
+                        investimentos={10}
+                        lucrou="-100,00"
+                        cartoes={["Cartão 1", "Cartão 2"]}
+                    /> 
                 </section>
             </main> 
             

@@ -11,11 +11,6 @@
     margin-top: var(--altura-header);
 }
 
-.sidebar{
-    position: absolute;
-    top: var(--altura-header);
-}
-
 .Regras > h1, .Regras > p{
     text-align: center;
 }

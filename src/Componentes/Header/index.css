@@ -17,6 +17,8 @@
     width: 100vw;
     height: var(--altura-header);
     top: 0;
+
+    margin: 0;
 }
 
 .bar-icon {

@@ -16,6 +16,7 @@
     /* posicionamento na tela */
     position: relative;
 
+    
     height: calc(100vh - var(--altura-header));
 
     display: flex;

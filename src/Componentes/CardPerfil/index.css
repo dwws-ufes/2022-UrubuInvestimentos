@@ -1,1 +1,92 @@
 @import url("../../constantes.css");
+
+.card-perfil {
+    background-color: var(--fundo-secundario);
+    border-radius: var(--default-border-radius);
+    
+    margin: auto 0;
+
+    width: 30vw;
+    min-width: 300px;
+
+    height: calc(100% - 1em);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 2em;
+}
+
+.parte-superior-perfil {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 2em;
+
+    padding: 1em 0;
+}
+
+.logo-perfil {
+    font-size: 5em;
+}
+
+.parte-superior-perfil p {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.parte-superior-perfil * {
+    margin: 0 auto;
+}
+
+.parte-meio-perfil {
+    font-size: 1.4em;
+}
+
+.parte-meio-perfil div {
+    display: flex;
+    align-items: row;
+    justify-content: center;
+    column-gap: 0.7em;
+}
+
+.icone-geral {
+    font-size: 1.6em;
+    margin: auto 0;
+}
+
+.parte-inferior-perfil {
+   
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   row-gap: 1em;
+}
+
+.parte-inferior-perfil * {
+    font-size: 1.2em;
+
+    margin: auto 0;
+}
+
+.parte-inferior-perfil .cartoes {
+
+}
+
+.cartao-individual {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 1em;
+}
+
+.cartao-individual p {
+    margin: auto 0;
+    font-size: 1em;
+}
+
+.icone-cartao-geral {
+    font-size: 1em;
+    margin: auto 0;
+}

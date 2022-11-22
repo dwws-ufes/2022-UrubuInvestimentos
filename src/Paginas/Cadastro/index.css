@@ -19,11 +19,6 @@ select, select:hover{
     appearance: none;
 }
 
-.sidebar{
-    position: absolute;
-    top: var(--altura-header);
-}
-
 footer{
     position: absolute;
     top: calc(100%);
