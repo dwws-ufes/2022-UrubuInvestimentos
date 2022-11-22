@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from "react";
 
 //Importando as coisas do react-routers
 import {
@@ -8,8 +8,9 @@ import {
 } from 'react-router-dom';
 
 //Importando as paginas
-import { Inicial } from './Paginas/Inicial';
-import Cadastro from './Paginas/Cadastro'
+import { Inicial } from "./Paginas/Inicial";
+import Cadastro from "./Paginas/Cadastro";
+import { Perfil } from "./Paginas/Perfil";
 
 import './App.css';
 
@@ -17,9 +18,9 @@ export const App = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route index element={<Inicial />}/>
-                <Route path="/blogs" element={<h1>Blogs</h1>} />
+                <Route index element={<Inicial/>}/>
                 <Route path="/cadastro" element={<Cadastro/>}/>
+                <Route path="/perfil" element={<Perfil/>}/>
             </Routes>
         </BrowserRouter>
     );

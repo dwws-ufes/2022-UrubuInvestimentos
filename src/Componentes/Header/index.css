@@ -48,7 +48,6 @@
     filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
  
     font-size: 10px;
-
     cursor: pointer;
 }
 
@@ -73,23 +72,19 @@
 }
 
 .icone-usuario {
-    /*border: 1px solid white;*/
     margin: auto 10px;
     font-size: 22px;
 }
 
 .pop-up-opcoes-login:hover {
     cursor: pointer;
-
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
 }
 
 .dropdown {
     position: absolute;
     top: 100%;
     background-color: var(--cor-dropdown);
+    background-color: black;
     padding: 0 0px;
     border-radius: var(--border-radius-padrao);
     width: 100%;

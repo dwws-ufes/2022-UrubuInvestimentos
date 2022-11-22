@@ -12,5 +12,6 @@
     background-repeat: no-repeat;
 
     border-radius: var(--default-border-radius);
-    width: 100%;
+
+    height: 15em;
 }

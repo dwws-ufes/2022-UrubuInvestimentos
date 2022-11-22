@@ -9,15 +9,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    height: 60%;
+    padding: 0.3em 0;
 }
 
-.dia {
-
+.dia-pequeno {
+    margin: 0;
 }
-.animal {
-
+.animal-pequeno {
+    margin: 0;
 }
 
-.milhar {
+.numeros-pequeno {
+    margin: 0;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.milhar-pequeno {
+    margin: 0;
+
+    --espacamento: 1em;
+    
+    letter-spacing: var(--espacamento);
+    text-align: center;
+    text-indent: var(--espacamento);
 }

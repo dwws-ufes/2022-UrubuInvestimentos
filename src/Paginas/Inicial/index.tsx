@@ -67,7 +67,35 @@ export const Inicial = () => {
 							milhares={["1234", "5678", "9012", "3456"]}
 						/>
 
-<Resultado
+                        <Resultado
+							src="imagens/animais/cagado.jpeg"
+							dia="ONTEM"
+							animal="CÁGADO"
+							milhares={["1234", "5678", "9012", "3456"]}
+						/>
+
+                        <Resultado
+							src="imagens/animais/cagado.jpeg"
+							dia="ONTEM"
+							animal="CÁGADO"
+							milhares={["1234", "5678", "9012", "3456"]}
+						/>
+
+                        <Resultado
+							src="imagens/animais/cagado.jpeg"
+							dia="ONTEM"
+							animal="CÁGADO"
+							milhares={["1234", "5678", "9012", "3456"]}
+						/>
+
+                        <Resultado
+							src="imagens/animais/cagado.jpeg"
+							dia="ONTEM"
+							animal="CÁGADO"
+							milhares={["1234", "5678", "9012", "3456"]}
+						/>
+
+                        <Resultado
 							src="imagens/animais/cagado.jpeg"
 							dia="ONTEM"
 							animal="CÁGADO"
