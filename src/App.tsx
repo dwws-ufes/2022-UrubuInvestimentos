@@ -9,8 +9,9 @@ import {
 
 //Importando as paginas
 import { Inicial } from "./Paginas/Inicial";
-import Cadastro from "./Paginas/Cadastro";
 import { Perfil } from "./Paginas/Perfil";
+import Cadastro from "./Paginas/Cadastro";
+import Regras from "./Paginas/Regras";
 
 import './App.css';
 
@@ -21,6 +22,7 @@ export const App = () => {
                 <Route index element={<Inicial/>}/>
                 <Route path="/cadastro" element={<Cadastro/>}/>
                 <Route path="/perfil" element={<Perfil/>}/>
+                <Route path="/regras" element={<Regras/>}/>
             </Routes>
         </BrowserRouter>
     );
