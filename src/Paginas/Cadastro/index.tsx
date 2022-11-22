@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Header } from '../../Componentes/Header';
 import { Sidebar } from '../../Componentes/Sidebar';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
 
 import './index.css';
+import { Footer } from '../../Componentes/Footer';
 
 export default function Cadastro (){
+    const [ sidebar, setSidebar ] = useState(false);
     return (
         <div className="Cadastro">
             <Header
@@ -14,7 +16,10 @@ export default function Cadastro (){
                 fechaCadastro={() => null}
                 abreEntrar={() => null}
                 fechaEntrar={() => null}
+                toggleSidebar={() => setSidebar(anterior => !anterior)}
             />
+            {sidebar && <div className="sidebar"><Sidebar/></div>}
+
             <h1>Complete seu Cadastro!</h1>
 
             <div className="form">
@@ -95,7 +100,7 @@ export default function Cadastro (){
                     <button type="submit">Completar cadastro!</button>
                 </form>
             </div>
-            <Sidebar/>
+            {/* <footer><Footer/></footer> */}
         </div>
     )
 }
