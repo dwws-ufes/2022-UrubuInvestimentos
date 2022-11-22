@@ -19,6 +19,16 @@ select, select:hover{
     appearance: none;
 }
 
+.sidebar{
+    position: absolute;
+    top: var(--altura-header);
+}
+
+footer{
+    position: absolute;
+    top: calc(100%);
+}
+
 form button{
     color: #FFF;
     font-weight: bolder;
@@ -34,10 +44,14 @@ input::placeholder{
     color: var(--cor-texto-cadastro);
 }
 
+.Cadastro{
+    margin-top: calc(var(--altura-header) + 2rem);
+}
+
 .Cadastro > h1{
     font-weight: bolder;
     text-align: center;
-    margin-bottom: 8rem;
+    margin-bottom: 3rem;
 }
 
 .Cadastro .form form{
