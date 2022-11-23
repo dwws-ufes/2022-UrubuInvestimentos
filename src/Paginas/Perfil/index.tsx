@@ -55,6 +55,7 @@ export const Perfil = () => {
                     />
 
                     <NovoInvestimento/>
+                    <RemoverCartao/>
                 </section>
             </main> 
             

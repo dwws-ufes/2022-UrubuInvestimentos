@@ -1,3 +1,13 @@
 @import url("../../constantes.css");
 
+.remover-cartao-pop-up {
+    background-color: var(--fundo-secundario);
+
+    border-radius: var(--default-border-radius);
+
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
