@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import { Header } from "../../Componentes/Header";
 import { Sidebar } from "../../Componentes/Sidebar";
 import { CardPerfil } from "../../Componentes/CardPerfil";
+import { NovoInvestimento } from "../../Componentes/NovoInvestimento";
 
 import { Cadastro } from "../../Popups/Cadastro";
 import { Entrar } from "../../Popups/Entrar";
+import { RemoverCartao } from "../../Popups/RemoverCartao";
 
 import "./index.css";
 
@@ -50,7 +52,9 @@ export const Perfil = () => {
                         investimentos={10}
                         lucrou="-100,00"
                         cartoes={["Cartão 1", "Cartão 2"]}
-                    /> 
+                    />
+
+                    <NovoInvestimento/>
                 </section>
             </main> 
             

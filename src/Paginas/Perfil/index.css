@@ -10,6 +10,8 @@ main {
 
 	display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    padding: 0 3em;
 }
 
 .conteudo-principal {
@@ -18,7 +20,7 @@ main {
     /* border: 2px solid green; */
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 
     padding: 20px 0;

@@ -9,7 +9,8 @@
     width: 30vw;
     min-width: 300px;
 
-    height: calc(100% - 1em);
+    /* usar para a distancia das bordas */
+    height: calc(100% - 2em);
 
     display: flex;
     flex-direction: column;
@@ -70,9 +71,11 @@
     margin: auto 0;
 }
 
+/*
 .parte-inferior-perfil .cartoes {
 
 }
+*/
 
 .cartao-individual {
     display: flex;

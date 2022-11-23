@@ -1,0 +1,9 @@
+@import url("../../constantes.css");
+
+.novo-investimento {
+    border: 2px solid red;
+}
+
+.novo-investimento .titulo {
+    text-align: center;
+}
