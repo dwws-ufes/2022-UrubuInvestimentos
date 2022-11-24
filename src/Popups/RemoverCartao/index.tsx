@@ -10,8 +10,8 @@ export const RemoverCartao = () => {
             <p>Tem certeza que deseja remover o cartão?</p>
 
             <div className="botoes-remover-cartao">
-                <BotaoGenerico texto="Sim"/>
-                <BotaoGenerico texto="Não"/>
+                <BotaoGenerico texto="Sim" fundo={false}/>
+                <BotaoGenerico texto="Não" fundo={true}/>
             </div>
         </div>
     );

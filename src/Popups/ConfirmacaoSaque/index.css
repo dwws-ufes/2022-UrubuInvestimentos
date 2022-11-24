@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-.remover-cartao-pop-up {
+.confirmacao-saque-pop-up {
     background-color: var(--fundo-secundario);
 
     border-radius: var(--default-border-radius);
@@ -11,13 +11,15 @@
     transform: translate(-50%, -50%);
 
     padding: 1em;
+
+    text-align: center;
 }
 
-.remover-cartao-pop-up p {
+.confirmacao-saque-pop-up p {
     font-weight: bold;
 }
 
-.botoes-remover-cartao {
+.botoes-confirmacao-saque {
     display: flex;
     flex-direction: row;
 }

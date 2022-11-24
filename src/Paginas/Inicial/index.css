@@ -12,7 +12,7 @@ main {
     flex-direction: row;
 }
 
-.conteudo-principal {
+.conteudo-principal-inicial {
     width: 100%;
     
     display: flex;

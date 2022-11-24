@@ -45,7 +45,7 @@ export const Inicial = () => {
 
             <main>
                 { sidebar && <Sidebar /> }
-                <section className="conteudo-principal">
+                <section className="conteudo-principal-inicial">
                    <UltimoResultado
                         fotoSrc="imagens/animais/cagado.jpeg"
                         animal={"cágado"}

@@ -7,7 +7,9 @@ import { NovoInvestimento } from "../../Componentes/NovoInvestimento";
 
 import { Cadastro } from "../../Popups/Cadastro";
 import { Entrar } from "../../Popups/Entrar";
-import { RemoverCartao } from "../../Popups/RemoverCartao";
+// import { RemoverCartao } from "../../Popups/RemoverCartao";
+// import { ConfirmacaoSaque } from "../../Popups/ConfirmacaoSaque";
+import { AdicionarSaldo } from "../../Popups/AdicionarSaldo";
 
 import "./index.css";
 
@@ -55,7 +57,9 @@ export const Perfil = () => {
                     />
 
                     <NovoInvestimento/>
-                    <RemoverCartao/>
+                    {/* <RemoverCartao/> */}
+					{/* <ConfirmacaoSaque/> */}
+					<AdicionarSaldo/>
                 </section>
             </main> 
             

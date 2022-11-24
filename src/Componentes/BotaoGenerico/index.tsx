@@ -19,10 +19,10 @@ export const BotaoGenerico = (props: propsType) => {
 
     let classeDeFundo = "botao-generico";
 
-    if(props?.fundo && !props.fundo)
-        classeDeFundo += " botao-sem-fundo";
+    if(props?.fundo)
+        classeDeFundo += " botao-com-fundo";
     else
-        classeDeFundo += " botao-com-fundo"; 
+        classeDeFundo += " botao-sem-fundo"; 
 
     return(
         <div
