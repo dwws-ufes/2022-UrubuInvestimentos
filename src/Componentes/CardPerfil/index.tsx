@@ -43,8 +43,11 @@ export const CardPerfil = (props: propsType) => {
                 />
 
                 <div className="cartoes">
-                    {cartoes.map(cartao =>
-                        <div className="cartao-individual">
+                    {cartoes.map((cartao, index) =>
+                        <div
+                            className="cartao-individual"
+                            key={index}
+                        >  
                             <BsCreditCard className="icone-cartao-geral"/>
                             <p>{cartao}</p>
                             <IoCloseSharp className="icone-cartao-geral"/>

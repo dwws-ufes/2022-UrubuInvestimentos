@@ -11,7 +11,7 @@ import { Entrar } from "../../Popups/Entrar";
 // import { ConfirmacaoSaque } from "../../Popups/ConfirmacaoSaque";
 //import { AdicionarSaldo } from "../../Popups/AdicionarSaldo";
 //import { SacarDinheiro } from "../../Popups/SacarDinheiro";
-import { AdicionarCartao } from "../../Popups/AdicionarCartao";
+//import { AdicionarCartao } from "../../Popups/AdicionarCartao";
 
 import "./index.css";
 
@@ -50,20 +50,14 @@ export const Perfil = () => {
             <main>
                 { sidebar && <Sidebar /> }
                 <section className="conteudo-principal">
-                    {/* <CardPerfil
+                    <CardPerfil
                         nome="David Messias"
                         saldo="10,00"
                         investimentos={10}
                         lucrou="-100,00"
                         cartoes={["Cartão 1", "Cartão 2"]}
-                    /> */}
-
-                    {/* <NovoInvestimento/> */}
-                    {/* <RemoverCartao/> */}
-					{/* <ConfirmacaoSaque/> */}
-					{/*<AdicionarSaldo />*/}
-                    {/*<SacarDinheiro saldo="10,00"/>*/}
-                    <AdicionarCartao/>
+                    />
+                    <NovoInvestimento/>
                 </section>
             </main> 
             
