@@ -4,13 +4,13 @@
     background-color: var(--fundo-secundario);
     border-radius: var(--default-border-radius);
     
-    margin: auto 0;
+    margin: 2rem;
 
-    width: 30vw;
+    width: 25vw;
     min-width: 300px;
 
     /* usar para a distancia das bordas */
-    height: calc(100% - 2em);
+    height: calc(100vh - var(--altura-header) - 2em);
 
     display: flex;
     flex-direction: column;

@@ -13,6 +13,7 @@ import { Perfil } from "./Paginas/Perfil";
 import Cadastro from "./Paginas/Cadastro";
 import Regras from "./Paginas/Regras";
 import Urubuzado from "./Paginas/Urubuzado";
+import TelaInvestimentoNumero from "./Paginas/Tela-Investimentos-Numero";
 
 import './App.css';
 
@@ -25,6 +26,7 @@ export const App = () => {
                 <Route path="/perfil" element={<Perfil/>}/>
                 <Route path="/regras" element={<Regras/>}/>
                 <Route path="/tzztzztztztzttzzzztttztttzt" element={<Urubuzado/>}/>
+                <Route path="/tela-investimentos" element={<TelaInvestimentoNumero/>}/>
             </Routes>
         </BrowserRouter>
     );

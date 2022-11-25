@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { BotaoGenerico } from "../BotaoGenerico";
 import { GanheDinheiro } from './GanheDinheiro';
 
@@ -39,7 +41,7 @@ export const Sidebar = (props: propsType) => {
                 <BotaoGenerico
                     texto="Jogos Passados"
                     icone={<FaCalendar />}
-                    href="#"
+                    href="/tela-investimentos"
                     fundo={true}
                     callback={() => null}
                     className="botao"
@@ -48,7 +50,7 @@ export const Sidebar = (props: propsType) => {
             <div className="links">
                 <ul>
                     <li>INDIQUE UM AMIGO</li>
-                    <li>REGRAS DE INVESTIMENTO</li>
+                    <li><Link className="redirect" to="/regras">REGRAS DE INVESTIMENTO</Link></li>
                     <li>SUPORTE AO VIVO</li>
                     <li>PERGUNTAS FREQUENTES</li>
                 </ul>

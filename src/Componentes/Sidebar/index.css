@@ -99,3 +99,8 @@
     cursor: pointer;
     user-select: none;
 }
+
+.links ul li .redirect{
+    color: white;
+    text-decoration: none;
+} 
