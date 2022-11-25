@@ -28,6 +28,7 @@ export const AdicionarCartao = (props: propsType) => {
                     type="text"
                     name="email"
                     placeholder="Nome completo no cartão"
+                    className="adicionar-cartao-input"
                 />
 
                 <div className="input-adicionar-cartao">
@@ -35,23 +36,19 @@ export const AdicionarCartao = (props: propsType) => {
                         type="text"
                         name="email"
                         placeholder="Número"
+                        className="adicionar-cartao-input"
                     /> 
                     <BsCreditCard className="adicionar-cartao-icone"/>
                 </div>
                        
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "row"
-                    }}
-                >
+                <div className="validade-cvv">
                     <div>
                         <input
                             type="text"
                             name="validade"
                             placeholder="Validade"
                         />
-                        <BsFillCalendarFill/>
+                        <BsFillCalendarFill className="adicionar-cartao-icone"/>
                     </div>
                     <div>
                         <input
@@ -59,7 +56,7 @@ export const AdicionarCartao = (props: propsType) => {
                             name="cvv"
                             placeholder="CVV"
                         />
-                        <IoInformationCircle/>
+                        <IoInformationCircle className="adicionar-cartao-icone"/>
                     </div> 
                 </div>
 
@@ -67,10 +64,11 @@ export const AdicionarCartao = (props: propsType) => {
                     type="text"
                     name="apelido"
                     placeholder="Apelido do cartão"
+                    className="adicionar-cartao-input"
                 />
 
                 <BotaoGenerico
-                    texto="AdicionarCartao"
+                    texto="Adicionar cartão"
                     fundo={true}
                 />
             </form>

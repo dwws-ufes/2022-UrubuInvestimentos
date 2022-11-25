@@ -15,8 +15,22 @@
     justify-content: space-around;
 }
 
+.adicionar-cartao form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+}
+
 .adicionar-cartao h3 {
     text-align: center;
+}
+
+.adicionar-cartao-input {
+    background-color: var(--fundo-primario) !important;
+    border-radius: var(--default-border-radius);
+    margin: 0;
+    width: 100%;
 }
 
 .input-adicionar-cartao {
@@ -27,8 +41,7 @@
     flex-direction: row;
 
     padding: 0 1em 0 0.1em;
-
-    margin: 1em 0;
+    width: 100%;
 }
 
 .adicionar-cartao input {
@@ -37,6 +50,21 @@
 
 .adicionar-cartao select {
     background-color: transparent;
+}
+
+.validade-cvv {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.validade-cvv div {
+    background-color: var(--fundo-primario);
+    border-radius: var(--default-border-radius);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 1em;
 }
 
 .adicionar-cartao-icone {
