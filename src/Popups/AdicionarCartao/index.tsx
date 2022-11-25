@@ -7,6 +7,8 @@ import { FaMoneyBill } from "react-icons/fa";
 import { BsCreditCard } from "react-icons/bs";
 import { CgClose } from "react-icons/cg";
 import { AiOutlineCaretDown } from "react-icons/ai";
+import { BsFillCalendarFill } from "react-icons/bs";
+import { IoInformationCircle } from "react-icons/io5";
 
 import "./index.css"
 
@@ -19,37 +21,57 @@ export const AdicionarCartao = (props: propsType) => {
         <div className="adicionar-cartao">
             <Logo />
 
-            <h3>Adicionar saldo</h3>
+            <h3>Adicione um cartão</h3>
 
             <form action="" className="adicionar-cartao-form">
+                <input
+                    type="text"
+                    name="email"
+                    placeholder="Nome completo no cartão"
+                />
+
                 <div className="input-adicionar-cartao">
                     <input
                         type="text"
                         name="email"
-                        placeholder="Valor"
-                    />
-                    <FaMoneyBill className="adicionar-cartao-icone"/>
-                </div>
-                
-                <div className="input-adicionar-cartao">
-                <select>
-                    <option>Cartao 1</option>
-                    <option>Cartao 2</option>
-                </select>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    gap: "1em"
-                }}>
-                    <AiOutlineCaretDown className="adicionar-cartao-icone"/>
+                        placeholder="Número"
+                    /> 
                     <BsCreditCard className="adicionar-cartao-icone"/>
                 </div>
+                       
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "row"
+                    }}
+                >
+                    <div>
+                        <input
+                            type="text"
+                            name="validade"
+                            placeholder="Validade"
+                        />
+                        <BsFillCalendarFill/>
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            name="cvv"
+                            placeholder="CVV"
+                        />
+                        <IoInformationCircle/>
+                    </div> 
                 </div>
 
+                <input
+                    type="text"
+                    name="apelido"
+                    placeholder="Apelido do cartão"
+                />
+
                 <BotaoGenerico
-                    texto="Confirmar"
+                    texto="AdicionarCartao"
                     fundo={true}
-                    className="confirmar-adicionar-cartao"
                 />
             </form>
 
