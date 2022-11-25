@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-.adicionar-saldo {
+.sacar-dinheiro {
     background-color: var(--fundo-secundario);
     width: var(--entrar-width);
     /* height: var(--entrar-height); */
@@ -15,11 +15,11 @@
     justify-content: space-around;
 }
 
-.adicionar-saldo h3 {
+.sacar-dinheiro h3 {
     text-align: center;
 }
 
-.input-adicionar-saldo {
+.input-sacar-dinheiro {
     background-color: var(--input-field-color);
     border-radius: var(--default-border-radius);
 
@@ -31,21 +31,21 @@
     margin: 1em 0;
 }
 
-.adicionar-saldo input {
+.sacar-dinheiro input {
     background-color: transparent;
 }
 
-.adicionar-saldo select {
+.sacar-dinheiro select {
     background-color: transparent;
 }
 
-.adicionar-saldo-icone {
+.sacar-dinheiro-icone {
     margin: auto auto;
     /* border: 2px solid red; */
     font-size: 1.5em;
 }
 
-.confirmar-adicionar-saldo {
+.confirmar-sacar-dinheiro {
     margin-top: 3em;
     width: 70%;
 }

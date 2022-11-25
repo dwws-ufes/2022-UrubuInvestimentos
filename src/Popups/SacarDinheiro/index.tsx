@@ -11,27 +11,31 @@ import { AiOutlineCaretDown } from "react-icons/ai";
 import "./index.css"
 
 interface propsType {
-
+    saldo: string;
 }
 
-export const AdicionarSaldo = (props: propsType) => {
+export const SacarDinheiro = (props: propsType) => {
+    const { saldo } = props;
+
     return(
-        <div className="adicionar-saldo">
+        <div className="sacar-dinheiro">
             <Logo />
 
-            <h3>Adicionar saldo</h3>
+            <h3>Sacar dinheiro</h3>
 
-            <form action="" className="adicionar-saldo-form">
-                <div className="input-adicionar-saldo">
+            <p>Saldo: ${saldo}</p>
+
+            <form action="" className="sacar-dinheiro-form">
+                <div className="input-sacar-dinheiro">
                     <input
                         type="text"
                         name="email"
-                        placeholder="Valor"
+                        placeholder="Valor do saque"
                     />
-                    <FaMoneyBill className="adicionar-saldo-icone"/>
+                    <FaMoneyBill className="sacar-dinheiro-icone"/>
                 </div>
                 
-                <div className="input-adicionar-saldo">
+                <div className="input-sacar-dinheiro">
                 <select>
                     <option>Cartao 1</option>
                     <option>Cartao 2</option>
@@ -41,15 +45,15 @@ export const AdicionarSaldo = (props: propsType) => {
                     flexDirection: "row",
                     gap: "1em"
                 }}>
-                    <AiOutlineCaretDown className="adicionar-saldo-icone"/>
-                    <BsCreditCard className="adicionar-saldo-icone"/>
+                    <AiOutlineCaretDown className="sacar-dinheiro-icone"/>
+                    <BsCreditCard className="sacar-dinheiro-icone"/>
                 </div>
                 </div>
 
                 <BotaoGenerico
-                    texto="Confirmar"
+                    texto="Sacar dinheiro"
                     fundo={true}
-                    className="confirmar-adicionar-saldo"
+                    className="confirmar-sacar-dinheiro"
                 />
             </form>
 

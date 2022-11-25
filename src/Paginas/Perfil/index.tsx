@@ -9,7 +9,9 @@ import { Cadastro } from "../../Popups/Cadastro";
 import { Entrar } from "../../Popups/Entrar";
 // import { RemoverCartao } from "../../Popups/RemoverCartao";
 // import { ConfirmacaoSaque } from "../../Popups/ConfirmacaoSaque";
-import { AdicionarSaldo } from "../../Popups/AdicionarSaldo";
+//import { AdicionarSaldo } from "../../Popups/AdicionarSaldo";
+//import { SacarDinheiro } from "../../Popups/SacarDinheiro";
+import { AdicionarCartao } from "../../Popups/AdicionarCartao";
 
 import "./index.css";
 
@@ -59,7 +61,9 @@ export const Perfil = () => {
                     {/* <NovoInvestimento/> */}
                     {/* <RemoverCartao/> */}
 					{/* <ConfirmacaoSaque/> */}
-					<AdicionarSaldo/>
+					{/*<AdicionarSaldo />*/}
+                    {/*<SacarDinheiro saldo="10,00"/>*/}
+                    <AdicionarCartao/>
                 </section>
             </main> 
             

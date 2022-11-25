@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-.adicionar-saldo {
+.adicionar-cartao {
     background-color: var(--fundo-secundario);
     width: var(--entrar-width);
     /* height: var(--entrar-height); */
@@ -15,11 +15,11 @@
     justify-content: space-around;
 }
 
-.adicionar-saldo h3 {
+.adicionar-cartao h3 {
     text-align: center;
 }
 
-.input-adicionar-saldo {
+.input-adicionar-cartao {
     background-color: var(--input-field-color);
     border-radius: var(--default-border-radius);
 
@@ -31,21 +31,21 @@
     margin: 1em 0;
 }
 
-.adicionar-saldo input {
+.adicionar-cartao input {
     background-color: transparent;
 }
 
-.adicionar-saldo select {
+.adicionar-cartao select {
     background-color: transparent;
 }
 
-.adicionar-saldo-icone {
+.adicionar-cartao-icone {
     margin: auto auto;
     /* border: 2px solid red; */
     font-size: 1.5em;
 }
 
-.confirmar-adicionar-saldo {
+.confirmar-adicionar-cartao {
     margin-top: 3em;
     width: 70%;
 }

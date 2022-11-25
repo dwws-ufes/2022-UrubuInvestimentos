@@ -14,24 +14,24 @@ interface propsType {
 
 }
 
-export const AdicionarSaldo = (props: propsType) => {
+export const AdicionarCartao = (props: propsType) => {
     return(
-        <div className="adicionar-saldo">
+        <div className="adicionar-cartao">
             <Logo />
 
             <h3>Adicionar saldo</h3>
 
-            <form action="" className="adicionar-saldo-form">
-                <div className="input-adicionar-saldo">
+            <form action="" className="adicionar-cartao-form">
+                <div className="input-adicionar-cartao">
                     <input
                         type="text"
                         name="email"
                         placeholder="Valor"
                     />
-                    <FaMoneyBill className="adicionar-saldo-icone"/>
+                    <FaMoneyBill className="adicionar-cartao-icone"/>
                 </div>
                 
-                <div className="input-adicionar-saldo">
+                <div className="input-adicionar-cartao">
                 <select>
                     <option>Cartao 1</option>
                     <option>Cartao 2</option>
@@ -41,15 +41,15 @@ export const AdicionarSaldo = (props: propsType) => {
                     flexDirection: "row",
                     gap: "1em"
                 }}>
-                    <AiOutlineCaretDown className="adicionar-saldo-icone"/>
-                    <BsCreditCard className="adicionar-saldo-icone"/>
+                    <AiOutlineCaretDown className="adicionar-cartao-icone"/>
+                    <BsCreditCard className="adicionar-cartao-icone"/>
                 </div>
                 </div>
 
                 <BotaoGenerico
                     texto="Confirmar"
                     fundo={true}
-                    className="confirmar-adicionar-saldo"
+                    className="confirmar-adicionar-cartao"
                 />
             </form>
 
