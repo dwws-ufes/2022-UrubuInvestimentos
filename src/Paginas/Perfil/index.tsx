@@ -4,6 +4,8 @@ import { Header } from "../../Componentes/Header";
 import { Sidebar } from "../../Componentes/Sidebar";
 import { CardPerfil } from "../../Componentes/CardPerfil";
 import { NovoInvestimento } from "../../Componentes/NovoInvestimento";
+import { MeusRendimentos } from "../../Componentes/MeusRendimentos";
+import { MeusInvestimentos } from "../../Componentes/MeusInvestimentos";
 
 import { Cadastro } from "../../Popups/Cadastro";
 import { Entrar } from "../../Popups/Entrar";
@@ -48,7 +50,7 @@ export const Perfil = () => {
 			/>
 
             <main>
-                { sidebar && <Sidebar /> }
+                { sidebar && <Sidebar/> }
                 <section className="conteudo-principal">
                     <CardPerfil
                         nome="David Messias"
@@ -57,7 +59,19 @@ export const Perfil = () => {
                         lucrou="-100,00"
                         cartoes={["Cartão 1", "Cartão 2"]}
                     />
-                    <NovoInvestimento/>
+                    {/*
+                    <MeusRendimentos
+                        totalInvestido="120,00" 
+                        totalLucrado="-100,00"
+                        saldo="10,00"
+                    />
+                    */}
+                    <MeusInvestimentos
+                        investimentos={[
+                        {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"},
+                        {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"}
+                    ]}
+                    />
                 </section>
             </main> 
             

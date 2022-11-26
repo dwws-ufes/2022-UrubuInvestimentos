@@ -1,13 +1,64 @@
 @import url("../../constantes.css");
 
 .novo-investimento {
-    border: 2px solid red;
+    width: 100%;
+    padding: 2em;
 }
 
 .novo-investimento .titulo {
     text-align: center;
 }
 
-.valor-div {
+.novo-investimento form {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
 
+.input-class {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-field-novo-investimento {
+    width: 50%;
+}
+
+.input-class label {
+    margin: auto 0;
+}
+
+.odds-totais {
+
+}
+
+.div-com-icone {
+    width: 50%;
+    background-color: var(--fundo-secundario);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: var(--default-border-radius);
+    padding-right: 1em;
+}
+
+#numero-cartao {
+    width: 100%;
+}
+
+.icone-seta {
+    margin: auto 0;
+    font-size: 1em;
+}
+
+.icone-cartao {
+    margin: auto 0;
+    font-size: 1.6em;
+}
+
+.botao-novo-investimento {
+    width: 15em;
+    margin-top: 2em;
 }

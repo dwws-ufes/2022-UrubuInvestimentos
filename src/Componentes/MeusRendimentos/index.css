@@ -1,0 +1,34 @@
+@import url("../../constantes.css");
+
+.meus-rendimentos {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 1em;
+
+    padding: 2em;
+
+}
+
+.proximo-resultado-div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.frase-motivacional {
+    margin: 0 auto;
+    width: 80%;
+    text-align: justify;
+    background-color: var(--fundo-secundario);
+    padding: 1em;
+    border-radius: var(--default-border-radius);
+}
+
+.informacoes-rendimentos {
+    text-align: center;
+}

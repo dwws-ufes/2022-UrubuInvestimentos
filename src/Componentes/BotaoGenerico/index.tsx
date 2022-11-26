@@ -18,8 +18,9 @@ export const BotaoGenerico = (props: propsType) => {
     
 
     let classeDeFundo = "botao-generico";
-
-    if(props?.fundo)
+    
+    //Caso fundo tenha sido passado e seja treu ou caso props nao tenha propriedade fundo entao o botao deve ter fundo
+    if(props?.fundo || !props.hasOwnProperty("fundo"))
         classeDeFundo += " botao-com-fundo";
     else
         classeDeFundo += " botao-sem-fundo"; 
