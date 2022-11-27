@@ -31,7 +31,7 @@ export const BotaoGenerico = (props: propsType) => {
             onClick={props?.callback}
         >
             <a href={"href" in props ? props.href : "#"} target="_self">
-                <p className="texto">{texto}</p>
+                <p className="texto-botao-generico">{texto}</p>
                 {props?.icone && <div className="icone">{props?.icone}</div>}
             </a>
         </div>

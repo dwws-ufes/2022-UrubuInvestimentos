@@ -12,7 +12,7 @@ export const Searchbar = (props: propsType) => {
     return(
         <div className="search-bar">
             <HiMagnifyingGlass className="lupa"/>
-            <p>Procure Jogos</p>
+            <p>Procure jogos passados</p>
         </div>
     );
 }

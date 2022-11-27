@@ -13,7 +13,6 @@
     background-color: var(--fundo-primario);
     border-bottom: 1px solid var(--cor-borda);
     position: fixed;
-    /* margin-top: 0; */
     width: 100vw;
     height: var(--altura-header);
     top: 0;
@@ -24,7 +23,6 @@
 .bar-icon {
     color: white;
     margin: auto 0;
-    /* border: 2px solid red; */
     margin-left: 20px;
     font-size: 25px;
 }
@@ -85,34 +83,28 @@
 .dropdown {
     position: absolute;
     top: 100%;
-    background-color: var(--cor-dropdown);
-    background-color: black;
-    padding: 0 0px;
+    padding: 0;
     border-radius: var(--border-radius-padrao);
     width: 100%;
 }
 
-.dropdown p {
+
+.dropdown a {
+    background-color: var(--cor-dropdown);
     padding: 10px 20px;
     margin: 0;
-    color: var(--cor-texto-cadastro);
-}
-
-.dropdown p:hover {
-    background-color: var(--cor-escura);
-    width: 100%;
+    color: white !important;
     cursor: pointer;
 }
 
-.p1 {
+.l1 {
     border-radius: var(--border-radius-padrao) var(--border-radius-padrao) 0 0;
 }
 
-.p3 {
+.l3 {
     border-radius: 0 0 var(--border-radius-padrao) var(--border-radius-padrao);
 }
 
-p .link{
-    text-decoration: none;
-    color: var(--cor-texto-cadastro);
+.botao-header {
+    font-size: 0.6em !important;
 }

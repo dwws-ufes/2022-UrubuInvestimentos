@@ -4,7 +4,6 @@
     background-image: url("/public/imagens/urubuzado.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 -15rem;
 
     color: black;
 
@@ -22,4 +21,10 @@
     font-size: 16px;
     text-shadow: 1px 1px 2px;
     margin-left: 2rem;
+}
+
+.botao-voltar-tela-inicial {
+    margin-left: 2rem;
+    width: fit-content;
+    text-align: center;
 }

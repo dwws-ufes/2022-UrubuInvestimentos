@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, selectLogin } from "../../store/loginSlice";
 import { Link } from 'react-router-dom';
-import { Dropdown } from "./Dropdown";
 
+import { Dropdown } from "./Dropdown";
 import { BotaoGenerico } from "../BotaoGenerico";
 import { Logo } from '../Logo';
 
@@ -21,13 +23,15 @@ export const Header = (props: propsType) => {
     const { abreCadastro, fechaCadastro, abreEntrar, fechaEntrar } = props;
     
     // controla se eh mostrado login/entrar ou as informacoes do usuario
-    const [ logado, setLogado ] = useState(false);
     
     // nome de usuario mostrado no header
     const [ nomeUsuario, setNomeUsuario ] = useState("David Messias");
     
     // decide se o dropdown de opcoes de login eh mostrado ou nao
     const [ mostraDropDown, setMostraDropDown ] = useState(false);
+    
+    const logado = useSelector(selectLogin);
+    const dispatch = useDispatch();
 
     return(
         <div className="header">
@@ -55,7 +59,7 @@ export const Header = (props: propsType) => {
                         onClick={() => setMostraDropDown(anterior => !anterior)}
                     />
 
-                    { mostraDropDown && <Dropdown sair={() => setLogado(false)}/> }
+                    { mostraDropDown && <Dropdown sair={() => dispatch(desloga())}/> }
                 </div>
             :
                 <div className="header-direito">
@@ -67,6 +71,7 @@ export const Header = (props: propsType) => {
                             fechaCadastro();
                             abreEntrar();
                         }}
+                        className="botao-header"
                     />
                     <BotaoGenerico
                         texto="Cadastre-se"
@@ -76,6 +81,7 @@ export const Header = (props: propsType) => {
                             fechaEntrar();
                             abreCadastro();
                         }}
+                        className="botao-header"
                     />
                 </div> 
             }

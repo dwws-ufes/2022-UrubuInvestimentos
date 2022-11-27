@@ -12,9 +12,9 @@ export const Dropdown = (props: propsType) => {
 
         return(
             <div className="dropdown">
-                <p className="p1"><Link className="link" to='/cadastro'>Meu perfil</Link></p>
-                <p className="p2">Investir</p>
-                <p className="p3" onClick={sair}><Link className="link" to='/'>Sair</Link></p>
+                <Link className="l1" to="/perfil">Meu perfil</Link>
+                <Link className="l2" to="/perfil">Investir</Link>
+                <Link className="l3" to="/">Sair</Link>
             </div>
         );
 }

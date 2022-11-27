@@ -7,9 +7,6 @@
     border-radius: 5px;
     padding: 12px;
     margin: 0 auto;
-    user-select: none;
-    display: flex;
-    flex-direction: row;
     cursor: pointer;
 }
 
@@ -26,7 +23,10 @@
 
 .botao-generico p {
     margin: auto 0;
-    font-size: 15px;
+    text-align: center;
+    margin-left: 0 !important;
+    font-size: 1.5em !important;
+    text-shadow: none !important;
 }
 
 .icone {

@@ -3,11 +3,6 @@
 
 @import url("./constantes.css");
 
-a {
-    text-decoration: none;
-    color: var(--cor-secundaria);
-}
-
 body {
     margin: 0;
     padding: 0;
