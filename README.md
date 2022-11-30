@@ -14,6 +14,8 @@ senha: urubu_investimentos_123
 
 Remover tópicos 'INDICE UM AMIGO' e 'PERGUNTAS FREQUENTES' da side bar pois não fizemos a pag do amigo e a parte de pergunas ja ta na pag de suporte.
 
+Corrigir linha azul em baixo da logo do Header.
+
 # Bugs
 
 <ul>
