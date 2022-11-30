@@ -20,6 +20,7 @@ Corrigir linha azul em baixo da logo do Header.
 
 <ul>
   <li>Na pag Regras: conteúdo some quando sidebar é aberta.</li>
+  <li>Quando clica no seu nome no header a aba q aparece esta bugada.</li>
 </ul>
 
 # Getting Started with Create React App
