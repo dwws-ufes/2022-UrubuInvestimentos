@@ -10,6 +10,10 @@ senha: urubu_investimentos_123
 
 [Planilha das páginas já feitas e seus responsáveis](https://shorturl.at/gsyIT)
 
+# A fazer
+
+Remover tópicos 'INDICE UM AMIGO' e 'PERGUNTAS FREQUENTES' da side bar pois não fizemos a pag do amigo e a parte de pergunas ja ta na pag de suporte.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
