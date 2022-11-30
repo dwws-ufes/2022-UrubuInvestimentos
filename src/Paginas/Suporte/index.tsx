@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
 
 import { Header } from "../../Componentes/Header";
+import { ProximoResultado } from "../../Componentes/ProximoResultado";
+import { Resultado } from "../../Componentes/Resultado";
 import { Sidebar } from "../../Componentes/Sidebar";
+import { UltimoResultado } from "../../Componentes/UltimoResultado";
 
 import "./index.css";
 
@@ -26,7 +30,7 @@ export default function Suporte(){
 		setEntrar(true);
 	}
     return(
-        <div className="Regras">
+        <div className="Suporte">
             <Header
                 abreCadastro={abreCadastro}
                 fechaCadastro={fechaCadastro}
@@ -34,33 +38,55 @@ export default function Suporte(){
                 fechaEntrar={fechaEntrar}
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
             />
-            {sidebar && <div className="sidebar"><Sidebar/></div>}
+            
+            <main>
+                {sidebar && <div className="sidebar"><Sidebar/></div>}
 
-            <div>
-                <h1>Suporte</h1>
-
-                <ul className="Topicos">
-                    <li>
+                <div className="Topicos">
+                    <h1>Suporte</h1>
+                    
+                    <div>
                         <h2>Perguntas Frequêntes</h2>
-                        <ul>
-                            <li>
-                                <h3>Pergunta 1</h3>
-                                <p>Resposta extensa e bem completa pra pergunta 1.</p>
-                            </li>
-                            <li>
-                                <h3>Pergunta 2</h3>
-                            </li>
-                            <li>
-                                <h3>Pergunta 3</h3>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                    <h2>Contato</h2>
-                    </li>
-                </ul>
+                        <details>
+                            <summary>Pergunta 1</summary>
+                            <p>Resposta extensa e bem completa pra pergunta 1.</p>
+                        </details>
+                        <details>
+                            <summary>Pergunta 2</summary>
+                            <p>Resposta extensa e bem completa pra pergunta 2.</p>
+                        </details>
+                        <details>
+                            <summary>Pergunta 3</summary>
+                            <p>Resposta extensa e bem completa pra pergunta 3.</p>
+                        </details>
+                    </div>
 
-            </div>
+                    <div>
+                        <h2>Contato</h2>
+
+                        E-mail: aaaaa@bbbb.ccc<br/>
+                        Telefone: +55 027 3333-3333<br/>
+                        Whatsapp: +55 027 9 9999-9999<br/>
+                    </div>
+                </div>
+                
+                <div className='Investimentos-sup'>
+                    <ProximoResultado/>
+                    <Resultado
+                            src="imagens/animais/cagado.jpeg"
+                            dia="ONTEM"
+                            animal="CÁGADO"
+                            milhares={["1234", "5678", "9012", "3456"]}
+                    />
+                    <Resultado
+                            src="imagens/animais/cagado.jpeg"
+                            dia="ONTEM"
+                            animal="CÁGADO"
+                            milhares={["1234", "5678", "9012", "3456"]}
+                    />
+                    <BotaoGenerico className="BotaoSuporte" texto="Novo Investimento"/>
+                </div>
+            </main>
         </div>
     );
 }

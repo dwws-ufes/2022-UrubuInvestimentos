@@ -37,6 +37,7 @@ export default function Regras(){
                 fechaEntrar={fechaEntrar}
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
             />
+            
             {sidebar && <div className="sidebar"><Sidebar/></div>}
             <h1>Regras de Investimento</h1>
 

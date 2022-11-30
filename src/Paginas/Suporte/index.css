@@ -1,0 +1,58 @@
+@import url("../../constantes.css");
+
+.Suporte{
+    display: flex;
+}
+
+.Suporte main .Topicos{
+    display: flex;
+    flex-direction: column;
+    width: 44vw;
+
+    position: absolute;
+    left: 25vw;
+}
+
+.Suporte h1{
+    font-weight: bolder;
+    font-size: 44px;
+}
+
+.Suporte .Topicos h2{
+    font-weight: bolder;
+    font-size: 34px;
+    color:rgba(241, 44, 76, 1);
+    border-bottom: 2px rgba(189, 24, 51, 1) solid;
+}
+.Suporte .Topicos{
+    font-size: 22px;
+}
+
+details summary {
+    border-bottom: 2px rgba(119, 119, 119, 1) solid;
+    width: 35vw;
+    font-size: 30px;
+
+    margin-top: 20px;
+}
+details p{ margin-top: 6px; }
+
+.Investimentos-sup{
+    width: 20vw;
+    height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
+
+.BotaoSuporte{
+    width: 20vw;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+}
