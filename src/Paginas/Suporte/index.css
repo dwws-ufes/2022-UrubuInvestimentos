@@ -21,15 +21,15 @@
 .Suporte .Topicos h2{
     font-weight: bolder;
     font-size: 34px;
-    color:rgba(241, 44, 76, 1);
-    border-bottom: 2px rgba(189, 24, 51, 1) solid;
+    color:var(--cor-secundaria);
+    border-bottom: 2px var(--cor-secundaria) solid;
 }
 .Suporte .Topicos{
     font-size: 22px;
 }
 
 details summary {
-    border-bottom: 2px rgba(119, 119, 119, 1) solid;
+    border-bottom: 2px var(--cor-borda) solid;
     width: 35vw;
     font-size: 30px;
 
