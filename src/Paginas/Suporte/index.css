@@ -34,6 +34,7 @@ details summary {
     font-size: 30px;
 
     margin-top: 20px;
+    cursor: pointer; 
 }
 details p{ margin-top: 6px; }
 
