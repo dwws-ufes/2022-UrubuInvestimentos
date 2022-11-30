@@ -10,6 +10,18 @@ senha: urubu_investimentos_123
 
 [Planilha das páginas já feitas e seus responsáveis](https://shorturl.at/gsyIT)
 
+# A fazer
+
+Remover tópicos 'INDICE UM AMIGO' e 'PERGUNTAS FREQUENTES' da side bar pois não fizemos a pag do amigo e a parte de pergunas ja ta na pag de suporte.
+
+Corrigir linha azul em baixo da logo do Header.
+
+# Bugs
+
+<ul>
+  <li>Na pag Regras: conteúdo some quando sidebar é aberta.</li>
+</ul>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -17,6 +29,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+baixa tudooooo.
 
 ### `npm start`
 
@@ -56,5 +72,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-# ABUBLUBLÉ
