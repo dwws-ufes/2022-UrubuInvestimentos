@@ -6,6 +6,7 @@
 //essa implementaçao parece podre, ver se tem um metodo melhor
 exports.up = function(knex) {
   return knex.schema.createTable('games', function (table) {
+    table.increments('gameId');
     table.string('number1', 4);
     table.string('number2', 4);
     table.string('number3', 4);

@@ -4,7 +4,8 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('investments', function (table) {
-    table.string('selectedNumber').notNullable();
+    table.increments('investmentId');
+    table.string('selectedNumber', 4).notNullable();
     table.decimal('value').notNullable();
     table.decimal('odds').notNullable();
     

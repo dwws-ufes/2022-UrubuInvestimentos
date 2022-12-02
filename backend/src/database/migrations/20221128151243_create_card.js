@@ -4,7 +4,7 @@
  */
 exports.up = function(knex) {
   return knex.schema.createTable('card', function (table) {
-    table.increments();
+    table.increments('cardId');
     table.string('name').notNullable();
     table.string('number',16).notNullable();
     table.string('expiration').notNullable();
