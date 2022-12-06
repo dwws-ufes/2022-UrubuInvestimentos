@@ -11,10 +11,9 @@ export const Dropdown = (props: propsType) => {
         const { sair } = props;
 
         return(
-            <div className="dropdown">
-                <Link className="l1" to="/perfil">Meu perfil</Link>
-                <Link className="l2" to="/perfil">Investir</Link>
-                <Link className="l3" to="/">Sair</Link>
+            <div className="dropdown" >
+                <Link className="link-dropdown l1" to="/perfil">Meu perfil</Link>
+                <Link className=" link-dropdown l3" to="/">Sair</Link>
             </div>
         );
 }
