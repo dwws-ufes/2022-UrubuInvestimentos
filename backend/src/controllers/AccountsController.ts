@@ -13,10 +13,13 @@ module.exports = {
         const [duplicate] = await connection('profile').where('email', email);
         if(duplicate){return response.status(451).json({ error: "Email já cadastrado!" });}
 
+        const balance = 1000;
+
         const [id] = await connection('profile').insert({
             email,
             password,
             age,
+            balance,
         },
         ['id']
         );

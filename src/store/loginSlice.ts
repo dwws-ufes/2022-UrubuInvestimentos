@@ -1,7 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    logado: true,
+interface stateType {
+    logado: boolean;
+    nomeUsuario: string;
+}
+
+const initialState: stateType = {
+    logado: false,
+    nomeUsuario: "",
 }
 
 export const loginSlice = createSlice({
@@ -9,12 +15,14 @@ export const loginSlice = createSlice({
     initialState,
     reducers: {
         loga: state => {state.logado = true},
-        desloga: state => {state.logado = false}
+        desloga: state => {state.logado = false},
+        setaNomeUsuario: (state, action) => {state.nomeUsuario = action.payload}
     }
 });
 
-export const { loga, desloga } = loginSlice.actions;
+export const { loga, desloga, setaNomeUsuario } = loginSlice.actions;
 
 export const selectLogin = (state: any) => state.login.logado;
+export const selectNomeUsuario = (state: any) => state.login.nomeUsuario;
 
 export const loginReducer = loginSlice.reducer;

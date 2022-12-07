@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import api from '../../services/api'
+
+// import { useSelector, useDispatch } from "react-redux";
 
 import { Header } from "../../Componentes/Header";
 import { Sidebar } from "../../Componentes/Sidebar";
@@ -9,105 +12,116 @@ import { Resultado } from "../../Componentes/Resultado";
 import { Cadastro } from "../../Popups/Cadastro"
 import { Entrar } from "../../Popups/Entrar";
 
+import { animais, mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
+
 import "./index.css";
+
+interface jogosType {
+  gameId: number;
+  data: string;
+  number1: string;
+  number2: string;
+  number3: string;
+  number4: string;
+  number5?: string;
+}
 
 export const Inicial = () => {
 
-	const [ showCadastro, setCadastro ] = useState(false);
-	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(true)
+  // const jogos = useSelector(selectJogos);
+  // const dispatch = useDispatch();
 
-	const fechaCadastro = () => {
-		setCadastro(false);
-	}
+  const [showCadastro, setCadastro] = useState(false);
+  const [showEntrar, setEntrar] = useState(false);
+  const [sidebar, setSidebar] = useState(true)
 
-	const abreCadastro = () => {
-		setCadastro(true);
-	}
+  const jogosIniciais: jogosType[] = [{
+    gameId: 0,
+    data: "",
+    number1: "",
+    number2: "",
+    number3: "",
+    number4: "",
+  }];
 
-	const fechaEntrar = () => {
-		setEntrar(false);
-	}
+  const [ jogos, setJogos ] = useState(jogosIniciais);
 
-	const abreEntrar = () => {
-		setEntrar(true);
-	}
+  const fechaCadastro = () => {
+    setCadastro(false);
+  }
 
-	return (
-		<div className="inicial">
-			<Header
-				abreCadastro={abreCadastro}
-				fechaCadastro={fechaCadastro}
-				abreEntrar={abreEntrar}
-				fechaEntrar={fechaEntrar}
-                toggleSidebar={() => setSidebar(anterior => !anterior)}
-			/>
+  const abreCadastro = () => {
+    setCadastro(true);
+  }
 
-            <main>
-                { sidebar && <Sidebar /> }
-                <section className="conteudo-principal-inicial">
-                   <UltimoResultado
-                        fotoSrc="imagens/animais/cagado.jpeg"
-                        animal={"cágado"}
-                        milhares={["1234", "4567", "8901", "2345"]}
-                    />
-                   <Searchbar />
-                   <div className="resultados-anteriores">
-						<Resultado
-							src="imagens/animais/cagado.jpeg"
-							dia="ONTEM"
-							animal="CÁGADO"
-							milhares={["1234", "5678", "9012", "3456"]}
-						/>
+  const fechaEntrar = () => {
+    setEntrar(false);
+  }
 
-						<Resultado
-							src="imagens/animais/cagado.jpeg"
-							dia="ONTEM"
-							animal="CÁGADO"
-							milhares={["1234", "5678", "9012", "3456"]}
-						/>
+  const abreEntrar = () => {
+    setEntrar(true);
+  }
 
-                        <Resultado
-							src="imagens/animais/cagado.jpeg"
-							dia="ONTEM"
-							animal="CÁGADO"
-							milhares={["1234", "5678", "9012", "3456"]}
-						/>
+  function numeroRandom(min:number, max:number){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max-min) + min).toString().padStart(4, '0');
+  }
 
-                        <Resultado
-							src="imagens/animais/cagado.jpeg"
-							dia="ONTEM"
-							animal="CÁGADO"
-							milhares={["1234", "5678", "9012", "3456"]}
-						/>
+  useEffect(() => {
+    // api.post("/", {number1:`${numeroRandom(0,9999)}`,number2:`${numeroRandom(0,9999)}`,number3:`${numeroRandom(0,9999)}`,number4:`${numeroRandom(0,9999)}`});
+    api.get("/").then((response: any) => {
+      // const { data } = response;
+      setJogos(response.data);
+    })
+  }, []);
 
-                        <Resultado
-							src="imagens/animais/cagado.jpeg"
-							dia="ONTEM"
-							animal="CÁGADO"
-							milhares={["1234", "5678", "9012", "3456"]}
-						/>
+  return (
+    <div className="inicial">
+      <Header
+        abreCadastro={abreCadastro}
+        fechaCadastro={fechaCadastro}
+        abreEntrar={abreEntrar}
+        fechaEntrar={fechaEntrar}
+        toggleSidebar={() => setSidebar(anterior => !anterior)}
+      />
 
-                        <Resultado
-							src="imagens/animais/cagado.jpeg"
-							dia="ONTEM"
-							animal="CÁGADO"
-							milhares={["1234", "5678", "9012", "3456"]}
-						/>
+      <main>
+        {sidebar && <Sidebar />}
+        <section className="conteudo-principal-inicial">
+          {
+            <UltimoResultado
+              fotoSrc={mapeiaSrcAnimal(jogos.at(-1)?.number1)}
+              animal={mapeiaNomeAnimal(jogos.at(-1)?.number1)}
+              milhares={[jogos.at(-1)?.number1 || "", jogos.at(-1)?.number2 || "", jogos.at(-1)?.number3 || "", jogos.at(-1)?.number4 || ""]}
+            />
+          }
+          <Searchbar />
+          <div className="resultados-anteriores">
+            {jogos.map((jogo, index) => {
+              const { gameId, number1, number2, number3, number4  } = jogo;
+              
+              const nome = mapeiaNomeAnimal(number1);
+              const src = mapeiaSrcAnimal(number1);
+              //console.log(src)
 
-                        <Resultado
-							src="imagens/animais/cagado.jpeg"
-							dia="ONTEM"
-							animal="CÁGADO"
-							milhares={["1234", "5678", "9012", "3456"]}
-						/>
-                   </div>
-                </section>
-            </main> 
-            
-			{ showEntrar && <Entrar fechaEntrar={fechaEntrar}/>}
-			{ showCadastro && <Cadastro fechaCadastro={fechaCadastro}/> }
+              return (
+                <Resultado
+                  src={src}
+                  key={index}
+                  dia="ONTEM"
+                  animal={nome}
+                  milhares={[number1, number2, number3, number4]}
+                />
+              );
+            })}
+          </div>
+        </section>
+      </main>
 
-		</div>
-	);
+      {showEntrar && <Entrar fechaEntrar={fechaEntrar} />}
+      {showCadastro && <Cadastro fechaCadastro={fechaCadastro} />}
+
+    </div>
+  );
 }

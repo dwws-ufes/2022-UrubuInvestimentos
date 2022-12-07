@@ -3,9 +3,10 @@
 .ultimo-resultado {
     width: var(--main-width);
     max-width: var(--main-max-width);
-    min-width: var(--main-min-width);
+    min-width: 700px;
 
     height: 80%;
+    min-height: 300px;
     /* border: 2px solid yellow; */
     
     margin: 0 auto;
