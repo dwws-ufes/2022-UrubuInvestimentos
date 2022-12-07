@@ -12,7 +12,7 @@ module.exports = {
         const { name, number, expiration, CVV } = request.body;
         const owner = request.headers.authorization;
 
-        const [duplicate] = await connection('card').where('number', number);
+        const [duplicate] = await connection('card').where('number', number).andWhere('owner', owner);
         if(duplicate){return response.status(451).json({ error: "Cartão já cadastrado!" });}
 
         const [id] = await connection('card').insert({
