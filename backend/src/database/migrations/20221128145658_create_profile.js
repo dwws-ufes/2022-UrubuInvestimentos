@@ -13,7 +13,7 @@ exports.up = function(knex) {
     table.decimal('balance');
     table.string('nickname');
     table.string('CPF');
-    table.string('region', 2);
+    table.string('region');
   });
 };
 
