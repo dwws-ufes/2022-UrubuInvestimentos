@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin } from "../../store/loginSlice";
+import { loga, desloga, selectLogin, selectNomeUsuario } from "../../store/loginSlice";
 import { Link } from 'react-router-dom';
 
 import { Dropdown } from "./Dropdown";
@@ -24,13 +24,11 @@ export const Header = (props: propsType) => {
     
     // controla se eh mostrado login/entrar ou as informacoes do usuario
     
-    // nome de usuario mostrado no header
-    const [ nomeUsuario, setNomeUsuario ] = useState("David Messias");
-    
     // decide se o dropdown de opcoes de login eh mostrado ou nao
     const [ mostraDropDown, setMostraDropDown ] = useState(false);
     
     const logado = useSelector(selectLogin);
+    const nomeUsuario = useSelector(selectNomeUsuario);
     const dispatch = useDispatch();
 
     return(

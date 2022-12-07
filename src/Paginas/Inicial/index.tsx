@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import api from '../../services/api'
 
 // import { useSelector, useDispatch } from "react-redux";
-import { atualizaJogos, selectJogos } from "../../store/loginSlice";
 
 import { Header } from "../../Componentes/Header";
 import { Sidebar } from "../../Componentes/Sidebar";
@@ -13,9 +12,19 @@ import { Resultado } from "../../Componentes/Resultado";
 import { Cadastro } from "../../Popups/Cadastro"
 import { Entrar } from "../../Popups/Entrar";
 
-import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
+import { animais, mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 
 import "./index.css";
+
+interface jogosType {
+  gameId: number;
+  data: string;
+  number1: string;
+  number2: string;
+  number3: string;
+  number4: string;
+  number5?: string;
+}
 
 export const Inicial = () => {
 
@@ -26,7 +35,16 @@ export const Inicial = () => {
   const [showEntrar, setEntrar] = useState(false);
   const [sidebar, setSidebar] = useState(true)
 
-  const [ jogos, setJogos ] = useState([]);
+  const jogosIniciais: jogosType[] = [{
+    gameId: 0,
+    data: "",
+    number1: "",
+    number2: "",
+    number3: "",
+    number4: "",
+  }];
+
+  const [ jogos, setJogos ] = useState(jogosIniciais);
 
   const fechaCadastro = () => {
     setCadastro(false);
@@ -44,11 +62,17 @@ export const Inicial = () => {
     setEntrar(true);
   }
 
-  useEffect(() => {
-    api.get("").then((response: any) => {
-      const { data } = response;
+  function numeroRandom(min:number, max:number){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max-min) + min).toString().padStart(4, '0');
+  }
 
-      setJogos(data);
+  useEffect(() => {
+    // api.post("/", {number1:`${numeroRandom(0,9999)}`,number2:`${numeroRandom(0,9999)}`,number3:`${numeroRandom(0,9999)}`,number4:`${numeroRandom(0,9999)}`});
+    api.get("/").then((response: any) => {
+      // const { data } = response;
+      setJogos(response.data);
     })
   }, []);
 
@@ -65,11 +89,13 @@ export const Inicial = () => {
       <main>
         {sidebar && <Sidebar />}
         <section className="conteudo-principal-inicial">
-          <UltimoResultado
-            fotoSrc={"imagens/animais/rato.jpeg"}
-            animal={"cágado"}
-            milhares={["1234", "4567", "8901", "2345"]}
-          />
+          {
+            <UltimoResultado
+              fotoSrc={mapeiaSrcAnimal(jogos.at(-1)?.number1)}
+              animal={mapeiaNomeAnimal(jogos.at(-1)?.number1)}
+              milhares={[jogos.at(-1)?.number1 || "", jogos.at(-1)?.number2 || "", jogos.at(-1)?.number3 || "", jogos.at(-1)?.number4 || ""]}
+            />
+          }
           <Searchbar />
           <div className="resultados-anteriores">
             {jogos.map((jogo, index) => {
@@ -77,8 +103,7 @@ export const Inicial = () => {
               
               const nome = mapeiaNomeAnimal(number1);
               const src = mapeiaSrcAnimal(number1);
-
-              console.log(src)
+              //console.log(src)
 
               return (
                 <Resultado

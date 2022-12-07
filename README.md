@@ -10,6 +10,31 @@ senha: urubu_investimentos_123
 
 [Planilha das páginas já feitas e seus responsáveis](https://shorturl.at/gsyIT)
 
+# a se fazer ainda hoje
+mudar o logo na tab
+
+atualizar a data nos cards da pagina inicial 
+
+tirar o mecanismo de busca da pagina inicial
+
+corrigir pagina de completar cadastro (css)
+
+fazer funcionalidade jogar
+
+fazer funcionalidade mostrar resultados
+
+fazer logout
+
+trocar botoes do header depois que usuario logar
+
+terminar o crud (investimento)
+
+corrigir css da pagina do perfil
+
+mudar loreipslom 
+
+github
+
 # A fazer
 
 Remover tópicos 'INDICE UM AMIGO' e 'PERGUNTAS FREQUENTES' da side bar pois não fizemos a pag do amigo e a parte de pergunas ja ta na pag de suporte.

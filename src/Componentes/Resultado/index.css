@@ -3,6 +3,7 @@
 .resultado {
     /* border: 2px solid blue; */
     text-align: center;
+    min-width: 300px;
 
     display: flex;
     flex-direction: column;

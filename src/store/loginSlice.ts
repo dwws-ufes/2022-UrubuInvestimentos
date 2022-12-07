@@ -2,12 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 interface stateType {
     logado: boolean;
-    jogos: any[]
+    nomeUsuario: string;
 }
 
 const initialState: stateType = {
-    logado: true,
-    jogos: [],
+    logado: false,
+    nomeUsuario: "",
 }
 
 export const loginSlice = createSlice({
@@ -16,18 +16,13 @@ export const loginSlice = createSlice({
     reducers: {
         loga: state => {state.logado = true},
         desloga: state => {state.logado = false},
-        atualizaJogos: (state, action: any) => {
-            return {
-                ...state,
-                state: action.value,
-            };
-        }
+        setaNomeUsuario: (state, action) => {state.nomeUsuario = action.payload}
     }
 });
 
-export const { loga, desloga, atualizaJogos } = loginSlice.actions;
+export const { loga, desloga, setaNomeUsuario } = loginSlice.actions;
 
 export const selectLogin = (state: any) => state.login.logado;
-export const selectJogos = (state: any) => state.login.jogos;
+export const selectNomeUsuario = (state: any) => state.login.nomeUsuario;
 
 export const loginReducer = loginSlice.reducer;

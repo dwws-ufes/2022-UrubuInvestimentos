@@ -1,4 +1,8 @@
-const animais = [
+export const animais = [
+    {
+        nome: "Calango",
+        src: "/imagens/animais/calango.jpeg",
+    },  
     {
         nome: "Burro",
         src: "/imagens/animais/burro.jpeg",
@@ -37,7 +41,7 @@ const animais = [
     },  
     {
         nome: "Caramelo",
-        src: "/imagens/animais/rato.jpeg",
+        src: "/imagens/animais/caramelo.jpeg",
     },  
     {
         nome: "Boto",
@@ -72,10 +76,6 @@ const animais = [
         src: "/imagens/animais/lobo-guara.jpeg",
     },  
     {
-        nome: "Calango",
-        src: "/imagens/animais/calango.jpeg",
-    },  
-    {
         nome: "Pombo",
         src: "/imagens/animais/pombo.jpeg",
     },  
@@ -101,12 +101,28 @@ const animais = [
     },
 ];
 
-export const mapeiaNomeAnimal = (n: string): string => {
-    let indice = Number(n) % 25;
+export const mapeiaNomeAnimal = (n: string | undefined): string => {
+    if(n == undefined)
+        return "";
+        
+    const substr = n.substring(2, 4);
+
+    // console.log("substr", substr);
+
+    let indice = Math.floor(Number(substr)/4);
+
+    // console.log("indice", indice);
+    // console.log("animal", animais[indice].nome);
+
     return animais[indice].nome.toUpperCase();
 }
 
-export const mapeiaSrcAnimal = (n: string): string => {
-    let indice = Number(n) % 25;
+export const mapeiaSrcAnimal = (n: string | undefined): string => {
+    if(n == undefined)
+        return "";
+
+    const substr = n.substring(2, 4);
+    // console.log("substring:", substr);
+    let indice = Math.floor(Number(substr)/4);
     return animais[indice].src;
 }

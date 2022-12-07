@@ -10,11 +10,14 @@ import "./index.css";
 interface propsType {
     fotoSrc: string;
     animal: string;
-    milhares: string[] | number[]
+    milhares: string [] | number[];
 }
 
 export const UltimoResultado = (props: propsType) => {
-    const { fotoSrc, animal, milhares } = props;
+    let { fotoSrc, animal, milhares } = props;
+
+    if(milhares == undefined)
+        milhares = [""];
 
     return(
         <div

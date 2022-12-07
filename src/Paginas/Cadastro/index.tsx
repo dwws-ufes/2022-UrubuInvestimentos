@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import api from './../../services/api';
+import { useNavigate, useLocation } from 'react-router-dom';
+
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, selectLogin, setaNomeUsuario } from "../../store/loginSlice";
 
 import { Header } from '../../Componentes/Header';
 import { Sidebar } from '../../Componentes/Sidebar';
@@ -7,8 +12,64 @@ import { FiTriangle, FiCalendar } from 'react-icons/fi';
 import './index.css';
 // import { Footer } from '../../Componentes/Footer';
 
-export default function Cadastro (){
+export default function Cadastro(){
+    const location = useLocation();
+    const { email, senha, idade } = location.state;
+    
     const [ sidebar, setSidebar ] = useState(false);
+    
+    const [apelido, setApelido] = useState("");
+    const [cpf , setCpf] = useState("");
+    const [regiao, setRegiao] = useState("");
+    const [cartaoNomeCompleto, setCartaoNomeCompleto] = useState("");
+    const [cartaoNumero, setCartaoNumero] = useState("");
+    const [cartaoValidade, setCartaoValidade] = useState("");
+    const [cartaoCVV, setCartaoCVV] = useState("");
+    const [cartaoApelido, setCartaoApelido] = useState("");
+    
+    const navigate = useNavigate();
+    
+    const handleRegisterFinal = async (e:any) => {
+        e.preventDefault();
+        const dataPerfil = {
+            email:email,
+            password:senha,
+            age:idade,
+            nickname:apelido,
+            CPF:cpf,
+            region:regiao
+        }
+        const dataCartao = {name:cartaoNomeCompleto,
+            number:cartaoNumero,
+            expiration:cartaoValidade,
+            CVV:cartaoCVV,
+            cardNickname:cartaoApelido};
+
+        try{
+            const responseAccounts = await api.post("/accounts", dataPerfil);
+            const card = {...dataCartao, owner:responseAccounts.data.id};
+            const responseCards = await api.post("/cards",card, {
+                headers: {
+                    Authorization: responseAccounts.data.id, 
+                }
+            });
+            localStorage.setItem('profileId', responseAccounts.data.id);
+            localStorage.setItem('profileName', apelido);
+
+            dispatch(loga());
+            dispatch(setaNomeUsuario(apelido))
+
+            navigate('/perfil');
+        }
+        catch (err){
+            console.log(err)
+            alert("Erro ao finalizar criação da conta, tente novamente");
+        }
+    }
+
+    const logado = useSelector(selectLogin);
+    const dispatch = useDispatch();
+
     return (
         <div className="Cadastro">
             <Header
@@ -24,23 +85,32 @@ export default function Cadastro (){
 
                 <div className="form">
                     <h1>Complete seu Cadastro!</h1>
-                    <form>
+                    <form onSubmit={handleRegisterFinal}>
                         <div className="inputs">
                             <section>
                                 <h2>Dados pessoais</h2>
                                 <input 
                                     placeholder='CPF'
                                     pattern='([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})' 
-                                    required
                                     maxLength={15}
                                     minLength={11}
+                                    value={cpf}
+                                    onChange={ e => setCpf(e.target.value)}
+                                    required
                                 />
                                 <input 
                                     placeholder='Apelido'
-                                    pattern='[0-9a-zA-Z_- ]'
+                                    // pattern='[0-9a-zA-Z_- ]'
+                                    value={apelido}
+                                    onChange={e => setApelido(e.target.value)}
+                                    required
                                 />
-                                <select required>
-                                    <option value="" disabled selected>Região</option>
+                                <select 
+                                    value={regiao}
+                                    onChange={ e => setRegiao(e.target.value) }
+                                    required
+                                >
+                                    <option value="" disabled >Região</option>
                                     <option value="Acre - AC">Acre - AC</option>
                                     <option value="Alagoas - AL">Alagoas - AL</option>
                                     <option value="Amapá - AP">Amapá - AP</option>
@@ -75,26 +145,41 @@ export default function Cadastro (){
                                 <h2>Adicione um cartão</h2>
                                 <input 
                                     placeholder='Nome completo no cartão' 
-                                    pattern='[a-zA-Z ]'
+                                    // pattern='[a-zA-Z ]'
+                                    value={cartaoNomeCompleto}
+                                    onChange={ e => setCartaoNomeCompleto(e.target.value)}
+                                    required
                                 />
                                 <input 
                                     placeholder='Número'
                                     pattern='[0-9]{16}'
+                                    required
+                                    value={cartaoNumero}
+                                    onChange = {e => setCartaoNumero(e.target.value)}
                                 />
                                 <div className="val-cvv">
                                     <input 
                                         placeholder='Validade'
                                         pattern='[0-9]{2}/[0-9]{2}'
+                                        value={cartaoValidade}
+                                        onChange={ e => setCartaoValidade(e.target.value)}
+                                        required
                                     />
                                     <FiCalendar className='fi-calendar' fill='white' fillOpacity={0.5} height={100} />
                                     <input 
                                         placeholder='CVV'
                                         pattern='[0-9]{3}'
+                                        value={cartaoCVV}
+                                        onChange={ e => setCartaoCVV(e.target.value)}
+                                        required
                                     />
                                 </div>
                                 <input 
                                     placeholder='Apelido do cartão'
-                                    pattern='[0-9a-zA-Z_- ]'
+                                    // pattern='[0-9a-zA-Z_- ]'
+                                    required
+                                    value={cartaoApelido}
+                                    onChange={e => setCartaoApelido(e.target.value)}
                                 />
                             </section>
                         </div>
