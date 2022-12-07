@@ -20,6 +20,7 @@ import Regras from "./Paginas/Regras";
 import Suporte from "./Paginas/Suporte";
 import Urubuzado from "./Paginas/Urubuzado";
 import TelaInvestimentoNumero from "./Paginas/Tela-Investimentos-Numero";
+import ResultadosPerfil from "./Paginas/ResultadosPerfil";
 
 import './App.css';
 
@@ -31,6 +32,7 @@ export const App = () => {
                     <Route index element={<Inicial/>}/>
                     <Route path="/cadastro" element={<Cadastro/>}/>
                     <Route path="/perfil" element={<Perfil/>}/>
+                    <Route path="/perfil/resultados" element={<ResultadosPerfil/>}/>
                     <Route path="/regras" element={<Regras/>}/>
                     <Route path="/suporte" element={<Suporte/>}/>
                     <Route path="/zumzumcapoeira" element={<Urubuzado/>}/>
