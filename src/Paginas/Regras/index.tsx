@@ -7,8 +7,8 @@ import "./index.css";
 export const Regras = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(false)
-    
+    const [ sidebar, setSidebar ] = useState(false);
+
     return(
         <div className="Regras">
             <Header

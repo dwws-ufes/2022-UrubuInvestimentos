@@ -8,7 +8,7 @@ import "./index.css";
 export const Suporte = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(false)
+    const [ sidebar, setSidebar ] = useState(false);
 
     return(
         <div className="Suporte">

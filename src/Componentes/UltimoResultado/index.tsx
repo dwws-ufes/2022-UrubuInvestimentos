@@ -11,7 +11,7 @@ interface propsType {
 export const UltimoResultado = (props: propsType) => {
     let { fotoSrc, animal, milhares } = props;
 
-    if(milhares == undefined)
+    if(milhares === undefined)
         milhares = [""];
 
     return(
