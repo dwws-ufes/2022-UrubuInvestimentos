@@ -1,11 +1,9 @@
-import React from "react";
-
 import { FaRegUser, FaMoneyCheckAlt } from "react-icons/fa";
 import { GiReceiveMoney } from "react-icons/gi";
 import { BsCreditCard } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 
-import { BotaoGenerico } from "../BotaoGenerico";
+import { BotaoGenerico } from "../";
 
 import "./index.css";
 

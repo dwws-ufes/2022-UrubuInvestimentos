@@ -1,12 +1,6 @@
-import React from "react";
-
 import "./index.css";
 
-interface propsType {
-
-}
-
-export const Footer = (props: propsType) => {
+export const Footer = () => {
     return(
         <footer>
             <div id="footer-container">

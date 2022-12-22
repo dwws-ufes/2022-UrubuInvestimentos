@@ -1,7 +1,3 @@
-import React from "react";
-
-import { ProximoResultado } from "../ProximoResultado";
-
 import "./index.css"
 
 interface propsType {

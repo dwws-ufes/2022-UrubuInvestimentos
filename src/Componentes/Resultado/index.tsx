@@ -1,6 +1,4 @@
-import React from "react";
-import { ResultadoInfoPequeno } from "../ResultadoInfoPequeno";
-
+import { ResultadoInfoPequeno } from "../";
 
 import "./index.css";
 

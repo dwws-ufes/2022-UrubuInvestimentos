@@ -1,6 +1,4 @@
-import React from "react";
-
-import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
+import { BotaoGenerico } from "../../Componentes";
 
 import "./index.css";
 

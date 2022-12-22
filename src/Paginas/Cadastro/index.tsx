@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import api from './../../services/api';
 import { useNavigate, useLocation } from 'react-router-dom';
-
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, setaNomeUsuario } from "../../store/loginSlice";
+import { loga, selectLogin, setaNomeUsuario } from "../../store/loginSlice";
 
-import { Header } from '../../Componentes/Header';
-import { Sidebar } from '../../Componentes/Sidebar';
+import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
 
 import './index.css';
-// import { Footer } from '../../Componentes/Footer';
 
-export default function Cadastro(){
+export const Cadastro = () => {
     const location = useLocation();
     const { email, senha, idade } = location.state;
     

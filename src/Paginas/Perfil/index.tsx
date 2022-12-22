@@ -1,19 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { Header } from "../../Componentes/Header";
-import { Sidebar } from "../../Componentes/Sidebar";
-import { CardPerfil } from "../../Componentes/CardPerfil";
-import { NovoInvestimento } from "../../Componentes/NovoInvestimento";
-import { MeusRendimentos } from "../../Componentes/MeusRendimentos";
-import { MeusInvestimentos } from "../../Componentes/MeusInvestimentos";
-
-import { Cadastro } from "../../Popups/Cadastro";
-import { Entrar } from "../../Popups/Entrar";
-// import { RemoverCartao } from "../../Popups/RemoverCartao";
-// import { ConfirmacaoSaque } from "../../Popups/ConfirmacaoSaque";
-//import { AdicionarSaldo } from "../../Popups/AdicionarSaldo";
-//import { SacarDinheiro } from "../../Popups/SacarDinheiro";
-//import { AdicionarCartao } from "../../Popups/AdicionarCartao";
+import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
+import { Cadastro, Entrar } from "../../Popups";
 
 import "./index.css";
 
@@ -23,29 +11,13 @@ export const Perfil = () => {
 	const [ showEntrar, setEntrar ] = useState(false);
     const [ sidebar, setSidebar ] = useState(true)
 
-	const fechaCadastro = () => {
-		setCadastro(false);
-	}
-
-	const abreCadastro = () => {
-		setCadastro(true);
-	}
-
-	const fechaEntrar = () => {
-		setEntrar(false);
-	}
-
-	const abreEntrar = () => {
-		setEntrar(true);
-	}
-
 	return (
 		<div className="inicial">
 			<Header
-				abreCadastro={abreCadastro}
-				fechaCadastro={fechaCadastro}
-				abreEntrar={abreEntrar}
-				fechaEntrar={fechaEntrar}
+				abreCadastro={ () => {setCadastro(true)}}
+                fechaCadastro={() => {setCadastro(false);}}
+                abreEntrar={() => {setEntrar(true);}}
+                fechaEntrar={() => {setEntrar(false);}}
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
 			/>
 
@@ -75,8 +47,8 @@ export const Perfil = () => {
                 </section>
             </main> 
             
-			{ showEntrar && <Entrar fechaEntrar={fechaEntrar}/>}
-			{ showCadastro && <Cadastro fechaCadastro={fechaCadastro}/> }
+			{ showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}}/>}
+			{ showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}}/> }
 
 		</div>
 	);

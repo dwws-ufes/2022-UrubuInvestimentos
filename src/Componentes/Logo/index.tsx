@@ -1,14 +1,8 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-
 
 import "./index.css";
 
-interface propsType {
-
-}
-
-export const Logo = (props: propsType) => {
+export const Logo = () => {
     const navigate = useNavigate();
 
     return(
@@ -16,7 +10,7 @@ export const Logo = (props: propsType) => {
             className="logo"
             onClick={() => navigate("/")}
         >
-            <img src="/imagens/urubuzado.svg"
+            <img src="imagens/urubuzado.svg"
                 alt="logo urubu"
                 className="urubu-svg"
             />

@@ -1,11 +1,9 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import { BotaoGenerico } from '../../Componentes/BotaoGenerico';
+import { BotaoGenerico } from '../../Componentes';
 
 import './index.css';
 
-export default function Urubuzado(){
+export const Urubuzado = () => {
     const navigate = useNavigate()
 
     return(

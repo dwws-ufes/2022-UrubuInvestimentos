@@ -1,17 +1,12 @@
-import React, {useState} from "react";
-import api from './../../services/api';
-import { useNavigate, useLocation } from 'react-router-dom';
-
-import { BotaoGenerico } from '../../Componentes/BotaoGenerico';
-import { Logo } from '../../Componentes/Logo';
-
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
 import "./index.css"
 
 interface propsType {
     fechaCadastro: () => void;
-
 }
 
 export const Cadastro = (props: propsType) => {

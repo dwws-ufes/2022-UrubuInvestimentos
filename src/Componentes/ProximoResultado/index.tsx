@@ -1,14 +1,8 @@
-import React from "react";
-
 import { FaRegClock } from "react-icons/fa";
 
 import "./index.css";
 
-interface propsType {
-
-}
-
-export const ProximoResultado = (props: propsType) => {
+export const ProximoResultado = () => {
     return(
         <div className="proximo-resultado">
             <FaRegClock className="relogio"/>

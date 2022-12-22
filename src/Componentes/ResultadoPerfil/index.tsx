@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import { Resultado } from "./../../Componentes/Resultado";
+import { Resultado } from "./../../Componentes";
 
 import "./index.css";
 
@@ -17,7 +15,7 @@ interface resultadoPerfilProps {
   odds: string | number;
 }
 
-const ResultadoPerfil = (props: resultadoPerfilProps) => {
+export const ResultadoPerfil = (props: resultadoPerfilProps) => {
   const { src, dia, animal, milhares, leadingMsg, valorJogado, status, valorInvestido, valorRecebido, odds } = props;
   return (
     <div className="resultado-jogo">

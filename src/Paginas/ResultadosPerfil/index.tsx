@@ -1,43 +1,23 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { Header } from "./../../Componentes/Header";
-import { Sidebar } from "./../../Componentes/Sidebar";
-import { Cadastro } from "./../../Popups/Cadastro";
-import { Entrar } from "./../../Popups/Entrar";
-import { BotaoGenerico } from "./../../Componentes/BotaoGenerico";
-import ResultadoPerfil from "./../../Componentes/ResultadoPerfil";
+import { Header, Sidebar, BotaoGenerico, ResultadoPerfil } from "./../../Componentes";
+import { Cadastro, Entrar } from "./../../Popups";
 
 import "./index.css";
 
-const ResultadosPerfil = () => {
+export const ResultadosPerfil = () => {
 
   const [showCadastro, setCadastro] = useState(false);
   const [showEntrar, setEntrar] = useState(false);
   const [sidebar, setSidebar] = useState(true)
 
-  const fechaCadastro = () => {
-    setCadastro(false);
-  }
-
-  const abreCadastro = () => {
-    setCadastro(true);
-  }
-
-  const fechaEntrar = () => {
-    setEntrar(false);
-  }
-
-  const abreEntrar = () => {
-    setEntrar(true);
-  }
-
   return (
     <div className="inicial">
       <Header
-        abreCadastro={abreCadastro}
-        fechaCadastro={fechaCadastro}
-        abreEntrar={abreEntrar}
-        fechaEntrar={fechaEntrar}
+        abreCadastro={() => {setCadastro(true)}}
+        fechaCadastro={() => {setCadastro(false);}}
+        abreEntrar={() => {setEntrar(true);}}
+        fechaEntrar={() => {setEntrar(false);}}
         toggleSidebar={() => setSidebar(anterior => !anterior)}
       />
       <main>
@@ -100,8 +80,8 @@ const ResultadosPerfil = () => {
         </section>
       </main>
 
-      {showEntrar && <Entrar fechaEntrar={fechaEntrar} />}
-      {showCadastro && <Cadastro fechaCadastro={fechaCadastro} />}
+      {showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}} />}
+      {showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}} />}
 
     </div>
   );

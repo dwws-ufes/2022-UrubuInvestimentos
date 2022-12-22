@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { Header } from "../../Componentes/Header";
-import { Sidebar } from "../../Componentes/Sidebar";
-import { CardPerfil } from "../../Componentes/CardPerfil";
+import { Header, Sidebar, CardPerfil } from "../../Componentes";
 
 import './index.css';
 
-export default function TelaInvestimentoNumero (){
+export const TelaInvestimentoNumero = () => {
     const [ sidebar, setSidebar ] = useState(false);
     return(
         <div className="tela-investimentos-numero">

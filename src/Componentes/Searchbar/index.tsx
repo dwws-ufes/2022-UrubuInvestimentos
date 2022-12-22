@@ -1,14 +1,8 @@
-import React from "react";
-
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
 import "./index.css";
 
-interface propsType {
-
-}
-
-export const Searchbar = (props: propsType) => {
+export const Searchbar = () => {
     return(
         <div className="search-bar">
             <HiMagnifyingGlass className="lupa"/>
