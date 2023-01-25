@@ -1,12 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "backend sacana",
+  "description": "backend",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/index.ts"
+    "start": "nodemon ./src/index.ts",
+    "gerador": "nodemon ./src/gerador.ts"
   },
-  "author": "ballsonaro",
+  "author": "Urubu Investimentos Inc.",
   "license": "ISC",
   "dependencies": {
     "@types/cors": "^2.8.12",
