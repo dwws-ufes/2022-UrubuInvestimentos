@@ -1,5 +1,5 @@
 # Liveshare
-https://prod.liveshare.vsengsaas.visualstudio.com/join?225DEF388BCBE5803D460E690624442E775F
+https://prod.liveshare.vsengsaas.visualstudio.com/join?90E3F71805C6B92CE34E5F214FC5D0676723
 
 # Bugs
 
