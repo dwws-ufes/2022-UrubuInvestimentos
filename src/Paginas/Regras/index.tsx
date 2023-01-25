@@ -1,8 +1,11 @@
 import { useState } from "react";
-
 import { Header, Sidebar } from "../../Componentes";
 
+import Contents from "../../Content/Content.json";
 import "./index.css";
+
+console.log(Contents.Rules.Title);
+console.log(Contents.Rules.Content);
 
 export const Regras = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
@@ -20,9 +23,9 @@ export const Regras = () => {
             />
             
             {sidebar && <div className="sidebar"><Sidebar/></div>}
-            <h1>Regras de Investimento</h1>
+            <h1>{Contents.Rules.Title}</h1>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quod consequuntur ullam quae doloribus enim optio cumque, placeat quibusdam veritatis illum sequi expedita ad est quia voluptates aliquam nam. Ut.</p>
+            <p>{Contents.Rules.Content}</p>
 
             <img src="/imagens/img3.png" alt="Imagem ilustrativa"></img>
         </div>

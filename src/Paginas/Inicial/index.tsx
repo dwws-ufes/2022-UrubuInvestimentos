@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import api from '../../services/api'
 
-// import { useSelector, useDispatch } from "react-redux";
-
 import { Header, Sidebar, UltimoResultado, Searchbar, Resultado } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups"
 
-import { animais, mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
+import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 
 import "./index.css";
 
@@ -21,9 +19,6 @@ interface jogosType {
 }
 
 export const Inicial = () => {
-
-  // const jogos = useSelector(selectJogos);
-  // const dispatch = useDispatch();
 
   const [showCadastro, setCadastro] = useState(false);
   const [showEntrar, setEntrar] = useState(false);
@@ -40,16 +35,8 @@ export const Inicial = () => {
 
   const [ jogos, setJogos ] = useState(jogosIniciais);
 
-  function numeroRandom(min:number, max:number){
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max-min) + min).toString().padStart(4, '0');
-  }
-
   useEffect(() => {
-    // api.post("/", {number1:`${numeroRandom(0,9999)}`,number2:`${numeroRandom(0,9999)}`,number3:`${numeroRandom(0,9999)}`,number4:`${numeroRandom(0,9999)}`});
     api.get("/").then((response: any) => {
-      // const { data } = response;
       setJogos(response.data);
     })
   }, []);
@@ -77,11 +64,10 @@ export const Inicial = () => {
           <Searchbar />
           <div className="resultados-anteriores">
             {jogos.map((jogo, index) => {
-              const { gameId, number1, number2, number3, number4  } = jogo;
+              const { number1, number2, number3, number4 } = jogo;
               
               const nome = mapeiaNomeAnimal(number1);
               const src = mapeiaSrcAnimal(number1);
-              //console.log(src)
 
               return (
                 <Resultado
