@@ -1,3 +1,8 @@
+# LINKEDATA
+
+https://rdf.js.org/
+https://www.npmjs.com/package/sparqljs
+
 # Liveshare
 https://prod.liveshare.vsengsaas.visualstudio.com/join?225DEF388BCBE5803D460E690624442E775F
 
