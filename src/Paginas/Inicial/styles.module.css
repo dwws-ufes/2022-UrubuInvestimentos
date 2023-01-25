@@ -1,6 +1,7 @@
 @import url("../../constantes.css");
 
 main {
+    background-color: white !important;
 	position: relative;
 
 	height: calc(100vh - var(--altura-header));

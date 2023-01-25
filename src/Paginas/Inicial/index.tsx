@@ -8,7 +8,7 @@ import { Cadastro, Entrar } from "../../Popups"
 
 import { animais, mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 
-import "./index.css";
+import styles from "./styles.module.css";
 
 interface jogosType {
   gameId: number;
@@ -54,6 +54,7 @@ export const Inicial = () => {
     })
   }, []);
 
+  console.log(styles);
   return (
     <div className="inicial">
       <Header
@@ -64,7 +65,7 @@ export const Inicial = () => {
         toggleSidebar={() => setSidebar(anterior => !anterior)}
       />
 
-      <main>
+      <main style={styles.main}>
         {sidebar && <Sidebar />}
         <section className="conteudo-principal-inicial">
           {
