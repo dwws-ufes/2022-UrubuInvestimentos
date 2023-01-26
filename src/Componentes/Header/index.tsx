@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectNomeUsuario } from "../../store/loginSlice";
+import { desloga, selectLogin, selectNomeUsuario } from "../../store/loginSlice";
 import { Link } from 'react-router-dom';
 
 import { Dropdown } from "./Dropdown";
-import { BotaoGenerico } from "../BotaoGenerico";
-import { Logo } from '../Logo';
+import { BotaoGenerico, Logo } from "../";
 
 import { FaBars, FaRegUser } from 'react-icons/fa';
 

@@ -1,8 +1,4 @@
-import React from "react";
-
-import { Logo } from '../../Componentes/Logo';
-import { BotaoGenerico } from '../../Componentes/BotaoGenerico';
-
+import { Logo, BotaoGenerico } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
 import "./index.css"

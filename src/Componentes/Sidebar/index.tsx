@@ -1,19 +1,13 @@
-import React from "react";
-
 import { Link } from "react-router-dom";
 
-import { BotaoGenerico } from "../BotaoGenerico";
+import { BotaoGenerico } from "../";
 import { GanheDinheiro } from './GanheDinheiro';
 
-import { FaMoneyCheckAlt, FaCalendar } from 'react-icons/fa';
+import { FaMoneyCheckAlt } from 'react-icons/fa';
 
 import './index.css';
 
-interface propsType {
-
-}
-
-export const Sidebar = (props: propsType) => {
+export const Sidebar = () => {
     return(
         <div className="sidebar">
             <div className="parte-superior">

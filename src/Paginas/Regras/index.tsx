@@ -1,40 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { Header } from "../../Componentes/Header";
-import { Sidebar } from "../../Componentes/Sidebar";
-
-import { Cadastro } from "../../Popups/Cadastro"
-import { Entrar } from "../../Popups/Entrar";
+import { Header, Sidebar } from "../../Componentes";
 
 import "./index.css";
 
-export default function Regras(){
+export const Regras = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(false)
+    const [ sidebar, setSidebar ] = useState(false);
 
-	const fechaCadastro = () => {
-		setCadastro(false);
-	}
-
-	const abreCadastro = () => {
-		setCadastro(true);
-	}
-
-	const fechaEntrar = () => {
-		setEntrar(false);
-	}
-
-	const abreEntrar = () => {
-		setEntrar(true);
-	}
     return(
         <div className="Regras">
             <Header
-                abreCadastro={abreCadastro}
-                fechaCadastro={fechaCadastro}
-                abreEntrar={abreEntrar}
-                fechaEntrar={fechaEntrar}
+                abreCadastro={() => {setCadastro(true)}}
+                fechaCadastro={() => {setCadastro(false);}}
+                abreEntrar={() => {setEntrar(true);}}
+                fechaEntrar={() => {setEntrar(false);}}
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
             />
             

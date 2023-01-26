@@ -1,7 +1,4 @@
-import React from "react";
-
-import { Logo } from "../../Componentes/Logo";
-import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
+import { Logo, BotaoGenerico } from "../../Componentes";
 
 import { FaMoneyBill } from "react-icons/fa";
 import { BsCreditCard } from "react-icons/bs";

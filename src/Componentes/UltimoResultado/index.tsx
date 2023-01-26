@@ -1,9 +1,4 @@
-import React from "react";
-
-import { BotaoGenerico } from "../BotaoGenerico";
-import { ResultadoInfo } from "../ResultadoInfo";
-import { ProximoResultado } from "../ProximoResultado";
-
+import { BotaoGenerico, ResultadoInfo, ProximoResultado } from "../";
 
 import "./index.css";
 
@@ -16,7 +11,7 @@ interface propsType {
 export const UltimoResultado = (props: propsType) => {
     let { fotoSrc, animal, milhares } = props;
 
-    if(milhares == undefined)
+    if(milhares === undefined)
         milhares = [""];
 
     return(

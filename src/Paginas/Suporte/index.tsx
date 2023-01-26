@@ -1,41 +1,22 @@
 import { useState } from "react";
 import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
 
-import { Header } from "../../Componentes/Header";
-import { ProximoResultado } from "../../Componentes/ProximoResultado";
-import { Resultado } from "../../Componentes/Resultado";
-import { Sidebar } from "../../Componentes/Sidebar";
-import { UltimoResultado } from "../../Componentes/UltimoResultado";
+import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
 
 import "./index.css";
 
-export default function Suporte(){
+export const Suporte = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(false)
+    const [ sidebar, setSidebar ] = useState(false);
 
-	const fechaCadastro = () => {
-		setCadastro(false);
-	}
-
-	const abreCadastro = () => {
-		setCadastro(true);
-	}
-
-	const fechaEntrar = () => {
-		setEntrar(false);
-	}
-
-	const abreEntrar = () => {
-		setEntrar(true);
-	}
     return(
         <div className="Suporte">
             <Header
-                abreCadastro={abreCadastro}
-                fechaCadastro={fechaCadastro}
-                abreEntrar={abreEntrar}
-                fechaEntrar={fechaEntrar}
+                abreCadastro={ () => {setCadastro(true)}}
+                fechaCadastro={() => {setCadastro(false);}}
+                abreEntrar={() => {setEntrar(true);}}
+                fechaEntrar={() => {setEntrar(false);}}
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
             />
             

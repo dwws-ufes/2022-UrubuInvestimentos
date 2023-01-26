@@ -102,7 +102,7 @@ export const animais = [
 ];
 
 export const mapeiaNomeAnimal = (n: string | undefined): string => {
-    if(n == undefined)
+    if(n === undefined)
         return "";
         
     const substr = n.substring(2, 4);
@@ -118,7 +118,7 @@ export const mapeiaNomeAnimal = (n: string | undefined): string => {
 }
 
 export const mapeiaSrcAnimal = (n: string | undefined): string => {
-    if(n == undefined)
+    if(n === undefined)
         return "";
 
     const substr = n.substring(2, 4);

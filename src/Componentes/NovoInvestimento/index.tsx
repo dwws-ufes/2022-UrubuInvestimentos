@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import { BotaoGenerico } from "../BotaoGenerico";
+import { BotaoGenerico } from "../";
 
 import { BsCreditCard } from "react-icons/bs";
 import { BsFillCaretDownFill } from "react-icons/bs";

@@ -1,7 +1,4 @@
-import React from "react";
-
-import { Logo } from "../../Componentes/Logo";
-import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
+import { Logo, BotaoGenerico } from "../../Componentes";
 
 import { FaMoneyBill } from "react-icons/fa";
 import { BsCreditCard } from "react-icons/bs";
@@ -10,11 +7,7 @@ import { AiOutlineCaretDown } from "react-icons/ai";
 
 import "./index.css"
 
-interface propsType {
-
-}
-
-export const AdicionarSaldo = (props: propsType) => {
+export const AdicionarSaldo = () => {
     return(
         <div className="adicionar-saldo">
             <Logo />

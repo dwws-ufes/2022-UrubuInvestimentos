@@ -1,7 +1,4 @@
-import React from "react";
-
-import { ProximoResultado } from "../ProximoResultado";
-import { BotaoGenerico } from "../BotaoGenerico";
+import { ProximoResultado, BotaoGenerico } from "../";
 
 import "./index.css";
 

@@ -1,0 +1,35 @@
+@import url("../../constantes.css");
+
+.resultado-jogo{
+  width: 100%;
+  margin: 10px 0px 0px 0px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.resultado-img{
+  margin: 0px 10px 0px 0px;
+  width: 30%;
+  min-width: 270px;
+  justify-content: left;
+}
+
+.resultado-msg{
+  margin: 0px 0px 0px 10px;
+  border: 0px;
+  padding: 0px;
+  width: 30%;
+  background-color: var(--fundo-secundario-transparente);
+
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* seleciona todos os descendentes da div resultado-msg*/
+.resultado-msg p,h2,h3{
+  margin: 5px 0px 5px 0px;
+}
+
