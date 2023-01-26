@@ -39,7 +39,8 @@ export default function Cadastro(){
             CPF:cpf,
             region:regiao
         }
-        const dataCartao = {name:cartaoNomeCompleto,
+        const dataCartao = {
+            name:cartaoNomeCompleto,
             number:cartaoNumero,
             expiration:cartaoValidade,
             CVV:cartaoCVV,
