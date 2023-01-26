@@ -4,11 +4,9 @@ const generator = axios.create({
     baseURL: "http://localhost:2222",
 });
 
-const minutes = 30;
-
 const zeroPad = (num: number, places: number) => String(num).padStart(places,'0');
 
-async function randomNumbers(){
+export default async function randomNumbers(){
     const data = { 
         number1: zeroPad(Math.floor(Math.random() * 10000),4),
         number2: zeroPad(Math.floor(Math.random() * 10000),4),
@@ -20,5 +18,3 @@ async function randomNumbers(){
     console.log(data);
     await generator.post('/', data);
 }   
-
-setInterval(randomNumbers, minutes*(60000));

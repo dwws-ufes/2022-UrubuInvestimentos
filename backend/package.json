@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/index.ts",
-    "generator": "nodemon ./src/gerador.ts"
   },
   "author": "Urubu Investimentos Inc.",
   "license": "ISC",
