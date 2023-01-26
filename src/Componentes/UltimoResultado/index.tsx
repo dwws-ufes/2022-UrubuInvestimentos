@@ -1,30 +1,33 @@
-import { BotaoGenerico, ResultadoInfo, ProximoResultado } from "../";
+import { BotaoGenerico, ProximoResultado } from "../";
+import { ResultadoInfo } from "./ResultadoInfo";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 interface propsType {
     fotoSrc: string;
     animal: string;
+    dia: string;
     milhares: string [] | number[];
 }
 
 export const UltimoResultado = (props: propsType) => {
-    let { fotoSrc, animal, milhares } = props;
+    let { fotoSrc, dia, animal, milhares } = props;
 
     if(milhares === undefined)
         milhares = [""];
 
     return(
         <div
-            className="ultimo-resultado"
+            className={styles.ultimo_resultado}
             style={{backgroundImage: `url(${fotoSrc})`}}
         >        
             {/*<img src="" alt="animal sorteado"/>*/}
             <ResultadoInfo
                 animal={animal}
+                dia={dia}
                 milhares={milhares}
             />
-            <div className="proximo-jogo">
+            <div className={styles.proximo_jogo}>
                 <ProximoResultado />
                 <BotaoGenerico
                     texto="Novo Investimento"

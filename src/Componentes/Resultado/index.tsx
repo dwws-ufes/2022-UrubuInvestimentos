@@ -1,6 +1,6 @@
-import { ResultadoInfoPequeno } from "../";
+import { ResultadoInfoPequeno } from "./ResultadoInfoPequeno";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 interface propsType {
     src: string;
@@ -14,7 +14,7 @@ export const Resultado = (props: propsType) => {
 
     return(
         <div
-            className="resultado"
+            className={styles.resultado}
             style={{backgroundImage: `url(${src})`}}
         >
             <ResultadoInfoPequeno

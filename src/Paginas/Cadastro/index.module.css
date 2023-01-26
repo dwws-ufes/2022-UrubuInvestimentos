@@ -44,7 +44,7 @@ input::placeholder{
     margin-top: var(--altura-header);
 }
 
-.main-content{
+.main_content{
     display: flex;
 }
 
@@ -91,29 +91,29 @@ section + section{
     margin-left: 2rem;
 }
 
-.val-cvv{
+.val_cvv{
     display: flex;
     /* justify-content: center; */
     /* margin: auto; */
 }
 
-.val-cvv input{
+.val_cvv input{
     flex: 1 0 4rem;
     width: 4rem;
     /* margin: 0 auto; */
 }
 
-.val-cvv .fi-calendar{
+.val_cvv .fi_calendar{
     position: relative;
     left: -2rem;
     top: 30%;
 }
 
-.val-cvv input + input{
+.val_cvv input + input{
     margin-left: 2%;
 }
 
-section .fi-triangle{
+section .fi_triangle{
     position: relative;
     top: -15%;
     right: -23rem;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 export const Perfil = () => {
 
@@ -12,7 +12,7 @@ export const Perfil = () => {
     const [ sidebar, setSidebar ] = useState(true)
 
 	return (
-		<div className="inicial">
+		<div className={styles.inicial}>
 			<Header
 				abreCadastro={ () => {setCadastro(true)}}
                 fechaCadastro={() => {setCadastro(false);}}
@@ -23,7 +23,7 @@ export const Perfil = () => {
 
             <main>
                 { sidebar && <Sidebar/> }
-                <section className="conteudo-principal">
+                <section className={styles.conteudo_principal}>
                     <CardPerfil
                         nome="David Messias"
                         saldo="10,00"
