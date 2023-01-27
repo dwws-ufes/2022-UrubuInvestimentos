@@ -51,10 +51,7 @@ export const Header = (props: propsType) => {
                         {nomeUsuario}
                     </p>
                     
-                    <FaRegUser
-                        className={styles.icone_usurario}
-                        onClick={() => setMostraDropDown(anterior => !anterior)}
-                    />
+                    <FaRegUser onClick={() => setMostraDropDown(anterior => !anterior)}/>
 
                     { mostraDropDown && <Dropdown sair={() => dispatch(desloga())}/> }
                 </div>
