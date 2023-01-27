@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-main {
+.main {
 	position: relative;
 
 	height: calc(100vh - var(--altura-header));

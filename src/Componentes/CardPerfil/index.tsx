@@ -5,7 +5,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 import { BotaoGenerico } from "../";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 interface propsType {
     nome: string;
@@ -19,38 +19,36 @@ export const CardPerfil = (props: propsType) => {
     const { nome, saldo, investimentos, lucrou, cartoes } = props;
 
     return(
-        <div className="card-perfil">
-            <div className="parte-superior-perfil">
-                <FaRegUser className="logo-perfil"/>
+        <div className={styles.card_perfil}>
+            <div className={styles.parte_superior_perfil}>
+                <FaRegUser className={styles.logo_perfil}/>
                 <p>{nome}</p>
                 <p>${saldo}</p>
             </div>
-            <div className="parte-meio-perfil">
+            <div className={styles.parte_meio_perfil}>
                 <div>
-                   <FaMoneyCheckAlt className="icone-geral"/>
+                   <FaMoneyCheckAlt className={styles.icone_geral}/>
                    <p>{investimentos} Investimentos</p>
                 </div>
                 <div>
-                    <GiReceiveMoney className="icone-geral"/>
+                    <GiReceiveMoney className={styles.icone_geral}/>
                     <p>Lucrou ${lucrou}</p>
                 </div>
             </div>
-            <div className="parte-inferior-perfil">
-                <BotaoGenerico
-                    texto="Adicionar Cartão"
-                />
+            <div className={styles.parte_inferior_perfil}>
+                <button>Adicionar Cartão</button>
 
-                <div className="cartoes">
+                <div>
                     {cartoes.map((cartao, index) =>
                         <div
-                            className="cartao-individual"
+                            className={styles.cartao_individual}
                             key={index}
                         >  
-                            <div className="cartao-div">
-                                <BsCreditCard className="icone-cartao-geral"/>
+                            <div className={styles.cartao_div}>
+                                <BsCreditCard className={styles.cartao_individual}/>
                                 <p>{cartao}</p>
                             </div>
-                            <IoCloseSharp className="icone-cartao-geral icone-x"/>
+                            <IoCloseSharp className={styles.cartao_individual}/>
                         </div>
                     )}
                 </div>

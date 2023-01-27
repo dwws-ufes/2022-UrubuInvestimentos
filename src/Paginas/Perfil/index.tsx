@@ -12,7 +12,7 @@ export const Perfil = () => {
     const [ sidebar, setSidebar ] = useState(true)
 
 	return (
-		<div className={styles.inicial}>
+		<div>
 			<Header
 				abreCadastro={ () => {setCadastro(true)}}
                 fechaCadastro={() => {setCadastro(false);}}
@@ -21,7 +21,7 @@ export const Perfil = () => {
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
 			/>
 
-            <main>
+            <main className={styles.main}>
                 { sidebar && <Sidebar/> }
                 <section className={styles.conteudo_principal}>
                     <CardPerfil

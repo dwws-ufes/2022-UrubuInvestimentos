@@ -32,7 +32,7 @@ export const Inicial = () => {
     const jogosIniciais: jogosType[] = [
         {
             gameId: 0,
-            dia: "26/01/2023",
+            dia: "26/01/2022",
             number1: "3456",
             number2: "5678",
             number3: "9012",
@@ -48,7 +48,7 @@ export const Inicial = () => {
         },
         {
             gameId: 2,
-            dia: "24/01/2023",
+            dia: "26/01/2023",
             number1: "3245",
             number2: "5678",
             number3: "9012",
@@ -56,8 +56,8 @@ export const Inicial = () => {
         },
         {
             gameId: 3,
-            dia: "24/12/2022",
-            number1: "3245",
+            dia: "27/01/2023",
+            number1: "7301",
             number2: "5678",
             number3: "9012",
             number4: "3456",
@@ -79,6 +79,10 @@ export const Inicial = () => {
     //         setJogos(response.data);
     //     })
     // }, []);
+    
+    // Inverte a ordem do vetor de jogos, para que o ultimo seja o primeiro do vetor
+    jogos.reverse()
+    console.log(jogos)
 
     return (
     <div className="inicial">
@@ -94,16 +98,18 @@ export const Inicial = () => {
         {sidebar && <Sidebar />}
         <section className={styles.conteudo_principal}>
             <UltimoResultado
-                fotoSrc={mapeiaSrcAnimal(jogos.at(-1)?.number1)}
-                animal={mapeiaNomeAnimal(jogos.at(-1)?.number1)}
-                dia={jogos.at(-1)?.dia || ""}
-                milhares={[jogos.at(-1)?.number1 || "", jogos.at(-1)?.number2 || "", jogos.at(-1)?.number3 || "", jogos.at(-1)?.number4 || ""]}
+                fotoSrc={mapeiaSrcAnimal(jogos[0].number1)}
+                animal={mapeiaNomeAnimal(jogos[0].number1)}
+                dia={jogos[0].dia}
+                milhares={[jogos[0].number1, jogos[0].number2, jogos[0].number3, jogos[0].number4]}
             />
 
             <Searchbar />
 
             <div className={styles.resultados_anteriores}>
-                {jogos.reverse().map( (jogo, index) => {
+
+                {/* Nao mostra o ultimo jogo nos resultados, pois ele ja eh mostrado no card inicial */}
+                {jogos.filter((jogo, index) => index !== 0).map( jogo => {
                     const { gameId, dia, number1, number2, number3, number4  } = jogo;
                     
                     const nome = mapeiaNomeAnimal(number1);

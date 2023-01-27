@@ -8,7 +8,7 @@ import { BotaoGenerico, Logo } from "../";
 
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
-import "./index.css";
+import styles from "./index.module.css";
 
 interface propsType {
     abreCadastro: () => void;
@@ -31,35 +31,35 @@ export const Header = (props: propsType) => {
     const dispatch = useDispatch();
 
     return(
-        <div className="header">
+        <div className={styles.header}>
 
-            <FaBars className="bar-icon" onClick={props?.toggleSidebar}/>
+            <FaBars className={styles.bar_icon} onClick={props?.toggleSidebar}/>
 
-            <div className="header-centro">
-                <Link className="link-home" to='/'>
+            <div className={styles.header_centro}>
+                <Link className={styles.link_home} to='/'>
                     <Logo />
                 </Link>
             </div>
             
             {/* caso nao logado mostra botoes de logar, caso contrario mostra botoes de perfil */}
             {logado ?
-                <div className="header-direito">
+                <div className={styles.header_direito}>
                     <p 
-                        className="nome-usuario pop-up-opcoes-login"
+                        className={styles.nome_usuario}
                         onClick={() => setMostraDropDown(anterior => !anterior)}
                     >
                         {nomeUsuario}
                     </p>
                     
                     <FaRegUser
-                        className="icone-usuario pop-up-opcoes-login"
+                        className={styles.icone_usurario}
                         onClick={() => setMostraDropDown(anterior => !anterior)}
                     />
 
                     { mostraDropDown && <Dropdown sair={() => dispatch(desloga())}/> }
                 </div>
             :
-                <div className="header-direito">
+                <div className={styles.header_direito}>
                     <BotaoGenerico
                         texto="Entrar"
                         href="#"

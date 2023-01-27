@@ -23,7 +23,11 @@
 
 .ultimo_jogo {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 1.2em;
+}
+
+.data {
+    font-size: 1.2em;
 }
 
 .animal {

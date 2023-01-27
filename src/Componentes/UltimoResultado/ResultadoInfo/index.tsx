@@ -17,7 +17,7 @@ export const ResultadoInfo = (props: propsType) => {
     return(
         <div className={styles.resultado_info}>
             <p className={styles.ultimo_jogo}>ÚLTIMO RESULTADO</p>
-            <p>{diaProcessado}</p>
+            <p className={styles.data}>{diaProcessado}</p>
             <h3 className={styles.animal}>{animal.toUpperCase()}!</h3>
             
             <div className={styles.numeros}>

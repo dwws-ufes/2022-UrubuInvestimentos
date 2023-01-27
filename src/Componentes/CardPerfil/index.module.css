@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-.card-perfil {
+.card_perfil {
     background-color: var(--fundo-secundario);
     border-radius: var(--default-border-radius);
     
@@ -20,7 +20,7 @@
     padding: 2em;
 }
 
-.parte-superior-perfil {
+.parte_superior_perfil {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,78 +29,81 @@
     padding: 1em 0;
 }
 
-.logo-perfil {
+.logo_perfil {
     font-size: 5em;
 }
 
-.parte-superior-perfil p {
+.parte_superior_perfil p {
     font-size: 2em;
     font-weight: bold;
 }
 
-.parte-superior-perfil * {
+.parte_superior_perfil * {
     margin: 0 auto;
 }
 
-.parte-meio-perfil {
+.parte_meio_perfil {
     font-size: 1.4em;
 }
 
-.parte-meio-perfil div {
+.parte_meio_perfil div {
     display: flex;
     align-items: row;
     justify-content: center;
     column-gap: 0.7em;
 }
 
-.icone-geral {
+.icone_geral {
     font-size: 1.6em;
     margin: auto 0;
 }
 
-.parte-inferior-perfil {
-   
+.parte_inferior_perfil {
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    row-gap: 1em;
 }
 
-.parte-inferior-perfil * {
+.parte_inferior_perfil * {
     font-size: 1.2em;
 
     margin: auto 0;
 }
 
-/*
-.parte-inferior-perfil .cartoes {
 
+.parte_inferior_perfil button {
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--default-border-radius);
+    color: white;
+    padding: 0.5em;
+    cursor: pointer;
 }
-*/
 
-.cartao-individual {
+.cartao_individual {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     column-gap: 1em;
 }
 
-.cartao-div {
+.cartao_div {
     display: flex;
     flex-direction: row;
     gap: 0.5em;
 }
 
-.cartao-individual p {
+.cartao_individual p {
     margin: auto 0;
     font-size: 0.7em;
 }
 
-.icone-cartao-geral {
+.icone_cartao_geral {
     font-size: 1em;
     margin: auto 0;
 }
 
-.icone-x {
+.icone_x {
     cursor: pointer;
 }
