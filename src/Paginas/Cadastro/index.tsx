@@ -6,10 +6,13 @@ import { loga, selectLogin, setaNomeUsuario } from "../../store/loginSlice";
 
 import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
+import Contents from "../../Content/Cadastro.json";
+
 
 import './index.css';
 
 export const Cadastro = () => {
+
     const location = useLocation();
     const { email, senha, idade } = location.state;
     
@@ -81,13 +84,13 @@ export const Cadastro = () => {
 
 
                 <div className="form">
-                    <h1>Complete seu Cadastro!</h1>
+                    <h1>{Contents.Title}</h1>
                     <form onSubmit={handleRegisterFinal}>
                         <div className="inputs">
                             <section>
-                                <h2>Dados pessoais</h2>
+                                <h2>{Contents.Content.PersonalDatas.Title}</h2>
                                 <input 
-                                    placeholder='CPF'
+                                    placeholder={Contents.Content.PersonalDatas.Id}
                                     pattern='([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})' 
                                     maxLength={15}
                                     minLength={11}
@@ -96,8 +99,7 @@ export const Cadastro = () => {
                                     required
                                 />
                                 <input 
-                                    placeholder='Apelido'
-                                    // pattern='[0-9a-zA-Z_- ]'
+                                    placeholder={Contents.Content.PersonalDatas.Nickname}
                                     value={apelido}
                                     onChange={e => setApelido(e.target.value)}
                                     required
@@ -108,47 +110,22 @@ export const Cadastro = () => {
                                     required
                                 >
                                     <option value="" disabled >Região</option>
-                                    <option value="Acre - AC">Acre - AC</option>
-                                    <option value="Alagoas - AL">Alagoas - AL</option>
-                                    <option value="Amapá - AP">Amapá - AP</option>
-                                    <option value="Amazonas - AM">Amazonas - AM</option>
-                                    <option value="Bahia - BA">Bahia - BA</option>
-                                    <option value="Ceará - CA">Ceará - CA</option>
-                                    <option value="Distrito Federal - DF">Distrito Federal - DF</option>
-                                    <option value="Espírito Santo - ES">Espírito Santo - ES</option>
-                                    <option value="Goiás - GO">Goiás - GO</option>
-                                    <option value="Maranhão - MA">Maranhão - MA</option>
-                                    <option value="Mato Grosso - MT">Mato Grosso - MT</option>
-                                    <option value="Mato Grosso do Sul - MS">Mato Grosso do Sul - MS</option>
-                                    <option value="Minas Gerais - MG">Minas Gerais - MG</option>
-                                    <option value="Pará - PA">Pará - PA</option>
-                                    <option value="Paraíba - PB">Paraíba - PB</option>
-                                    <option value="Paraná - PR">Paraná - PR</option>
-                                    <option value="Pernambuco - PE">Pernambuco - PE</option>
-                                    <option value="Piauí - PI">Piauí - PI</option>
-                                    <option value="Rio de Janeiro - RJ">Rio de Janeiro - RJ</option>
-                                    <option value="Rio Grande do Norte - RN">Rio Grande do Norte - RN</option>
-                                    <option value="Rio Grande do Sul - RS">Rio Grande do Sul - RS</option>
-                                    <option value="Rondônia - RO">Rondônia - RO</option>
-                                    <option value="Roraima - RR">Roraima - RR</option>
-                                    <option value="Santa Catarina - SC">Santa Catarina - SC</option>
-                                    <option value="São Paulo - SP">São Paulo - SP</option>
-                                    <option value="Sergipe - SE">Sergipe - SE</option>
-                                    <option value="Tocantins - TO">Tocantins - TO</option>
+                                    {Contents.Content.PersonalDatas.Locations.map((value) => { return (<option value={value}>{value}</option>)})}
+
                                 </select>
                                 <FiTriangle className='fi-triangle' fill='white'/>
                             </section>
                             <section>
-                                <h2>Adicione um cartão</h2>
+                                <h2>{Contents.Content.Payment.Title}</h2>
                                 <input 
-                                    placeholder='Nome completo no cartão' 
-                                    // pattern='[a-zA-Z ]'
+                                    placeholder={Contents.Content.Payment.Card.Name}
+                                    pattern='[a-zA-Z ]'
                                     value={cartaoNomeCompleto}
                                     onChange={ e => setCartaoNomeCompleto(e.target.value)}
                                     required
                                 />
                                 <input 
-                                    placeholder='Número'
+                                    placeholder={Contents.Content.Payment.Card.Number}
                                     pattern='[0-9]{16}'
                                     required
                                     value={cartaoNumero}
@@ -156,7 +133,7 @@ export const Cadastro = () => {
                                 />
                                 <div className="val-cvv">
                                     <input 
-                                        placeholder='Validade'
+                                        placeholder={Contents.Content.Payment.Card.Validity}
                                         pattern='[0-9]{2}/[0-9]{2}'
                                         value={cartaoValidade}
                                         onChange={ e => setCartaoValidade(e.target.value)}
@@ -164,7 +141,7 @@ export const Cadastro = () => {
                                     />
                                     <FiCalendar className='fi-calendar' fill='white' fillOpacity={0.5} height={100} />
                                     <input 
-                                        placeholder='CVV'
+                                        placeholder={Contents.Content.Payment.Card.SecurityCode}
                                         pattern='[0-9]{3}'
                                         value={cartaoCVV}
                                         onChange={ e => setCartaoCVV(e.target.value)}
@@ -172,15 +149,14 @@ export const Cadastro = () => {
                                     />
                                 </div>
                                 <input 
-                                    placeholder='Apelido do cartão'
-                                    // pattern='[0-9a-zA-Z_- ]'
+                                    placeholder={Contents.Content.Payment.Card.Nickname}
                                     required
                                     value={cartaoApelido}
                                     onChange={e => setCartaoApelido(e.target.value)}
                                 />
                             </section>
                         </div>
-                        <button type="submit">Completar cadastro!</button>
+                        <button type="submit">{Contents.Content.Complet}</button>
                     </form>
                 </div>
             </div>

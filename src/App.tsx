@@ -1,7 +1,8 @@
+import React from "react";
 import { Provider } from "react-redux";
 
 //Importando as coisas do react-routers
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
 // Importando a store do redux, que gerencia o estado global da aplicacao
 import { store } from "./store";
@@ -12,12 +13,13 @@ import { Inicial, Perfil, Cadastro, Regras, Suporte, Urubuzado, TelaInvestimento
 import './App.css';
 
 export const App = () => {
+
     return (
     <Provider store={store}>
             <BrowserRouter>
                 <Routes>
                     <Route index element={<Inicial/>}/>
-                    <Route path="/cadastro" element={<Cadastro/>}/>
+                    <Route path="/cadastro" element={<Cadastro/> }/>
                     <Route path="/perfil" element={<Perfil/>}/>
                     <Route path="/perfil/resultados" element={<ResultadosPerfil/>}/>
                     <Route path="/regras" element={<Regras/>}/>

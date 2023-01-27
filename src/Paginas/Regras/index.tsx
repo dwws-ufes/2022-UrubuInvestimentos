@@ -1,11 +1,8 @@
 import { useState } from "react";
 import { Header, Sidebar } from "../../Componentes";
 
-import Contents from "../../Content/Content.json";
+import Contents from "../../Content/Regras.json";
 import "./index.css";
-
-console.log(Contents.Rules.Title);
-console.log(Contents.Rules.Content);
 
 export const Regras = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
@@ -23,9 +20,9 @@ export const Regras = () => {
             />
             
             {sidebar && <div className="sidebar"><Sidebar/></div>}
-            <h1>{Contents.Rules.Title}</h1>
+            <h1>{Contents.Title}</h1>
 
-            <p>{Contents.Rules.Content}</p>
+            <p>{Contents.Content}</p>
 
             <img src="/imagens/img3.png" alt="Imagem ilustrativa"></img>
         </div>
