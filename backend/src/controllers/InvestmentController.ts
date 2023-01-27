@@ -14,7 +14,8 @@ module.exports = {
         const { selectedNumber, value, odds } = request.body;
         const investmentOwner = request.headers.authorization;
 
-        const gameIdAtual = await connection('games').where('gameId', '=', 'max(gameId)');
+        const gameIdMax = await connection.raw('select max(gameId) from "games"');
+        const gameIdAtual = Object.values(gameIdMax[0])[0];
 
         const [id] = await connection('investments').insert({
             selectedNumber,
