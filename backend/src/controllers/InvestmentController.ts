@@ -15,7 +15,7 @@ module.exports = {
         const investmentOwner = request.headers.authorization;
 
         const gameIdMax = await connection.raw('select max(gameId) from "games"');
-        const gameIdAtual = Object.values(gameIdMax[0])[0];
+        const gameIdAtual: number = Number(Object.values(gameIdMax[0])[0]) + 1;
 
         const [id] = await connection('investments').insert({
             selectedNumber,
