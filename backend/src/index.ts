@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import generator from "./gerador";
 
-const minutes = 30;
+const minutes = 1;
 
 const routes = require("./routes");
 

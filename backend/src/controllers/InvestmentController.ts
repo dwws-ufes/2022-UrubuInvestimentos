@@ -1,3 +1,5 @@
+import knex from "knex";
+
 export const connection = require('../database/connection');
 
 module.exports = {
@@ -12,11 +14,14 @@ module.exports = {
         const { selectedNumber, value, odds } = request.body;
         const investmentOwner = request.headers.authorization;
 
+        const gameIdAtual = await connection('games').where('gameId', '=', 'max(gameId)');
+
         const [id] = await connection('investments').insert({
             selectedNumber,
             value,
             odds,
             investmentOwner,
+            gameIdAtual,
         },
         ['investmentId']
         );

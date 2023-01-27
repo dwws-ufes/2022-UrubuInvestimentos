@@ -12,7 +12,6 @@ export default async function randomNumbers(){
         number2: zeroPad(Math.floor(Math.random() * 10000),4),
         number3: zeroPad(Math.floor(Math.random() * 10000),4),
         number4: zeroPad(Math.floor(Math.random() * 10000),4),
-        number5: null
     }
 
     console.log(data);

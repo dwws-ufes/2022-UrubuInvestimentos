@@ -12,6 +12,8 @@ exports.up = function(knex) {
     table.string('investmentOwner').notNullable();
 
     table.foreign('investmentOwner').references('id').inTable('profile');
+
+    table.integer('gameIdAtual').notNullable();
   })
 };
 
