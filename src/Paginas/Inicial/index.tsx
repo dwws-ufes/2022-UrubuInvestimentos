@@ -85,7 +85,7 @@ export const Inicial = () => {
     console.log(jogos)
 
     return (
-    <div className="inicial">
+    <div>
         <Header
             abreCadastro={ () => {setCadastro(true)}}
             fechaCadastro={() => {setCadastro(false);}}

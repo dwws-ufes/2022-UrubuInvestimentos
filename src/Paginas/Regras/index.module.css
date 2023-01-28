@@ -4,34 +4,38 @@
     box-sizing: border-box;
 }
 
-.Regras{
+.regras {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: var(--altura-header);
 }
 
-.Regras > h1, .Regras > p{
+.regras > h1, .regras > p {
     text-align: center;
 }
 
-h1{
+h1 {
     padding-top: 3rem;
     font-weight: bolder;
     font-size: 40px;
 }
 
-.Regras > p {
+.regras > p {
     max-width: 50%;
     font-size: 30px;
     margin: 0 auto;
     margin-top: 2rem;
 }
 
-.Regras > img{
+.regras > img {
     display: block;
     margin: 0 auto;
     margin-top: 5rem;
     max-width: 50%;
     border-radius: var(--default-border-radius);
+}
+
+.main {
+    display: flex;
 }
