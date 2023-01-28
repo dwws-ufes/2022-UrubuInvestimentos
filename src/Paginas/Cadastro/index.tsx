@@ -42,7 +42,7 @@ export const Cadastro = () => {
             CVV:cartaoCVV,
             cardNickname:cartaoApelido};
 
-        try{
+        try {
             const responseAccounts = await api.post("/accounts", dataPerfil);
             const card = {...dataCartao, owner:responseAccounts.data.id};
             const responseCards = await api.post("/cards",card, {
@@ -68,7 +68,7 @@ export const Cadastro = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className={styles.Cadastro}>
+        <div>
             <Header
                 abreCadastro={() => null}
                 fechaCadastro={() => null}
@@ -78,7 +78,6 @@ export const Cadastro = () => {
             />
             <div className={styles.main_content}>
                 {sidebar && <Sidebar/>}
-
 
                 <div className={styles.form}>
                     <h1>Complete seu Cadastro!</h1>
@@ -102,7 +101,8 @@ export const Cadastro = () => {
                                     onChange={e => setApelido(e.target.value)}
                                     required
                                 />
-                                <select 
+                                <select
+                                    placeholder="Regiao"
                                     value={regiao}
                                     onChange={ e => setRegiao(e.target.value) }
                                     required

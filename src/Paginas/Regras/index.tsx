@@ -22,7 +22,7 @@ export const Regras = () => {
             <main className={styles.main}>
                 {sidebar && <Sidebar/>}
                 
-                <div>
+                <div className={styles.conteudo_principal}>
                     <h1>Regras de Investimento</h1>
 
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quod consequuntur ullam quae doloribus enim optio cumque, placeat quibusdam veritatis illum sequi expedita ad est quia voluptates aliquam nam. Ut.</p>

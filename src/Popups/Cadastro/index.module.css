@@ -18,7 +18,7 @@
     border-top-left-radius: var(--default-border-radius);
 }
 
-.cadastro-x {
+.cadastro_x {
     color: var(--x-button-color);
     cursor: pointer;
     font-size: 20px;
@@ -27,20 +27,25 @@
     top: 5px;
 }
 
-.cadastro-info {
+.cadastro_info {
     display: flex;
     flex-direction: column; 
     padding: 30px;
     justify-content: center;
+    gap: 2rem;
 }
 
-.cadastro-info form {
+.cadastro_info h3 {
+    text-align: center;
+}
+
+form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.cadastro-info input {
+input {
     background-color: var(--input-field-color);
     padding: 5px;
     border-radius: var(--small-border-radius);
@@ -53,17 +58,56 @@
     padding: 20px;
 }
 
-.cadastro-info input:focus {
+input:focus {
     border: none;
     outline: none;
 }
 
-.termos-condicoes {
-    color: var(--cor-texto-cadastro);
-    font-size: 12px;
+.cadastro_info button {
+    width: 80%;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
-.ja-investidor {
+.termos_condicoes {
+    color: var(--cor-texto-cadastro);
+}
+
+.termos_condicoes a {
+    color: var(--cor-secundaria);
+}
+
+.ja_investidor {
     color: var(--cor-texto-cadastro);
     font-size: 13px;
+}
+
+.ja_investidor a {
+    color: var(--cor-secundaria);
+}
+
+.x {
+    color: var(--x-button-color);
+    cursor: pointer;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+}
+
+.bonus {
+    background-image: url("../../../public/imagens/cadastro.svg");
+    background-size: cover;
+    border-top-left-radius: var(--default-border-radius);
+    border-bottom-left-radius: var(--default-border-radius);
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.bonus p {
+    font-size: 1.4rem;
+    font-weight: bolder;
+    margin: 2rem;
+    text-align: left;
 }
