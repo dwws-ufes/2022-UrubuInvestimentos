@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { desloga, selectLogin, selectNomeUsuario } from "../../store/loginSlice";
 import { Link } from 'react-router-dom';
 
-import { Dropdown } from "./Dropdown";
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/slices";
+import { setNomeUsuario, selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+
 import { BotaoGenerico, Logo } from "../";
 
 import { FaBars, FaRegUser } from 'react-icons/fa';
@@ -27,8 +28,12 @@ export const Header = (props: propsType) => {
     const [ mostraDropDown, setMostraDropDown ] = useState(false);
     
     const logado = useSelector(selectLogin);
+    const dropdown = useSelector(selectDropdown);
+
     const nomeUsuario = useSelector(selectNomeUsuario);
     const dispatch = useDispatch();
+
+    console.log(logado, nomeUsuario);
 
     return(
         <div className={styles.header}>
@@ -42,18 +47,18 @@ export const Header = (props: propsType) => {
             </div>
             
             {/* caso nao logado mostra botoes de logar, caso contrario mostra botoes de perfil */}
-            {logado ?
-                <div className={styles.header_direito}>
+            { logado ?
+                <div
+                    className={`${styles.header_direito} ${styles.header_direito_logado}`}
+                    onClick={() => {dispatch({type: setDropdown, payload: !dropdown})}}
+                >
                     <p 
                         className={styles.nome_usuario}
-                        onClick={() => setMostraDropDown(anterior => !anterior)}
                     >
                         {nomeUsuario}
                     </p>
                     
-                    <FaRegUser onClick={() => setMostraDropDown(anterior => !anterior)}/>
-
-                    { mostraDropDown && <Dropdown sair={() => dispatch(desloga())}/> }
+                    <FaRegUser onClick={() => setMostraDropDown(anterior => !anterior)} className={styles.icone_usuario}/>
                 </div>
             :
                 <div className={styles.header_direito}>
@@ -65,7 +70,6 @@ export const Header = (props: propsType) => {
                             fechaCadastro();
                             abreEntrar();
                         }}
-                        className="botao-header"
                     />
                     <BotaoGenerico
                         texto="Cadastre-se"
@@ -75,7 +79,6 @@ export const Header = (props: propsType) => {
                             fechaEntrar();
                             abreCadastro();
                         }}
-                        className="botao-header"
                     />
                 </div> 
             }

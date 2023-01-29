@@ -4,7 +4,12 @@ import api from '../../services/api'
 // import { useSelector, useDispatch } from "react-redux";
 
 import { Header, Sidebar, UltimoResultado, Searchbar, Resultado } from "../../Componentes";
-import { Cadastro, Entrar } from "../../Popups"
+import { Cadastro, Entrar} from "../../Popups";
+import { LoginDropdown } from "../../Popups/LoginDropdown";
+
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, selectLogin, selectDropdown } from "../../store/slices";
+import { selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
 
 import { animais, mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 
@@ -27,7 +32,9 @@ export const Inicial = () => {
 
     const [showCadastro, setCadastro] = useState(false);
     const [showEntrar, setEntrar] = useState(false);
-    const [sidebar, setSidebar] = useState(true)
+    const [sidebar, setSidebar] = useState(true);
+
+    const showDropdown = useSelector(selectDropdown);
 
     const jogosIniciais: jogosType[] = [
         {
@@ -129,9 +136,9 @@ export const Inicial = () => {
         </section>
         </main>
 
-        {showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}} />}
-        {showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}} />}
-
+        { showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}}/> }
+        { showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}}/> }
+        { showDropdown && <LoginDropdown sair={() => {}}/> }
     </div>
     );
 }

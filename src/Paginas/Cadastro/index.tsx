@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import api from './../../services/api';
 import { useNavigate, useLocation } from 'react-router-dom';
+
 import { useSelector, useDispatch } from "react-redux";
-import { loga, selectLogin, setaNomeUsuario } from "../../store/loginSlice";
+import { loga, desloga, selectLogin } from "../../store/slices";
+import { setNomeUsuario, selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+
 
 import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
@@ -61,7 +64,7 @@ export const Cadastro = () => {
             localStorage.setItem('profileName', apelido);
 
             dispatch(loga());
-            dispatch(setaNomeUsuario(apelido))
+            dispatch(setNomeUsuario(apelido))
 
             navigate('/perfil');
         }

@@ -20,9 +20,9 @@ export const TelaInvestimentoNumero = () => {
                 { sidebar && <Sidebar/> }
                 <CardPerfil
                     nome="David Messias"
-                    saldo="0 quid"
+                    saldo={0}
                     investimentos={0}
-                    lucrou="Nada"
+                    lucrou={0}
                     cartoes={[]}
                 />
                 <div className="form">

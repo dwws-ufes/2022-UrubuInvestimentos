@@ -1,6 +1,12 @@
 import { useState } from "react";
 
 import { Header, Sidebar } from "../../Componentes";
+import { LoginDropdown } from "../../Popups/LoginDropdown";
+
+
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, selectLogin, selectDropdown } from "../../store/slices";
+import { selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
 
 import styles from "./index.module.css";
 
@@ -8,6 +14,8 @@ export const Regras = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);
     const [ sidebar, setSidebar ] = useState(false);
+
+    const showDropdown = useSelector(selectDropdown);
 
     return(
         <div className={styles.regras}>
@@ -30,6 +38,9 @@ export const Regras = () => {
                     <img src="/imagens/img3.png" alt="Imagem ilustrativa"></img>
                 </div>
             </main>
+
+            { showDropdown && <LoginDropdown sair={() => {}}/> }
+
         </div>
     );
 }

@@ -9,9 +9,9 @@ import styles from "./index.module.css";
 
 interface propsType {
     nome: string;
-    saldo: string;
+    saldo: number;
     investimentos: number | string;
-    lucrou: string;
+    lucrou: number;
     cartoes: string[];
 }
 
@@ -23,7 +23,7 @@ export const CardPerfil = (props: propsType) => {
             <div className={styles.parte_superior_perfil}>
                 <FaRegUser className={styles.logo_perfil}/>
                 <p>{nome}</p>
-                <p>${saldo}</p>
+                <p>${`${saldo.toFixed(2)}`}</p>
             </div>
             <div className={styles.parte_meio_perfil}>
                 <div>
@@ -32,7 +32,7 @@ export const CardPerfil = (props: propsType) => {
                 </div>
                 <div>
                     <GiReceiveMoney className={styles.icone_geral}/>
-                    <p>Lucrou ${lucrou}</p>
+                    <p>Lucrou ${`${lucrou.toFixed(2)}`}</p>
                 </div>
             </div>
             <div className={styles.parte_inferior_perfil}>

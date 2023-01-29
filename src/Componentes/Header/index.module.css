@@ -67,6 +67,11 @@
     margin-right: 10px;
     position: relative;
 }
+
+.header_direito_logado {
+    cursor: pointer;
+}
+
 .nome_usuario {
     font-size: 1em;
 }
@@ -79,47 +84,3 @@
 .pop_up_opcoes_login:hover {
     cursor: pointer;
 }
-
-.dropdown {
-    position: fixed;
-    top: 0;
-    right: 0;
-    /* padding: 0;
-    /*border-radius: var(--border-radius-padrao);*/
-    /* width: 100%; */
-    /*border: 2px solid red; */
-    display: flex;
-    flex-direction: column;
-    /* border: 2px solid red; */
-    /* position: absolute; */
-}
-
-.link_dropdown {
-    /* border: 2px solid blue; */
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    background-color: var(--cor-dropdown);
-    padding: 10px 20px;
-    border: 2px solid red;
-}
-
-/* .dropdown a {
-    background-color: var(--cor-dropdown);
-    padding: 10px 20px;
-    margin: 0;
-    color: white !important;
-    cursor: pointer;
-}*/
-
-/* .l1 {
-    border-radius: var(--border-radius-padrao) var(--border-radius-padrao) 0 0;
-}
-
-.l3 {
-    border-radius: 0 0 var(--border-radius-padrao) var(--border-radius-padrao);
-} */
-/*
-.botao-header {
-    font-size: 0.6em !important;
-} */

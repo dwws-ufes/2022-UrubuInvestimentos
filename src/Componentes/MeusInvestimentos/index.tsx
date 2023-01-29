@@ -19,7 +19,7 @@ export const MeusInvestimentos = (props: propsType) => {
         return(
             <div className="meus-investimentos">
                 <div className="proximo-resultado-div">
-                    <ProximoResultado/>
+                    <ProximoResultado transparente={false}/>
                     <BotaoGenerico
                         texto="Novo Investimento"    
                     />

@@ -28,7 +28,7 @@ export const UltimoResultado = (props: propsType) => {
                 milhares={milhares}
             />
             <div className={styles.proximo_jogo}>
-                <ProximoResultado />
+                <ProximoResultado transparente={true}/>
                 <BotaoGenerico
                     texto="Novo Investimento"
                 />
