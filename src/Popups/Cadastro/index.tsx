@@ -18,13 +18,16 @@ export const Cadastro = (props: propsType) => {
 
     const handleRegister = async (e:any) => {
         e.preventDefault();
-        if (Number(idade) < 18){
+        if(isNaN(Number(idade))) {
+            alert("A idade informada deve ser um numero");
+            return ;
+        }
+        else if (Number(idade) < 18){
             alert("Peça ajuda aos seus pais para investir");
             return ;
         }
         const data = { email, senha, idade }
-        try{
-            // const response = await api.post("/accountsTemp", data)
+        try {
             navigate("/cadastro", { state: data });
         }
         catch (err){
@@ -42,9 +45,10 @@ export const Cadastro = (props: propsType) => {
                 <Logo />
                 
                 <form onSubmit={handleRegister}>
-                    <h3>Cadastre-se no Urubu Investimentos!</h3>
+                    <h3>Venha para o Urubu!</h3>
 
                     <input
+                        className={styles.cadastro_info_input}
                         type="email"
                         name="email"
                         placeholder="Endereço de Email"
@@ -53,6 +57,7 @@ export const Cadastro = (props: propsType) => {
                         required 
                     />
                     <input
+                        className={styles.cadastro_info_input}
                         type="password"
                         name="senha"
                         placeholder="Senha"
@@ -61,6 +66,7 @@ export const Cadastro = (props: propsType) => {
                         required
                     />
                     <input
+                        className={styles.cadastro_info_input}
                         type="text"
                         inputMode="numeric"
                         name="idade"

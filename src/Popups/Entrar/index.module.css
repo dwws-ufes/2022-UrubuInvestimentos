@@ -23,7 +23,7 @@
 }
 
 .entrar input {
-    background-color: var(--input-field-color);
+    background-color: var(--input-field-color) !important;
     padding: 5px;
     border-radius: var(--small-border-radius);
     color: white;

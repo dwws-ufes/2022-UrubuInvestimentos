@@ -39,6 +39,10 @@
     text-align: center;
 }
 
+.cadastro_info_input {
+    background-color: var(--input-field-color) !important;
+}
+
 form {
     display: flex;
     flex-direction: column;

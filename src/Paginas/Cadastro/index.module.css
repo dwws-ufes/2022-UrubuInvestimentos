@@ -1,25 +1,34 @@
 @import url("../../constantes.css");
 
-*{
-    box-sizing: border-box;
+.main_content {
+    position: relative;
+
+	height: calc(100vh - var(--altura-header));
+	width: 100vw;
+
+	margin-top: var(--altura-header);
+
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-input, select{
+input, select {
     height: 3rem;
     width: 25rem;
     border-radius: var(--default-border-radius);
-    background-color: var(--search-bar-fundo);
+    background-color: var(--search-bar-fundo) !important;
     color: var(--cor-texto-cadastro);
     padding-left: 1.2rem;
     outline: none;
     border: none;
 }
 
-select, select:hover{
+select, select:hover {
     appearance: none;
 }
 
-footer{
+footer {
     position: absolute;
     top: calc(100%);
 }
@@ -40,14 +49,6 @@ input::placeholder{
     opacity: 50%;
 }
 
-input[type=""]
-
-.main_content {
-    margin-top: var(--altura-header);
-    display: flex;
-    width: 100vw;
-}
-
 .form {
     display: flex;
     flex-direction: column;
@@ -59,7 +60,7 @@ input[type=""]
     text-align: center;
 }
 
-.cadastro .form form{
+.cadastro .form form {
     margin: 0 20%;
     display: flex;
     flex-direction: column;
@@ -84,9 +85,7 @@ input[type=""]
 
 .inputs section {
     padding: 0;
-    /* flex: 1 0 40%; */
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
     gap: .8rem 0;
     padding: 1rem;
@@ -103,29 +102,26 @@ section + section{
     margin-left: 2rem;
 }
 
-.val_cvv{
+.val_cvv {
     display: flex;
-    /* justify-content: center; */
-    /* margin: auto; */
 }
 
-.val_cvv input{
+.val_cvv input {
     flex: 1 0 4rem;
     width: 4rem;
-    /* margin: 0 auto; */
 }
 
-.val_cvv .fi_calendar{
+.val_cvv .fi_calendar {
     position: relative;
     left: -2rem;
     top: 30%;
 }
 
-.val_cvv input + input{
+.val_cvv input + input {
     margin-left: 2%;
 }
 
-section .fi_triangle{
+section .fi_triangle {
     position: relative;
     top: -15%;
     right: -23rem;

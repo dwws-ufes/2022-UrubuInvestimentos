@@ -13,6 +13,8 @@ export const Cadastro = () => {
     const location = useLocation();
     const { email, senha, idade } = location.state;
     
+    // console.log("de cadastro: ", "email: ", email, "senha: ", senha, "idade: ", idade);
+
     const [ sidebar, setSidebar ] = useState(false);
     
     const [apelido, setApelido] = useState("");
@@ -28,28 +30,33 @@ export const Cadastro = () => {
     
     const handleRegisterFinal = async (e:any) => {
         e.preventDefault();
+        
         const dataPerfil = {
-            email:email,
-            password:senha,
-            age:idade,
-            nickname:apelido,
-            CPF:cpf,
-            region:regiao
-        }
-        const dataCartao = {name:cartaoNomeCompleto,
-            number:cartaoNumero,
-            expiration:cartaoValidade,
-            CVV:cartaoCVV,
-            cardNickname:cartaoApelido};
+            email: email,
+            password: senha,
+            age: idade,
+            nickname: apelido,
+            CPF: cpf,
+            region: regiao
+        };
+
+        const dataCartao = {
+            name: cartaoNomeCompleto,
+            number: cartaoNumero,
+            expiration: cartaoValidade,
+            CVV: cartaoCVV,
+            cardNickname: cartaoApelido
+        };
 
         try {
             const responseAccounts = await api.post("/accounts", dataPerfil);
-            const card = {...dataCartao, owner:responseAccounts.data.id};
-            const responseCards = await api.post("/cards",card, {
+            const card = { ...dataCartao, owner: responseAccounts.data.id };
+            const responseCards = await api.post("/cards", card, {
                 headers: {
                     Authorization: responseAccounts.data.id, 
                 }
             });
+
             localStorage.setItem('profileId', responseAccounts.data.id);
             localStorage.setItem('profileName', apelido);
 
