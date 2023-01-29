@@ -1,12 +1,17 @@
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 export const Searchbar = () => {
     return(
-        <div className="search-bar">
-            <HiMagnifyingGlass className="lupa"/>
-            <p>Procure jogos passados</p>
+        <div className={styles.search_bar}>
+            <HiMagnifyingGlass className={styles.lupa}/>
+            <form>
+                <input
+                    type="text"
+                    placeholder="Procure jogos passados"
+                />
+            </form>
         </div>
     );
 }

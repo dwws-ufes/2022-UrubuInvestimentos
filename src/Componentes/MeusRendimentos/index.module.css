@@ -1,6 +1,7 @@
 @import url("../../constantes.css");
 
-.meus-rendimentos {
+.meus_rendimentos {
+    border: 2px solid red;
     width: 100%;
 
     display: flex;
@@ -12,7 +13,7 @@
 
 }
 
-.proximo-resultado-div {
+.proximo_resultado_div {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -20,15 +21,24 @@
     margin: 0 auto;
 }
 
-.frase-motivacional {
+.frase_motivacional {
+    text-align: center !important;
     margin: 0 auto;
     width: 80%;
-    text-align: justify;
     background-color: var(--fundo-secundario);
     padding: 1em;
     border-radius: var(--default-border-radius);
+    border: 2px solid red !important;
 }
 
-.informacoes-rendimentos {
+.informacoes_rendimentos {
     text-align: center;
+    border: 2px solid red;
+}
+
+.btn {
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--default-border-radius);
+    color: white;
 }

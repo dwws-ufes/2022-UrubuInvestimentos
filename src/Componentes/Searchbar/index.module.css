@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-.search-bar {
+.search_bar {
     display: flex;
     border: 1px solid var(--search-bar-border);
     border-radius: var(--default-border-radius);
@@ -20,7 +20,7 @@
     margin: auto 0;
 }
 
-.search-bar p {
+.search_bar input {    
   margin: auto 0;
   margin-left: 20px;
 }
