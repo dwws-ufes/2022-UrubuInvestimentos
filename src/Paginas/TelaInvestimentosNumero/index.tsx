@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Header, Sidebar, CardPerfil } from "../../Componentes";
 
+import Content from "../../Content/Pages/TelaInvestimentosNumero.json"
 import './index.css';
 
 export const TelaInvestimentoNumero = () => {
@@ -27,15 +28,17 @@ export const TelaInvestimentoNumero = () => {
                 />
                 <div className="form">
                     <form>
-                        <h1>Novo Investimento</h1>
+                        <h1>{ Content.Title }</h1>
                         <section>
-                            <p>Tipo de investimento</p>
+                            <p>{ Content.Investment.TitleTypes }</p>
                             <select>
-                                <option value="Dezena" selected>Dezena</option>
-                                <option value="Centena">Centena</option>
-                                <option value="Milhar">Milhar</option>
+                                { Content.Investment.Types.map((element) => {
+                                    return ( <option value={ element }>{ element }</option> )
+                                    })
+                                }
                             </select>
-                            <p>Número</p>
+                            
+                            <p>{ Content.Investment.Number }</p>
                             <input
                                 pattern="[0-9]{4}"
                                 maxLength={4}
@@ -43,12 +46,15 @@ export const TelaInvestimentoNumero = () => {
                                 required
                                 placeholder="0000"
                             />
-                            <p>Distribuição</p>
+                            <p>{ Content.Investment.TitleDistribution }</p>
                             <select>
-                                <option value="Normal">Normal</option>
-                                <option value="Cabeça">Cabeça</option>
+                                { Content.Investment.Distributions.map((element) => {
+                                        return ( <option value={ element }>{ element }</option> )
+                                        })
+                                }
                             </select>
-                            <p>Valor</p>
+
+                            <p>{ Content.Investment.Value }</p>
                             <input
                                 type="number"
                                 min={0.00}
@@ -58,7 +64,7 @@ export const TelaInvestimentoNumero = () => {
                                 required
                             />
                         </section>
-                        <button type="submit">Investir!</button>
+                        <button type="submit">{ Content.Investment.Invest }</button>
                     </form>
                 </div>
             </div>

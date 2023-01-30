@@ -1,0 +1,10 @@
+{
+    "Page": {
+        "Login": "Entrar",
+        "SingIn": "Cadastrar-se"
+    },
+    "Dropdown": {
+        "Profile": "Meu Perfil",
+        "LogOut": "Sair"
+    }
+}

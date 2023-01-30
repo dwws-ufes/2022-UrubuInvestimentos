@@ -3,6 +3,7 @@ import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
 
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
 
+import Content from "../../Content/Pages/Suporte.json"
 import "./index.css";
 
 export const Suporte = () => {
@@ -24,30 +25,29 @@ export const Suporte = () => {
                 {sidebar && <div className="sidebar"><Sidebar/></div>}
 
                 <div className="Topicos">
-                    <h1>Suporte</h1>
+                    <h1>{ Content.Title }</h1>
                     
                     <div>
-                        <h2>Perguntas Frequêntes</h2>
-                        <details>
-                            <summary>Pergunta 1</summary>
-                            <p>Resposta extensa e bem completa pra pergunta 1.</p>
-                        </details>
-                        <details>
-                            <summary>Pergunta 2</summary>
-                            <p>Resposta extensa e bem completa pra pergunta 2.</p>
-                        </details>
-                        <details>
-                            <summary>Pergunta 3</summary>
-                            <p>Resposta extensa e bem completa pra pergunta 3.</p>
-                        </details>
+                        <h2>{ Content.Questions.Title }</h2>
+                        { Content.Questions.Content.map((element) => {
+                            return (
+                            <details>
+                                <summary>{ element.Question }</summary>
+                                <p>{ element.Answer }</p>
+                            </details>
+                            );
+                        })
+                        }
                     </div>
 
                     <div>
-                        <h2>Contato</h2>
-
-                        E-mail: aaaaa@bbbb.ccc<br/>
-                        Telefone: +55 027 3333-3333<br/>
-                        Whatsapp: +55 027 9 9999-9999<br/>
+                        <h2>{ Content.Contacts.Title }</h2>
+                        { Content.Contacts.Content.map((element) => {
+                            return (
+                            <div>{ element.Type }: { element.Data }</div>
+                            );
+                        })
+                        }
                     </div>
                 </div>
                 

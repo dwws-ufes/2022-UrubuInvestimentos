@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
+import Content from "../../Content/Components/Logo.json"
 import "./index.css";
 
 export const Logo = () => {
@@ -11,10 +12,10 @@ export const Logo = () => {
             onClick={() => navigate("/")}
         >
             <img src="imagens/urubuzado.svg"
-                alt="logo urubu"
+                alt={ Content.Alternative }
                 className="urubu-svg"
             />
-            <h2 className="nome-empresa">Urubu Investimentos</h2>
+            <h2 className="nome-empresa">{ Content.Name }</h2>
         </div>
     );
 }

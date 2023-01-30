@@ -8,6 +8,7 @@ import { BotaoGenerico, Logo } from "../";
 
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
+import Content from "../../Content/Components/Header.json"
 import "./index.css";
 
 interface propsType {
@@ -61,7 +62,7 @@ export const Header = (props: propsType) => {
             :
                 <div className="header-direito">
                     <BotaoGenerico
-                        texto="Entrar"
+                        texto={ Content.Page.Login }
                         href="#"
                         fundo={false}
                         callback={() => {
@@ -71,7 +72,7 @@ export const Header = (props: propsType) => {
                         className="botao-header"
                     />
                     <BotaoGenerico
-                        texto="Cadastre-se"
+                        texto={ Content.Page.SingIn }
                         href="#"
                         fundo={true}
                         callback={() => {

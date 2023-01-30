@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header, Sidebar } from "../../Componentes";
 
-import Contents from "../../Content/Regras.json";
+import Contents from "../../Content/Pages/Regras.json";
 import "./index.css";
 
 export const Regras = () => {

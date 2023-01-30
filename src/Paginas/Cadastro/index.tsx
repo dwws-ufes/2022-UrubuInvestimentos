@@ -6,9 +6,8 @@ import { loga, selectLogin, setaNomeUsuario } from "../../store/loginSlice";
 
 import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
-import Contents from "../../Content/Cadastro.json";
 
-
+import Contents from "../../Content/Pages/Cadastro.json";
 import './index.css';
 
 export const Cadastro = () => {
@@ -119,7 +118,7 @@ export const Cadastro = () => {
                                 <h2>{Contents.Content.Payment.Title}</h2>
                                 <input 
                                     placeholder={Contents.Content.Payment.Card.Name}
-                                    pattern='[a-zA-Z ]'
+                                    //pattern='[a-zA-Z ]'
                                     value={cartaoNomeCompleto}
                                     onChange={ e => setCartaoNomeCompleto(e.target.value)}
                                     required

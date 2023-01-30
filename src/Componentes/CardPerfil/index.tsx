@@ -5,6 +5,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 import { BotaoGenerico } from "../";
 
+import Content from "../../Content/Components/CardPerfil.json"
 import "./index.css";
 
 interface propsType {
@@ -28,16 +29,16 @@ export const CardPerfil = (props: propsType) => {
             <div className="parte-meio-perfil">
                 <div>
                    <FaMoneyCheckAlt className="icone-geral"/>
-                   <p>{investimentos} Investimentos</p>
+                   <p>{investimentos} { Content.Investment }</p>
                 </div>
                 <div>
                     <GiReceiveMoney className="icone-geral"/>
-                    <p>Lucrou ${lucrou}</p>
+                    <p>{ Content.Profit } ${lucrou}</p>
                 </div>
             </div>
             <div className="parte-inferior-perfil">
                 <BotaoGenerico
-                    texto="Adicionar Cartão"
+                    texto={ Content.Card }
                 />
 
                 <div className="cartoes">

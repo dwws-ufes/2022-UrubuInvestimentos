@@ -1,5 +1,6 @@
 import { ProximoResultado, BotaoGenerico } from "../";
 
+import Content from "../../Content/Components/MeusInvestimentos.json"
 import "./index.css";
 
 interface investimento {
@@ -21,16 +22,14 @@ export const MeusInvestimentos = (props: propsType) => {
                 <div className="proximo-resultado-div">
                     <ProximoResultado/>
                     <BotaoGenerico
-                        texto="Novo Investimento"    
+                        texto={ Content.ButtonInvestement }
                     />
                 </div>
 
-                <p className="frase-motivacional">
-                    Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!
-                </p>
+                <p className="frase-motivacional"> { Content.Motivational } </p>
                 
                 <div className="informacoes-rendimentos">
-                    <h3>Meus Investimentos</h3>
+                    <h3>{ Content.Investement }</h3>
                     
                     <div className="div-investimentos">
                         {investimentos.map((investimento, index) => {
@@ -49,7 +48,7 @@ export const MeusInvestimentos = (props: propsType) => {
                 </div>
 
                 <BotaoGenerico
-                    texto="Sacar dinheiro"
+                    texto={ Content.ButtonWithdraw }
                 />
             </div>
         );

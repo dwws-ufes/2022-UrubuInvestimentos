@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
+import Content from "../../Content/Components/Header.json"
 import "./index.css";
 
 interface propsType {
@@ -12,8 +13,8 @@ export const Dropdown = (props: propsType) => {
 
         return(
             <div className="dropdown" >
-                <Link className="link-dropdown l1" to="/perfil">Meu perfil</Link>
-                <Link className=" link-dropdown l3" to="/">Sair</Link>
+                <Link className="link-dropdown l1" to="/perfil">{ Content.Dropdown.Profile }</Link>
+                <Link className=" link-dropdown l3" to="/">{ Content.Dropdown.LogOut }</Link>
             </div>
         );
 }
