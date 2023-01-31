@@ -7,14 +7,13 @@ module.exports = {
         return response.json(games);
     },
     async create(request:any, response:any){
-        const { number1, number2, number3, number4, number5 } = request.body;
+        const { number1, number2, number3, number4 } = request.body;
 
         const [id] = await connection('games').insert({
             number1,
             number2,
             number3,
             number4,
-            number5,
         },
         ['gameId']
         );

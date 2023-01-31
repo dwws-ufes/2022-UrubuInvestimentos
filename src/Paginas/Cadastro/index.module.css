@@ -1,5 +1,8 @@
 @import url("../../constantes.css");
 
+*{
+    box-sizing: border-box;
+}
 .main_content {
     position: relative;
 
