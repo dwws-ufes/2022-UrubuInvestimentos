@@ -7,7 +7,7 @@ module.exports = {
         return response.json( profile_info );
     },
     async create(request:any, response:any){
-        const { email, password, age } = request.body;
+        const { email, password, age, nickname, CPF, region } = request.body;
 
         // const duplicate = await connection('profile').where('email', email).select('id').first();
         const [duplicate] = await connection('profile').where('email', email);
@@ -19,6 +19,9 @@ module.exports = {
             email,
             password,
             age,
+            nickname,
+            CPF,
+            region,
             balance,
         },
         ['id']
