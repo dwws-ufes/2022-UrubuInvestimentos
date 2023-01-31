@@ -1,37 +1,43 @@
 @import url("../../constantes.css");
 
-*{
+* {
     box-sizing: border-box;
 }
 
-.Regras{
+.regras {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: var(--altura-header);
 }
 
-.Regras > h1, .Regras > p{
-    text-align: center;
+.main {
+    margin: 0;
+    display: flex;
 }
 
-h1{
+.conteudo_principal {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.conteudo_principal h1 {
     padding-top: 3rem;
     font-weight: bolder;
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
-.Regras > p {
-    max-width: 50%;
-    font-size: 30px;
+.conteudo_principal > p {
+    max-width: 50vw;
+    font-size: 1.5rem;
     margin: 0 auto;
-    margin-top: 2rem;
+    text-align: justify;
 }
 
-.Regras > img{
+.conteudo_principal > img {
     display: block;
     margin: 0 auto;
-    margin-top: 5rem;
-    max-width: 50%;
+    margin-top: 2rem;
+    max-width: 50vw;
     border-radius: var(--default-border-radius);
 }

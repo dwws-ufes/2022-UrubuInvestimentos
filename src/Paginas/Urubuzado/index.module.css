@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-.Urubuzado{
+.urubuzado {  
     background-image: url("/public/imagens/urubuzado.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -10,21 +10,26 @@
     height: 100vh;
 }
 
-.Urubuzado h1{
+.urubuzado h1 {
     font-size: 70px;
     text-shadow: 2px 2px 10px;
     margin: 0;
     margin-left: 2rem;
 }
 
-.Urubuzado p{
+.urubuzado p {
     font-size: 16px;
     text-shadow: 1px 1px 2px;
     margin-left: 2rem;
 }
 
-.botao-voltar-tela-inicial {
+.botao {
+    color: white;
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--default-border-radius);
+    padding: 0.5em;
+    font-size: 1.2em;
+    cursor: pointer;
     margin-left: 2rem;
-    width: fit-content;
-    text-align: center;
 }

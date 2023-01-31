@@ -1,31 +1,45 @@
 @import url("../../constantes.css");
 
+<<<<<<< HEAD:src/Paginas/Cadastro/index.css
 *{
     box-sizing: border-box;
     outline: 2px solid red;
+=======
+.main_content {
+    position: relative;
+
+	height: calc(100vh - var(--altura-header));
+	width: 100vw;
+
+	margin-top: var(--altura-header);
+
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+>>>>>>> development:src/Paginas/Cadastro/index.module.css
 }
 
-input, select{
+input, select {
     height: 3rem;
     width: 25rem;
     border-radius: var(--default-border-radius);
-    background-color: var(--search-bar-fundo);
+    background-color: var(--search-bar-fundo) !important;
     color: var(--cor-texto-cadastro);
     padding-left: 1.2rem;
     outline: none;
     border: none;
 }
 
-select, select:hover{
+select, select:hover {
     appearance: none;
 }
 
-footer{
+footer {
     position: absolute;
     top: calc(100%);
 }
 
-form button{
+form button {
     color: #FFF;
     font-weight: bolder;
     font-size: 1.2rem;
@@ -41,80 +55,79 @@ input::placeholder{
     opacity: 50%;
 }
 
-.Cadastro{
-    margin-top: var(--altura-header);
-}
-
-.main-content{
+.form {
     display: flex;
+    flex-direction: column;
+    margin: auto auto;
 }
 
-.form > h1{
+.form > h1 {
     font-weight: bolder;
     text-align: center;
-    margin-bottom: 3rem;
 }
 
-.form{
-    flex: 1;
-}
-
-.Cadastro .form form{
+.cadastro .form form {
     margin: 0 20%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* border: 2px solid red; */
 }
 
-.Cadastro .form form .inputs{
+.cadastro .form form .inputs{
     display: flex;
     justify-content: center;
 }
 
-.Cadastro .form form button{
+.cadastro .form form button{
     width: 23rem;
     margin: 0 auto;
     margin-top: 3rem;
 }
 
-.inputs section{
-    padding: 0;
-    /* flex: 1 0 40%; */
+.inputs {
     display: flex;
-    /* align-items: center; */
+    justify-content: flex-end;
+}
+
+.inputs section {
+    padding: 0;
+    display: flex;
     flex-direction: column;
     gap: .8rem 0;
-    /* border: 2px solid greenyellow; */
+    padding: 1rem;
+    text-align: center;
+}
+
+.form button {
+    width: 30%;
+    margin: 1rem auto;
+    cursor: pointer;
 }
 
 section + section{
     margin-left: 2rem;
 }
 
-.val-cvv{
+.val_cvv {
     display: flex;
-    /* justify-content: center; */
-    /* margin: auto; */
 }
 
-.val-cvv input{
+.val_cvv input {
     flex: 1 0 4rem;
     width: 4rem;
-    /* margin: 0 auto; */
 }
 
-.val-cvv .fi-calendar{
+.val_cvv .fi_calendar {
     position: relative;
     left: -2rem;
     top: 30%;
 }
 
-.val-cvv input + input{
+.val_cvv input + input {
     margin-left: 2%;
 }
 
-section .fi-triangle{
+section .fi_triangle {
     position: relative;
     top: -15%;
     right: -23rem;

@@ -2,17 +2,33 @@ import { useState } from "react";
 
 import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups";
+import { LoginDropdown } from "../../Popups/LoginDropdown";
 
-import "./index.css";
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, selectLogin, selectDropdown } from "../../store/slices";
+import { selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+
+import styles from "./index.module.css";
 
 export const Perfil = () => {
 
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(true)
+    const [ sidebar, setSidebar ] = useState(true);
+    
+    const logado = useSelector(selectLogin);
+    const showDropdown = useSelector(selectDropdown);
+
+    const nomeUsuario = useSelector(selectNomeUsuario);
+    const totalDepositado = useSelector(selectTotalDepositado);
+    const totalInvestido = useSelector(selectTotalInvestido);
+    const totalLucrado = useSelector(selectTotalLucrado);
+    const saldo = totalDepositado + totalLucrado - totalInvestido;
+    
+    const dispatch = useDispatch();
 
 	return (
-		<div className="inicial">
+		<div>
 			<Header
 				abreCadastro={ () => {setCadastro(true)}}
                 fechaCadastro={() => {setCadastro(false);}}
@@ -21,14 +37,14 @@ export const Perfil = () => {
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
 			/>
 
-            <main>
+            <main className={styles.main}>
                 { sidebar && <Sidebar/> }
-                <section className="conteudo-principal">
+                <section className={styles.conteudo_principal}>
                     <CardPerfil
-                        nome="David Messias"
-                        saldo="10,00"
+                        nome={nomeUsuario}
+                        saldo={saldo}
                         investimentos={10}
-                        lucrou="-100,00"
+                        lucrou={totalLucrado}
                         cartoes={["Cartão 1", "Cartão 2"]}
                     />
                     {/*
@@ -49,6 +65,7 @@ export const Perfil = () => {
             
 			{ showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}}/>}
 			{ showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}}/> }
+            { showDropdown && <LoginDropdown sair={() => {}}/> }
 
 		</div>
 	);

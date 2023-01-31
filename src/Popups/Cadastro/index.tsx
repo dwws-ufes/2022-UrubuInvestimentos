@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
-import "./index.css"
+import styles from "./index.module.css"
 
 interface propsType {
     fechaCadastro: () => void;
@@ -18,13 +18,16 @@ export const Cadastro = (props: propsType) => {
 
     const handleRegister = async (e:any) => {
         e.preventDefault();
-        if (Number(idade) < 18){
+        if(isNaN(Number(idade))) {
+            alert("A idade informada deve ser um numero");
+            return ;
+        }
+        else if (Number(idade) < 18){
             alert("Peça ajuda aos seus pais para investir");
             return ;
         }
         const data = { email, senha, idade }
-        try{
-            // const response = await api.post("/accountsTemp", data)
+        try {
             navigate("/cadastro", { state: data });
         }
         catch (err){
@@ -33,29 +36,58 @@ export const Cadastro = (props: propsType) => {
     }
 
     return(
-        <div className="cadastro">
-            <img src="./imagens/cadastro.svg" alt="cadastro" />
+        <div className={styles.cadastro}>
+            <div className={styles.bonus}>  
+                <p>Cadastre-se e ganhe 1000 quid para começar os investimentos!</p>
+            </div>
 
-            <div className="cadastro-info">
+            <div className={styles.cadastro_info}>
                 <Logo />
-                <h3>Cadastre-se no Urubu Investimentos!</h3>
                 
                 <form onSubmit={handleRegister}>
-                    <input type="text" name="email" placeholder="Endereço de Email" value={email} onChange={e => setEmail(e.target.value)} required />
-                    <input type="text" name="senha" placeholder="Senha" value={senha} onChange={e => setSenha(e.target.value)} required/>
-                    <input type="number" name="idade" placeholder="Idade" value={idade} onChange={e => setIdade(e.target.value)} required min={0}/>
+                    <h3>Venha para o Urubu!</h3>
 
-                    <p className="termos-condicoes">Ao se inscrever, você concorda com os <a href=".logo">Termos de serviço</a>.</p>
+                    <input
+                        className={styles.cadastro_info_input}
+                        type="email"
+                        name="email"
+                        placeholder="Endereço de Email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)} 
+                        required 
+                    />
+                    <input
+                        className={styles.cadastro_info_input}
+                        type="password"
+                        name="senha"
+                        placeholder="Senha"
+                        value={senha}
+                        onChange={e => setSenha(e.target.value)}
+                        required
+                    />
+                    <input
+                        className={styles.cadastro_info_input}
+                        type="text"
+                        inputMode="numeric"
+                        name="idade"
+                        placeholder="Idade"
+                        value={idade} 
+                        onChange={e => setIdade(e.target.value)}
+                        required
+                        min={0}
+                    />
 
-                    {/* <button texto="Começe já! &rarr;" href="#" fundo={true} callback={() => null}/> */}
+                    <p className={styles.termos_condicoes}>Ao se inscrever, você concorda com os <a href=".logo">termos de serviço</a>.</p>
 
                     <button type="submit">Começe já! &rarr;</button>
+
+                    <p className={styles.ja_investidor}>Já é um investidor? <a href=".logo">Entre</a>.</p>
                 </form>
 
-                <p className="ja-investidor">Já é um investidor? <a href=".logo">Entre</a>.</p>
             </div>
+
         <CgClose 
-            className="x"
+            className={styles.x}
             onClick={fechaCadastro}
         />
         </div>

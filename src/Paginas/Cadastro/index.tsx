@@ -1,18 +1,23 @@
 import { useState } from 'react';
 import api from './../../services/api';
 import { useNavigate, useLocation } from 'react-router-dom';
+
 import { useSelector, useDispatch } from "react-redux";
-import { loga, selectLogin, setaNomeUsuario } from "../../store/loginSlice";
+import { loga, desloga, selectLogin } from "../../store/slices";
+import { setNomeUsuario, selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+
 
 import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
 
-import './index.css';
+import styles from './index.module.css';
 
 export const Cadastro = () => {
     const location = useLocation();
     const { email, senha, idade } = location.state;
     
+    // console.log("de cadastro: ", "email: ", email, "senha: ", senha, "idade: ", idade);
+
     const [ sidebar, setSidebar ] = useState(false);
     
     const [apelido, setApelido] = useState("");
@@ -28,7 +33,9 @@ export const Cadastro = () => {
     
     const handleRegisterFinal = async (e:any) => {
         e.preventDefault();
+        
         const dataPerfil = {
+<<<<<<< HEAD
             email:email,
             password:senha,
             age:idade,
@@ -42,20 +49,38 @@ export const Cadastro = () => {
             expiration:cartaoValidade,
             CVV:cartaoCVV,
             cardNickname:cartaoApelido};
+=======
+            email: email,
+            password: senha,
+            age: idade,
+            nickname: apelido,
+            CPF: cpf,
+            region: regiao
+        };
+>>>>>>> development
 
-        try{
+        const dataCartao = {
+            name: cartaoNomeCompleto,
+            number: cartaoNumero,
+            expiration: cartaoValidade,
+            CVV: cartaoCVV,
+            cardNickname: cartaoApelido
+        };
+
+        try {
             const responseAccounts = await api.post("/accounts", dataPerfil);
-            const card = {...dataCartao, owner:responseAccounts.data.id};
-            const responseCards = await api.post("/cards",card, {
+            const card = { ...dataCartao, owner: responseAccounts.data.id };
+            const responseCards = await api.post("/cards", card, {
                 headers: {
                     Authorization: responseAccounts.data.id, 
                 }
             });
+
             localStorage.setItem('profileId', responseAccounts.data.id);
             localStorage.setItem('profileName', apelido);
 
             dispatch(loga());
-            dispatch(setaNomeUsuario(apelido))
+            dispatch(setNomeUsuario(apelido))
 
             navigate('/perfil');
         }
@@ -69,7 +94,7 @@ export const Cadastro = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="Cadastro">
+        <div>
             <Header
                 abreCadastro={() => null}
                 fechaCadastro={() => null}
@@ -77,14 +102,13 @@ export const Cadastro = () => {
                 fechaEntrar={() => null}
                 toggleSidebar={() => setSidebar(anterior => !anterior)}
             />
-            <div className="main-content">
+            <div className={styles.main_content}>
                 {sidebar && <Sidebar/>}
 
-
-                <div className="form">
+                <div className={styles.form}>
                     <h1>Complete seu Cadastro!</h1>
                     <form onSubmit={handleRegisterFinal}>
-                        <div className="inputs">
+                        <div className={styles.inputs}>
                             <section>
                                 <h2>Dados pessoais</h2>
                                 <input 
@@ -103,7 +127,8 @@ export const Cadastro = () => {
                                     onChange={e => setApelido(e.target.value)}
                                     required
                                 />
-                                <select 
+                                <select
+                                    placeholder="Regiao"
                                     value={regiao}
                                     onChange={ e => setRegiao(e.target.value) }
                                     required
@@ -137,7 +162,7 @@ export const Cadastro = () => {
                                     <option value="Sergipe - SE">Sergipe - SE</option>
                                     <option value="Tocantins - TO">Tocantins - TO</option>
                                 </select>
-                                <FiTriangle className='fi-triangle' fill='white'/>
+                                <FiTriangle className={styles.fi_triangle} fill='white'/>
                             </section>
                             <section>
                                 <h2>Adicione um cartão</h2>
@@ -155,7 +180,7 @@ export const Cadastro = () => {
                                     value={cartaoNumero}
                                     onChange = {e => setCartaoNumero(e.target.value)}
                                 />
-                                <div className="val-cvv">
+                                <div className={styles.val_cvv}>
                                     <input 
                                         placeholder='Validade'
                                         pattern='[0-9]{2}/[0-9]{2}'
@@ -163,7 +188,7 @@ export const Cadastro = () => {
                                         onChange={ e => setCartaoValidade(e.target.value)}
                                         required
                                     />
-                                    <FiCalendar className='fi-calendar' fill='white' fillOpacity={0.5} height={100} />
+                                    <FiCalendar className={styles.fi_calendar} fill='white' fillOpacity={0.5} height={100} />
                                     <input 
                                         placeholder='CVV'
                                         pattern='[0-9]{3}'

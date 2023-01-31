@@ -9,7 +9,7 @@ import { store } from "./store";
 // Importando as paginas
 import { Inicial, Perfil, Cadastro, Regras, Suporte, Urubuzado, TelaInvestimentoNumero, ResultadosPerfil } from "./Paginas";
 
-import './App.css';
+import "./index.css";
 
 export const App = () => {
     return (

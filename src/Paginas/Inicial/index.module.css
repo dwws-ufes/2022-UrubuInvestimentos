@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-main {
+.main {
 	position: relative;
 
 	height: calc(100vh - var(--altura-header));
@@ -13,7 +13,7 @@ main {
     justify-content: space-between;
 }
 
-.conteudo-principal-inicial {
+.conteudo_principal {
     width: 100%;
     
     display: flex;
@@ -21,17 +21,15 @@ main {
     justify-content: space-between;
 
     padding: 20px 0;
-
 }
 
-.resultados-anteriores {
+.resultados_anteriores {
     width: var(--main-width); 
 	min-width: var(--main-min-width);
     max-width: var(--main-max-width);
 
     margin: 0 auto;
     height: 100%;
-    /* border: 2px solid red; */
 
     display: grid;
     grid-template-columns: auto auto;
@@ -40,9 +38,8 @@ main {
     overflow: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
-
 }
 
-.resultados-anteriores::-webkit-scrollbar {
+.resultados_anteriores::-webkit-scrollbar {
     display: none;
 }

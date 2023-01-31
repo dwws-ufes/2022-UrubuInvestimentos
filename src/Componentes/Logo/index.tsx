@@ -1,20 +1,21 @@
 import { useNavigate } from "react-router-dom";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 export const Logo = () => {
     const navigate = useNavigate();
 
     return(
         <div
-            className="logo"
+            className={styles.logo}
             onClick={() => navigate("/")}
         >
-            <img src="imagens/urubuzado.svg"
+            <img
+                src="imagens/urubuzado.svg"
                 alt="logo urubu"
-                className="urubu-svg"
+                className={styles.urubu_svg}
             />
-            <h2 className="nome-empresa">Urubu Investimentos</h2>
+            <h2 className={styles.nome_empresa}>Urubu Investimentos</h2>
         </div>
     );
 }

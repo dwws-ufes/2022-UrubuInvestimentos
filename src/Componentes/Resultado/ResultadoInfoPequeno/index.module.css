@@ -1,6 +1,6 @@
-@import url("../../constantes.css");
+@import url("../../../constantes.css");
 
-.resultado-info-pequeno {
+.resultado_info {
     background-color: var(--fundo-secundario-transparente);
     width: 40%;
     border-radius: var(--default-border-radius);
@@ -14,14 +14,14 @@
     padding: 0.3em 0;
 }
 
-.dia-pequeno {
+.dia {
     margin: 0;
 }
-.animal-pequeno {
+.animal {
     margin: 0;
 }
 
-.numeros-pequeno {
+.numeros {
     margin: 0;
 
     display: flex;
@@ -29,7 +29,7 @@
     justify-content: space-between;
 }
 
-.milhar-pequeno {
+.milhar {
     margin: 0;
 
     --espacamento: 1em;

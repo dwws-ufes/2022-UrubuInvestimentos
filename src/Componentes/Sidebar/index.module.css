@@ -26,7 +26,7 @@
     margin: 0;
 }
 
-.parte-superior {
+.parte_superior {
     /* border: 2px solid green; */
     padding: 20px;
 
@@ -36,7 +36,7 @@
     row-gap: 30px;
 }
 
-.parceiro-oficial {
+.parceiro_oficial {
     display: flex;
     justify-content: space-between;
 
@@ -47,10 +47,10 @@
 
     text-decoration: none;
     color: white;
-    
+    padding: 0.5em 1em;
 }
 
-.parceiro-oficial img {
+.parceiro_oficial img {
     display: flex;
     width: 40px;
 }
@@ -60,7 +60,7 @@
     margin-left: 10px;
 }
 
-.ganhe-dinheiro {
+.ganhe_dinheiro {
     border-radius: var(--default-border-radius);
     height: 150px;
     background-size: cover;
@@ -72,7 +72,7 @@
     cursor: pointer;
 }
 
-.ganhe-dinheiro p {
+.ganhe_dinheiro p {
     margin: 0;
     padding-top: 0.5em;
     background-color: #66af94;
@@ -84,7 +84,7 @@
     border-top-left-radius: var(--default-border-radius);
 }
 
-.ganhe-dinheiro div {
+.ganhe_dinheiro div {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -97,15 +97,21 @@
     background-color: #66af94;
 }
 
-.botao {
-    width: 100%;
+.investir_agora {
+    color: white;
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--default-border-radius);
+    padding: 0.5em;
+    font-size: 1.2em;
+    cursor: pointer;
 }
 
 .links {
     border-top: 1px solid var(--cor-borda);
 }
 
-.barra-horizontal {
+.barra_horizontal {
     color: white;
     width: 100%;
 }
