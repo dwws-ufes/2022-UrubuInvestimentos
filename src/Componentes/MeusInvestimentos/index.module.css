@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-.meus-rendimentos {
+.meus_investimentos {
     width: 100%;
 
     display: flex;
@@ -12,7 +12,7 @@
 
 }
 
-.proximo-resultado-div {
+.proximo_resultado_div {
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -20,15 +20,27 @@
     margin: 0 auto;
 }
 
-.frase-motivacional {
+.frase_motivacional {
     margin: 0 auto;
     width: 80%;
-    text-align: justify;
+    text-align: center;
     background-color: var(--fundo-secundario);
     padding: 1em;
     border-radius: var(--default-border-radius);
 }
 
-.informacoes-rendimentos {
+.informacoes_rendimentos {
     text-align: center;
+}
+
+.div_investimentos {
+    overflow: scroll;
+}
+
+.investimento {
+    background-color: var(--fundo-secundario);
+    border-radius: var(--default-border-radius);
+    width: 10em;
+    margin: 1em auto;
+    padding: 0.5em;
 }

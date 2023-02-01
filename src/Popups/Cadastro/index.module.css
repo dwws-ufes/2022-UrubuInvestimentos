@@ -75,6 +75,7 @@ input:focus {
 
 .termos_condicoes {
     color: var(--cor-texto-cadastro);
+    font-size: 0.9rem;
 }
 
 .termos_condicoes a {
@@ -83,7 +84,7 @@ input:focus {
 
 .ja_investidor {
     color: var(--cor-texto-cadastro);
-    font-size: 13px;
+    font-size: 0.8rem;
 }
 
 .ja_investidor a {

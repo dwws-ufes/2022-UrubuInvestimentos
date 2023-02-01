@@ -5,7 +5,7 @@ module.exports = {
 
         const { email, password } = request.body;
 
-        const profile = await connection('profile').where('email', email).andWhere('password', password).select('email').first();
+        const profile = await connection('profile').where('email', email).andWhere('password', password).select('*');
 
         if (!profile){return response.status(400).json({error: 'Senha ou email inválidos'})};
 

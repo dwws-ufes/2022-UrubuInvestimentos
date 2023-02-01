@@ -2,14 +2,15 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/slices";
-import { setNomeUsuario, selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+import { logaPrimeiraVez, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { BotaoGenerico, Logo } from "../";
 
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
 import styles from "./index.module.css";
+import Content from "../../Content/Components/Header.json"
 
 interface propsType {
     abreCadastro: () => void;
@@ -63,7 +64,7 @@ export const Header = (props: propsType) => {
             :
                 <div className={styles.header_direito}>
                     <BotaoGenerico
-                        texto="Entrar"
+                        texto={ Content.Page.Login }
                         href="#"
                         fundo={false}
                         callback={() => {
@@ -72,7 +73,7 @@ export const Header = (props: propsType) => {
                         }}
                     />
                     <BotaoGenerico
-                        texto="Cadastre-se"
+                        texto={ Content.Page.SingIn }
                         href="#"
                         fundo={true}
                         callback={() => {

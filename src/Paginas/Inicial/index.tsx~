@@ -24,6 +24,16 @@ interface jogosType {
 }
 
 export const Inicial = () => {
+<<<<<<< HEAD
+    const [showCadastro, setCadastro] = useState(false);
+    const [showEntrar, setEntrar] = useState(false);
+    const [sidebar, setSidebar] = useState(true);
+=======
+
+    // const jogos = useSelector(selectJogos);
+    // const dispatch = useDispatch();
+>>>>>>> development
+
     const showDropdown = useSelector(selectDropdown);
 
     const jogosIniciais: jogosType[] = [
