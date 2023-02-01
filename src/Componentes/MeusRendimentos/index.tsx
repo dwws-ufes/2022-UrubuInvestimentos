@@ -1,6 +1,7 @@
 import { ProximoResultado } from "../";
 
 import styles from "./index.module.css";
+import Content from "../../Content/Components/MeusRendimentos.json"
 
 interface propsType {
     totalInvestido: string;
@@ -13,25 +14,22 @@ export const MeusRendimentos = (props: propsType) => {
 
         return(
             <div className={styles.meus_rendimentos}>
-            asdlfgjkasdkfjgaksjhdgfkjagsdgkajhsdgfaskjdhgfskahd    
             <div className={styles.proximo_resultado_div}>
                     <ProximoResultado transparente={false}/>
                     
-                    <button className={styles.btn}>Novo Investimento</button>
+                    <button className={styles.btn}>{ Content.Investment }</button>
                 </div>
                 <p className={styles.frase_motivacional}>
-                    Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!! asdflkhjasdhf
+		    { Content.Motivational }
                 </p>
                 
                 <div className={styles.informacoes_rendimentos}>
-                    <h3>Meus Rendimentos</h3>
-
-                    <p>Total investido: ${totalInvestido}</p>
-                    <p>Total lucrado: ${totalLucrado}</p>
-                    <p>Saldo: ${saldo}</p>
+                    <h3>{ Content.Income.Title }</h3>
+                    <p>{ Content.Income.Invested }: ${totalInvestido}</p>
+                    <p>{ Content.Income.Profited }: ${totalLucrado}</p>
+                    <p>{ Content.Income.Balance }: ${saldo}</p>
                 </div>
-                
-                <button className={styles.btn}>Sacar dinheiro</button>
+                <button className={styles.btn}>{ Content.Withdraw }</button>
             </div>
         );
 }

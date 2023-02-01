@@ -48,10 +48,9 @@ export const Sidebar = () => {
                             className={styles.redirect}
                             to="/suporte"
                         >
-                            SUPORTE AO VIVO
+                            SUPORTE
                         </Link>
                     </li>
-                    <li>PERGUNTAS FREQUENTES</li>
                 </ul>
             </div>
         </div>
