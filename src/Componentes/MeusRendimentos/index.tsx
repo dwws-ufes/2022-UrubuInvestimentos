@@ -1,5 +1,6 @@
 import { ProximoResultado, BotaoGenerico } from "../";
 
+import Content from "../../Content/Components/MeusRendimentos.json"
 import "./index.css";
 
 interface propsType {
@@ -16,24 +17,22 @@ export const MeusRendimentos = (props: propsType) => {
                 <div className="proximo-resultado-div">
                     <ProximoResultado/>
                     <BotaoGenerico
-                        texto="Novo Investimento"    
+                        texto= { Content.Investment }
                     />
                 </div>
 
-                <p className="frase-motivacional">
-                    Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!
-                </p>
+                <p className="frase-motivacional"> { Content.Motivational } </p>
                 
                 <div className="informacoes-rendimentos">
-                    <h3>Meus Rendimentos</h3>
+                    <h3> { Content.Income.Title } </h3>
 
-                    <p>Total investido: ${totalInvestido}</p>
-                    <p>Total lucrado: ${totalLucrado}</p>
-                    <p>Saldo: ${saldo}</p>
+                    <p>{ Content.Income.Invested }: ${totalInvestido}</p>
+                    <p>{ Content.Income.Profited }: ${totalLucrado}</p>
+                    <p>{ Content.Income.Balance }: ${saldo}</p>
                 </div>
 
                 <BotaoGenerico
-                    texto="Sacar dinheiro"
+                    texto={ Content.Withdraw }
                 />
             </div>
         );

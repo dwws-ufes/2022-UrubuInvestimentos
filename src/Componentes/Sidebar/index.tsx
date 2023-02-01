@@ -36,8 +36,7 @@ export const Sidebar = () => {
                 <ul>
                     <li><Link className="redirect" to="/zumzumcapoeira">INDIQUE UM AMIGO</Link></li>
                     <li><Link className="redirect" to="/regras">REGRAS DE INVESTIMENTO</Link></li>
-                    <li><Link className="redirect" to="/suporte">SUPORTE AO VIVO</Link></li>
-                    <li>PERGUNTAS FREQUENTES</li>
+                    <li><Link className="redirect" to="/suporte">SUPORTE</Link></li>
                 </ul>
             </div>
         </div>
