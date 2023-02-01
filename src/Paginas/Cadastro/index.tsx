@@ -37,20 +37,20 @@ export const Cadastro = () => {
         e.preventDefault();
         
         const dataPerfil = {
-            email: email,
-            password: senha,
-            age: idade,
-            nickname: apelido,
-            CPF: cpf,
-            region: regiao
+            email:email,
+            password:senha,
+            age:idade,
+            nickname:apelido,
+            CPF:cpf,
+            region:regiao
         };
 
         const dataCartao = {
-            name: cartaoNomeCompleto,
-            number: cartaoNumero,
-            expiration: cartaoValidade,
-            CVV: cartaoCVV,
-            cardNickname: cartaoApelido
+            name:cartaoNomeCompleto,
+            number:cartaoNumero,
+            expiration:cartaoValidade,
+            CVV:cartaoCVV,
+            cardNickname:cartaoApelido
         };
 
         try {

@@ -17,7 +17,6 @@ exports.up = function(knex) {
     table.string('number2', 4);
     table.string('number3', 4);
     table.string('number4', 4);
-    table.string('number5', 4);
   })
 };
 
