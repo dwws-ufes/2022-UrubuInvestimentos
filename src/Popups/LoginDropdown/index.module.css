@@ -1,0 +1,41 @@
+@import url("../../constantes.css");
+
+.dropdown {
+    position: fixed;
+    top: calc(var(--altura-header) + 0.5rem);
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.link_dropdown {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--cor-dropdown);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.link_dropdown::hover {
+    background-color: red;
+}
+
+.dropdown a {
+    background-color: var(--cor-dropdown);
+    padding: 10px 20px;
+    margin: 0;
+    color: white !important;
+}
+
+.l1 {
+    border-radius: var(--border-radius-padrao) var(--border-radius-padrao) 0 0;
+}
+
+.l3 {
+    border-radius: 0 0 var(--border-radius-padrao) var(--border-radius-padrao);
+}
+
+.botao_header {
+    font-size: 0.6em !important;
+}

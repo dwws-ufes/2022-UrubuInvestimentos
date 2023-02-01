@@ -6,8 +6,14 @@
     justify-content: center;
 }
 
-.urubu-svg {
+.urubu_svg {
     /* Torna a cor do logo branca */
     filter: invert(98%) sepia(85%) saturate(27%) hue-rotate(169deg) brightness(116%) contrast(92%);
     width: 30px;
-} 
+}
+
+.nome_empresa {
+    color: white;
+    text-decoration: none;
+    margin: auto 0;
+}

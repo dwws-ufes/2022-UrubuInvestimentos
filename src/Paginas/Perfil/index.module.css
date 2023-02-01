@@ -1,6 +1,6 @@
 @import url("../../constantes.css");
 
-main {
+.main {
 	position: relative;
 
 	height: calc(100vh - var(--altura-header));
@@ -14,7 +14,7 @@ main {
     padding: 0;
 }
 
-.conteudo-principal {
+.conteudo_principal {
     width: 100%;
 
     /* border: 2px solid green; */
@@ -27,7 +27,7 @@ main {
 
 }
 
-.resultados-anteriores {
+.resultados_anteriores {
     width: var(--main-width); 
 	min-width: var(--main-min-width);
     max-width: var(--main-max-width);
@@ -43,9 +43,8 @@ main {
     overflow: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
-
 }
 
-.resultados-anteriores::-webkit-scrollbar {
+.resultados_anteriores::-webkit-scrollbar {
     display: none;
 }

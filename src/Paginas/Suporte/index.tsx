@@ -52,7 +52,7 @@ export const Suporte = () => {
                 </div>
                 
                 <div className='Investimentos-sup'>
-                    <ProximoResultado/>
+                    <ProximoResultado transparente={false}/>
                     <Resultado
                             src="imagens/animais/cagado.jpeg"
                             dia="ONTEM"

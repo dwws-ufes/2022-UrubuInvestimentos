@@ -20,18 +20,18 @@
     margin: 0;
 }
 
-.bar-icon {
+.bar_icon {
     color: white;
     margin: auto 0;
     margin-left: 20px;
     font-size: 25px;
 }
 
-.bar-icon:hover {
+.bar_icon:hover {
     cursor: pointer;
 }
 
-.header-centro .link-home{
+.header_centro .link_home {
     display: flex;
     position: absolute;
     left: 50%;
@@ -41,7 +41,7 @@
     justify-content: center;
 }
 
-.urubu-logo {
+.urubu_logo {
     width: 2.5v;
     
     /* torna o logo branco */
@@ -51,7 +51,7 @@
     cursor: pointer;
 }
 
-.nome-empresa{
+.nome_empresa{
     color: whitesmoke;
     font-size: 20px;
     padding: 10px 10px;
@@ -60,66 +60,27 @@
     cursor: pointer;
 }
 
-.header-direito {
+.header_direito {
     display: flex;
     column-gap: 5px;
     margin: auto 0;
     margin-right: 10px;
     position: relative;
 }
-.nome-usuario {
+
+.header_direito_logado {
+    cursor: pointer;
+}
+
+.nome_usuario {
     font-size: 1em;
 }
 
-.icone-usuario {
+.icone_usuario {
     margin: auto 10px;
     font-size: 22px;
 }
 
-.pop-up-opcoes-login:hover {
+.pop_up_opcoes_login:hover {
     cursor: pointer;
 }
-
-.dropdown {
-    position: fixed;
-    top: 0;
-    right: 0;
-    /* padding: 0;
-    /*border-radius: var(--border-radius-padrao);*/
-    /* width: 100%; */
-    /*border: 2px solid red; */
-    display: flex;
-    flex-direction: column;
-    /* border: 2px solid red; */
-    /* position: absolute; */
-}
-
-.link-dropdown {
-    /* border: 2px solid blue; */
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    background-color: var(--cor-dropdown);
-    padding: 10px 20px;
-    border: 2px solid red;
-}
-
-/* .dropdown a {
-    background-color: var(--cor-dropdown);
-    padding: 10px 20px;
-    margin: 0;
-    color: white !important;
-    cursor: pointer;
-}*/
-
-/* .l1 {
-    border-radius: var(--border-radius-padrao) var(--border-radius-padrao) 0 0;
-}
-
-.l3 {
-    border-radius: 0 0 var(--border-radius-padrao) var(--border-radius-padrao);
-} */
-/*
-.botao-header {
-    font-size: 0.6em !important;
-} */

@@ -1,7 +1,7 @@
 import { Logo, BotaoGenerico } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
-import "./index.css"
+import styles from "./index.module.css";
 
 interface propsType {
     fechaEntrar: () => void;
@@ -11,32 +11,32 @@ export const Entrar = (props: propsType) => {
     const { fechaEntrar } = props;
 
     return(
-        <div className="entrar">
+        <div className={styles.entrar}>
             <Logo />
 
-            <h3>Entre na sua conta</h3>
-
             <form action="">
+                <h3>Entre na sua conta</h3>
+
                 <input
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder="Endereço de Email"
                 />
                 <input
-                    type="text"
+                    type="password"
                     name="senha"
                     placeholder="Senha"
                 />
 
-                <a className="entrar-esqueceu-senha" href=".">Esqueceu a senha?</a>
+                <a className={styles.entrar_esqueceu_senha} href=".">Esqueceu a senha?</a>
 
-                <BotaoGenerico texto="Entrar &rarr;" href="#" fundo={true} callback={() => null}/>
+                <button>Entrar &rarr;</button>
+
+                <p className={styles.ainda_nao_investidor}>Ainda não é investidor? <a href=".">Cadastre-se agora!</a></p>
             </form>
 
-            <p className="ainda-nao-investidor">Ainda não é investidor? <a href=".">Cadastre-se agora!</a></p>
-
             <CgClose
-                className="x"
+                className={styles.x}
                 onClick={fechaEntrar}
             />
         </div>

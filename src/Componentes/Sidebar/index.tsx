@@ -5,14 +5,14 @@ import { GanheDinheiro } from './GanheDinheiro';
 
 import { FaMoneyCheckAlt } from 'react-icons/fa';
 
-import './index.css';
+import styles from './index.module.css';
 
 export const Sidebar = () => {
     return(
-        <div className="sidebar">
-            <div className="parte-superior">
+        <div className={styles.sidebar}>
+            <div className={styles.parte_superior}>
                 <a
-                    className="parceiro-oficial"
+                    className={styles.parceiro_oficial}
                     href="https://www.flamengo.com.br/"
                     target="_blank"
                     rel="noreferrer"
@@ -22,21 +22,35 @@ export const Sidebar = () => {
                 </a>
                 
                 <GanheDinheiro />
-
-                <BotaoGenerico
-                    texto="Investir agora!"
-                    icone={<FaMoneyCheckAlt />}
-                    href="#"
-                    fundo={true}
-                    callback={() => null}
-                    className="botao"
-                /> 
+                
+                <button className={styles.investir_agora}>Investir agora!</button>
             </div>
-            <div className="links">
+            <div className={styles.links}>
                 <ul>
-                    <li><Link className="redirect" to="/zumzumcapoeira">INDIQUE UM AMIGO</Link></li>
-                    <li><Link className="redirect" to="/regras">REGRAS DE INVESTIMENTO</Link></li>
-                    <li><Link className="redirect" to="/suporte">SUPORTE AO VIVO</Link></li>
+                    <li>
+                        <Link
+                            className={styles.redirect}
+                            to="/zumzumcapoeira"
+                        >
+                            INDIQUE UM AMIGO
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={styles.redirect}
+                            to="/regras"
+                        >
+                            REGRAS DE INVESTIMENTO
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            className={styles.redirect}
+                            to="/suporte"
+                        >
+                            SUPORTE AO VIVO
+                        </Link>
+                    </li>
                     <li>PERGUNTAS FREQUENTES</li>
                 </ul>
             </div>

@@ -1,6 +1,6 @@
-import { ProximoResultado, BotaoGenerico } from "../";
+import { ProximoResultado } from "../";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 interface propsType {
     totalInvestido: string;
@@ -12,29 +12,26 @@ export const MeusRendimentos = (props: propsType) => {
         const { totalInvestido, totalLucrado, saldo } = props;
 
         return(
-            <div className="meus-rendimentos">
-                <div className="proximo-resultado-div">
-                    <ProximoResultado/>
-                    <BotaoGenerico
-                        texto="Novo Investimento"    
-                    />
+            <div className={styles.meus_rendimentos}>
+            asdlfgjkasdkfjgaksjhdgfkjagsdgkajhsdgfaskjdhgfskahd    
+            <div className={styles.proximo_resultado_div}>
+                    <ProximoResultado transparente={false}/>
+                    
+                    <button className={styles.btn}>Novo Investimento</button>
                 </div>
-
-                <p className="frase-motivacional">
-                    Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!
+                <p className={styles.frase_motivacional}>
+                    Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!! asdflkhjasdhf
                 </p>
                 
-                <div className="informacoes-rendimentos">
+                <div className={styles.informacoes_rendimentos}>
                     <h3>Meus Rendimentos</h3>
 
                     <p>Total investido: ${totalInvestido}</p>
                     <p>Total lucrado: ${totalLucrado}</p>
                     <p>Saldo: ${saldo}</p>
                 </div>
-
-                <BotaoGenerico
-                    texto="Sacar dinheiro"
-                />
+                
+                <button className={styles.btn}>Sacar dinheiro</button>
             </div>
         );
 }
