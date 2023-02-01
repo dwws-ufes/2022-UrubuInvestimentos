@@ -1,6 +1,6 @@
 import { ProximoResultado, BotaoGenerico } from "../";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 interface investimento {
     dia: string;
@@ -17,28 +17,28 @@ export const MeusInvestimentos = (props: propsType) => {
         const { investimentos } = props;
 
         return(
-            <div className="meus-investimentos">
-                <div className="proximo-resultado-div">
+            <div className={styles.meus_investimentos}>
+                <div className={styles.proximo_resultado_div}>
                     <ProximoResultado transparente={false}/>
                     <BotaoGenerico
                         texto="Novo Investimento"    
                     />
                 </div>
 
-                <p className="frase-motivacional">
+                <p className={styles.frase_motivacional}>
                     Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!
                 </p>
                 
-                <div className="informacoes-rendimentos">
+                <div className={styles.informacoes_rendimentos}>
                     <h3>Meus Investimentos</h3>
                     
-                    <div className="div-investimentos">
+                    <div className={styles.div_investimentos}>
                         {investimentos.map((investimento, index) => {
                             const { dia, hora, animal, valor } = investimento;
                             return(
                                 <div
                                     key={index}
-                                    className="investimento"
+                                    className={styles.investimento}
                                 >
                                     <p>{dia.toUpperCase()} {hora}</p>
                                     <p>{animal} - ${valor}</p>

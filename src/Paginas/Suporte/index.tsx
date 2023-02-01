@@ -3,7 +3,7 @@ import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
 
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 export const Suporte = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
@@ -11,7 +11,7 @@ export const Suporte = () => {
     const [ sidebar, setSidebar ] = useState(false);
 
     return(
-        <div className="Suporte">
+        <div className={styles.suporte}>
             <Header
                 abreCadastro={ () => {setCadastro(true)}}
                 fechaCadastro={() => {setCadastro(false);}}
@@ -21,9 +21,9 @@ export const Suporte = () => {
             />
             
             <main>
-                {sidebar && <div className="sidebar"><Sidebar/></div>}
+                {sidebar && <div className={styles.sidebar}><Sidebar/></div>}
 
-                <div className="Topicos">
+                <div className={styles.topicos}>
                     <h1>Suporte</h1>
                     
                     <div>
@@ -51,7 +51,7 @@ export const Suporte = () => {
                     </div>
                 </div>
                 
-                <div className='Investimentos-sup'>
+                <div className={styles.investimentos_sup}>
                     <ProximoResultado transparente={false}/>
                     <Resultado
                             src="imagens/animais/cagado.jpeg"
@@ -65,7 +65,7 @@ export const Suporte = () => {
                             animal="CÁGADO"
                             milhares={["1234", "5678", "9012", "3456"]}
                     />
-                    <BotaoGenerico className="BotaoSuporte" texto="Novo Investimento"/>
+                    <BotaoGenerico className={styles.botao_suporte} texto="Novo Investimento"/>
                 </div>
             </main>
         </div>

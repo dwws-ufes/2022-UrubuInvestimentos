@@ -3,9 +3,8 @@ import api from './../../services/api';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin } from "../../store/slices";
-import { setNomeUsuario, selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
-
+import { logaPrimeiraVez, selectLogin } from "../../store/loginSlice";
+import { setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
@@ -37,8 +36,9 @@ export const Cadastro = () => {
         const dataPerfil = {
             email: email,
             password: senha,
-            age: idade,
             nickname: apelido,
+
+            age: idade,
             CPF: cpf,
             region: regiao
         };
@@ -63,14 +63,16 @@ export const Cadastro = () => {
             localStorage.setItem('profileId', responseAccounts.data.id);
             localStorage.setItem('profileName', apelido);
 
-            dispatch(loga());
-            dispatch(setNomeUsuario(apelido))
+            dispatch(setNomeUsuario(apelido));
+            dispatch(setSaldo(1000));
 
+            dispatch(logaPrimeiraVez());
+            
             navigate('/perfil');
         }
         catch (err){
             console.log(err)
-            alert("Erro ao finalizar criação da conta, tente novamente");
+            alert("Erro ao finalizar criação da conta, tente novamente.");
         }
     }
 

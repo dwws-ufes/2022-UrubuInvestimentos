@@ -1,40 +1,40 @@
 @import url("../../constantes.css");
 
-.novo-investimento {
+.novo_investimento {
     width: 100%;
     padding: 2em;
 }
 
-.novo-investimento .titulo {
+.novo_investimento .titulo {
     text-align: center;
 }
 
-.novo-investimento form {
+.novo_investimento form {
     margin-top: 2em;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-.input-class {
+.input_class {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.input-field-novo-investimento {
+.input_field_novo_investimento {
     width: 50%;
 }
 
-.input-class label {
+.input_class label {
     margin: auto 0;
 }
 
-.odds-totais {
+.odds_totais {
 
 }
 
-.div-com-icone {
+.div_com_icone {
     width: 50%;
     background-color: var(--fundo-secundario);
     display: flex;
@@ -44,21 +44,21 @@
     padding-right: 1em;
 }
 
-#numero-cartao {
+#numero_cartao {
     width: 100%;
 }
 
-.icone-seta {
+.icone_seta {
     margin: auto 0;
     font-size: 1em;
 }
 
-.icone-cartao {
+.icone_cartao {
     margin: auto 0;
     font-size: 1.6em;
 }
 
-.botao-novo-investimento {
+.botao_novo_investimento {
     width: 15em;
     margin-top: 2em;
 }

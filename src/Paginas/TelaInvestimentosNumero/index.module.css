@@ -1,44 +1,44 @@
 @import url("../../constantes.css");
 
-*{
+* {
     box-sizing: border-box;
 }
 
-.main-content{
+.main_content {
     display: flex;
     margin-top: var(--altura-header);
     /* border: 2px solid red; */
 }
 
-.form form section input, .form form section input:hover{
+.form form section input, .form form section input:hover {
     appearance: none;
 }
 
-.form form{
+.form form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.form form section{
+.form form section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
     margin-top: 5rem;
 }
 
-.form form button{
+.form form button {
     margin-top: 4rem;
     width: 10rem;
 }
 
 .form form section input,
-.form form section select{
+.form form section select {
     height: 4rem;
 }
 
 input[type=number], 
 input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button{
+input::-webkit-outer-spin-button {
     appearance: none;
 }

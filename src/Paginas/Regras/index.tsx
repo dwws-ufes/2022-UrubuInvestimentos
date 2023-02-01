@@ -5,8 +5,8 @@ import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/slices";
-import { selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
 

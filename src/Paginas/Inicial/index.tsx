@@ -8,8 +8,8 @@ import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/slices";
-import { selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { animais, mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 
@@ -29,10 +29,6 @@ export const Inicial = () => {
 
     // const jogos = useSelector(selectJogos);
     // const dispatch = useDispatch();
-
-    const [showCadastro, setCadastro] = useState(false);
-    const [showEntrar, setEntrar] = useState(false);
-    const [sidebar, setSidebar] = useState(true);
 
     const showDropdown = useSelector(selectDropdown);
 
@@ -91,13 +87,17 @@ export const Inicial = () => {
     jogos.reverse()
     console.log(jogos)
 
+    const [showCadastro, setCadastro] = useState(false);
+    const [showEntrar, setEntrar] = useState(false);
+    const [sidebar, setSidebar] = useState(true);
+
     return (
     <div>
         <Header
-            abreCadastro={ () => {setCadastro(true)}}
-            fechaCadastro={() => {setCadastro(false);}}
-            abreEntrar={() => {setEntrar(true);}}
-            fechaEntrar={() => {setEntrar(false);}}
+            abreCadastro={() => setCadastro(true)}
+            fechaCadastro={() => setCadastro(false)}
+            abreEntrar={() => setEntrar(true)}
+            fechaEntrar={() => setEntrar(false)}
             toggleSidebar={() => setSidebar(anterior => !anterior)}
         />
 

@@ -5,8 +5,8 @@ import { Cadastro, Entrar } from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/slices";
-import { selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
 
@@ -20,10 +20,7 @@ export const Perfil = () => {
     const showDropdown = useSelector(selectDropdown);
 
     const nomeUsuario = useSelector(selectNomeUsuario);
-    const totalDepositado = useSelector(selectTotalDepositado);
-    const totalInvestido = useSelector(selectTotalInvestido);
-    const totalLucrado = useSelector(selectTotalLucrado);
-    const saldo = totalDepositado + totalLucrado - totalInvestido;
+    const saldo = useSelector(selectSaldo);
     
     const dispatch = useDispatch();
 
@@ -44,21 +41,15 @@ export const Perfil = () => {
                         nome={nomeUsuario}
                         saldo={saldo}
                         investimentos={10}
-                        lucrou={totalLucrado}
+                        lucrou={0}
                         cartoes={["Cartão 1", "Cartão 2"]}
                     />
-                    {/*
-                    <MeusRendimentos
-                        totalInvestido="120,00" 
-                        totalLucrado="-100,00"
-                        saldo="10,00"
-                    />
-                    */}
+                    
                     <MeusInvestimentos
                         investimentos={[
-                        {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"},
-                        {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"}
-                    ]}
+                            {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"},
+                            {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"}
+                        ]}
                     />
                 </section>
             </main> 

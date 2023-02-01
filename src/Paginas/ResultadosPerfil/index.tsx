@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Header, Sidebar, BotaoGenerico, ResultadoPerfil } from "./../../Componentes";
 import { Cadastro, Entrar } from "./../../Popups";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 export const ResultadosPerfil = () => {
 
@@ -12,7 +12,7 @@ export const ResultadosPerfil = () => {
   const [sidebar, setSidebar] = useState(true)
 
   return (
-    <div className="inicial">
+    <div className={styles.inicial}>
       <Header
         abreCadastro={() => {setCadastro(true)}}
         fechaCadastro={() => {setCadastro(false);}}
@@ -22,9 +22,9 @@ export const ResultadosPerfil = () => {
       />
       <main>
         {sidebar && <Sidebar />}
-        <section className="conteudo-principal-perfil-resultados">
-          <h1 className="resultados-titulo"> Resultados </h1>
-          <div className="resultados-jogos">
+        <section className={styles.conteudo_principal_perfil_resultados}>
+          <h1 className={styles.resultados_titulo}>Resultados</h1>
+          <div className={styles.resultados_jogos}>
             <ResultadoPerfil src="/imagens/animais/cagado.jpeg"
               dia="ONTEM"
               animal="CÁGADO"
@@ -65,16 +65,16 @@ export const ResultadosPerfil = () => {
               href="#"
               fundo={true}
               callback={() => null}
-              className="botao"
+              className={styles.botao}
             />
-            <div className="separador-botoes">
+            <div className={styles.separador_botoes}>
             </div>
             <BotaoGenerico
               texto="Meu perfil"
               href="#"
               fundo={true}
               callback={() => null}
-              className="botao"
+              className={styles.botao}
             />
           </div>
         </section>
