@@ -55,7 +55,6 @@ export const CardPerfil = (props: propsType) => {
                         </div>
                     )}
                 </div>
-            </div>
-        </div>
+	</div>
     );
 }

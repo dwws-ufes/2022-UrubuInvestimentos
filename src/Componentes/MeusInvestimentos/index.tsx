@@ -29,7 +29,7 @@ export const MeusInvestimentos = (props: propsType) => {
                 <p className="frase-motivacional"> { Content.Motivational } </p>
                 
                 <div className="informacoes-rendimentos">
-                    <h3>{ Content.Investement }</h3>
+                    <h3>{ Content.Investment }</h3>
                     
                     <div className="div-investimentos">
                         {investimentos.map((investimento, index) => {
