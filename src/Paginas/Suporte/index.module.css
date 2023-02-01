@@ -1,10 +1,10 @@
 @import url("../../constantes.css");
 
-.Suporte{
+.suporte {
     display: flex;
 }
 
-.Suporte main .Topicos{
+.suporte main .Topicos{
     display: flex;
     flex-direction: column;
     width: 44vw;
@@ -13,18 +13,18 @@
     left: 25vw;
 }
 
-.Suporte h1{
+.suporte h1{
     font-weight: bolder;
     font-size: 44px;
 }
 
-.Suporte .Topicos h2{
+.suporte .Topicos h2{
     font-weight: bolder;
     font-size: 34px;
     color:var(--cor-secundaria);
     border-bottom: 2px var(--cor-secundaria) solid;
 }
-.Suporte .Topicos{
+.suporte .Topicos{
     font-size: 22px;
 }
 
@@ -38,7 +38,7 @@ details summary {
 }
 details p{ margin-top: 6px; }
 
-.Investimentos-sup{
+.investimentos_sup {
     width: 20vw;
     height: 80vh;
 
@@ -52,7 +52,7 @@ details p{ margin-top: 6px; }
     top: 30px;
 }
 
-.BotaoSuporte{
+.botao_suporte{
     width: 20vw;
     padding-top: 2.5vh;
     padding-bottom: 2.5vh;

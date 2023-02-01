@@ -2,8 +2,8 @@ import React from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/slices";
-import { setNomeUsuario, selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
+import { logaPrimeiraVez, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
 
@@ -24,7 +24,7 @@ export const LoginDropdown = (props: propsType) => {
                 <div
                     className={`${styles.link_dropdown} ${styles.l3}`}
                     onClick={() => {
-                        dispatch({type: desloga})
+                        dispatch(desloga());
                         navigate("/");
                     }}
                 >

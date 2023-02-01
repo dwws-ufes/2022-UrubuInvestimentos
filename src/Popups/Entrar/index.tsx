@@ -1,7 +1,16 @@
 import { Logo, BotaoGenerico } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
+import { logaPrimeiraVez, selectLogin } from "../../store/loginSlice";
+import { setEmail, setSenha, setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+
+import api from './../../services/api';
 
 import styles from "./index.module.css";
+
+import { useState } from 'react';
 
 interface propsType {
     fechaEntrar: () => void;
@@ -9,28 +18,63 @@ interface propsType {
 
 export const Entrar = (props: propsType) => {
     const { fechaEntrar } = props;
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    async function loginHandler(){
+        const dataLogin = {
+            email,
+            password
+        }
+
+        try{
+            const loginInfo = await api.post("/sessions", dataLogin);
+
+            localStorage.setItem('profileId', loginInfo.data.id);
+            localStorage.setItem('profileName', loginInfo.data.nickname);
+
+            console.log(loginInfo.data[0]);
+
+            dispatch(setNomeUsuario(loginInfo.data[0].nickname));
+            dispatch(setSaldo(loginInfo.data[0].balance));
+            
+            dispatch(logaPrimeiraVez());
+
+            navigate("/perfil");
+        }catch(err){
+            console.log(err);
+            alert("Erro ao logar na conta, tente novamente");
+        }
+    }
 
     return(
         <div className={styles.entrar}>
             <Logo />
 
-            <form action="">
+            <form onSubmit={loginHandler}>
                 <h3>Entre na sua conta</h3>
 
                 <input
                     type="email"
                     name="email"
                     placeholder="Endereço de Email"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
                 />
                 <input
                     type="password"
                     name="senha"
                     placeholder="Senha"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
                 />
 
-                <a className={styles.entrar_esqueceu_senha} href=".">Esqueceu a senha?</a>
+                <Link className={styles.entrar_esqueceu_senha} to="/zumzumcapoeira">Esqueceu a senha?</Link>
 
-                <button>Entrar &rarr;</button>
+                <button type="submit">Entrar &rarr;</button>
 
                 <p className={styles.ainda_nao_investidor}>Ainda não é investidor? <a href=".">Cadastre-se agora!</a></p>
             </form>

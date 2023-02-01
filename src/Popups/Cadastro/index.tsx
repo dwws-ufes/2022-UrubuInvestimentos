@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
@@ -77,7 +77,7 @@ export const Cadastro = (props: propsType) => {
                         min={0}
                     />
 
-                    <p className={styles.termos_condicoes}>Ao se inscrever, você concorda com os <a href=".logo">termos de serviço</a>.</p>
+                    <p className={styles.termos_condicoes}>Ao se inscrever, você concorda com os <Link to="/zumzumcapoeira">termos de serviço</Link>.</p>
 
                     <button type="submit">Começe já! &rarr;</button>
 
