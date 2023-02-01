@@ -10,6 +10,7 @@ import { BotaoGenerico, Logo } from "../";
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
 import styles from "./index.module.css";
+import Content from "../../Content/Components/Header.json"
 
 interface propsType {
     abreCadastro: () => void;
@@ -63,7 +64,7 @@ export const Header = (props: propsType) => {
             :
                 <div className={styles.header_direito}>
                     <BotaoGenerico
-                        texto="Entrar"
+                        texto={ Content.Page.Login }
                         href="#"
                         fundo={false}
                         callback={() => {
@@ -72,7 +73,7 @@ export const Header = (props: propsType) => {
                         }}
                     />
                     <BotaoGenerico
-                        texto="Cadastre-se"
+                        texto={ Content.Page.SingIn }
                         href="#"
                         fundo={true}
                         callback={() => {

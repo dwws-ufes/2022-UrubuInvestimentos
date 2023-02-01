@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import api from '../../services/api'
 
-// import { useSelector, useDispatch } from "react-redux";
-
 import { Header, Sidebar, UltimoResultado, Searchbar, Resultado } from "../../Componentes";
 import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
@@ -11,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { loga, desloga, selectLogin, selectDropdown } from "../../store/slices";
 import { selectNomeUsuario, selectTotalDepositado, selectTotalInvestido, selectTotalLucrado } from "../../store/slices";
 
-import { animais, mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
+import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 
 import styles from "./index.module.css";
 
@@ -26,10 +24,6 @@ interface jogosType {
 }
 
 export const Inicial = () => {
-
-    // const jogos = useSelector(selectJogos);
-    // const dispatch = useDispatch();
-
     const [showCadastro, setCadastro] = useState(false);
     const [showEntrar, setEntrar] = useState(false);
     const [sidebar, setSidebar] = useState(true);
@@ -102,6 +96,7 @@ export const Inicial = () => {
         />
 
         <main className={styles.main}>
+
         {sidebar && <Sidebar />}
         <section className={styles.conteudo_principal}>
             <UltimoResultado

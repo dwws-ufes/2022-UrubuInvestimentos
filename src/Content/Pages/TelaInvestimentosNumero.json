@@ -1,0 +1,19 @@
+{
+    "Title": "Novo Investimento",
+    "Investment": {
+        "TitleTypes": "Tipo de investimento",
+        "Types": [
+            "Dezena",
+            "Centena",
+            "Milhar"
+        ],
+        "Number": "Número",
+        "TitleDistribution": "Distribuição",
+        "Distributions": [
+            "Normal",
+            "Cabeça"
+        ],
+        "Value": "Valor",
+        "Invest": "Investir"
+    }
+}
