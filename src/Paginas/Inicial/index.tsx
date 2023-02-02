@@ -61,24 +61,10 @@ export const Inicial = () => {
         },
     ];
 
-    const [ jogos, setJogos ] = useState(jogosIniciais);
-
-    function numeroRandom(min:number, max:number){
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max-min) + min).toString().padStart(4, '0');
-    }
-
-    // useEffect(() => {
-    //     // api.post("/", {number1:`${numeroRandom(0,9999)}`,number2:`${numeroRandom(0,9999)}`,number3:`${numeroRandom(0,9999)}`,number4:`${numeroRandom(0,9999)}`});    
-    //     api.get("/").then((response: any) => {
-    //         const { data } = response;
-    //         setJogos(response.data);
-    //     })
-    // }, []);
+    const [ jogos, setJogos ] = useState(jogosIniciais.reverse());
     
     // Inverte a ordem do vetor de jogos, para que o ultimo seja o primeiro do vetor
-    jogos.reverse()
+    // jogos.reverse()
     console.log(jogos)
 
     const [showCadastro, setCadastro] = useState(false);

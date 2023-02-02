@@ -24,19 +24,19 @@ export const Entrar = (props: propsType) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    async function loginHandler(){
+    async function loginHandler(e:any){
+        e.preventDefault();
+
         const dataLogin = {
             email,
             password
-        }
+        };
 
         try{
             const loginInfo = await api.post("/sessions", dataLogin);
 
             localStorage.setItem('profileId', loginInfo.data.id);
             localStorage.setItem('profileName', loginInfo.data.nickname);
-
-            console.log(loginInfo.data[0]);
 
             dispatch(setNomeUsuario(loginInfo.data[0].nickname));
             dispatch(setSaldo(loginInfo.data[0].balance));
@@ -45,9 +45,9 @@ export const Entrar = (props: propsType) => {
 
             navigate("/perfil");
         }catch(err){
-            console.log(err);
+            console.error(err);
             alert("Erro ao logar na conta, tente novamente");
-        }
+        };
     }
 
     return(

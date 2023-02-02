@@ -24,6 +24,7 @@ export const LoginDropdown = (props: propsType) => {
                 <div
                     className={`${styles.link_dropdown} ${styles.l3}`}
                     onClick={() => {
+                        localStorage.clear();
                         dispatch(desloga());
                         navigate("/");
                     }}
