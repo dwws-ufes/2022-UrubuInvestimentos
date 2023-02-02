@@ -2,6 +2,9 @@ import { BotaoGenerico, ProximoResultado } from "../";
 import { ResultadoInfo } from "./ResultadoInfo";
 
 import styles from "./index.module.css";
+import CONTENTS from "../../Content/Components/UltimoResultado.json"
+
+const Contents = CONTENTS['pt-Br'];
 
 interface propsType {
     fotoSrc: string;
@@ -30,7 +33,7 @@ export const UltimoResultado = (props: propsType) => {
             <div className={styles.proximo_jogo}>
                 <ProximoResultado transparente={true}/>
                 <BotaoGenerico
-                    texto="Novo Investimento"
+                    texto={ Contents.Investment }
                 />
             </div>
         </div>

@@ -1,5 +1,4 @@
 import { useClock } from "react-use-clock";
-
 import { FaRegClock } from "react-icons/fa";
 
 import styles from "./index.module.css";

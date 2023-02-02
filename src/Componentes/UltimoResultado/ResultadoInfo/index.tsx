@@ -1,6 +1,9 @@
 import { processaData } from "../../../Utils/processaData";
 
 import styles from "./index.module.css";
+import CONTENTS from "../../../Content/Components/UltimoResultado.json"
+
+const Contents = CONTENTS['pt-Br'];
 
 // Espera-se receber um dia no formato DD/MM/AAAA
 interface propsType {
@@ -16,7 +19,7 @@ export const ResultadoInfo = (props: propsType) => {
 
     return(
         <div className={styles.resultado_info}>
-            <p className={styles.ultimo_jogo}>ÚLTIMO RESULTADO</p>
+            <p className={styles.ultimo_jogo}>{ Contents.Infos }</p>
             <p className={styles.data}>{diaProcessado}</p>
             <h3 className={styles.animal}>{animal.toUpperCase()}!</h3>
             

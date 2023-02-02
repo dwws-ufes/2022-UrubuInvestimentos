@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
-import { BotaoGenerico } from "../";
 import { GanheDinheiro } from './GanheDinheiro';
 
-import { FaMoneyCheckAlt } from 'react-icons/fa';
-
 import styles from './index.module.css';
+import CONTENTS from '../../Content/Components/Sidebar.json'
+
+const Contents = CONTENTS['pt-Br'];
 
 export const Sidebar = () => {
     return(
@@ -17,13 +17,15 @@ export const Sidebar = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <p>Parceiro Oficial</p>
-                    <img src="/imagens/flamengo-logo-2020.svg" alt="Logo do Flamengo" />
+                    <p>{ Contents.Sponsors.Title }</p>
+                    { Contents.Sponsors.Infos.map((element) => {
+                        return (<img src={ element.src } alt={ element.alt }/>)
+                    })}
                 </a>
                 
                 <GanheDinheiro />
                 
-                <button className={styles.investir_agora}>Investir agora!</button>
+                <button className={styles.investir_agora}>{ Contents.DoInvestment }</button>
             </div>
             <div className={styles.links}>
                 <ul>
@@ -32,7 +34,7 @@ export const Sidebar = () => {
                             className={styles.redirect}
                             to="/zumzumcapoeira"
                         >
-                            INDIQUE UM AMIGO
+                            { Contents.Friend }
                         </Link>
                     </li>
                     <li>
@@ -40,7 +42,7 @@ export const Sidebar = () => {
                             className={styles.redirect}
                             to="/regras"
                         >
-                            REGRAS DE INVESTIMENTO
+                           { Contents.Rules }
                         </Link>
                     </li>
                     <li>
@@ -48,7 +50,7 @@ export const Sidebar = () => {
                             className={styles.redirect}
                             to="/suporte"
                         >
-                            SUPORTE
+                            { Contents.Help }
                         </Link>
                     </li>
                 </ul>

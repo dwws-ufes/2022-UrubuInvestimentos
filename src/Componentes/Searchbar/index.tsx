@@ -1,6 +1,9 @@
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
 import styles from "./index.module.css";
+import CONTENTS from "../../Content/Components/Searchbar.json"
+
+const Contents = CONTENTS["pt-Br"];
 
 export const Searchbar = () => {
     return(
@@ -9,7 +12,7 @@ export const Searchbar = () => {
             <form>
                 <input
                     type="text"
-                    placeholder="Procure jogos passados"
+                    placeholder={ Contents.Search }
                 />
             </form>
         </div>
