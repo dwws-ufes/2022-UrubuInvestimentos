@@ -1,5 +1,7 @@
-{
-    "Title": "ERROR 420",
-    "Content": "Você BUGOU o Site. Crie outra conta para continuar investindo :&#41; 😅.",
-    "Button": "Voltar para a página inicial"
+{   
+    "pt-Br": {
+        "Title": "ERROR 420",
+        "Content": "Você BUGOU o Site. Crie outra conta para continuar investindo :&#41; 😅.",
+        "Button": "Voltar para a página inicial"
+    }
 }

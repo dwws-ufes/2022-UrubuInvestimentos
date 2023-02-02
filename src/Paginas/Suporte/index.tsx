@@ -3,8 +3,10 @@ import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
 
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
 
-import Content from "../../Content/Pages/Suporte.json"
+import CONTENTS from "../../Content/Pages/Suporte.json"
 import styles from "./index.module.css";
+
+const Contents = CONTENTS["pt-Br"];
 
 export const Suporte = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
@@ -25,11 +27,11 @@ export const Suporte = () => {
                 {sidebar && <div className={styles.sidebar}><Sidebar/></div>}
 
                 <div className={styles.topicos}>
-                    <h1>{ Content.Title }</h1>
+                    <h1>{ Contents.Title }</h1>
                     
                     <div>
-                        <h2>{ Content.Questions.Title }</h2>
-                        { Content.Questions.Content.map((element) => {
+                        <h2>{ Contents.Questions.Title }</h2>
+                        { Contents.Questions.Content.map((element) => {
                             return (
                             <details>
                                 <summary>{ element.Question }</summary>
@@ -41,8 +43,8 @@ export const Suporte = () => {
                     </div>
 
                     <div>
-                        <h2>{ Content.Contacts.Title }</h2>
-                        { Content.Contacts.Content.map((element) => {
+                        <h2>{ Contents.Contacts.Title }</h2>
+                        { Contents.Contacts.Content.map((element) => {
                             return (
                             <div>{ element.Type }: { element.Data }</div>
                             );

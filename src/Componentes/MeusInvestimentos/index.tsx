@@ -1,6 +1,6 @@
 import { ProximoResultado, BotaoGenerico } from "../";
 
-import Content from "../../Content/Components/MeusInvestimentos.json"
+import CONTENTS from "../../Content/Components/MeusInvestimentos.json"
 import styles from "./index.module.css";
 
 interface investimento {
@@ -14,6 +14,8 @@ interface propsType {
     investimentos: investimento[] 
 }
 
+const Contents = CONTENTS["pt-Br"];
+
 export const MeusInvestimentos = (props: propsType) => {
         const { investimentos } = props;
 
@@ -22,14 +24,14 @@ export const MeusInvestimentos = (props: propsType) => {
                 <div className={styles.proximo_resultado_div}>
                     <ProximoResultado transparente={false}/>
                     <BotaoGenerico
-                        texto={ Content.ButtonInvestement }
+                        texto={ Contents.ButtonInvestement }
                     />
                 </div>
 
-                <p className={styles.frase_motivacional}> { Content.Motivational } </p>
+                <p className={styles.frase_motivacional}> { Contents.Motivational } </p>
                 
                 <div className={styles.informacoes_rendimentos}>
-                    <h3>{ Content.Investment }</h3>
+                    <h3>{ Contents.Investment }</h3>
                     
                     <div className={styles.div_investimentos}>
                         {investimentos.map((investimento, index) => {
@@ -48,7 +50,7 @@ export const MeusInvestimentos = (props: propsType) => {
                 </div>
 
                 <BotaoGenerico
-                    texto={ Content.ButtonWithdraw }
+                    texto={ Contents.ButtonWithdraw }
                 />
             </div>
         );

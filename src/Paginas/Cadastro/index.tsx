@@ -10,7 +10,9 @@ import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';
 
 import styles from './index.module.css';
-import Contents from "../../Content/Pages/Cadastro.json";
+import CONTENTS from "../../Content/Pages/Cadastro.json";
+
+const Contents = CONTENTS["pt-Br"];
 
 export const Cadastro = () => {
 

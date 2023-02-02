@@ -3,8 +3,10 @@ import { useState } from "react";
 import { Header, Sidebar, BotaoGenerico, ResultadoPerfil } from "./../../Componentes";
 import { Cadastro, Entrar } from "./../../Popups";
 
-import Content from "../../Content/Pages/ResultadosPerfil.json"
+import CONTENTS from "../../Content/Pages/ResultadosPerfil.json"
 import styles from "./index.module.css";
+
+const Contents = CONTENTS["pt-Br"];
 
 export const ResultadosPerfil = () => {
 
@@ -24,7 +26,7 @@ export const ResultadosPerfil = () => {
       <main>
         {sidebar && <Sidebar />}
         <section className={styles.conteudo_principal_perfil_resultados}>
-          <h1 className={styles.resultados_titulo}> {Content.Title} </h1>
+          <h1 className={styles.resultados_titulo}> {Contents.Title} </h1>
           <div className={styles.resultados_jogos}>
             <ResultadoPerfil src="/imagens/animais/cagado.jpeg"
               dia="ONTEM"

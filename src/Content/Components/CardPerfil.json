@@ -1,5 +1,7 @@
-{
-    "Investment": "Investimentos",
-    "Profit": "Lucrou",
-    "Card": "Adicionar Cartão"
+{   
+    "pt-Br": {
+        "Investment": "Investimentos",
+        "Profit": "Lucrou",
+        "Card": "Adicionar Cartão"
+    }
 }

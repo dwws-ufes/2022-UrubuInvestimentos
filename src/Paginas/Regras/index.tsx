@@ -6,7 +6,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 import styles from "./index.module.css";
-import Contents from "../../Content/Pages/Regras.json";
+import CONTENTS from "../../Content/Pages/Regras.json";
+
+const Contents = CONTENTS["pt-Br"];
 
 export const Regras = () => {
 	const [ showCadastro, setCadastro ] = useState(false);

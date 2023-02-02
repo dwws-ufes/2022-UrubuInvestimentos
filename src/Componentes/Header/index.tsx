@@ -10,7 +10,8 @@ import { BotaoGenerico, Logo } from "../";
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
 import styles from "./index.module.css";
-import Content from "../../Content/Components/Header.json"
+import CONTENT from "../../Content/Components/Header.json"
+import Languages from "../../Content/Languages.json"
 
 interface propsType {
     abreCadastro: () => void;
@@ -19,6 +20,8 @@ interface propsType {
     fechaEntrar: () => void;
     toggleSidebar?: () => void;
 }
+
+const Contents = CONTENT["pt-Br"];
 
 export const Header = (props: propsType) => {
     const { abreCadastro, fechaCadastro, abreEntrar, fechaEntrar } = props;
@@ -33,6 +36,8 @@ export const Header = (props: propsType) => {
 
     const nomeUsuario = useSelector(selectNomeUsuario);
     const dispatch = useDispatch();
+    
+    const [language, setLanguage ] = useState("pt-Br");
 
     console.log(logado, nomeUsuario);
 
@@ -40,6 +45,20 @@ export const Header = (props: propsType) => {
         <div className={styles.header}>
 
             <FaBars className={styles.bar_icon} onClick={props?.toggleSidebar}/>
+            
+            /**ISSO DAQUI É UM TESTO MEU (DAVID), PODE DEIXAR POR ENQUANTO Q DPS EU TIRO */
+            <div>
+                <select
+                    value={ language }
+                    onChange={ e => setLanguage(e.target.value) }
+                    required
+                >
+                    <option value={ Languages.Standard } selected >{ Languages.Standard }</option>
+                    { Languages.Others.map((element) => {
+                        return (<option value={element}>{element}</option>)
+                    })}
+                </select>
+            </div>
 
             <div className={styles.header_centro}>
                 <Link className={styles.link_home} to='/'>
@@ -64,7 +83,7 @@ export const Header = (props: propsType) => {
             :
                 <div className={styles.header_direito}>
                     <BotaoGenerico
-                        texto={ Content.Page.Login }
+                        texto={ Contents.Page.Login }
                         href="#"
                         fundo={false}
                         callback={() => {
@@ -73,7 +92,7 @@ export const Header = (props: propsType) => {
                         }}
                     />
                     <BotaoGenerico
-                        texto={ Content.Page.SingIn }
+                        texto={ Contents.Page.SingIn }
                         href="#"
                         fundo={true}
                         callback={() => {

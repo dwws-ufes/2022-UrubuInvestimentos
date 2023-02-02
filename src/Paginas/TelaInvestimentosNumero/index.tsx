@@ -5,8 +5,10 @@ import api from './../../services/api';
 
 import { Header, Sidebar, CardPerfil } from "../../Componentes";
 
-import Content from "../../Content/Pages/TelaInvestimentosNumero.json"
+import CONTENTS from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
+
+const Contents = CONTENTS["pt-Br"];
 
 export const TelaInvestimentoNumero = () => {
     const [ sidebar, setSidebar ] = useState(false);
@@ -61,21 +63,21 @@ export const TelaInvestimentoNumero = () => {
                 />
                 <div className={styles.form}>
                     <form onSubmit={investmentHandler}>
-                        <h1>{ Content.Title }</h1>
+                        <h1>{ Contents.Title }</h1>
                         <section>
-                            <p>{ Content.Investment.TitleTypes }</p>
+                            <p>{ Contents.Investment.TitleTypes }</p>
                             <select
 				value={betType}
                                 onChange={e => setBetType(e.target.value)}
                                 required
 			    >
-                                { Content.Investment.Types.map((element) => {
+                                { Contents.Investment.Types.map((element) => {
                                     return ( <option value={ element }>{ element }</option> )
                                     })
                                 }
                             </select>
                             
-                            <p>{ Content.Investment.Number }</p>
+                            <p>{ Contents.Investment.Number }</p>
                             <input
                                 pattern="[0-9]{4}"
                                 maxLength={4}
@@ -85,19 +87,19 @@ export const TelaInvestimentoNumero = () => {
                                 onChange={e => setSelectedNumber(e.target.value)}
                                 required
                             />
-                            <p>{ Content.Investment.TitleDistribution }</p>
+                            <p>{ Contents.Investment.TitleDistribution }</p>
                             <select
                                 value={distribution}
                                 onChange={e => setDistribution(e.target.value)}
                                 required
 			    >
-                                { Content.Investment.Distributions.map((element) => {
+                                { Contents.Investment.Distributions.map((element) => {
                                         return ( <option value={ element }>{ element }</option> )
                                         })
                                 }
                             </select>
 
-                            <p>{ Content.Investment.Value }</p>
+                            <p>{ Contents.Investment.Value }</p>
                             <input
                                 type="number"
                                 min={0.00}
@@ -109,7 +111,7 @@ export const TelaInvestimentoNumero = () => {
                                 required
                             />
                         </section>
-                        <button type="submit">{ Content.Investment.Invest }</button>
+                        <button type="submit">{ Contents.Investment.Invest }</button>
                     </form>
                 </div>
             </div>

@@ -1,6 +1,8 @@
-{
-    "ButtonInvestement": "Novo Investimento", 
-    "Motivational": "Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!",
-    "Investment": "Meus Investimentos",
-    "ButtonWithdraw": "Sacar dinheiro"
+{   
+    "pt-Br": {
+        "ButtonInvestement": "Novo Investimento", 
+        "Motivational": "Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!",
+        "Investment": "Meus Investimentos",
+        "ButtonWithdraw": "Sacar dinheiro"
+    }
 }

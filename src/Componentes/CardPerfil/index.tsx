@@ -6,7 +6,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import { BotaoGenerico } from "../";
 
 import styles from "./index.module.css";
-import Content from "../../Content/Components/CardPerfil.json"
+import CONTENTS from "../../Content/Components/CardPerfil.json"
 
 interface propsType {
     nome: string;
@@ -15,6 +15,8 @@ interface propsType {
     lucrou: number;
     cartoes: string[];
 }
+
+const Contents = CONTENTS["pt-Br"];
 
 export const CardPerfil = (props: propsType) => {
     const { nome, saldo, investimentos, lucrou, cartoes } = props;
@@ -29,16 +31,16 @@ export const CardPerfil = (props: propsType) => {
             <div className={styles.parte_meio_perfil}>
                 <div>
                    <FaMoneyCheckAlt className={styles.icone_geral}/>
-                   <p>{investimentos} { Content.Investment }</p>
+                   <p>{investimentos} { Contents.Investment }</p>
                 </div>
                 <div>
                     <GiReceiveMoney className={styles.icone_geral}/>
-                    <p>{ Content.Profit } ${`${lucrou.toFixed(2)}`}</p>
+                    <p>{ Contents.Profit } ${`${lucrou.toFixed(2)}`}</p>
                 </div>
             </div>
             <div className={styles.parte_inferior_perfil}>
                 <BotaoGenerico
-                    texto={ Content.Card }
+                    texto={ Contents.Card }
                 />
             </div>
                 <div>

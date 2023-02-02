@@ -1,10 +1,12 @@
-{
-    "Page": {
-        "Login": "Entrar",
-        "SingIn": "Cadastrar-se"
-    },
-    "Dropdown": {
-        "Profile": "Meu Perfil",
-        "LogOut": "Sair"
+{   
+    "pt-Br": {
+        "Page": {
+            "Login": "Entrar",
+            "SingIn": "Cadastrar-se"
+        },
+        "Dropdown": {
+            "Profile": "Meu Perfil",
+            "LogOut": "Sair"
+        }
     }
 }
