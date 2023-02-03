@@ -11,7 +11,7 @@ module.exports = {
         return response.json(investments);
     },
     async create(request:any, response:any){
-        const { selectedNumber, value, odds } = request.body;
+        const { selectedNumber, betType, distribution , value, odds } = request.body;
         const investmentOwner = request.headers.authorization;
 
         const gameIdMax = await connection.raw('select max(gameId) from "games"');
@@ -19,6 +19,8 @@ module.exports = {
 
         const [id] = await connection('investments').insert({
             selectedNumber,
+            betType,
+            distribution,
             value,
             odds,
             investmentOwner,

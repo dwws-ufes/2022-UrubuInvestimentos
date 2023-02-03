@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import api from './../../services/api';
 
 import { Header, Sidebar, CardPerfil } from "../../Componentes";
+import { LoginDropdown } from "../../Popups/LoginDropdown";
+
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
+import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import CONTENTS from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
@@ -11,16 +16,20 @@ import styles from './index.module.css';
 const Contents = CONTENTS["pt-Br"];
 
 export const TelaInvestimentoNumero = () => {
+    const investmentOwner = localStorage.getItem("profileId");
+
     const [ sidebar, setSidebar ] = useState(false);
-    const [ betType, setBetType ] = useState("");
+    const [ betType, setBetType ] = useState("D");
     const [ selectedNumber, setSelectedNumber ] = useState("");
-    const [ distribution, setDistribution ] = useState("");
+    const [ distribution, setDistribution ] = useState("N");
     const [ value, setValue ] = useState(0);
 
     const navigate = useNavigate();
 
     async function investmentHandler(e:any){
         e.preventDefault();
+
+        console.log(investmentOwner);
 
         const odds: number = 100;
 
@@ -33,7 +42,11 @@ export const TelaInvestimentoNumero = () => {
         }
 
         try{
-            const investmentInfo = await api.post("/tela-investimentos", investmentData);
+            const investmentInfo = await api.post("/tela-investimentos", investmentData, {
+                headers: {
+                    Authorization: investmentOwner,
+                }
+            });
 
             navigate("/perfil");
         }catch(err){
@@ -41,6 +54,9 @@ export const TelaInvestimentoNumero = () => {
             alert("Houve um erro ao criar o investimento, tente novamente");
         }
     }
+
+    const dispatch = useDispatch();
+    const showDropdown = useSelector(selectDropdown);
 
     return(
         <div className={styles.tela_investimentos_numero}>
@@ -67,14 +83,11 @@ export const TelaInvestimentoNumero = () => {
                         <section>
                             <p>{ Contents.Investment.TitleTypes }</p>
                             <select
-				value={betType}
+				                value={betType}
                                 onChange={e => setBetType(e.target.value)}
                                 required
-			    >
-                                { Contents.Investment.Types.map((element) => {
-                                    return ( <option value={ element }>{ element }</option> )
-                                    })
-                                }
+			                >
+                                { Contents.Investment.Types.map((element) => {return ( <option value={ element.charAt(0) }>{ element }</option>)})}
                             </select>
                             
                             <p>{ Contents.Investment.Number }</p>
@@ -92,11 +105,8 @@ export const TelaInvestimentoNumero = () => {
                                 value={distribution}
                                 onChange={e => setDistribution(e.target.value)}
                                 required
-			    >
-                                { Contents.Investment.Distributions.map((element) => {
-                                        return ( <option value={ element }>{ element }</option> )
-                                        })
-                                }
+			                >
+                                { Contents.Investment.Distributions.map((element) => { return ( <option value={ element.charAt(0) }>{ element }</option>)})}
                             </select>
 
                             <p>{ Contents.Investment.Value }</p>
@@ -115,6 +125,8 @@ export const TelaInvestimentoNumero = () => {
                     </form>
                 </div>
             </div>
+
+            { showDropdown && <LoginDropdown sair={() => {}}/> }
         </div>
     );
 }

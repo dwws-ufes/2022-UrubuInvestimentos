@@ -3,7 +3,7 @@ import { CgClose } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, selectLogin } from "../../store/loginSlice";
+import { loga, selectLogin } from "../../store/pageInfoSlice";
 import { setEmail, setSenha, setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import api from './../../services/api';
@@ -24,30 +24,32 @@ export const Entrar = (props: propsType) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    async function loginHandler(){
+    async function loginHandler(e:any){
+        e.preventDefault();
+
         const dataLogin = {
             email,
             password
-        }
+        };
 
         try{
             const loginInfo = await api.post("/sessions", dataLogin);
 
-            localStorage.setItem('profileId', loginInfo.data.id);
-            localStorage.setItem('profileName', loginInfo.data.nickname);
+            console.log(loginInfo.data)
 
-            console.log(loginInfo.data[0]);
+            localStorage.setItem('profileId', loginInfo.data[0].id);
+            localStorage.setItem('profileName', loginInfo.data[0].nickname);
 
             dispatch(setNomeUsuario(loginInfo.data[0].nickname));
             dispatch(setSaldo(loginInfo.data[0].balance));
             
-            dispatch(logaPrimeiraVez());
+            dispatch(loga());
 
             navigate("/perfil");
         }catch(err){
-            console.log(err);
+            console.error(err);
             alert("Erro ao logar na conta, tente novamente");
-        }
+        };
     }
 
     return(

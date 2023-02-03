@@ -3,7 +3,7 @@ import { Header, Sidebar } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Pages/Regras.json";

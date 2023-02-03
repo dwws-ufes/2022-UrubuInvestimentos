@@ -1,16 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import api from '../../services/api';
 
 import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
 
+interface investimentsType {
+    investimentId: string;
+    investmentOwner: string;
+    selectedNumber: string;
+    betType: string;
+    distribution: string;
+    value: number;
+    odds: number;
+    gameId: number;
+}
+
 export const Perfil = () => {
+    const investmentOwner = localStorage.getItem('profileId');
+
+    const initialInvestment: investimentsType[] = [{
+        investimentId: "",
+        investmentOwner: "",
+        selectedNumber: "",
+        betType: "",
+        distribution: "",
+        value: 0,
+        odds: 0,
+        gameId: 0,
+    }];
+    
+    const [ investments, setInvestments ] = useState(initialInvestment);
+
+    useEffect(() => {
+        console.log("useEffect do perfil chamado")
+        api.get('/tela-investimentos', {
+            headers: {
+                Authorization: investmentOwner,
+            }
+        }).then((response) => { console.log(response);setInvestments(response.data) });
+    }, []);
 
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);

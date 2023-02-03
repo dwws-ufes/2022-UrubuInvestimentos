@@ -3,7 +3,8 @@ import { GiReceiveMoney } from "react-icons/gi";
 import { BsCreditCard } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 
-import { BotaoGenerico } from "../";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagemm} from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/CardPerfil.json"
@@ -16,10 +17,10 @@ interface propsType {
     cartoes: string[];
 }
 
-const Contents = CONTENTS["pt-Br"];
-
 export const CardPerfil = (props: propsType) => {
     const { nome, saldo, investimentos, lucrou, cartoes } = props;
+    
+    const Contents = CONTENTS[useSelector(selectLinguagemm)];
 
     return(
         <div className={styles.card_perfil}>
@@ -39,9 +40,11 @@ export const CardPerfil = (props: propsType) => {
                 </div>
             </div>
             <div className={styles.parte_inferior_perfil}>
-                <BotaoGenerico
-                    texto={ Contents.Card }
-                />
+                <button
+                    className={styles.btn}
+                >
+                    { Contents.Card }
+                </button>
             </div>
                 <div>
                     {cartoes.map((cartao, index) =>

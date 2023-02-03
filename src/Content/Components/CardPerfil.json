@@ -1,7 +1,17 @@
-{   
-    "pt-Br": {
+[   
+    {
+        "Investment": "Investimentos",
+        "Profit": "Lucrou",
+        "Card": "Adicionar Cartão"
+    },
+    {
+        "Investment": "Investimentos",
+        "Profit": "Lucrou",
+        "Card": "Adicionar Cartão"
+    },
+    {
         "Investment": "Investimentos",
         "Profit": "Lucrou",
         "Card": "Adicionar Cartão"
     }
-}
+]

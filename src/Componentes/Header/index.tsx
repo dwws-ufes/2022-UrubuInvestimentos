@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { loga, desloga, setDropdown, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectLinguagemm, setLinguagem } from "../../store/pageInfoSlice";
 import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { BotaoGenerico, Logo } from "../";
@@ -35,27 +35,29 @@ export const Header = (props: propsType) => {
     const dropdown = useSelector(selectDropdown);
 
     const nomeUsuario = useSelector(selectNomeUsuario);
+    const showCadastro = useSelector(selectCadastro);
+    const showEntrar = useSelector(selectEntrar);
     const dispatch = useDispatch();
     
-    const [language, setLanguage ] = useState("pt-Br");
+    let language = useSelector(selectLinguagemm);
+    const [aaaa, setAaaa] = useState("");
 
-    console.log(logado, nomeUsuario);
+    // console.log(logado, nomeUsuario);
 
     return(
         <div className={styles.header}>
 
             <FaBars className={styles.bar_icon} onClick={props?.toggleSidebar}/>
             
-            /**ISSO DAQUI É UM TESTO MEU (DAVID), PODE DEIXAR POR ENQUANTO Q DPS EU TIRO */
+            
             <div>
                 <select
-                    value={ language }
-                    onChange={ e => setLanguage(e.target.value) }
+                    onChange={ e => { dispatch(setLinguagem(e.target.value)); }}
                     required
                 >
-                    <option value={ Languages.Standard } selected >{ Languages.Standard }</option>
-                    { Languages.Others.map((element) => {
-                        return (<option value={element}>{element}</option>)
+                    { /**ISSO DAQUI É UM TESTO MEU (DAVID), PODE DEIXAR POR ENQUANTO Q DPS EU TIRO */
+                        Languages.Languages.map((element, index) => {
+                        return (<option key={index} value={index} >{element}</option>)
                     })}
                 </select>
             </div>
