@@ -1,32 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
+    import { createSlice } from "@reduxjs/toolkit";
 
-interface loginType {
+interface stateType {
     logado: boolean;
-    dropdown: boolean;
+    nomeUsuario: string;
 }
 
-const loginInitialState: loginType  = {
+const initialState: stateType = {
     logado: false,
-    dropdown: false,
-};
+    nomeUsuario: "",
+}
 
 export const loginSlice = createSlice({
     name: "login",
-    initialState: loginInitialState,
+    initialState,
     reducers: {
-        logaPrimeiraVez: state => {
-            state.logado = true;
-        },
-        desloga: state => {
-            state.logado = false;
-            state.dropdown = false;
-        },
-        setDropdown: (state, action) => {state.dropdown = action.payload},
+        loga: state => {state.logado = true},
+        desloga: state => {state.logado = false},
+        setaNomeUsuario: (state, action) => {state.nomeUsuario = action.payload}
     }
 });
 
-export const { logaPrimeiraVez, desloga, setDropdown } = loginSlice.actions;
+export const { loga, desloga, setaNomeUsuario } = loginSlice.actions;
+
 export const selectLogin = (state: any) => state.login.logado;
-export const selectDropdown = (state: any) => state.login.dropdown;
+export const selectNomeUsuario = (state: any) => state.login.nomeUsuario;
 
 export const loginReducer = loginSlice.reducer;
