@@ -82,13 +82,7 @@ export const Cadastro = () => {
 
     return (
         <div>
-            <Header
-                abreCadastro={() => null}
-                fechaCadastro={() => null}
-                abreEntrar={() => null}
-                fechaEntrar={() => null}
-                toggleSidebar={() => setSidebar(anterior => !anterior)}
-            />
+            <Header/>
             <div className={styles.main_content}>
                 {sidebar && <Sidebar/>}
 

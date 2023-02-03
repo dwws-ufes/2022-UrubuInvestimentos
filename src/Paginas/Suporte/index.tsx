@@ -5,24 +5,25 @@ import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes"
 
 import Content from "../../Content/Pages/Suporte.json"
 import styles from "./index.module.css";
+import { useSelector } from "react-redux";
+import { selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar } from "../../store/pageInfoSlice";
+import { Entrar } from "../../Popups";
+import { Cadastro } from "../Cadastro";
+import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 export const Suporte = () => {
-	const [ showCadastro, setCadastro ] = useState(false);
-	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(false);
+	const logado = useSelector(selectLogin);
+	const showDropdown = useSelector(selectDropdown);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
 
     return(
         <div className={styles.suporte}>
-            <Header
-                abreCadastro={ () => {setCadastro(true)}}
-                fechaCadastro={() => {setCadastro(false);}}
-                abreEntrar={() => {setEntrar(true);}}
-                fechaEntrar={() => {setEntrar(false);}}
-                toggleSidebar={() => setSidebar(anterior => !anterior)}
-            />
+            <Header/>
             
             <main>
-                {sidebar && <div className={styles.sidebar}><Sidebar/></div>}
+                { showSidebar && <div className={styles.sidebar}><Sidebar/></div> }
 
                 <div className={styles.topicos}>
                     <h1>{ Content.Title }</h1>
@@ -65,7 +66,15 @@ export const Suporte = () => {
                             animal="CÁGADO"
                             milhares={["1234", "5678", "9012", "3456"]}
                     />
-                    <BotaoGenerico className={styles.botao_suporte} texto="Novo Investimento"/>
+                    <button
+                        className={styles.botao_suporte}
+                    >
+                        Novo Investimento
+                    </button>
+
+                    { showEntrar && <Entrar/> }
+                    { showCadastro && <Cadastro/> }
+                    { showDropdown && <LoginDropdown/> }
                 </div>
             </main>
         </div>

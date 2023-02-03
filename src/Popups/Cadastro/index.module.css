@@ -78,8 +78,9 @@ input:focus {
     font-size: 0.9rem;
 }
 
-.termos_condicoes a {
+.termos_condicoes b {
     color: var(--cor-secundaria);
+    cursor: pointer;
 }
 
 .ja_investidor {
@@ -87,8 +88,9 @@ input:focus {
     font-size: 0.8rem;
 }
 
-.ja_investidor a {
+.ja_investidor b {
     color: var(--cor-secundaria);
+    cursor: pointer;
 }
 
 .x {

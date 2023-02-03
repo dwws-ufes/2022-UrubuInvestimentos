@@ -7,7 +7,7 @@ import { Cadastro, Entrar } from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
+import { loga, desloga, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
@@ -48,13 +48,12 @@ export const Perfil = () => {
         }).then((response) => { console.log(response);setInvestments(response.data) });
     }, []);
 
-	const [ showCadastro, setCadastro ] = useState(false);
-	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(true);
-    
     const logado = useSelector(selectLogin);
-    const showDropdown = useSelector(selectDropdown);
-
+	const showDropdown = useSelector(selectDropdown);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
+    
     const nomeUsuario = useSelector(selectNomeUsuario);
     const saldo = useSelector(selectSaldo);
     
@@ -62,16 +61,10 @@ export const Perfil = () => {
 
 	return (
 		<div>
-			<Header
-				abreCadastro={ () => {setCadastro(true)}}
-                fechaCadastro={() => {setCadastro(false);}}
-                abreEntrar={() => {setEntrar(true);}}
-                fechaEntrar={() => {setEntrar(false);}}
-                toggleSidebar={() => setSidebar(anterior => !anterior)}
-			/>
+			<Header/>
 
             <main className={styles.main}>
-                { sidebar && <Sidebar/> }
+                { showSidebar && <Sidebar/> }
                 <section className={styles.conteudo_principal}>
                     <CardPerfil
                         nome={nomeUsuario}
@@ -90,9 +83,9 @@ export const Perfil = () => {
                 </section>
             </main> 
             
-			{ showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}}/>}
-			{ showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}}/> }
-            { showDropdown && <LoginDropdown sair={() => {}}/> }
+			{ showEntrar && <Entrar/> }
+			{ showCadastro && <Cadastro/> }
+            { showDropdown && <LoginDropdown/> }
 
 		</div>
 	);

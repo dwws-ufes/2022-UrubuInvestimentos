@@ -6,7 +6,7 @@ import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
+import { loga, desloga, selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
@@ -22,16 +22,16 @@ interface jogosType {
     number4: string;
 }
 
-export const Inicial = () => {
-    const jogosIniciais: jogosType[] = [{
-        gameId: 0,
-        date: "",
-        number1: "",
-        number2: "",
-        number3: "",
-        number4: ""
-    }];
+const jogosIniciais: jogosType[] = [{
+    gameId: 0,
+    date: "",
+    number1: "",
+    number2: "",
+    number3: "",
+    number4: ""
+}];
 
+export const Inicial = () => {
     const [ games, setGames ] = useState(jogosIniciais);
 
     useEffect(() => {
@@ -40,24 +40,17 @@ export const Inicial = () => {
     }, []);
 
     const showDropdown = useSelector(selectDropdown);
-
-    const [showCadastro, setCadastro] = useState(false);
-    const [showEntrar, setEntrar] = useState(false);
-    const [sidebar, setSidebar] = useState(true);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
 
     return (
     <div>
-        <Header
-            abreCadastro={() => setCadastro(true)}
-            fechaCadastro={() => setCadastro(false)}
-            abreEntrar={() => setEntrar(true)}
-            fechaEntrar={() => setEntrar(false)}
-            toggleSidebar={() => setSidebar(anterior => !anterior)}
-        />
+        <Header/>
 
         <main className={styles.main}>
 
-        {sidebar && <Sidebar />}
+        {showSidebar && <Sidebar />}
         <section className={styles.conteudo_principal}>
             <UltimoResultado
                 fotoSrc={mapeiaSrcAnimal(games[0].number1)}
@@ -91,9 +84,9 @@ export const Inicial = () => {
         </section>
         </main>
 
-        { showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}}/> }
-        { showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}}/> }
-        { showDropdown && <LoginDropdown sair={() => {}}/> }
+        { showEntrar && <Entrar/> }
+        { showCadastro && <Cadastro/> }
+        { showDropdown && <LoginDropdown/> }
     </div>
     );
 }

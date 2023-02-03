@@ -1,27 +1,31 @@
+import { useState } from 'react';
 import { Logo, BotaoGenerico } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
 import { useSelector, useDispatch } from "react-redux";
-import { loga, selectLogin } from "../../store/pageInfoSlice";
+import { loga, selectCadastro, selectDropdown, selectEntrar, selectLogin, selectSidebar, setCadastro, setEntrar } from "../../store/pageInfoSlice";
 import { setEmail, setSenha, setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import api from './../../services/api';
 
 import styles from "./index.module.css";
 
-import { useState } from 'react';
-
-interface propsType {
-    fechaEntrar: () => void;
-}
-
-export const Entrar = (props: propsType) => {
-    const { fechaEntrar } = props;
+export const Entrar = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
 
     const navigate = useNavigate();
+
+    const logado = useSelector(selectLogin);
+    const showDropdown = useSelector(selectDropdown);
+    const showCadastro = useSelector(selectCadastro);
+    const showEntrar = useSelector(selectEntrar);
+    const showSidebar = useSelector(selectSidebar);
+
+    const nomeUsuario = useSelector(selectNomeUsuario);
+    
     const dispatch = useDispatch();
 
     async function loginHandler(e:any){
@@ -44,6 +48,8 @@ export const Entrar = (props: propsType) => {
             dispatch(setSaldo(loginInfo.data[0].balance));
             
             dispatch(loga());
+            dispatch(setCadastro(false));
+            dispatch(setEntrar(false));
 
             navigate("/perfil");
         }catch(err){
@@ -74,16 +80,37 @@ export const Entrar = (props: propsType) => {
                     onChange={e => setPassword(e.target.value)}
                 />
 
-                <Link className={styles.entrar_esqueceu_senha} to="/zumzumcapoeira">Esqueceu a senha?</Link>
+                <p
+                    className={styles.entrar_esqueceu_senha}
+                    onClick={() => {
+                        dispatch(setCadastro(false));
+                        dispatch(setEntrar(false));
+                        navigate("/zumzumcapoeira");
+                    }}
+                >
+                    Esqueceu a senha?
+                </p>
 
                 <button type="submit">Entrar &rarr;</button>
 
-                <p className={styles.ainda_nao_investidor}>Ainda não é investidor? <a href=".">Cadastre-se agora!</a></p>
+                <p
+                    className={styles.ainda_nao_investidor}
+                >
+                    Ainda não é investidor?&nbsp;
+                    <b
+                        onClick={() => {
+                            dispatch(setEntrar(false));
+                            dispatch(setCadastro(true))
+                        }}
+                    >
+                        Cadastre-se agora!
+                    </b>
+                </p>
             </form>
 
             <CgClose
                 className={styles.x}
-                onClick={fechaEntrar}
+                onClick={() => dispatch(setEntrar(false))}
             />
         </div>
     );

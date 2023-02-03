@@ -3,8 +3,6 @@ import { GiReceiveMoney } from "react-icons/gi";
 import { BsCreditCard } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 
-import { BotaoGenerico } from "../";
-
 import styles from "./index.module.css";
 import Content from "../../Content/Components/CardPerfil.json"
 

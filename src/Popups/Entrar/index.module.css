@@ -54,16 +54,18 @@
     font-size: 0.7rem;
     text-align: left;
     color: var(--cor-texto-cadastro);
+    cursor: pointer;
 }
 
 .ainda_nao_investidor {
     color: var(--cor-texto-cadastro);
     text-align: left;
-    font-size: 0.8rem; 
+    font-size: 0.8rem;
 }
 
-.ainda_nao_investidor a {
+.ainda_nao_investidor b {
     color: var(--cor-secundaria);
+    cursor: pointer;
 }
 
 .x {

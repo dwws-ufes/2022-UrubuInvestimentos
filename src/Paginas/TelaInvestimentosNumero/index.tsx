@@ -7,16 +7,24 @@ import { Header, Sidebar, CardPerfil } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
+import { loga, desloga, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar, setSidebar } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import Content from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
+import { Entrar } from "../../Popups";
+import { Cadastro } from "../Cadastro";
 
 export const TelaInvestimentoNumero = () => {
     const investmentOwner = localStorage.getItem("profileId");
 
-    const [ sidebar, setSidebar ] = useState(false);
+    const logado = useSelector(selectLogin);
+	const showDropdown = useSelector(selectDropdown);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
+    const dispatch = useDispatch();
+
     const [ betType, setBetType ] = useState("D");
     const [ selectedNumber, setSelectedNumber ] = useState("");
     const [ distribution, setDistribution ] = useState("N");
@@ -53,21 +61,13 @@ export const TelaInvestimentoNumero = () => {
         }
     }
 
-    const dispatch = useDispatch();
-    const showDropdown = useSelector(selectDropdown);
 
     return(
         <div className={styles.tela_investimentos_numero}>
-            <Header
-                abreCadastro={() => null}
-                fechaCadastro={() => null}
-                abreEntrar={() => null}
-                fechaEntrar={() => null}
-                toggleSidebar={() => setSidebar(anterior => !anterior)}
-            />
+            <Header/>
 
             <div className={styles.main_content}>
-                { sidebar && <Sidebar/> }
+                { showSidebar && <Sidebar/> }
                 <CardPerfil
                     nome="David Messias"
                     saldo={0}
@@ -124,7 +124,9 @@ export const TelaInvestimentoNumero = () => {
                 </div>
             </div>
 
-            { showDropdown && <LoginDropdown sair={() => {}}/> }
+            { showEntrar && <Entrar/> }
+			{ showCadastro && <Cadastro/> }
+            { showDropdown && <LoginDropdown/> }
         </div>
     );
 }

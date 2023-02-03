@@ -7,13 +7,7 @@ import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/user
 
 import styles from "./index.module.css";
 
-interface propsType {
-    sair: () => void;
-}
-
-export const LoginDropdown = (props: propsType) => {
-        const { sair } = props;
-        
+export const LoginDropdown = () => {
         const navigate = useNavigate();
         const dispatch = useDispatch();
 

@@ -5,24 +5,24 @@ import { Cadastro, Entrar } from "./../../Popups";
 
 import Content from "../../Content/Pages/ResultadosPerfil.json"
 import styles from "./index.module.css";
+import { useSelector } from "react-redux";
+import { selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, setEntrar, setCadastro } from "../../store/pageInfoSlice";
+import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 export const ResultadosPerfil = () => {
 
-  const [showCadastro, setCadastro] = useState(false);
-  const [showEntrar, setEntrar] = useState(false);
-  const [sidebar, setSidebar] = useState(true)
+  const logado = useSelector(selectLogin);
+	const showDropdown = useSelector(selectDropdown);
+  const showEntrar = useSelector(selectEntrar);
+  const showCadastro = useSelector(selectCadastro);
+  const showSidebar = useSelector(selectSidebar);
 
   return (
     <div className={styles.inicial}>
-      <Header
-        abreCadastro={() => {setCadastro(true)}}
-        fechaCadastro={() => {setCadastro(false);}}
-        abreEntrar={() => {setEntrar(true);}}
-        fechaEntrar={() => {setEntrar(false);}}
-        toggleSidebar={() => setSidebar(anterior => !anterior)}
-      />
+      <Header/>
+
       <main>
-        {sidebar && <Sidebar />}
+        { showSidebar && <Sidebar />}
         <section className={styles.conteudo_principal_perfil_resultados}>
           <h1 className={styles.resultados_titulo}> {Content.Title} </h1>
           <div className={styles.resultados_jogos}>
@@ -81,8 +81,9 @@ export const ResultadosPerfil = () => {
         </section>
       </main>
 
-      {showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}} />}
-      {showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}} />}
+      { showEntrar && <Entrar/> }
+			{ showCadastro && <Cadastro/> }
+      { showDropdown && <LoginDropdown/> }
 
     </div>
   );
