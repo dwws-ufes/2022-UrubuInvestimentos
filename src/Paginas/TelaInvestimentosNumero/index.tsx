@@ -48,16 +48,22 @@ export const TelaInvestimentoNumero = () => {
         }
 
         try{
+            // const diff = useSelector(selectSaldo) - value;
+            // if (diff < 0) throw new Error("Sando menor que zero!");
+
             const investmentInfo = await api.post("/tela-investimentos", investmentData, {
                 headers: {
                     Authorization: investmentOwner,
                 }
             });
 
+            // await api.put('/profile', { balance: diff});
+
             navigate("/perfil");
         }catch(err){
-            console.error(err);
-            alert("Houve um erro ao criar o investimento, tente novamente");
+            // console.error(err);
+            alert(err);
+            // alert("Houve um erro ao criar o investimento, tente novamente");
         }
     }
 

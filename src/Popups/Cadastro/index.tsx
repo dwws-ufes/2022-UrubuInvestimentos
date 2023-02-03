@@ -8,6 +8,8 @@ import { loga, desloga, setDropdown, setSidebar, selectLogin, selectDropdown, se
 import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css"
+import api from "../../services/api";
+import { AxiosError } from "axios";
 
 export const Cadastro = () => {
     const [email, setEmail] = useState("");
@@ -37,12 +39,15 @@ export const Cadastro = () => {
         }
         const data = { email, senha, idade }
         try {
+            await api.post("/register", data);
             dispatch(setCadastro(false));
             dispatch(setEntrar(false));
             navigate("/cadastro", { state: data });
         }
-        catch (err){
-            alert("Erro ao iniciar criacao de conta");
+        catch (err:any){
+            console.error(err);
+            alert(err.response.data.error);
+            // alert("Erro ao iniciar criacao de conta");
         }
     }
 
