@@ -4,6 +4,8 @@ import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
 import styles from "./index.module.css"
+import api from "../../services/api";
+import { AxiosError } from "axios";
 
 interface propsType {
     fechaCadastro: () => void;
@@ -28,10 +30,13 @@ export const Cadastro = (props: propsType) => {
         }
         const data = { email, senha, idade }
         try {
+            await api.post("/register", data);
             navigate("/cadastro", { state: data });
         }
-        catch (err){
-            alert("Erro ao iniciar criacao de conta");
+        catch (err:any){
+            console.error(err);
+            alert(err.response.data.error);
+            // alert("Erro ao iniciar criacao de conta");
         }
     }
 
