@@ -8,7 +8,7 @@ exports.up = function(knex) {
   // const regex = /d{2}-d{2}/;
   // const data = new Date().toString().match(regex);
 
-  const date = `${new Date().getDate()}-${new Date().getMonth() + 1}`;
+  const date = `${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}`;
 
   return knex.schema.createTable('games', function (table) {
     table.increments('gameId');

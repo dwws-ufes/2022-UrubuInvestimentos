@@ -1,6 +1,6 @@
 import { Resultado } from "./../../Componentes";
 
-import "./index.css";
+import styles from "./index.module.css";
 
 interface resultadoPerfilProps {
   src: string;
@@ -18,8 +18,8 @@ interface resultadoPerfilProps {
 export const ResultadoPerfil = (props: resultadoPerfilProps) => {
   const { src, dia, animal, milhares, leadingMsg, valorJogado, status, valorInvestido, valorRecebido, odds } = props;
   return (
-    <div className="resultado-jogo">
-      <div className="resultado-img">
+    <div className={styles.resultado_jogo}>
+      <div className={styles.resultado_img}>
         <Resultado
           src={src}
           dia={dia}
@@ -27,14 +27,14 @@ export const ResultadoPerfil = (props: resultadoPerfilProps) => {
           milhares={milhares}
         />
       </div>
-      <div className="resultado-msg">
-        <h2 className="leading-msg">{leadingMsg}</h2>
-        <h3 className="animal-msg">{animal}</h3>
-        <p className="jogo-msg">{valorJogado}</p>
-        <h3 className="status-msg">{status}</h3>
-        <p className="valor-investido-msg">{valorInvestido}</p>
-        <p className="valor-recebido-msg">{valorRecebido}</p>
-        <p className="odds-msg">{odds}</p>
+      <div className={styles.resultado_msg}>
+        <h2 className={styles.leading_msg}>{leadingMsg}</h2>
+        <h3 className={styles.animal_msg}>{animal}</h3>
+        <p className={styles.jogo_msg}>{valorJogado}</p>
+        <h3 className={styles.status_msg}>{status}</h3>
+        <p className={styles.valor_investido_msg}>{valorInvestido}</p>
+        <p className={styles.valor_recebido_msg}>{valorRecebido}</p>
+        <p className={styles.odds_msg}>{odds}</p>
       </div>
     </div>
   )

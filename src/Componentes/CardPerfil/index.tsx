@@ -37,9 +37,11 @@ export const CardPerfil = (props: propsType) => {
                 </div>
             </div>
             <div className={styles.parte_inferior_perfil}>
-                <BotaoGenerico
-                    texto={ Content.Card }
-                />
+                <button
+                    className={styles.btn}
+                >
+                    { Content.Card }
+                </button>
             </div>
                 <div>
                     {cartoes.map((cartao, index) =>

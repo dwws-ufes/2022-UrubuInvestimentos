@@ -4,6 +4,11 @@ import { useNavigate } from "react-router-dom";
 import api from './../../services/api';
 
 import { Header, Sidebar, CardPerfil } from "../../Componentes";
+import { LoginDropdown } from "../../Popups/LoginDropdown";
+
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
+import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import Content from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
@@ -47,6 +52,9 @@ export const TelaInvestimentoNumero = () => {
             alert("Houve um erro ao criar o investimento, tente novamente");
         }
     }
+
+    const dispatch = useDispatch();
+    const showDropdown = useSelector(selectDropdown);
 
     return(
         <div className={styles.tela_investimentos_numero}>
@@ -115,6 +123,8 @@ export const TelaInvestimentoNumero = () => {
                     </form>
                 </div>
             </div>
+
+            { showDropdown && <LoginDropdown sair={() => {}}/> }
         </div>
     );
 }

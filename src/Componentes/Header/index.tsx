@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { loga, desloga, setDropdown, selectLogin, selectDropdown, selectCadastro, selectEntrar } from "../../store/pageInfoSlice";
 import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { BotaoGenerico, Logo } from "../";
@@ -32,9 +32,11 @@ export const Header = (props: propsType) => {
     const dropdown = useSelector(selectDropdown);
 
     const nomeUsuario = useSelector(selectNomeUsuario);
+    const showCadastro = useSelector(selectCadastro);
+    const showEntrar = useSelector(selectEntrar);
     const dispatch = useDispatch();
 
-    console.log(logado, nomeUsuario);
+    // console.log(logado, nomeUsuario);
 
     return(
         <div className={styles.header}>
