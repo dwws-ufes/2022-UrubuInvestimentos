@@ -20,7 +20,6 @@ interface jogosType {
     number2: string;
     number3: string;
     number4: string;
-    number5?: string;
 }
 
 export const Inicial = () => {

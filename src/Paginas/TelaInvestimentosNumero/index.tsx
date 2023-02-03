@@ -9,16 +9,20 @@ import Content from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
 
 export const TelaInvestimentoNumero = () => {
+    const investmentOwner = localStorage.getItem("profileId");
+
     const [ sidebar, setSidebar ] = useState(false);
-    const [ betType, setBetType ] = useState("");
+    const [ betType, setBetType ] = useState("D");
     const [ selectedNumber, setSelectedNumber ] = useState("");
-    const [ distribution, setDistribution ] = useState("");
+    const [ distribution, setDistribution ] = useState("N");
     const [ value, setValue ] = useState(0);
 
     const navigate = useNavigate();
 
     async function investmentHandler(e:any){
         e.preventDefault();
+
+        console.log(investmentOwner);
 
         const odds: number = 100;
 
@@ -31,7 +35,11 @@ export const TelaInvestimentoNumero = () => {
         }
 
         try{
-            const investmentInfo = await api.post("/tela-investimentos", investmentData);
+            const investmentInfo = await api.post("/tela-investimentos", investmentData, {
+                headers: {
+                    Authorization: investmentOwner,
+                }
+            });
 
             navigate("/perfil");
         }catch(err){
@@ -65,14 +73,11 @@ export const TelaInvestimentoNumero = () => {
                         <section>
                             <p>{ Content.Investment.TitleTypes }</p>
                             <select
-				value={betType}
+				                value={betType}
                                 onChange={e => setBetType(e.target.value)}
                                 required
-			    >
-                                { Content.Investment.Types.map((element) => {
-                                    return ( <option value={ element }>{ element }</option> )
-                                    })
-                                }
+			                >
+                                { Content.Investment.Types.map((element) => {return ( <option value={ element.charAt(0) }>{ element }</option>)})}
                             </select>
                             
                             <p>{ Content.Investment.Number }</p>
@@ -90,11 +95,8 @@ export const TelaInvestimentoNumero = () => {
                                 value={distribution}
                                 onChange={e => setDistribution(e.target.value)}
                                 required
-			    >
-                                { Content.Investment.Distributions.map((element) => {
-                                        return ( <option value={ element }>{ element }</option> )
-                                        })
-                                }
+			                >
+                                { Content.Investment.Distributions.map((element) => { return ( <option value={ element.charAt(0) }>{ element }</option>)})}
                             </select>
 
                             <p>{ Content.Investment.Value }</p>
