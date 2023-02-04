@@ -1,7 +1,6 @@
 @import url("../../constantes.css");
 
 .meus_rendimentos {
-    border: 2px solid red;
     width: 100%;
 
     display: flex;

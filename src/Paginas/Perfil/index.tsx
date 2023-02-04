@@ -70,8 +70,6 @@ export const Perfil = () => {
                         nome={nomeUsuario}
                         saldo={saldo}
                         investimentos={10}
-                        lucrou={0}
-                        cartoes={["Cartão 1", "Cartão 2"]}
                     />
                     
                     <MeusInvestimentos

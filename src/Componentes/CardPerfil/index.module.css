@@ -4,22 +4,26 @@
     background-color: var(--fundo-secundario);
     border-radius: var(--default-border-radius);
     
-    /* margin: 1em; */
     margin: auto 0;
 
-    /* width: 25vw; */
-    min-width: 300px;
+    /* min-width: 300px; */
 
     /* usar para a distancia das bordas */
     height: 80%;
-    min-height: fit-content;
+    min-height: 30rem;
+    max-height: 40rem;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
-    padding: 2em;
-    /* border: 2px solid blue; */
+    padding: 2rem 4rem;
+
+    overflow: scroll;
+
+    width: 25rem;
+    max-width: 25rem;
+    min-width: 25rem;
 }
 
 .parte_superior_perfil {
@@ -69,10 +73,12 @@
 
 .parte_inferior_perfil * {
     font-size: 1.2em;
-
     margin: auto 0;
 }
 
+.parte_inferior_perfil input {
+    background-color: var(--fundo-primario) !important;
+}
 
 .parte_inferior_perfil button {
     background-color: var(--cor-secundaria);
@@ -108,4 +114,8 @@
 
 .icone_x {
     cursor: pointer;
+}
+
+.btn {
+    font-weight: bold;
 }

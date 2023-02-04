@@ -9,7 +9,9 @@
     gap: 1em;
 
     padding: 2em;
-
+    overflow: scroll;
+    max-height: 100%;
+    margin: 1rem 0;
 }
 
 .proximo_resultado_div {
@@ -31,6 +33,10 @@
 
 .informacoes_rendimentos {
     text-align: center;
+}
+
+.informacoes_rendimentos h3 {
+    font-size: 1.5rem;
 }
 
 .div_investimentos {

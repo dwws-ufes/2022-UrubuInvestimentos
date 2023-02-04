@@ -15,16 +15,10 @@
 }
 
 .conteudo_principal {
-    width: 100%;
-
-    /* border: 2px solid green; */
-    
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
-    padding: 20px 0;
-
+    justify-content: space-around;
+    margin: 0 auto;    
 }
 
 .resultados_anteriores {
@@ -34,7 +28,6 @@
 
     margin: 0 auto;
     height: 100%;
-    /* border: 2px solid red; */
 
     display: grid;
     grid-template-columns: auto auto;
