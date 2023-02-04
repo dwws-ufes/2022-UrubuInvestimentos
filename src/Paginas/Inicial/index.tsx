@@ -6,7 +6,7 @@ import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar } from "../../store/pageInfoSlice";
+import { loga, desloga, selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
@@ -43,6 +43,7 @@ export const Inicial = () => {
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);
     const showSidebar = useSelector(selectSidebar);
+    const search = useSelector(selectSearch);
 
     return (
     <div>
@@ -64,22 +65,42 @@ export const Inicial = () => {
             <div className={styles.resultados_anteriores}>
 
                 {/* Nao mostra o ultimo jogo nos resultados, pois ele ja eh mostrado no card inicial */}
-                {games.filter((game, index) => index !== 0).map( game => {
-                    const { gameId, date, number1, number2, number3, number4  } = game;
-                    
-                    const nome = mapeiaNomeAnimal(number1);
-                    const src = mapeiaSrcAnimal(number1);
+                {games
+                    .filter((game, index) => index !== 0)
+                    .filter(game => {
+                        const { date, number1, number2, number3, number4  } = game;
 
-                    return (
-                    <Resultado
-                        key={gameId}
-                        src={src}
-                        dia={date}
-                        animal={nome}
-                        milhares={[number1, number2, number3, number4]}
-                    />
-                    );
-                })}
+                        const nome = mapeiaNomeAnimal(number1);
+
+                        if(
+                            date.includes(search)
+                            || number1.includes(search)
+                            || number2.includes(search)
+                            || number3.includes(search)
+                            || number4.includes(search)
+                            || nome.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+                        )
+                            return true;
+                        else
+                            return false;
+                    })
+                    .map( game => {
+                        const { gameId, date, number1, number2, number3, number4  } = game;
+                        
+                        const nome = mapeiaNomeAnimal(number1);
+                        const src = mapeiaSrcAnimal(number1);
+
+                        return (
+                        <Resultado
+                            key={gameId}
+                            src={src}
+                            dia={date}
+                            animal={nome}
+                            milhares={[number1, number2, number3, number4]}
+                        />
+                        );
+                    })
+                }
             </div>
         </section>
         </main>
