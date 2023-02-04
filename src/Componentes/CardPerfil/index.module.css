@@ -24,6 +24,8 @@
     width: 25rem;
     max-width: 25rem;
     min-width: 25rem;
+
+    box-shadow: 3px 3px 10px black;
 }
 
 .parte_superior_perfil {
@@ -78,6 +80,7 @@
 
 .parte_inferior_perfil input {
     background-color: var(--fundo-primario) !important;
+    width: 100%;
 }
 
 .parte_inferior_perfil button {

@@ -1,18 +1,46 @@
+import { useNavigate } from "react-router-dom";
 import { BotaoGenerico } from "../../Componentes";
 
-import "./index.css";
+import styles from "./index.module.css";
+import { CgClose } from "react-icons/cg";
+import { setEntrar } from "../../store/pageInfoSlice";
 
-export const ConfirmacaoSaque = () => {
+interface propsType {
+    fechar: () => void;
+}
+
+export const ConfirmacaoSaque = (props: propsType) => {
+    const { fechar } = props;
+
+    const navigate = useNavigate();
+
     return(
-        <div className="confirmacao-saque-pop-up">
+        <div className={styles.confirmacao_saque_pop_up}>
             <p>Tem certeza que deseja sacar este dinheiro?
             <br/>
             Você não poderá utilizá-lo para futuros investimentos :(</p>
 
-            <div className="botoes-confirmacao-saque">
-                <BotaoGenerico texto="Continuar Investindo!!!" fundo={true}/>
-                <BotaoGenerico texto="Sim" fundo={false}/>
+            <div className={styles.botoes_confirmacao_saque}>
+                <button
+                    className={styles.btn_nao}
+                    onClick={fechar}
+                >
+                    Continuar Investindo!!!
+                </button>
+                <button
+                    className={styles.btn_sim}
+                    onClick={() => {
+                        navigate("/zumzumcapoeira");
+                    }}
+                >
+                    Sim
+                </button>
             </div>
+
+            <CgClose
+                className={styles.x}
+                onClick={fechar}
+            />
         </div>
     );
 }

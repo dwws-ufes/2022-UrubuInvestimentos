@@ -1,0 +1,57 @@
+@import url("../../constantes.css");
+
+.confirmacao_saque_pop_up {
+    background-color: var(--fundo-secundario);
+    border-radius: var(--default-border-radius);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 3px 3px 10px black;
+}
+
+.confirmacao_saque_pop_up p {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.botoes_confirmacao_saque {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.btn_nao {
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--default-border-radius);
+    color: white;
+    max-width: 15rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px black;
+    margin: 0 auto;
+
+}
+
+.btn_sim {
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.x {
+    color: var(--x-button-color);
+    cursor: pointer;
+    position: absolute;
+    right: 7px;
+    top: 7px;
+}

@@ -96,6 +96,7 @@
     font-weight: bold;
     margin: 0 auto;
     cursor: pointer;
+    box-shadow: 3px 3px 10px black;
 }
 
 .btn_entrar {

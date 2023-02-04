@@ -3,6 +3,8 @@ import { ProximoResultado, BotaoGenerico } from "../";
 
 import Content from "../../Content/Components/MeusInvestimentos.json"
 import styles from "./index.module.css";
+import { useState } from "react";
+import { ConfirmacaoSaque } from "../../Popups";
 
 interface investimento {
     dia: string;
@@ -19,6 +21,8 @@ export const MeusInvestimentos = (props: propsType) => {
     const { investimentos } = props;
 
     const navigate = useNavigate();
+
+    const [ showSacarDinheiro, setSacarDinheiro ] = useState(false);
 
     return(
         <div className={styles.meus_investimentos}>
@@ -53,9 +57,16 @@ export const MeusInvestimentos = (props: propsType) => {
                 </div>
             </div>
 
-            <BotaoGenerico
-                texto={ Content.ButtonWithdraw }
-            />
+            <button
+                className={styles.btn}
+                onClick={() => {
+                    setSacarDinheiro(!showSacarDinheiro);
+                }}
+            >
+                { Content.ButtonWithdraw }
+            </button>
+
+            { showSacarDinheiro && <ConfirmacaoSaque fechar={() => setSacarDinheiro(false)}/> }
         </div>
     );
 }
