@@ -2,6 +2,9 @@ import { useClock } from "react-use-clock";
 import { FaRegClock } from "react-icons/fa";
 
 import styles from "./index.module.css";
+import CONTENTS from '../../Content/Components/ProximoResultado.json'
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 interface propsType {
     transparente: boolean;
@@ -9,6 +12,7 @@ interface propsType {
 
 export const ProximoResultado = (props: propsType) => {
     const { transparente } = props;
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     const clock = useClock();
     
@@ -32,7 +36,7 @@ export const ProximoResultado = (props: propsType) => {
     return(
         <div className={`${styles.proximo_resultado} ${classeDeFundo}`}>
             <FaRegClock className={styles.relogio}/>
-            <p>Próximo resultado:</p>
+            <p>{ Contents.NextResult }</p>
             <p>{resulting_remaining_time}</p>
             <p></p>
         </div>

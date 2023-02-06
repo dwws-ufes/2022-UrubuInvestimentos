@@ -2,10 +2,12 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/Logo.json"
-const Contents = CONTENTS["pt-Br"];
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const Logo = () => {
     const navigate = useNavigate();
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div

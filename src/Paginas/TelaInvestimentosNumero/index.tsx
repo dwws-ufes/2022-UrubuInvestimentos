@@ -7,16 +7,15 @@ import { Header, Sidebar, CardPerfil } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { selectDropdown, selectLinguagem } from "../../store/pageInfoSlice";
 
 import CONTENTS from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
 
-const Contents = CONTENTS["pt-Br"];
-
 export const TelaInvestimentoNumero = () => {
     const investmentOwner = localStorage.getItem("profileId");
+
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     const [ sidebar, setSidebar ] = useState(false);
     const [ betType, setBetType ] = useState("D");

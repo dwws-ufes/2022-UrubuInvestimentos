@@ -39,6 +39,6 @@ export const selectLogin = (state: any) => state.pageInfo.logado;
 export const selectDropdown = (state: any) => state.pageInfo.dropdown;
 export const selectCadastro = (state: any) => state.pageInfo.cadastro;
 export const selectEntrar = (state: any) => state.pageInfo.entrar;
-export const selectLinguagemm = (state: any) => state.pageInfo.linguagem;
+export const selectLinguagem = (state: any) => state.pageInfo.linguagem;
 
 export const pageInfoReducer = pageInfoSlice.reducer;

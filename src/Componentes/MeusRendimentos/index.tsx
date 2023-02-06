@@ -2,6 +2,8 @@ import { ProximoResultado } from "../";
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/MeusRendimentos.json"
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 interface propsType {
     totalInvestido: string;
@@ -9,10 +11,9 @@ interface propsType {
     saldo: string;
 }
 
-const Contents = CONTENTS["pt-Br"];
-
 export const MeusRendimentos = (props: propsType) => {
         const { totalInvestido, totalLucrado, saldo } = props;
+        const Contents = CONTENTS[useSelector(selectLinguagem)];
 
         return(
             <div className={styles.meus_rendimentos}>

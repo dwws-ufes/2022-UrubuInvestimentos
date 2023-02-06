@@ -6,6 +6,9 @@ import { CgClose } from "react-icons/cg";
 import { AiOutlineCaretDown } from "react-icons/ai";
 
 import "./index.css"
+import CONTENTS from '../../Content/Popups/SacarDinheiro.json'
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 interface propsType {
     saldo: string;
@@ -13,29 +16,30 @@ interface propsType {
 
 export const SacarDinheiro = (props: propsType) => {
     const { saldo } = props;
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div className="sacar-dinheiro">
             <Logo />
 
-            <h3>Sacar dinheiro</h3>
+            <h3>{ Contents.Title }</h3>
 
-            <p>Saldo: ${saldo}</p>
+            <p>{ Contents.Balance }{saldo}</p>
 
             <form action="" className="sacar-dinheiro-form">
                 <div className="input-sacar-dinheiro">
                     <input
                         type="text"
                         name="email"
-                        placeholder="Valor do saque"
+                        placeholder={ Contents.Value }
                     />
                     <FaMoneyBill className="sacar-dinheiro-icone"/>
                 </div>
                 
                 <div className="input-sacar-dinheiro">
                 <select>
-                    <option>Cartao 1</option>
-                    <option>Cartao 2</option>
+                    <option>{ Contents.Cards[0] }</option>
+                    <option>{ Contents.Cards[1] }</option>
                 </select>
                 <div style={{
                     display: "flex",
@@ -48,7 +52,7 @@ export const SacarDinheiro = (props: propsType) => {
                 </div>
 
                 <BotaoGenerico
-                    texto="Sacar dinheiro"
+                    texto={ Contents.Button }
                     fundo={true}
                     className="confirmar-sacar-dinheiro"
                 />

@@ -1,0 +1,38 @@
+[
+    {
+        "Alerts": "Erro ao logar na conta, tente novamente",
+        "Login": "Entre na sua conta",
+        "Email": "Endereço de Email",
+        "Password": "Senha",
+        "NoPassword": "Esqueceu a senha?",
+        "In": "Entrar",
+        "Singin": [
+            "Ainda não é investidor?",
+            "Cadastre-se agora!"
+        ]
+    },
+    {
+        "Alerts": "Erro ao logar na conta, tente novamente",
+        "Login": "Entre na sua conta",
+        "Email": "Endereço de Email",
+        "Password": "Senha",
+        "NoPassword": "Esqueceu a senha?",
+        "In": "Entrar",
+        "Singin": [
+            "Ainda não é investidor?",
+            "Cadastre-se agora!"
+        ]
+    },
+    {
+        "Alerts": "AAAA AA AAAAAA AA AAAAA, AAAAA AAAAAAAAA",
+        "Login": "AAAAA AA AAAA AAAAA",
+        "Email": "AAAAAAAA AA AAAAAA",
+        "Password": "AAAAA",
+        "NoPassword": "AAAAAA A AAAAAA?",
+        "In": "AAAAAA",
+        "Singin": [
+            "AAAAAA AAA A AAAAAAAA?",
+            "AAAAAAAA-AA AAAAA!"
+        ]
+    }
+]

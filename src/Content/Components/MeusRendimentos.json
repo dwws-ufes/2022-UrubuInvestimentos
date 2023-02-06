@@ -1,5 +1,5 @@
-{   
-    "pt-Br": {
+[
+    {
         "Investment": "Novo Investimento",
         "Motivational": "Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!",
         "Income": {
@@ -9,5 +9,27 @@
             "Balance": "Saldo"
         },
         "Withdraw": "Sacar dinheiro"
+    },
+    {
+        "Investment": "Novo Investimento",
+        "Motivational": "Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!",
+        "Income": {
+            "Title": "Meus Rendimentos",
+            "Invested": "Total investido",
+            "Profited": "Total lucrado",
+            "Balance": "Saldo"
+        },
+        "Withdraw": "Sacar dinheiro"
+    },
+    {
+        "Investment": "AAAA AAAAAAAAA",
+        "Motivational": "AAAAA AAAAA AAA AAAAAAAAAAAAA AAA AAA AAAAAAAA AAAAAAA AA AAAAAAA AA AAAAA AAAAA AAAAA AA AAAAA A AAAAA AAAAAA?!!!",
+        "Income": {
+            "Title": "AAAA AAAAAAAAAA",
+            "Invested": "AAAAA AAAAAAAAA",
+            "Profited": "AAAAA AAAAAAA",
+            "Balance": "AAAAA"
+        },
+        "Withdraw": "AAAAA AAAAAAAAA"
     }
-}
+]

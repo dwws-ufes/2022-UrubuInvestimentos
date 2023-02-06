@@ -1,0 +1,35 @@
+[
+    {
+        "AddCard": "Adicione um cartão",
+        "SaveCard": "Salvar cartão",
+        "Card": {
+            "Name": "Nome completo no cartão",
+            "Number": "Número",
+            "Validity": "Validade",
+            "SecurityCode": "CVV",
+            "Nickname": "Apelido do cartão"
+        }
+    },
+    {
+        "AddCard": "Adicione um cartão",
+        "SaveCard": "Salvar cartão",
+        "Card": {
+            "Name": "Nome completo no cartão",
+            "Number": "Número",
+            "Validity": "Validade",
+            "SecurityCode": "CVV",
+            "Nickname": "Apelido do cartão"
+        }
+    },
+    {
+        "AddCard": "AAAAAAAA AA AAAAAA",
+        "SaveCard": "AAAAA AAAAAA",
+        "Card": {
+            "Name": "AAAA AAAAAAA AA AAAAAAA",
+            "Number": "AAAAAAA",
+            "Validity": "AAAAAAAAA",
+            "SecurityCode": "AAA",
+            "Nickname": "AAAAAAA AA AAAAAA"
+        }
+    }
+]

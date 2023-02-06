@@ -1,5 +1,5 @@
-{   
-    "pt-Br": {
+[
+    {
         "Title": "novo Investimento",
         "Investment": {
             "Title": "Tipo de investimento",
@@ -21,5 +21,51 @@
             "Value": "Valor"
         },
         "DoInvestment": "Investir!"
+    },
+    {
+        "Title": "novo Investimento",
+        "Investment": {
+            "Title": "Tipo de investimento",
+            "Types": {
+                "Animal": "Animal",
+                "Ten": "Dezena",
+                "Hundred": "Centena",
+                "Thousand": "Milhar"
+            },
+            "Number": "Número",
+            "Distribution": {
+                "Title": "Distribuição",
+                "Types": {
+                    "Normal": "Normal",
+                    "Head": "Cabeça"
+                }
+            },
+            "Proportion": "Odds totais",
+            "Value": "Valor"
+        },
+        "DoInvestment": "Investir!"
+    },
+    {
+        "Title": "AAAA AAAAAAAAAAAA",
+        "Investment": {
+            "Title": "AAAA AA AAAAAAAAAA",
+            "Types": {
+                "Animal": "AAAAAA",
+                "Ten": "AAAAAA",
+                "Hundred": "AAAAAA",
+                "Thousand": "AAAAAA"
+            },
+            "Number": "AAAAAA",
+            "Distribution": {
+                "Title": "AAAAAAA",
+                "Types": {
+                    "Normal": "AAAAAA",
+                    "Head": "AAAAAA"
+                }
+            },
+            "Proportion": "AAAA AAAAAA",
+            "Value": "AAAAA"
+        },
+        "DoInvestment": "AAAAAAAA!"
     }
-}
+]

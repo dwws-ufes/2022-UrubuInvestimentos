@@ -3,15 +3,17 @@ import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
 
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
 
-import CONTENTS from "../../Content/Pages/Suporte.json"
 import styles from "./index.module.css";
-
-const Contents = CONTENTS["pt-Br"];
+import CONTENTS from "../../Content/Pages/Suporte.json"
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const Suporte = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
 	const [ showEntrar, setEntrar ] = useState(false);
     const [ sidebar, setSidebar ] = useState(false);
+
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div className={styles.suporte}>

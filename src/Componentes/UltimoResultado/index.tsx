@@ -3,8 +3,9 @@ import { ResultadoInfo } from "./ResultadoInfo";
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/UltimoResultado.json"
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
-const Contents = CONTENTS['pt-Br'];
 
 interface propsType {
     fotoSrc: string;
@@ -14,6 +15,8 @@ interface propsType {
 }
 
 export const UltimoResultado = (props: propsType) => {
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+    
     let { fotoSrc, dia, animal, milhares } = props;
 
     if(milhares === undefined)

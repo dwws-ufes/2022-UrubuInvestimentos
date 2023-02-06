@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectLinguagemm, setLinguagem } from "../../store/pageInfoSlice";
+import { loga, desloga, setDropdown, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectLinguagem, setLinguagem } from "../../store/pageInfoSlice";
 import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { BotaoGenerico, Logo } from "../";
@@ -10,7 +10,7 @@ import { BotaoGenerico, Logo } from "../";
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
 import styles from "./index.module.css";
-import CONTENT from "../../Content/Components/Header.json"
+import CONTENTS from "../../Content/Components/Header.json"
 import Languages from "../../Content/Languages.json"
 
 interface propsType {
@@ -21,10 +21,9 @@ interface propsType {
     toggleSidebar?: () => void;
 }
 
-const Contents = CONTENT["pt-Br"];
-
 export const Header = (props: propsType) => {
     const { abreCadastro, fechaCadastro, abreEntrar, fechaEntrar } = props;
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
     
     // controla se eh mostrado login/entrar ou as informacoes do usuario
     
@@ -38,24 +37,29 @@ export const Header = (props: propsType) => {
     const showCadastro = useSelector(selectCadastro);
     const showEntrar = useSelector(selectEntrar);
     const dispatch = useDispatch();
+    //const [language, setLanguage] = useState("pt-Br");
     
-    let language = useSelector(selectLinguagemm);
-    const [aaaa, setAaaa] = useState("");
-
-    // console.log(logado, nomeUsuario);
-
     return(
         <div className={styles.header}>
 
             <FaBars className={styles.bar_icon} onClick={props?.toggleSidebar}/>
             
-            
             <div>
                 <select
-                    onChange={ e => { dispatch(setLinguagem(e.target.value)); }}
-                    required
-                >
-                    { /**ISSO DAQUI É UM TESTO MEU (DAVID), PODE DEIXAR POR ENQUANTO Q DPS EU TIRO */
+                    //value={ language }
+                    onChange={ e => { 
+                        dispatch(setLinguagem(e.target.value));
+                        /*
+                        console.log(language)
+                        console.log(e.target.value)
+                        console.log(Number(e.target.value))
+                        console.log(Languages.Languages[Number(e.target.value)])
+                        setLanguage(Languages.Languages[Number(e.target.value)])
+                        console.log(language)
+                        */
+                    }}
+                    required >
+                    {
                         Languages.Languages.map((element, index) => {
                         return (<option key={index} value={index} >{element}</option>)
                     })}

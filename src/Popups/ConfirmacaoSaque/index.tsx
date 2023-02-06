@@ -1,17 +1,23 @@
 import { BotaoGenerico } from "../../Componentes";
 
 import "./index.css";
+import CONTENTS from '../../Content/Popups/ConfirmarSaque.json'
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const ConfirmacaoSaque = () => {
+
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+
     return(
         <div className="confirmacao-saque-pop-up">
-            <p>Tem certeza que deseja sacar este dinheiro?
+            <p>{ Contents.Withdrawal1 }
             <br/>
-            Você não poderá utilizá-lo para futuros investimentos :(</p>
+            { Contents.Withdrawal2 }</p>
 
             <div className="botoes-confirmacao-saque">
-                <BotaoGenerico texto="Continuar Investindo!!!" fundo={true}/>
-                <BotaoGenerico texto="Sim" fundo={false}/>
+                <BotaoGenerico texto={ Contents.Investing } fundo={true}/>
+                <BotaoGenerico texto={ Contents.Yes } fundo={false}/>
             </div>
         </div>
     );

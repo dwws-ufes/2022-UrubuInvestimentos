@@ -2,13 +2,10 @@ import { useState } from "react";
 import { Header, Sidebar } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useSelector } from "react-redux";
+import { selectDropdown, selectLinguagem } from "../../store/pageInfoSlice";
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Pages/Regras.json";
-
-const Contents = CONTENTS["pt-Br"];
 
 export const Regras = () => {
 	const [ showCadastro, setCadastro ] = useState(false);
@@ -16,6 +13,7 @@ export const Regras = () => {
     const [ sidebar, setSidebar ] = useState(false);
 
     const showDropdown = useSelector(selectDropdown);
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div className={styles.regras}>

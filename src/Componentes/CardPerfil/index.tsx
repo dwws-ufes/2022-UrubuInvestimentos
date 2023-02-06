@@ -4,7 +4,7 @@ import { BsCreditCard } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { selectLinguagemm} from "../../store/pageInfoSlice";
+import { selectLinguagem} from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/CardPerfil.json"
@@ -20,7 +20,7 @@ interface propsType {
 export const CardPerfil = (props: propsType) => {
     const { nome, saldo, investimentos, lucrou, cartoes } = props;
     
-    const Contents = CONTENTS[useSelector(selectLinguagemm)];
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div className={styles.card_perfil}>

@@ -2,8 +2,8 @@ import { processaData } from "../../../Utils/processaData";
 
 import styles from "./index.module.css";
 import CONTENTS from "../../../Content/Components/UltimoResultado.json"
-
-const Contents = CONTENTS['pt-Br'];
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../../store/pageInfoSlice";
 
 // Espera-se receber um dia no formato DD/MM/AAAA
 interface propsType {
@@ -14,7 +14,8 @@ interface propsType {
 
 export const ResultadoInfo = (props: propsType) => {
     const { animal, dia, milhares } = props;
-
+    
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
     const diaProcessado = processaData(dia);
 
     return(

@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useNavigate } from "react-router-dom";
 import { ProximoResultado, BotaoGenerico } from "../";
 
 import CONTENTS from "../../Content/Components/MeusInvestimentos.json"
+import { selectLinguagem } from "../../store/pageInfoSlice";
 import styles from "./index.module.css";
 
 interface investimento {
@@ -15,11 +17,10 @@ interface propsType {
     investimentos: investimento[] 
 }
 
-const Contents = CONTENTS["pt-Br"];
-
 export const MeusInvestimentos = (props: propsType) => {
     const { investimentos } = props;
-
+    
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
     const navigate = useNavigate();
 
     return(

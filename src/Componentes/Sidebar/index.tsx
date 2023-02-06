@@ -4,10 +4,12 @@ import { GanheDinheiro } from './GanheDinheiro';
 
 import styles from './index.module.css';
 import CONTENTS from '../../Content/Components/Sidebar.json'
-
-const Contents = CONTENTS['pt-Br'];
+import { selectLinguagem } from "../../store/pageInfoSlice";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 export const Sidebar = () => {
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+    
     return(
         <div className={styles.sidebar}>
             <div className={styles.parte_superior}>
@@ -18,8 +20,8 @@ export const Sidebar = () => {
                     rel="noreferrer"
                 >
                     <p>{ Contents.Sponsors.Title }</p>
-                    { Contents.Sponsors.Infos.map((element) => {
-                        return (<img src={ element.src } alt={ element.alt }/>)
+                    { Contents.Sponsors.Infos.map((element, index) => {
+                        return (<img src={ element.src } alt={ element.alt } key={index} />)
                     })}
                 </a>
                 

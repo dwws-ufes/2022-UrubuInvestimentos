@@ -7,11 +7,12 @@ import { BsFillCaretDownFill } from "react-icons/bs";
 
 import CONTENTS from "../../Content/Components/NovoInvestimento.json"
 import styles from "./index.module.css";
-
-const Contents = CONTENTS["pt-Br"];
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const NovoInvestimento = () => {
     const [ odds, setOdds ] = useState(0);
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div className={styles.novo_investimento}>

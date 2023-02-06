@@ -5,14 +5,15 @@ import { Cadastro, Entrar } from "./../../Popups";
 
 import CONTENTS from "../../Content/Pages/ResultadosPerfil.json"
 import styles from "./index.module.css";
-
-const Contents = CONTENTS["pt-Br"];
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const ResultadosPerfil = () => {
-
   const [showCadastro, setCadastro] = useState(false);
   const [showEntrar, setEntrar] = useState(false);
   const [sidebar, setSidebar] = useState(true)
+
+  const Contents = CONTENTS[useSelector(selectLinguagem)];
 
   return (
     <div className={styles.inicial}>

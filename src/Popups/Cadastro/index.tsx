@@ -4,6 +4,9 @@ import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
 import styles from "./index.module.css"
+import CONTENTS from '../../Content/Popups/Cadastro.json'
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 interface propsType {
     fechaCadastro: () => void;
@@ -16,14 +19,16 @@ export const Cadastro = (props: propsType) => {
     const [idade, setIdade] = useState("");
     const navigate = useNavigate();
 
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+
     const handleRegister = async (e:any) => {
         e.preventDefault();
         if(isNaN(Number(idade))) {
-            alert("A idade informada deve ser um numero");
+            alert(Contents.Alerts[0]);
             return ;
         }
         else if (Number(idade) < 18){
-            alert("Peça ajuda aos seus pais para investir");
+            alert(Contents.Alerts[1]);
             return ;
         }
         const data = { email, senha, idade }
@@ -31,27 +36,27 @@ export const Cadastro = (props: propsType) => {
             navigate("/cadastro", { state: data });
         }
         catch (err){
-            alert("Erro ao iniciar criacao de conta");
+            alert(Contents.Alerts[2]);
         }
     }
 
     return(
         <div className={styles.cadastro}>
             <div className={styles.bonus}>  
-                <p>Cadastre-se e ganhe 1000 quid para começar os investimentos!</p>
+                <p>{ Contents.Promo }</p>
             </div>
 
             <div className={styles.cadastro_info}>
                 <Logo />
                 
                 <form onSubmit={handleRegister}>
-                    <h3>Venha para o Urubu!</h3>
+                    <h3>{ Contents.Title }</h3>
 
                     <input
                         className={styles.cadastro_info_input}
                         type="email"
                         name="email"
-                        placeholder="Endereço de Email"
+                        placeholder={ Contents.Infos.Email }
                         value={email}
                         onChange={e => setEmail(e.target.value)} 
                         required 
@@ -60,7 +65,7 @@ export const Cadastro = (props: propsType) => {
                         className={styles.cadastro_info_input}
                         type="password"
                         name="senha"
-                        placeholder="Senha"
+                        placeholder={ Contents.Infos.Password }
                         value={senha}
                         onChange={e => setSenha(e.target.value)}
                         required
@@ -70,18 +75,18 @@ export const Cadastro = (props: propsType) => {
                         type="text"
                         inputMode="numeric"
                         name="idade"
-                        placeholder="Idade"
+                        placeholder={ Contents.Infos.Email }
                         value={idade} 
                         onChange={e => setIdade(e.target.value)}
                         required
                         min={0}
                     />
 
-                    <p className={styles.termos_condicoes}>Ao se inscrever, você concorda com os <Link to="/zumzumcapoeira">termos de serviço</Link>.</p>
+                    <p className={styles.termos_condicoes}>{ Contents.Terms[0] }<Link to="/zumzumcapoeira">{ Contents.Terms[1] }</Link></p>
 
-                    <button type="submit">Começe já! &rarr;</button>
+                    <button type="submit">{ Contents.Begin } &rarr;</button>
 
-                    <p className={styles.ja_investidor}>Já é um investidor? <a href=".logo">Entre</a>.</p>
+                    <p className={styles.ja_investidor}>{ Contents.Enter[0] }<a href=".logo">{ Contents.Enter[0] }</a>.</p>
                 </form>
 
             </div>

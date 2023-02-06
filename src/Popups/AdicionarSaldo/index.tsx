@@ -6,28 +6,33 @@ import { CgClose } from "react-icons/cg";
 import { AiOutlineCaretDown } from "react-icons/ai";
 
 import "./index.css"
+import CONTENTS from '../../Content/Popups/AdicionarSaldo.json'
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const AdicionarSaldo = () => {
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+
     return(
         <div className="adicionar-saldo">
             <Logo />
 
-            <h3>Adicionar saldo</h3>
+            <h3>{ Contents.AddBalance }</h3>
 
             <form action="" className="adicionar-saldo-form">
                 <div className="input-adicionar-saldo">
                     <input
                         type="text"
                         name="email"
-                        placeholder="Valor"
+                        placeholder={ Contents.Value }
                     />
                     <FaMoneyBill className="adicionar-saldo-icone"/>
                 </div>
                 
                 <div className="input-adicionar-saldo">
                 <select>
-                    <option>Cartao 1</option>
-                    <option>Cartao 2</option>
+                    <option>{ Contents.Cards[0] }</option>
+                    <option>{ Contents.Cards[1] }</option>
                 </select>
                 <div style={{
                     display: "flex",
@@ -40,7 +45,7 @@ export const AdicionarSaldo = () => {
                 </div>
 
                 <BotaoGenerico
-                    texto="Confirmar"
+                    texto={ Contents.Button }
                     fundo={true}
                     className="confirmar-adicionar-saldo"
                 />
