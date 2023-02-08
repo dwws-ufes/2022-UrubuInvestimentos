@@ -1,0 +1,29 @@
+[
+    {
+        "AddBalance": "Adicionar saldo",
+        "Value": "Valor",
+        "Cards": [
+            "Cartão 1",
+            "Cartão 2"
+        ],
+        "Button": "Confirmar"
+    },
+    {
+        "AddBalance": "Adicionar saldo",
+        "Value": "Valor",
+        "Cards": [
+            "Cartão 1",
+            "Cartão 2"
+        ],
+        "Button": "Confirmar"
+    },
+    {
+        "AddBalance": "AAAAAAAAA AAAAA",
+        "Value": "AAAAA",
+        "Cards": [
+            "AAAAAA 1",
+            "AAAAAA 2"
+        ],
+        "Button": "AAAAAAAA"
+    }
+]

@@ -1,31 +1,24 @@
 import { useState } from 'react';
-import { Logo, BotaoGenerico } from '../../Componentes';
+import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, selectCadastro, selectDropdown, selectEntrar, selectLogin, selectSidebar, setCadastro, setEntrar } from "../../store/pageInfoSlice";
-import { setEmail, setSenha, setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { loga, setCadastro, setEntrar, selectLinguagem } from "../../store/pageInfoSlice";
+import { setNomeUsuario, setSaldo } from "../../store/userInfoSlice";
+
+import CONTENTS from '../../Content/Popups/Entrar.json'
 
 import api from './../../services/api';
-
 import styles from "./index.module.css";
 
 export const Entrar = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
 
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+
     const navigate = useNavigate();
-
-    const logado = useSelector(selectLogin);
-    const showDropdown = useSelector(selectDropdown);
-    const showCadastro = useSelector(selectCadastro);
-    const showEntrar = useSelector(selectEntrar);
-    const showSidebar = useSelector(selectSidebar);
-
-    const nomeUsuario = useSelector(selectNomeUsuario);
-    
     const dispatch = useDispatch();
 
     async function loginHandler(e:any){
@@ -38,8 +31,6 @@ export const Entrar = () => {
 
         try{
             const loginInfo = await api.post("/sessions", dataLogin);
-
-            console.log(loginInfo.data)
 
             localStorage.setItem('profileId', loginInfo.data[0].id);
             localStorage.setItem('profileName', loginInfo.data[0].nickname);
@@ -54,7 +45,7 @@ export const Entrar = () => {
             navigate("/perfil");
         }catch(err){
             console.error(err);
-            alert("Erro ao logar na conta, tente novamente");
+            alert(Contents.Alerts);
         };
     }
 
@@ -63,19 +54,19 @@ export const Entrar = () => {
             <Logo />
 
             <form onSubmit={loginHandler}>
-                <h3>Entre na sua conta</h3>
+                <h3>{ Contents.Login }</h3>
 
                 <input
                     type="email"
                     name="email"
-                    placeholder="Endereço de Email"
+                    placeholder={ Contents.Email }
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
                 <input
                     type="password"
                     name="senha"
-                    placeholder="Senha"
+                    placeholder={ Contents.Password }
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
@@ -88,22 +79,22 @@ export const Entrar = () => {
                         navigate("/zumzumcapoeira");
                     }}
                 >
-                    Esqueceu a senha?
+                    { Contents.NoPassword }
                 </p>
 
-                <button type="submit">Entrar &rarr;</button>
+                <button type="submit">{ Contents.In } &rarr;</button>
 
                 <p
                     className={styles.ainda_nao_investidor}
                 >
-                    Ainda não é investidor?&nbsp;
+                    { Contents.Singin[0] }
                     <b
                         onClick={() => {
                             dispatch(setEntrar(false));
                             dispatch(setCadastro(true))
                         }}
                     >
-                        Cadastre-se agora!
+                        { Contents.Singin[1] }
                     </b>
                 </p>
             </form>

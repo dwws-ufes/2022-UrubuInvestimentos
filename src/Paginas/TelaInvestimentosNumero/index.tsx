@@ -6,11 +6,11 @@ import api from './../../services/api';
 import { Header, Sidebar, CardPerfil } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar, setSidebar } from "../../store/pageInfoSlice";
-import { selectInvestimentos, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useSelector } from "react-redux";
+import { selectDropdown, selectCadastro, selectEntrar, selectSidebar, setSidebar, selectLinguagem } from "../../store/pageInfoSlice";
+import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
-import Content from "../../Content/Pages/TelaInvestimentosNumero.json"
+import CONTENTS from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
 import { Entrar } from "../../Popups";
 import { Cadastro } from "../Cadastro";
@@ -18,7 +18,6 @@ import { Cadastro } from "../Cadastro";
 export const TelaInvestimentoNumero = () => {
     const investmentOwner = localStorage.getItem("profileId");
 
-    const logado = useSelector(selectLogin);
 	const showDropdown = useSelector(selectDropdown);
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);
@@ -26,9 +25,8 @@ export const TelaInvestimentoNumero = () => {
     
     const nomeUsuario = useSelector(selectNomeUsuario);
     const saldo = useSelector(selectSaldo);
-    const investimentos = useSelector(selectInvestimentos);
-    
-    const dispatch = useDispatch();
+
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     const [ betType, setBetType ] = useState("D");
     const [ selectedNumber, setSelectedNumber ] = useState("");
@@ -88,18 +86,18 @@ export const TelaInvestimentoNumero = () => {
 
                     <div className={styles.form}>
                         <form onSubmit={investmentHandler}>
-                            <h1>{ Content.Title }</h1>
+                            <h1>{ Contents.Title }</h1>
                             <section>
-                                <p>{ Content.Investment.TitleTypes }</p>
+                                <p>{ Contents.Investment.TitleTypes }</p>
                                 <select
                                     value={betType}
                                     onChange={e => setBetType(e.target.value)}
                                     required
                                 >
-                                    { Content.Investment.Types.map((element) => {return ( <option value={ element.charAt(0) }>{ element }</option>)})}
+                                    { Contents.Investment.Types.map((element) => {return ( <option value={ element.charAt(0) }>{ element }</option>)})}
                                 </select>
                                 
-                                <p>{ Content.Investment.Number }</p>
+                                <p>{ Contents.Investment.Number }</p>
                                 <input
                                     pattern="[0-9]{4}"
                                     maxLength={4}
@@ -109,16 +107,16 @@ export const TelaInvestimentoNumero = () => {
                                     onChange={e => setSelectedNumber(e.target.value)}
                                     required
                                 />
-                                <p>{ Content.Investment.TitleDistribution }</p>
+                                <p>{ Contents.Investment.TitleDistribution }</p>
                                 <select
                                     value={distribution}
                                     onChange={e => setDistribution(e.target.value)}
                                     required
                                 >
-                                    { Content.Investment.Distributions.map((element) => { return ( <option value={ element.charAt(0) }>{ element }</option>)})}
+                                    { Contents.Investment.Distributions.map((element) => { return ( <option value={ element.charAt(0) }>{ element }</option>)})}
                                 </select>
 
-                                <p>{ Content.Investment.Value }</p>
+                                <p>{ Contents.Investment.Value }</p>
                                 <input
                                     type="number"
                                     min={0.00}
@@ -134,7 +132,7 @@ export const TelaInvestimentoNumero = () => {
                                 type="submit"
                                 className={styles.submit_btn}
                             >
-                                { Content.Investment.Invest }
+                                { Contents.Investment.Invest }
                             </button>
                         </form>
                     </div>

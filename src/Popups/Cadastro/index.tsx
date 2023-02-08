@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar } from "../../store/pageInfoSlice";
-import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { setCadastro, setEntrar } from "../../store/pageInfoSlice";
+import CONTENTS from '../../Content/Popups/Cadastro.json'
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css"
 import api from "../../services/api";
-import { AxiosError } from "axios";
 
 export const Cadastro = () => {
     const [email, setEmail] = useState("");
@@ -17,24 +17,17 @@ export const Cadastro = () => {
     const [idade, setIdade] = useState("");
     const navigate = useNavigate();
 
-    const logado = useSelector(selectLogin);
-    const showDropdown = useSelector(selectDropdown);
-    const showCadastro = useSelector(selectCadastro);
-    const showEntrar = useSelector(selectEntrar);
-    const showSidebar = useSelector(selectSidebar);
-
-    const nomeUsuario = useSelector(selectNomeUsuario);
-
     const dispatch = useDispatch();
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     const handleRegister = async (e:any) => {
         e.preventDefault();
         if(isNaN(Number(idade))) {
-            alert("A idade informada deve ser um numero");
+            alert(Contents.Alerts[0]);
             return ;
         }
         else if (Number(idade) < 18){
-            alert("Peça ajuda aos seus pais para investir");
+            alert(Contents.Alerts[1]);
             return ;
         }
         const data = { email, senha, idade }
@@ -47,27 +40,26 @@ export const Cadastro = () => {
         catch (err:any){
             console.error(err);
             alert(err.response.data.error);
-            // alert("Erro ao iniciar criacao de conta");
         }
     }
 
     return(
         <div className={styles.cadastro}>
             <div className={styles.bonus}>  
-                <p>Cadastre-se e ganhe 1000 quid para começar os investimentos!</p>
+                <p>{ Contents.Promo }</p>
             </div>
 
             <div className={styles.cadastro_info}>
                 <Logo />
                 
                 <form onSubmit={handleRegister}>
-                    <h3>Venha para o Urubu!</h3>
+                    <h3>{ Contents.Title }</h3>
 
                     <input
                         className={styles.cadastro_info_input}
                         type="email"
                         name="email"
-                        placeholder="Endereço de Email"
+                        placeholder={ Contents.Infos.Email }
                         value={email}
                         onChange={e => setEmail(e.target.value)} 
                         required 
@@ -76,7 +68,7 @@ export const Cadastro = () => {
                         className={styles.cadastro_info_input}
                         type="password"
                         name="senha"
-                        placeholder="Senha"
+                        placeholder={ Contents.Infos.Password }
                         value={senha}
                         onChange={e => setSenha(e.target.value)}
                         required
@@ -86,7 +78,7 @@ export const Cadastro = () => {
                         type="text"
                         inputMode="numeric"
                         name="idade"
-                        placeholder="Idade"
+                        placeholder={ Contents.Infos.Age }
                         value={idade} 
                         onChange={e => setIdade(e.target.value)}
                         required
@@ -96,7 +88,7 @@ export const Cadastro = () => {
                     <p
                         className={styles.termos_condicoes}
                     >
-                        Ao se inscrever, você concorda com os&nbsp;
+                        { Contents.Terms[0] }
                         <b
                             onClick={() => {
                                 dispatch(setCadastro(false));
@@ -104,24 +96,24 @@ export const Cadastro = () => {
                                 navigate("/zumzumcapoeira");
                             }}
                         >
-                            termos de serviço
+                            { Contents.Terms[1] }
                         </b>
                         
                     </p>
 
-                    <button type="submit">Começe já! &rarr;</button>
+                    <button type="submit">{ Contents.Begin } &rarr;</button>
 
                     <p
                         className={styles.ja_investidor}
                     >
-                        Já é um investidor?&nbsp;
+                        Contents.Enter[0]
                         <b
                             onClick={() => {
                                 dispatch(setCadastro(false));
                                 dispatch(setEntrar(true));
                             }}
                         >
-                            Entre
+                            Contents.Enter[1]
                         </b>
                         .
                     </p>

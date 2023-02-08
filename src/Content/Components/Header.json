@@ -1,10 +1,32 @@
-{
-    "Page": {
-        "Login": "Entrar",
-        "SingIn": "Cadastrar-se"
+[
+    {
+        "Page": {
+            "Login": "Entrar",
+            "SingIn": "Cadastrar-se"
+        },
+        "Dropdown": {
+            "Profile": "Meu Perfil",
+            "LogOut": "Sair"
+        }
     },
-    "Dropdown": {
-        "Profile": "Meu Perfil",
-        "LogOut": "Sair"
+    {
+        "Page": {
+            "Login": "Entrar",
+            "SingIn": "Cadastrar-se"
+        },
+        "Dropdown": {
+            "Profile": "Meu Perfil",
+            "LogOut": "Sair"
+        }
+    },
+    {
+        "Page": {
+            "Login": "AAAAAA",
+            "SingIn": "AAAAAAAA-AA"
+        },
+        "Dropdown": {
+            "Profile": "AAA AAAAAAA",
+            "LogOut": "AAAA"
+        }
     }
-}
+]

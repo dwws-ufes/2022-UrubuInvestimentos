@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
-import Content from "../../Content/Components/Logo.json"
+import CONTENTS from "../../Content/Components/Logo.json"
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const Logo = () => {
     const navigate = useNavigate();
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div
@@ -13,10 +16,10 @@ export const Logo = () => {
         >
             <img
                 src="imagens/urubuzado.svg"
-                alt={ Content.Alternative }
+                alt={ Contents.Alternative }
                 className={styles.urubu_svg}
             />
-            <h2 className={styles.nome_empresa}>{ Content.Name }</h2>
+            <h2 className={styles.nome_empresa}>{ Contents.Name }</h2>
         </div>
     );
 }

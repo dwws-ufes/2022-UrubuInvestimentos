@@ -1,10 +1,9 @@
 import { FaRegUser, FaMoneyCheckAlt } from "react-icons/fa";
-import { GiReceiveMoney } from "react-icons/gi";
-import { BsCreditCard } from "react-icons/bs";
-import { IoCloseSharp } from "react-icons/io5";
 
 import styles from "./index.module.css";
-import Content from "../../Content/Components/CardPerfil.json"
+import CONTENTS from "../../Content/Components/CardPerfil.json"
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem} from "../../store/pageInfoSlice";
 
 interface propsType {
     nome: string;
@@ -13,7 +12,9 @@ interface propsType {
 }
 
 export const CardPerfil = (props: propsType) => {
+
     const { nome, saldo, investimentos } = props;
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div className={styles.card_perfil}>
@@ -25,7 +26,7 @@ export const CardPerfil = (props: propsType) => {
             <div className={styles.parte_meio_perfil}>
                 <div>
                    <FaMoneyCheckAlt className={styles.icone_geral}/>
-                   <p>{investimentos} { Content.Investment }</p>
+                   <p>{investimentos} { Contents.Investment }</p>
                 </div>
             </div>
             <form className={styles.parte_inferior_perfil}>
@@ -42,7 +43,7 @@ export const CardPerfil = (props: propsType) => {
                         e.preventDefault();
                     }}
                 >
-                    { Content.Card }
+                    { Contents.Card }
                 </button>
             </form>
                 <div>

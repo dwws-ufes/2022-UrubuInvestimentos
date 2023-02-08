@@ -1,19 +1,59 @@
-{
-    "Title": "Novo Investimento",
-    "Investment": {
-        "TitleTypes": "Tipo de investimento",
-        "Types": [
-            "Dezena",
-            "Centena",
-            "Milhar"
-        ],
-        "Number": "Número",
-        "TitleDistribution": "Distribuição",
-        "Distributions": [
-            "Normal",
-            "Cabeça"
-        ],
-        "Value": "Valor",
-        "Invest": "Investir"
+[
+    {
+        "Title": "Novo Investimento",
+        "Investment": {
+            "TitleTypes": "Tipo de investimento",
+            "Types": [
+                "Dezena",
+                "Centena",
+                "Milhar"
+            ],
+            "Number": "Número",
+            "TitleDistribution": "Distribuição",
+            "Distributions": [
+                "Normal",
+                "Cabeça"
+            ],
+            "Value": "Valor",
+            "Invest": "Investir"
+        }
+    },
+    {
+        "Title": "Novo Investimento",
+        "Investment": {
+            "TitleTypes": "Tipo de investimento",
+            "Types": [
+                "Dezena",
+                "Centena",
+                "Milhar"
+            ],
+            "Number": "Número",
+            "TitleDistribution": "Distribuição",
+            "Distributions": [
+                "Normal",
+                "Cabeça"
+            ],
+            "Value": "Valor",
+            "Invest": "Investir"
+        }
+    },
+    {
+        "Title": "AAAA AAAAAAAA",
+        "Investment": {
+            "TitleTypes": "AAAA AA AAAAAAAAAA",
+            "Types": [
+                "AAAAAA",
+                "AAAAAAA",
+                "AAAA"
+            ],
+            "Number": "AAAAAA",
+            "TitleDistribution": "AAAAAAAAAA",
+            "Distributions": [
+                "AAAAAA",
+                "AAAAAA"
+            ],
+            "Value": "AAAAA",
+            "Invest": "AAAAAAAA"
+        }
     }
-}
+]

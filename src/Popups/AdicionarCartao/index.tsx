@@ -6,19 +6,24 @@ import { BsFillCalendarFill } from "react-icons/bs";
 import { IoInformationCircle } from "react-icons/io5";
 
 import "./index.css"
+import CONTENTS from '../../Content/Popups/AdicionarCartao.json'
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const AdicionarCartao = () => {
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+
     return(
         <div className="adicionar-cartao">
             <Logo />
 
-            <h3>Adicione um cartão</h3>
+            <h3>{ Contents.AddCard }</h3>
 
             <form action="" className="adicionar-cartao-form">
                 <input
                     type="text"
                     name="email"
-                    placeholder="Nome completo no cartão"
+                    placeholder={ Contents.Card.Name }
                     className="adicionar-cartao-input"
                 />
 
@@ -26,7 +31,7 @@ export const AdicionarCartao = () => {
                     <input
                         type="text"
                         name="email"
-                        placeholder="Número"
+                        placeholder={ Contents.Card.Number }
                         className="adicionar-cartao-input"
                     /> 
                     <BsCreditCard className="adicionar-cartao-icone"/>
@@ -37,7 +42,7 @@ export const AdicionarCartao = () => {
                         <input
                             type="text"
                             name="validade"
-                            placeholder="Validade"
+                            placeholder={ Contents.Card.Validity }
                         />
                         <BsFillCalendarFill className="adicionar-cartao-icone"/>
                     </div>
@@ -45,7 +50,7 @@ export const AdicionarCartao = () => {
                         <input
                             type="text"
                             name="cvv"
-                            placeholder="CVV"
+                            placeholder={ Contents.Card.SecurityCode }
                         />
                         <IoInformationCircle className="adicionar-cartao-icone"/>
                     </div> 
@@ -54,12 +59,12 @@ export const AdicionarCartao = () => {
                 <input
                     type="text"
                     name="apelido"
-                    placeholder="Apelido do cartão"
+                    placeholder={ Contents.Card.Nickname }
                     className="adicionar-cartao-input"
                 />
 
                 <BotaoGenerico
-                    texto="Adicionar cartão"
+                    texto={ Contents.SaveCard }
                     fundo={true}
                 />
             </form>

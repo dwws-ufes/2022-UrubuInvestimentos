@@ -1,13 +1,14 @@
-import React from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
-import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { desloga, setDropdown } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
+import CONTENTS from '../../Content/Popups/Login.json'
+import { useSelector, useDispatch } from "react-redux/es";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const LoginDropdown = () => {
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
         const navigate = useNavigate();
         const dispatch = useDispatch();
 
@@ -20,7 +21,7 @@ export const LoginDropdown = () => {
                         navigate("/perfil");
                     }}
                 >
-                    Meu perfil
+                    { Contents.Profile }
                 </div>
                 <div
                     className={styles.link_dropdown}
@@ -30,7 +31,7 @@ export const LoginDropdown = () => {
                     }}
                         
                 >
-                    Novo investimento
+                    { Contents.Investment }
                 </div>
                 <div
                     className={`${styles.link_dropdown} ${styles.l3}`}
@@ -41,7 +42,7 @@ export const LoginDropdown = () => {
                         navigate("/");
                     }}
                 >
-                    Sair
+                    { Contents.Logout }
                 </div>
             </div>
         );

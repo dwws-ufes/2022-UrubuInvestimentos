@@ -1,25 +1,26 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import { BotaoGenerico } from "../";
 import { GanheDinheiro } from './GanheDinheiro';
-
-import { FaMoneyCheckAlt } from 'react-icons/fa';
 
 import styles from './index.module.css';
 import { setEntrar, setCadastro, selectCadastro, selectDropdown, selectEntrar, selectLogin, selectSidebar } from "../../store/pageInfoSlice";
+
+import CONTENTS from '../../Content/Components/Sidebar.json'
+import { selectLinguagem } from "../../store/pageInfoSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export const Sidebar = () => {
-
+    
     const showDropdown = useSelector(selectDropdown);
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);
     const showSidebar = useSelector(selectSidebar);
     
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+
     const logado = useSelector(selectLogin);
 
     const dispatch = useDispatch();
-
     const navigate = useNavigate();
 
     return(
@@ -31,8 +32,10 @@ export const Sidebar = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <p>Parceiro Oficial</p>
-                    <img src="/imagens/flamengo-logo-2020.svg" alt="Logo do Flamengo" />
+                    <p>{ Contents.Sponsors.Title }</p>
+                    { Contents.Sponsors.Infos.map((element, index) => {
+                        return (<img src={ element.src } alt={ element.alt } key={index} />)
+                    })}
                 </a>
                 
                 <GanheDinheiro/>
@@ -50,8 +53,9 @@ export const Sidebar = () => {
                         }
                     }}
                 >
-                    Investir agora!
+                    { Contents.DoInvestment }
                 </button>
+
             </div>
             <div className={styles.links}>
                 <ul>
@@ -64,8 +68,9 @@ export const Sidebar = () => {
                                 navigate("/zumzumcapoeira");
                             }}
                         >
-                            INDIQUE UM AMIGO
+                            { Contents.Friend }
                         </div>
+
                     </li>
                     <li>
                         <div
@@ -76,7 +81,7 @@ export const Sidebar = () => {
                                 navigate("/regras");
                             }}        
                         >
-                            REGRAS DE INVESTIMENTO
+                            { Contents.Rules }
                         </div>
                     </li>
                     <li>
@@ -88,7 +93,7 @@ export const Sidebar = () => {
                                 navigate("/suporte");
                             }}
                         >
-                            SUPORTE
+                            { Contents.Help }
                         </div>
                     </li>
                 </ul>

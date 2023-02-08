@@ -1,13 +1,15 @@
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, setSearch } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { setSearch } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
+import CONTENTS from "../../Content/Components/Searchbar.json"
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 export const Searchbar = () => {
     const dispatch = useDispatch();
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
     
     return(
             <form
@@ -16,12 +18,11 @@ export const Searchbar = () => {
                 <HiMagnifyingGlass className={styles.lupa}/>
                 <input
                     type="text"
-                    placeholder="Procure jogos passados"
+                    placeholder={ Contents.Search }
                     onChange={e => {
                         dispatch(setSearch(e.target.value));
                     }}
                 />
             </form>
-        
     );
 }

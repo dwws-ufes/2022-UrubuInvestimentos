@@ -1,0 +1,50 @@
+[
+    {
+        "Sponsors": {
+            "Title": "Parceiros Oficiais",
+            "Infos": [
+                {
+                    "src": "/imagens/flamengo-logo-2020.svg",
+                    "alt": "Logo do Flamengo"
+                }
+            ]
+        },
+        "DoInvestment": "Investir agora!",
+        "Friend": "INDIQUE UM AMIGO!",
+        "Rules": "REGRAS DE INVESTIMENTO",
+        "Help": "SUPORTE",
+        "EarnMoney": "Ganhe $ grátis agora!"
+    },
+    {
+        "Sponsors": {
+            "Title": "Parceiros Oficiais",
+            "Infos": [
+                {
+                    "src": "/imagens/flamengo-logo-2020.svg",
+                    "alt": "Logo do Flamengo"
+                }
+            ]
+        },
+        "DoInvestment": "Investir agora!",
+        "Friend": "INDIQUE UM AMIGO!",
+        "Rules": "REGRAS DE INVESTIMENTO",
+        "Help": "SUPORTE",
+        "EarnMoney": "Ganhe $ grátis agora!"
+    },
+    {
+        "Sponsors": {
+            "Title": "AAAAAAAA AAAAAAAAA",
+            "Infos": [
+                {
+                    "src": "/imagens/flamengo-logo-2020.svg",
+                    "alt": "Logo do Flamengo"
+                }
+            ]
+        },
+        "DoInvestment": "AAAAAAAA AAAAAAAA!",
+        "Friend": "AAAAAAAA AA AAAAAAA!",
+        "Rules": "AAAAAA AAA AAAAAAAAA",
+        "Help": "AAAAAAAA",
+        "EarnMoney": "AAAAAAAA A AAAAAA AAAAA!"
+    }
+]

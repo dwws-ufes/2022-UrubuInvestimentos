@@ -1,22 +1,22 @@
-import { useState } from "react";
 import { Link } from 'react-router-dom';
-
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar } from "../../store/pageInfoSlice";
-import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
-
+import { setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar, selectLinguagem, setLinguagem } from "../../store/pageInfoSlice";
+import { selectNomeUsuario } from "../../store/userInfoSlice";
 import { Logo } from "../";
-
 import { FaBars, FaRegUser } from 'react-icons/fa';
 
 import styles from "./index.module.css";
-import Content from "../../Content/Components/Header.json"
+import CONTENTS from "../../Content/Components/Header.json"
+import Languages from "../../Content/Languages.json"
 
 export const Header = () => {
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+    
     const logado = useSelector(selectLogin);
     const showDropdown = useSelector(selectDropdown);
     const showCadastro = useSelector(selectCadastro);
     const showEntrar = useSelector(selectEntrar);
+
     const showSidebar = useSelector(selectSidebar);
 
     const nomeUsuario = useSelector(selectNomeUsuario);
@@ -25,11 +25,23 @@ export const Header = () => {
 
     return(
         <div className={styles.header}>
-
             <FaBars
                 className={styles.bar_icon}
                 onClick={() => {dispatch(setSidebar(!showSidebar))}}
             />
+            <div>
+                <select
+                    //value={ language }
+                    onChange={ e => { 
+                        dispatch(setLinguagem(e.target.value));
+                    }}
+                    required >
+                    {
+                        Languages.Languages.map((element, index) => {
+                        return (<option key={index} value={index} >{element}</option>)
+                    })}
+                </select>
+            </div>
 
             <div className={styles.header_centro}>
                 <Link className={styles.link_home} to='/'>
@@ -55,16 +67,16 @@ export const Header = () => {
                             dispatch(setEntrar(!showEntrar));
                         }}
                     >
-                        { Content.Page.Login }
+                        { Contents.Page.Login }
                     </button>
                     <button
                         className={styles.btn_cadastro}
                         onClick={() => {
-                            dispatch(setCadastro(!showCadastro));
-                            dispatch(setEntrar(false));
+                                dispatch(setCadastro(!showCadastro));
+                                dispatch(setEntrar(false));
                         }}
                     >
-                        { Content.Page.SingIn }
+                        { Contents.Page.SingIn }
                     </button>
                 </div> 
             }

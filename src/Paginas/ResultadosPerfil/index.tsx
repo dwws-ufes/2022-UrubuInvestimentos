@@ -1,12 +1,10 @@
-import { useState } from "react";
-
 import { Header, Sidebar, BotaoGenerico, ResultadoPerfil } from "./../../Componentes";
 import { Cadastro, Entrar } from "./../../Popups";
 
-import Content from "../../Content/Pages/ResultadosPerfil.json"
+import CONTENTS from "../../Content/Pages/ResultadosPerfil.json"
 import styles from "./index.module.css";
 import { useSelector } from "react-redux";
-import { selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, setEntrar, setCadastro } from "../../store/pageInfoSlice";
+import { selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectLinguagem } from "../../store/pageInfoSlice";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 export const ResultadosPerfil = () => {
@@ -17,6 +15,8 @@ export const ResultadosPerfil = () => {
   const showCadastro = useSelector(selectCadastro);
   const showSidebar = useSelector(selectSidebar);
 
+  const Contents = CONTENTS[useSelector(selectLinguagem)];
+
   return (
     <div className={styles.inicial}>
       <Header/>
@@ -24,7 +24,7 @@ export const ResultadosPerfil = () => {
       <main>
         { showSidebar && <Sidebar />}
         <section className={styles.conteudo_principal_perfil_resultados}>
-          <h1 className={styles.resultados_titulo}> {Content.Title} </h1>
+          <h1 className={styles.resultados_titulo}> {Contents.Title} </h1>
           <div className={styles.resultados_jogos}>
             <ResultadoPerfil src="/imagens/animais/cagado.jpeg"
               dia="ONTEM"

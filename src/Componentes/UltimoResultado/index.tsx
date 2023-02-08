@@ -1,10 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { BotaoGenerico, ProximoResultado } from "../";
+import { ProximoResultado } from "../";
 import { ResultadoInfo } from "./ResultadoInfo";
 
 import styles from "./index.module.css";
-import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, setEntrar, selectLogin, setCadastro } from "../../store/pageInfoSlice";
-import { Navigate, useNavigate } from "react-router-dom";
+import { setEntrar, selectLogin, setCadastro } from "../../store/pageInfoSlice";
+import { useNavigate } from "react-router-dom";
+import CONTENTS from "../../Content/Components/UltimoResultado.json"
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 interface propsType {
     fotoSrc: string;
@@ -14,16 +16,13 @@ interface propsType {
 }
 
 export const UltimoResultado = (props: propsType) => {
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
+    
     let { fotoSrc, dia, animal, milhares } = props;
 
     if(milhares === undefined)
         milhares = [""];
 
-    const showDropdown = useSelector(selectDropdown);
-    const showEntrar = useSelector(selectEntrar);
-    const showCadastro = useSelector(selectCadastro);
-    const showSidebar = useSelector(selectSidebar);
-    
     const logado = useSelector(selectLogin);
 
     const dispatch = useDispatch();
@@ -56,7 +55,7 @@ export const UltimoResultado = (props: propsType) => {
                         }
                     }}
                 >
-                    Novo Investimento
+                    { Contents.Investment }
                 </button>
             </div>
         </div>

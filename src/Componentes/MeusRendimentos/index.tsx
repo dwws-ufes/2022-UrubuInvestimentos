@@ -1,7 +1,9 @@
 import { ProximoResultado } from "../";
 
 import styles from "./index.module.css";
-import Content from "../../Content/Components/MeusRendimentos.json"
+import CONTENTS from "../../Content/Components/MeusRendimentos.json"
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { selectLinguagem } from "../../store/pageInfoSlice";
 
 interface propsType {
     totalInvestido: string;
@@ -11,25 +13,26 @@ interface propsType {
 
 export const MeusRendimentos = (props: propsType) => {
         const { totalInvestido, totalLucrado, saldo } = props;
+        const Contents = CONTENTS[useSelector(selectLinguagem)];
 
         return(
             <div className={styles.meus_rendimentos}>
             <div className={styles.proximo_resultado_div}>
                     <ProximoResultado transparente={false}/>
                     
-                    <button className={styles.btn}>{ Content.Investment }</button>
+                    <button className={styles.btn}>{ Contents.Investment }</button>
                 </div>
                 <p className={styles.frase_motivacional}>
-		    { Content.Motivational }
+		    { Contents.Motivational }
                 </p>
                 
                 <div className={styles.informacoes_rendimentos}>
-                    <h3>{ Content.Income.Title }</h3>
-                    <p>{ Content.Income.Invested }: ${totalInvestido}</p>
-                    <p>{ Content.Income.Profited }: ${totalLucrado}</p>
-                    <p>{ Content.Income.Balance }: ${saldo}</p>
+                    <h3>{ Contents.Income.Title }</h3>
+                    <p>{ Contents.Income.Invested }: ${totalInvestido}</p>
+                    <p>{ Contents.Income.Profited }: ${totalLucrado}</p>
+                    <p>{ Contents.Income.Balance }: ${saldo}</p>
                 </div>
-                <button className={styles.btn}>{ Content.Withdraw }</button>
+                <button className={styles.btn}>{ Contents.Withdraw }</button>
             </div>
         );
 }

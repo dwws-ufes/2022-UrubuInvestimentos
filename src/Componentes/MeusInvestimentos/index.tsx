@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useNavigate } from "react-router-dom";
-import { ProximoResultado, BotaoGenerico } from "../";
+import { ProximoResultado } from "../";
 
-import Content from "../../Content/Components/MeusInvestimentos.json"
+import CONTENTS from "../../Content/Components/MeusInvestimentos.json"
+import { selectLinguagem } from "../../store/pageInfoSlice";
 import styles from "./index.module.css";
 import { useState } from "react";
 import { ConfirmacaoSaque } from "../../Popups";
@@ -19,7 +21,8 @@ interface propsType {
 
 export const MeusInvestimentos = (props: propsType) => {
     const { investimentos } = props;
-
+    
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
     const navigate = useNavigate();
 
     const [ showSacarDinheiro, setSacarDinheiro ] = useState(false);
@@ -32,14 +35,14 @@ export const MeusInvestimentos = (props: propsType) => {
                     className={styles.btn}
                     onClick={() => navigate("/tela-investimentos")}
                 >
-                    { Content.ButtonInvestement }
+                    { Contents.ButtonInvestement }
                 </button>
             </div>
 
-            <p className={styles.frase_motivacional}> { Content.Motivational } </p>
+            <p className={styles.frase_motivacional}> { Contents.Motivational } </p>
             
             <div className={styles.informacoes_rendimentos}>
-                <h3>{ Content.Investment }</h3>
+                <h3>{ Contents.Investment }</h3>
                 
                 <div className={styles.div_investimentos}>
                     {investimentos.map((investimento, index) => {
@@ -63,10 +66,11 @@ export const MeusInvestimentos = (props: propsType) => {
                     setSacarDinheiro(!showSacarDinheiro);
                 }}
             >
-                { Content.ButtonWithdraw }
+                { Contents.ButtonWithdraw }
             </button>
 
             { showSacarDinheiro && <ConfirmacaoSaque fechar={() => setSacarDinheiro(false)}/> }
+
         </div>
     );
 }

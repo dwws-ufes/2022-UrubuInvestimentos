@@ -1,13 +1,11 @@
-import { useState } from "react";
 import { Header, Sidebar } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown, selectSidebar, selectCadastro, selectEntrar } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useSelector } from "react-redux";
+import { selectLogin, selectDropdown, selectSidebar, selectCadastro, selectEntrar, selectLinguagem } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
-import Contents from "../../Content/Pages/Regras.json";
+import CONTENTS from "../../Content/Pages/Regras.json";
 import { Entrar } from "../../Popups";
 import { Cadastro } from "../Cadastro";
 
@@ -17,6 +15,7 @@ export const Regras = () => {
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);
     const showSidebar = useSelector(selectSidebar);
+    const Contents = CONTENTS[useSelector(selectLinguagem)];
 
     return(
         <div className={styles.regras}>

@@ -5,9 +5,8 @@ import api from '../../services/api';
 import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
-
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
+import { selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";

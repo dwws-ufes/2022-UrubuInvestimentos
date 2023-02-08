@@ -1,0 +1,71 @@
+[
+    {
+        "Alerts": [
+            "A idade informada deve ser um número",
+            "Peça ajuda aos seus pais para investir"
+        ],
+        "Promo": "Cadastre-se e ganhe 1000 quid para começar os investimentos!",
+        "Title": "Venha para o Urubu!",
+        "Infos": {
+            "Email": "Endereço de Email",
+            "Password": "Senha",
+            "Age": "Idade"
+        },
+        "Terms": 
+        [
+            "Ao se inscrever, você concorda com os ",
+            "Termos de serviço"
+        ],
+        "Begin": "Começa já!",
+        "Enter": [
+            "Já é um investidor? ",
+            "Entre"
+        ]
+    },
+    {
+        "Alerts": [
+            "A idade informada deve ser um número",
+            "Peça ajuda aos seus pais para investir"
+        ],
+        "Promo": "Cadastre-se e ganhe 1000 quid para começar os investimentos!",
+        "Title": "Venha para o Urubu!",
+        "Infos": {
+            "Email": "Endereço de Email",
+            "Password": "Senha",
+            "Age": "Years Old"
+        },
+        "Terms": 
+        [
+            "Ao se inscrever, você concorda com os ",
+            "Termos de serviço"
+        ],
+        "Begin": "Começa já!",
+        "Enter": [
+            "Já é um investidor? ",
+            "Entre"
+        ]
+    },
+    {
+        "Alerts": [
+            "A AAAAA AAAAAAAA AAAA AAA AA AAAAAAA",
+            "AAAA AAAAA AAA AAAA AAAA AAAA AAAAAAAA"
+        ],
+        "Promo": "AAAAAAAA-AA A AAAAAA 1000 AAA AAAA AAAAAAAA AA AAAAAAAAAA!",
+        "Title": "AAAAA AAAA A AAAAAA!",
+        "Infos": {
+            "Email": "AAAAAAAA AA AAAA",
+            "Password": "AAAAAA",
+            "Age": "AAAAA"
+        },
+        "Terms": 
+        [
+            "AA AA AAAAAAAA, AAAA AAAAAAAA AAA AA ",
+            "AAAAAA AA AAAAAAA"
+        ],
+        "Begin": "AAAAAAA AA!",
+        "Enter": [
+            "AA A AA AAAAAAA? ",
+            "AAAAAA"
+        ]
+    }
+]
