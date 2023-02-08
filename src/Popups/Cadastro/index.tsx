@@ -106,14 +106,14 @@ export const Cadastro = () => {
                     <p
                         className={styles.ja_investidor}
                     >
-                        Contents.Enter[0]
+                        { Contents.Enter[0] }
                         <b
                             onClick={() => {
                                 dispatch(setCadastro(false));
                                 dispatch(setEntrar(true));
                             }}
                         >
-                            Contents.Enter[1]
+                            { Contents.Enter[1] }
                         </b>
                         .
                     </p>
