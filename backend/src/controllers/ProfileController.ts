@@ -12,7 +12,7 @@ module.exports = {
         const { balance } = request.body;
         const investmentOwner = request.headers.authorization;
 
-        await connection('profile').where('id', investmentOwner).insert({ balance });
+        await connection('profile').where('id', investmentOwner).update({balance});
 
         return response.status(204).send();
     }

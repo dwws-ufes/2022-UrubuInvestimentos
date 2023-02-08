@@ -15,7 +15,6 @@ routes.post('/sessions', SessionController.create);
 routes.get('/perfil', ProfileController.index);
 routes.put('/perfil', ProfileController.modify);
 
-
 routes.get('/accounts', AccountsController.index);
 routes.post('/accounts', AccountsController.create);
 routes.delete('/accounts', AccountsController.delete);

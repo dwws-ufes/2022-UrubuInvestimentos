@@ -40,12 +40,11 @@ export const Perfil = () => {
     const [ investments, setInvestments ] = useState(initialInvestment);
 
     useEffect(() => {
-        console.log("useEffect do perfil chamado")
         api.get('/tela-investimentos', {
             headers: {
                 Authorization: investmentOwner,
             }
-        }).then((response) => { console.log(response);setInvestments(response.data) });
+        }).then((response) => { setInvestments(response.data) });
     }, []);
 
     const logado = useSelector(selectLogin);
