@@ -11,12 +11,12 @@
     },
     {
         "Page": {
-            "Login": "Entrar",
-            "SingIn": "Cadastrar-se"
+            "Login": "Login",
+            "SingIn": "Sign In"
         },
         "Dropdown": {
-            "Profile": "Meu Perfil",
-            "LogOut": "Sair"
+            "Profile": "My Profile",
+            "LogOut": "Logout"
         }
     },
     {

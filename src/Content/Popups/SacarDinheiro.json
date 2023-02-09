@@ -10,14 +10,14 @@
         "Button": "Sacar dinheiro"
     },
     {
-        "Title": "Sacar dinheiro",
-        "Balance": "Saldo: $",
-        "Value": "Valor do saque",
+        "Title": "Withdraw money",
+        "Balance": "Balance: $",
+        "Value": "Withdrawal amount",
         "Cards": [
-            "Cartão 1",
-            "Cartão 2"
+            "Card 1",
+            "Card 2"
         ],
-        "Button": "Sacar dinheiro"
+        "Button": "Withdraw money"
     },
     {
         "Title": "AAAAA AAAAAAAA",

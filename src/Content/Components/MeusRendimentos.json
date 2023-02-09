@@ -11,15 +11,15 @@
         "Withdraw": "Sacar dinheiro"
     },
     {
-        "Investment": "Novo Investimento",
-        "Motivational": "Você sabia que estatisticamente 95% das pessoas viciadas em jogos de azar param antes de tirar a sorte grande?!!!",
+        "Investment": "New Investment",
+        "Motivational": "Did you know that statistically 95% of people addicted to gambling quit before hitting the jackpot?!!!",
         "Income": {
-            "Title": "Meus Rendimentos",
-            "Invested": "Total investido",
-            "Profited": "Total lucrado",
-            "Balance": "Saldo"
+            "Title": "My Income",
+            "Invested": "Total invested",
+            "Profited": "Total profited",
+            "Balance": "Balance"
         },
-        "Withdraw": "Sacar dinheiro"
+        "Withdraw": "Withdraw Money"
     },
     {
         "Investment": "AAAA AAAAAAAAA",

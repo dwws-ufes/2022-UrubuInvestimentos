@@ -9,13 +9,13 @@
         "Button": "Confirmar"
     },
     {
-        "AddBalance": "Adicionar saldo",
-        "Value": "Valor",
+        "AddBalance": "Add Balance",
+        "Value": "Value",
         "Cards": [
-            "Cartão 1",
-            "Cartão 2"
+            "Card 1",
+            "Card 2"
         ],
-        "Button": "Confirmar"
+        "Button": "Confirm"
     },
     {
         "AddBalance": "AAAAAAAAA AAAAA",

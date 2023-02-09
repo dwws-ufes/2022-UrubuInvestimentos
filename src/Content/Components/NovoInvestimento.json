@@ -1,6 +1,6 @@
 [
     {
-        "Title": "novo Investimento",
+        "Title": "Novo Investimento",
         "Investment": {
             "Title": "Tipo de investimento",
             "Types": {
@@ -23,27 +23,27 @@
         "DoInvestment": "Investir!"
     },
     {
-        "Title": "novo Investimento",
+        "Title": "New Investment",
         "Investment": {
-            "Title": "Tipo de investimento",
+            "Title": "Investment Types",
             "Types": {
                 "Animal": "Animal",
-                "Ten": "Dezena",
-                "Hundred": "Centena",
-                "Thousand": "Milhar"
+                "Ten": "Ten",
+                "Hundred": "Hundred",
+                "Thousand": "Thousand"
             },
-            "Number": "Número",
+            "Number": "Number",
             "Distribution": {
-                "Title": "Distribuição",
+                "Title": "Distribution",
                 "Types": {
                     "Normal": "Normal",
-                    "Head": "Cabeça"
+                    "Head": "Head"
                 }
             },
-            "Proportion": "Odds totais",
-            "Value": "Valor"
+            "Proportion": "Proportion",
+            "Value": "Value"
         },
-        "DoInvestment": "Investir!"
+        "DoInvestment": "Do Investment!"
     },
     {
         "Title": "AAAA AAAAAAAAAAAA",

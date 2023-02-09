@@ -17,7 +17,7 @@
     },
     {
         "Sponsors": {
-            "Title": "Parceiros Oficiais",
+            "Title": "Official Sponsors",
             "Infos": [
                 {
                     "src": "/imagens/flamengo-logo-2020.svg",
@@ -25,11 +25,11 @@
                 }
             ]
         },
-        "DoInvestment": "Investir agora!",
-        "Friend": "INDIQUE UM AMIGO!",
-        "Rules": "REGRAS DE INVESTIMENTO",
-        "Help": "SUPORTE",
-        "EarnMoney": "Ganhe $ grátis agora!"
+        "DoInvestment": "Invest now!",
+        "Friend": "REFER A FRIEND!",
+        "Rules": "INVESTMENT RULES",
+        "Help": "SUPPORT",
+        "EarnMoney": "Get Free $ Now!"
     },
     {
         "Sponsors": {

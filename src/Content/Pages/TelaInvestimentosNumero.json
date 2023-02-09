@@ -19,22 +19,22 @@
         }
     },
     {
-        "Title": "Novo Investimento",
+        "Title": "New Investment",
         "Investment": {
-            "TitleTypes": "Tipo de investimento",
+            "TitleTypes": "Tipos de investimentos",
             "Types": [
-                "Dezena",
-                "Centena",
-                "Milhar"
+                "Ten",
+                "Hundred",
+                "Thousand"
             ],
-            "Number": "Número",
-            "TitleDistribution": "Distribuição",
+            "Number": "Number",
+            "TitleDistribution": "Distribution",
             "Distributions": [
                 "Normal",
-                "Cabeça"
+                "Head"
             ],
-            "Value": "Valor",
-            "Invest": "Investir"
+            "Value": "Value",
+            "Invest": "Invest"
         }
     },
     {

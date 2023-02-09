@@ -16,9 +16,7 @@ export const Header = () => {
     const showDropdown = useSelector(selectDropdown);
     const showCadastro = useSelector(selectCadastro);
     const showEntrar = useSelector(selectEntrar);
-
     const showSidebar = useSelector(selectSidebar);
-
     const nomeUsuario = useSelector(selectNomeUsuario);
     
     const dispatch = useDispatch();
@@ -31,12 +29,12 @@ export const Header = () => {
             />
             <div>
                 <select
-                    //value={ language }
                     onChange={ e => { 
                         dispatch(setLinguagem(e.target.value));
                     }}
                     required >
-                    {
+                        <option value={useSelector(selectLinguagem)}>{Languages.Languages[useSelector(selectLinguagem)]}</option>
+                    {   
                         Languages.Languages.map((element, index) => {
                         return (<option key={index} value={index} >{element}</option>)
                     })}

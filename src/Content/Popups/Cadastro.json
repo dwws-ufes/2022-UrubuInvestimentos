@@ -24,25 +24,25 @@
     },
     {
         "Alerts": [
-            "A idade informada deve ser um número",
-            "Peça ajuda aos seus pais para investir"
+            "Age must be a number",
+            "Ask your parents for help investing"
         ],
-        "Promo": "Cadastre-se e ganhe 1000 quid para começar os investimentos!",
-        "Title": "Venha para o Urubu!",
+        "Promo": "Sign up and earn 1000 quid to start investing!",
+        "Title": "Come to Urubu!",
         "Infos": {
-            "Email": "Endereço de Email",
-            "Password": "Senha",
+            "Email": "Email address",
+            "Password": "Password",
             "Age": "Years Old"
         },
         "Terms": 
         [
-            "Ao se inscrever, você concorda com os ",
-            "Termos de serviço"
+            "By signing up, you agree to the ",
+            "Terms of Service"
         ],
-        "Begin": "Começa já!",
+        "Begin": "Begin!",
         "Enter": [
-            "Já é um investidor? ",
-            "Entre"
+            "Already an investor? ",
+            "Enter"
         ]
     },
     {

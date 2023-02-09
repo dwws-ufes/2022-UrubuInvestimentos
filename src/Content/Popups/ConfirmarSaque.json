@@ -6,10 +6,10 @@
         "Yes": "Sim"
     },
     {
-        "Withdrawal1": "Tem certeza que deseja sacar este dinheiro?",
-        "Withdrawal2": "Você não poderá utilizá-lo para futuros investimentos :",
-        "Investing": "Continuar Investindo!!!",
-        "Yes": "Sim"
+        "Withdrawal1": "Are you sure you want to withdraw this money??",
+        "Withdrawal2": "You will not be able to use it for future investments:",
+        "Investing": "Continue investing!!!",
+        "Yes": "Yes"
     },
     {
         "Withdrawal1": "AAA AAAAAAAA AAA AAAAAA AAAAA AAAA AAAAAAAA?",

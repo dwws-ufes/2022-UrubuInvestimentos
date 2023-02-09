@@ -37,33 +37,33 @@
         }
     },
     {
-        "Title": "Suporte",
+        "Title": "Suport",
         "Questions": {
-            "Title": "Perguntas Frequêntes",
+            "Title": "Common questions",
             "Content": [
                 {
-                "Question": "Pergunta 1",
-                "Answer": "Resposta extensa e bem completa pra pergunta 1."
+                "Question": "Question 1",
+                "Answer": "Extensive and very complete answer to the question 1."
                 },
                 {
-                "Question": "Pergunta 2",
-                "Answer": "Resposta extensa e bem completa pra pergunta 2."
+                "Question": "Question 2",
+                "Answer": "Extensive and very complete answer to the question 2."
                 },
                 {
-                "Question": "Pergunta 3",
-                "Answer": "Resposta extensa e bem completa pra pergunta 3."
+                "Question": "Question 3",
+                "Answer": "Extensive and very complete answer to the question 3."
                 }
             ]
         },
         "Contacts": {
-            "Title": "Contato",
+            "Title": "Contact",
             "Content": [
                 {
                 "Type": "E-mail",
                 "Data": "aaaaa@bbbb.ccc"
                 },
                 {
-                "Type": "Telefone",
+                "Type": "Telephone",
                 "Data": "+55 027 3333-3333"
                 },
                 {

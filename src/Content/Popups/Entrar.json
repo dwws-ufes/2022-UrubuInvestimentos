@@ -12,15 +12,15 @@
         ]
     },
     {
-        "Alerts": "Erro ao logar na conta, tente novamente",
-        "Login": "Entre na sua conta",
-        "Email": "Endereço de Email",
-        "Password": "Senha",
-        "NoPassword": "Esqueceu a senha?",
-        "In": "Entrar",
+        "Alerts": "Error logging into account, please try again",
+        "Login": "Login to your account",
+        "Email": "Email address",
+        "Password": "Password",
+        "NoPassword": "Forgot password?",
+        "In": "Login",
         "Singin": [
-            "Ainda não é investidor?",
-            "Cadastre-se agora!"
+            "Not an investor yet?",
+            "Register now!"
         ]
     },
     {

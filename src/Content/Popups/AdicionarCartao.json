@@ -11,14 +11,14 @@
         }
     },
     {
-        "AddCard": "Adicione um cartão",
-        "SaveCard": "Salvar cartão",
+        "AddCard": "Add Card",
+        "SaveCard": "Save Card",
         "Card": {
-            "Name": "Nome completo no cartão",
-            "Number": "Número",
-            "Validity": "Validade",
-            "SecurityCode": "CVV",
-            "Nickname": "Apelido do cartão"
+            "Name": "Full name on card",
+            "Number": "Number",
+            "Validity": "Validity",
+            "SecurityCode": "SecurityCode",
+            "Nickname": "Card Nickname"
         }
     },
     {
