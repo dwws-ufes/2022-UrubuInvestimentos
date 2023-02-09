@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
 import { loga, selectCadastro, selectDropdown, selectEntrar, selectLogin, selectSidebar, setCadastro, setEntrar } from "../../store/pageInfoSlice";
-import { setEmail, setSenha, setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { setEmail, setSenha, setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo, setInvestimentos, selectInvestimentos } from "../../store/userInfoSlice";
 
 import api from './../../services/api';
 
@@ -25,6 +25,7 @@ export const Entrar = () => {
     const showSidebar = useSelector(selectSidebar);
 
     const nomeUsuario = useSelector(selectNomeUsuario);
+    const investimentos = useSelector(selectInvestimentos);
     
     const dispatch = useDispatch();
 
@@ -47,6 +48,14 @@ export const Entrar = () => {
             dispatch(setNomeUsuario(loginInfo.data[0].nickname));
             dispatch(setSaldo(loginInfo.data[0].balance));
             
+            const investmentsInfo = await api.get("/tela-investimentos", {
+                headers: {
+                    Authorization: loginInfo.data[0].id,
+                }
+            });
+
+            dispatch(setInvestimentos(investmentsInfo.data))
+
             dispatch(loga());
             dispatch(setCadastro(false));
             dispatch(setEntrar(false));

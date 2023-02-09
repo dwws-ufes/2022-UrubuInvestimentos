@@ -11,7 +11,8 @@
     padding: 2em;
     overflow: scroll;
     max-height: 100%;
-    margin: 1rem 0;
+    margin: auto 0;
+
 }
 
 .proximo_resultado_div {
@@ -41,6 +42,7 @@
 
 .div_investimentos {
     overflow: scroll;
+    max-height: 40vh;
 }
 
 .investimento {

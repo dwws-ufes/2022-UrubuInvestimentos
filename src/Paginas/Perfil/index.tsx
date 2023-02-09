@@ -8,9 +8,10 @@ import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
 import { loga, desloga, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { selectInvestimentos, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
+import { investimento } from "../../Componentes/MeusInvestimentos/index.module.css";
 
 interface investimentsType {
     investimentId: string;
@@ -55,8 +56,11 @@ export const Perfil = () => {
     
     const nomeUsuario = useSelector(selectNomeUsuario);
     const saldo = useSelector(selectSaldo);
+    const investimentos = useSelector(selectInvestimentos)
     
     const dispatch = useDispatch();
+    
+    console.log("investimentos", investimentos)
 
 	return (
 		<div>
@@ -72,10 +76,7 @@ export const Perfil = () => {
                     />
                     
                     <MeusInvestimentos
-                        investimentos={[
-                            {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"},
-                            {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"}
-                        ]}
+                        investimentos={investimentos}
                     />
                 </section>
             </main> 

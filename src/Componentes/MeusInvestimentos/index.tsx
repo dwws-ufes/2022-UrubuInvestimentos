@@ -5,16 +5,10 @@ import Content from "../../Content/Components/MeusInvestimentos.json"
 import styles from "./index.module.css";
 import { useState } from "react";
 import { ConfirmacaoSaque } from "../../Popups";
-
-interface investimento {
-    dia: string;
-    hora: string;
-    animal: string;
-    valor: string;
-}
+import { investimentosType } from "../../Utils/tipos"
 
 interface propsType {
-    investimentos: investimento[] 
+    investimentos: investimentosType[]; 
 }
 
 export const MeusInvestimentos = (props: propsType) => {
@@ -43,14 +37,22 @@ export const MeusInvestimentos = (props: propsType) => {
                 
                 <div className={styles.div_investimentos}>
                     {investimentos.map((investimento, index) => {
-                        const { dia, hora, animal, valor } = investimento;
+                        const {
+                            betType,
+                            distribution,
+                            gameIdAtual,
+                            investmentId,
+                            investmentOwner,
+                            odds,
+                            selectedNumber,
+                            value
+                        } = investimento;
                         return(
                             <div
                                 key={index}
                                 className={styles.investimento}
                             >
-                                <p>{dia.toUpperCase()} {hora}</p>
-                                <p>{animal} - ${valor}</p>
+                                <p>{selectedNumber} - ${value},00</p>
                             </div>
                         );
                     })}
