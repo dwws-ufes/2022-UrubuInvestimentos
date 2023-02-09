@@ -3,20 +3,23 @@ import { ProximoResultado } from "../";
 
 import Content from "../../Content/Components/MeusInvestimentos.json"
 import styles from "./index.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ConfirmacaoSaque } from "../../Popups";
 import { investimentosType } from "../../Utils/tipos"
+import { useSelector } from "react-redux";
+import { selectInvestimentos } from "../../store/userInfoSlice";
 
-interface propsType {
-    investimentos: investimentosType[]; 
-}
-
-export const MeusInvestimentos = (props: propsType) => {
-    const { investimentos } = props;
+export const MeusInvestimentos = () => {
 
     const navigate = useNavigate();
 
     const [ showSacarDinheiro, setSacarDinheiro ] = useState(false);
+    
+    const investimentos = useSelector(selectInvestimentos);
+    
+    useEffect(() => {
+
+    }, [investimentos]);
 
     return(
         <div className={styles.meus_investimentos}>
@@ -36,7 +39,7 @@ export const MeusInvestimentos = (props: propsType) => {
                 <h3>{ Content.Investment }</h3>
                 
                 <div className={styles.div_investimentos}>
-                    {[...investimentos].reverse().map((investimento, index) => {
+                    {[...investimentos].reverse().map((investimento: investimentosType, index: number) => {
                         const {
                             betType,
                             distribution,

@@ -8,7 +8,7 @@ import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
 import { loga, desloga, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar, setSidebar } from "../../store/pageInfoSlice";
-import { selectInvestimentos, selectNomeUsuario, selectSaldo, setSaldo } from "../../store/userInfoSlice";
+import { adicionaInvestimento, selectInvestimentos, selectNomeUsuario, selectSaldo, setSaldo } from "../../store/userInfoSlice";
 
 import Content from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
@@ -76,6 +76,7 @@ export const TelaInvestimentoNumero = () => {
             });
 
             dispatch(setSaldo(diff));
+            dispatch(adicionaInvestimento(investmentData))
 
             navigate("/perfil");
         }catch(err){

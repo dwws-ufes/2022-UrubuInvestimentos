@@ -54,7 +54,7 @@ export const NovoInvestimento = () => {
                     </div>
                 </div>
 
-                <p className={styles.odds_totais}>{ Content.Investment.Proportion }: {odds}x</p>
+                <p>{ Content.Investment.Proportion }: {odds}x</p>
                 <div className={styles.input_class}>
                     <label htmlFor="valor">{ Content.Investment.Value }</label>
                     <div className={styles.div_com_icone}>
