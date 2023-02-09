@@ -9,7 +9,9 @@
     gap: 1em;
 
     padding: 2em;
-
+    overflow: scroll;
+    max-height: 100%;
+    margin: 1rem 0;
 }
 
 .proximo_resultado_div {
@@ -33,6 +35,10 @@
     text-align: center;
 }
 
+.informacoes_rendimentos h3 {
+    font-size: 1.5rem;
+}
+
 .div_investimentos {
     overflow: scroll;
 }
@@ -43,4 +49,18 @@
     width: 10em;
     margin: 1em auto;
     padding: 0.5em;
+}
+
+.btn {
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--default-border-radius);
+    color: white;
+    max-width: 15rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px black;
 }

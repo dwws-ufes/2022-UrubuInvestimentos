@@ -8,19 +8,27 @@
     color: black;
 
     height: 100vh;
+
+    padding: 2rem;
 }
 
 .urubuzado h1 {
     font-size: 70px;
     text-shadow: 2px 2px 10px;
     margin: 0;
-    margin-left: 2rem;
+    background-color: rgba(255, 255, 255, 0.406);
+    width: fit-content;
+    padding: 1rem;
+    border-radius: var(--default-border-radius);
 }
 
 .urubuzado p {
-    font-size: 16px;
+    font-size: 1.5rem;
     text-shadow: 1px 1px 2px;
-    margin-left: 2rem;
+    background-color: rgba(255, 255, 255, 0.406);
+    width: fit-content;
+    padding: 1rem;
+    border-radius: var(--default-border-radius);
 }
 
 .botao {
@@ -31,5 +39,6 @@
     padding: 0.5em;
     font-size: 1.2em;
     cursor: pointer;
-    margin-left: 2rem;
+    font-weight: bold;
+    box-shadow: 3px 3px 10px black;
 }

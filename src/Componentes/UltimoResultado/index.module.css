@@ -26,3 +26,16 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.btn {
+    background-color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--default-border-radius);
+    color: white;
+    max-width: 15rem;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 auto;
+    cursor: pointer;
+}

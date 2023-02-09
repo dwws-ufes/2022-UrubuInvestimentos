@@ -1,7 +1,10 @@
-import { BotaoGenerico, ProximoResultado } from "../";
+import { useDispatch, useSelector } from "react-redux";
+import { ProximoResultado } from "../";
 import { ResultadoInfo } from "./ResultadoInfo";
 
 import styles from "./index.module.css";
+import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, setEntrar, selectLogin, setCadastro } from "../../store/pageInfoSlice";
+import { Navigate, useNavigate } from "react-router-dom";
 
 interface propsType {
     fotoSrc: string;
@@ -16,6 +19,17 @@ export const UltimoResultado = (props: propsType) => {
     if(milhares === undefined)
         milhares = [""];
 
+    const showDropdown = useSelector(selectDropdown);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
+    
+    const logado = useSelector(selectLogin);
+
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
+        
     return(
         <div
             className={styles.ultimo_resultado}
@@ -29,9 +43,21 @@ export const UltimoResultado = (props: propsType) => {
             />
             <div className={styles.proximo_jogo}>
                 <ProximoResultado transparente={true}/>
-                <BotaoGenerico
-                    texto="Novo Investimento"
-                />
+                <button
+                    className={styles.btn}
+                    onClick={() => {
+                        if(logado) {
+                            dispatch(setEntrar(false));
+                            dispatch(setCadastro(false));
+                            navigate("/tela-investimentos");
+                        }
+                        else {
+                            dispatch(setEntrar(true));
+                        }
+                    }}
+                >
+                    Novo Investimento
+                </button>
             </div>
         </div>
     );

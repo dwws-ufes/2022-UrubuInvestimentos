@@ -11,7 +11,6 @@
     
     text-decoration: none;
     color: white;
-    /* border: 2px solid red; */
 
     /* posicionamento na tela */
     position: relative;
@@ -27,7 +26,6 @@
 }
 
 .parte_superior {
-    /* border: 2px solid green; */
     padding: 20px;
 
     display: flex;
@@ -48,6 +46,7 @@
     text-decoration: none;
     color: white;
     padding: 0.5em 1em;
+    box-shadow: 3px 3px 10px black;
 }
 
 .parceiro_oficial img {
@@ -65,11 +64,13 @@
     height: 150px;
     background-size: cover;
     background-position: center;
+    box-shadow: 3px 3px 10px black;
 
     display: flex;
     flex-direction: column;
 
     cursor: pointer;
+
 }
 
 .ganhe_dinheiro p {
@@ -95,6 +96,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-color: #66af94;
+    
 }
 
 .investir_agora {
@@ -104,7 +106,9 @@
     border-radius: var(--default-border-radius);
     padding: 0.5em;
     font-size: 1.2em;
+    box-shadow: 3px 3px 10px black;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .links {

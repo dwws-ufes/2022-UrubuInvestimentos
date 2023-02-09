@@ -6,12 +6,14 @@ const ProfileController = require('./controllers/ProfileController');
 const InvestmentController = require('./controllers/InvestmentController');
 const CardController = require('./controllers/CardController');
 const GameController = require('./controllers/GameController');
+const RegisterController = require('./controllers/RegisterController');
 
 const routes = express.Router();
 
 routes.post('/sessions', SessionController.create);
 
 routes.get('/perfil', ProfileController.index);
+routes.put('/perfil', ProfileController.modify);
 
 routes.get('/accounts', AccountsController.index);
 routes.post('/accounts', AccountsController.create);
@@ -28,5 +30,7 @@ routes.delete('/cards/:cardId', CardController.delete);
 routes.get('/', GameController.index);
 routes.post('/', GameController.create);
 routes.delete('/:gameId', GameController.delete);
+
+routes.post('/register', RegisterController.create);
 
 module.exports = routes;

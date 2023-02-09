@@ -16,6 +16,7 @@
 
 .fundo_opaco {
     background-color: var(--cor-terciaria);
+    box-shadow: 3px 3px 10px black;
 }
 
 .relogio {

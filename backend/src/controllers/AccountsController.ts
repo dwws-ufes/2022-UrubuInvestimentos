@@ -9,10 +9,6 @@ module.exports = {
     async create(request:any, response:any){
         const { email, password, age, nickname, CPF, region } = request.body;
 
-        // const duplicate = await connection('profile').where('email', email).select('id').first();
-        const [duplicate] = await connection('profile').where('email', email);
-        if(duplicate){return response.status(451).json({ error: "Email já cadastrado!" });}
-
         const balance = 1000;
 
         const [id] = await connection('profile').insert({

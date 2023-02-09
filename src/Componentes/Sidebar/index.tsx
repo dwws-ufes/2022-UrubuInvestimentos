@@ -1,13 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-import { BotaoGenerico } from "../";
 import { GanheDinheiro } from './GanheDinheiro';
 
 import { FaMoneyCheckAlt } from 'react-icons/fa';
 
 import styles from './index.module.css';
+import { setEntrar, setCadastro, selectCadastro, selectDropdown, selectEntrar, selectLogin, selectSidebar } from "../../store/pageInfoSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 export const Sidebar = () => {
+
+    const showDropdown = useSelector(selectDropdown);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
+    
+    const logado = useSelector(selectLogin);
+
+    const dispatch = useDispatch();
+
+    const navigate = useNavigate();
+
     return(
         <div className={styles.sidebar}>
             <div className={styles.parte_superior}>
@@ -21,35 +34,61 @@ export const Sidebar = () => {
                     <img src="/imagens/flamengo-logo-2020.svg" alt="Logo do Flamengo" />
                 </a>
                 
-                <GanheDinheiro />
+                <GanheDinheiro/>
                 
-                <button className={styles.investir_agora}>Investir agora!</button>
+                <button
+                    className={styles.investir_agora}
+                    onClick={() => {
+                        if(logado) {
+                            dispatch(setEntrar(false));
+                            dispatch(setCadastro(false));
+                            navigate("/tela-investimentos");
+                        }
+                        else {
+                            dispatch(setEntrar(true));
+                        }
+                    }}
+                >
+                    Investir agora!
+                </button>
             </div>
             <div className={styles.links}>
                 <ul>
                     <li>
-                        <Link
+                        <div
                             className={styles.redirect}
-                            to="/zumzumcapoeira"
+                            onClick={() => {
+                                dispatch(setEntrar(false));
+                                dispatch(setCadastro(false));
+                                navigate("/zumzumcapoeira");
+                            }}
                         >
                             INDIQUE UM AMIGO
-                        </Link>
+                        </div>
                     </li>
                     <li>
-                        <Link
+                        <div
                             className={styles.redirect}
-                            to="/regras"
+                            onClick={() => {
+                                dispatch(setEntrar(false));
+                                dispatch(setCadastro(false));
+                                navigate("/regras");
+                            }}        
                         >
                             REGRAS DE INVESTIMENTO
-                        </Link>
+                        </div>
                     </li>
                     <li>
-                        <Link
+                        <div
                             className={styles.redirect}
-                            to="/suporte"
+                            onClick={() => {
+                                dispatch(setEntrar(false));
+                                dispatch(setCadastro(false));
+                                navigate("/suporte");
+                            }}
                         >
                             SUPORTE
-                        </Link>
+                        </div>
                     </li>
                 </ul>
             </div>

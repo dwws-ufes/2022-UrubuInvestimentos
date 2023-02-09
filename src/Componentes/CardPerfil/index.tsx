@@ -3,8 +3,6 @@ import { GiReceiveMoney } from "react-icons/gi";
 import { BsCreditCard } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 
-import { BotaoGenerico } from "../";
-
 import styles from "./index.module.css";
 import Content from "../../Content/Components/CardPerfil.json"
 
@@ -12,12 +10,10 @@ interface propsType {
     nome: string;
     saldo: number;
     investimentos: number | string;
-    lucrou: number;
-    cartoes: string[];
 }
 
 export const CardPerfil = (props: propsType) => {
-    const { nome, saldo, investimentos, lucrou, cartoes } = props;
+    const { nome, saldo, investimentos } = props;
 
     return(
         <div className={styles.card_perfil}>
@@ -31,29 +27,25 @@ export const CardPerfil = (props: propsType) => {
                    <FaMoneyCheckAlt className={styles.icone_geral}/>
                    <p>{investimentos} { Content.Investment }</p>
                 </div>
-                <div>
-                    <GiReceiveMoney className={styles.icone_geral}/>
-                    <p>{ Content.Profit } ${`${lucrou.toFixed(2)}`}</p>
-                </div>
             </div>
-            <div className={styles.parte_inferior_perfil}>
-                <BotaoGenerico
-                    texto={ Content.Card }
+            <form className={styles.parte_inferior_perfil}>
+                <input
+                    placeholder="$0.00"
+                    type="text"
+                    inputMode="numeric"
                 />
-            </div>
+                
+                <button
+                    className={styles.btn}
+                    type="submit"
+                    onClick={e => {
+                        e.preventDefault();
+                    }}
+                >
+                    { Content.Card }
+                </button>
+            </form>
                 <div>
-                    {cartoes.map((cartao, index) =>
-                        <div
-                            className={styles.cartao_individual}
-                            key={index}
-                        >  
-                            <div className={styles.cartao_div}>
-                                <BsCreditCard className={styles.cartao_individual}/>
-                                <p>{cartao}</p>
-                            </div>
-                            <IoCloseSharp className={styles.cartao_individual}/>
-                        </div>
-                    )}
                 </div>
 	</div>
     );

@@ -6,7 +6,7 @@ import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { loga, desloga, selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
@@ -15,80 +15,49 @@ import styles from "./index.module.css";
 
 interface jogosType {
     gameId: number;
-    dia: string,
+    date: string;
     number1: string;
     number2: string;
     number3: string;
     number4: string;
 }
 
+const jogosIniciais: jogosType[] = [{
+    gameId: 0,
+    date: "",
+    number1: "",
+    number2: "",
+    number3: "",
+    number4: ""
+}];
+
 export const Inicial = () => {
+    const [ games, setGames ] = useState(jogosIniciais);
+
+    useEffect(() => {
+        console.log("chamou useEffect");
+        api.get('/').then((request) => {console.log(request); setGames(request.data.reverse())});
+    }, []);
+
     const showDropdown = useSelector(selectDropdown);
-
-    const jogosIniciais: jogosType[] = [
-        {
-            gameId: 0,
-            dia: "26/01/2022",
-            number1: "3456",
-            number2: "5678",
-            number3: "9012",
-            number4: "3456",
-        },
-        {
-            gameId: 1,
-            dia: "25/01/2023",
-            number1: "8910",
-            number2: "5678",
-            number3: "9012",
-            number4: "3456",
-        },
-        {
-            gameId: 2,
-            dia: "26/01/2023",
-            number1: "3245",
-            number2: "5678",
-            number3: "9012",
-            number4: "3456",
-        },
-        {
-            gameId: 3,
-            dia: "27/01/2023",
-            number1: "7301",
-            number2: "5678",
-            number3: "9012",
-            number4: "3456",
-        },
-    ];
-
-    const [ jogos, setJogos ] = useState(jogosIniciais.reverse());
-    
-    // Inverte a ordem do vetor de jogos, para que o ultimo seja o primeiro do vetor
-    // jogos.reverse()
-    console.log(jogos)
-
-    const [showCadastro, setCadastro] = useState(false);
-    const [showEntrar, setEntrar] = useState(false);
-    const [sidebar, setSidebar] = useState(true);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
+    const search = useSelector(selectSearch);
 
     return (
     <div>
-        <Header
-            abreCadastro={() => setCadastro(true)}
-            fechaCadastro={() => setCadastro(false)}
-            abreEntrar={() => setEntrar(true)}
-            fechaEntrar={() => setEntrar(false)}
-            toggleSidebar={() => setSidebar(anterior => !anterior)}
-        />
+        <Header/>
 
         <main className={styles.main}>
 
-        {sidebar && <Sidebar />}
+        {showSidebar && <Sidebar />}
         <section className={styles.conteudo_principal}>
             <UltimoResultado
-                fotoSrc={mapeiaSrcAnimal(jogos[0].number1)}
-                animal={mapeiaNomeAnimal(jogos[0].number1)}
-                dia={jogos[0].dia}
-                milhares={[jogos[0].number1, jogos[0].number2, jogos[0].number3, jogos[0].number4]}
+                fotoSrc={mapeiaSrcAnimal(games[0].number1)}
+                animal={mapeiaNomeAnimal(games[0].number1)}
+                dia={games[0].date}
+                milhares={[games[0].number1, games[0].number2, games[0].number3, games[0].number4]}
             />
 
             <Searchbar />
@@ -96,29 +65,49 @@ export const Inicial = () => {
             <div className={styles.resultados_anteriores}>
 
                 {/* Nao mostra o ultimo jogo nos resultados, pois ele ja eh mostrado no card inicial */}
-                {jogos.filter((jogo, index) => index !== 0).map( jogo => {
-                    const { gameId, dia, number1, number2, number3, number4  } = jogo;
-                    
-                    const nome = mapeiaNomeAnimal(number1);
-                    const src = mapeiaSrcAnimal(number1);
+                {games
+                    .filter((game, index) => index !== 0)
+                    .filter(game => {
+                        const { date, number1, number2, number3, number4  } = game;
 
-                    return (
-                    <Resultado
-                        key={gameId}
-                        src={src}
-                        dia={dia}
-                        animal={nome}
-                        milhares={[number1, number2, number3, number4]}
-                    />
-                    );
-                })}
+                        const nome = mapeiaNomeAnimal(number1);
+
+                        if(
+                            date.includes(search)
+                            || number1.includes(search)
+                            || number2.includes(search)
+                            || number3.includes(search)
+                            || number4.includes(search)
+                            || nome.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+                        )
+                            return true;
+                        else
+                            return false;
+                    })
+                    .map( game => {
+                        const { gameId, date, number1, number2, number3, number4  } = game;
+                        
+                        const nome = mapeiaNomeAnimal(number1);
+                        const src = mapeiaSrcAnimal(number1);
+
+                        return (
+                        <Resultado
+                            key={gameId}
+                            src={src}
+                            dia={date}
+                            animal={nome}
+                            milhares={[number1, number2, number3, number4]}
+                        />
+                        );
+                    })
+                }
             </div>
         </section>
         </main>
 
-        { showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}}/> }
-        { showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}}/> }
-        { showDropdown && <LoginDropdown sair={() => {}}/> }
+        { showEntrar && <Entrar/> }
+        { showCadastro && <Cadastro/> }
+        { showDropdown && <LoginDropdown/> }
     </div>
     );
 }

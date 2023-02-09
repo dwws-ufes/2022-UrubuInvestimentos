@@ -3,7 +3,7 @@ import api from './../../services/api';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, selectLogin } from "../../store/loginSlice";
+import { loga, selectLogin } from "../../store/pageInfoSlice";
 import { setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import { Header, Sidebar } from '../../Componentes';
@@ -67,7 +67,7 @@ export const Cadastro = () => {
             dispatch(setNomeUsuario(apelido));
             dispatch(setSaldo(1000));
 
-            dispatch(logaPrimeiraVez());
+            dispatch(loga());
             
             navigate('/perfil');
         }
@@ -82,13 +82,7 @@ export const Cadastro = () => {
 
     return (
         <div>
-            <Header
-                abreCadastro={() => null}
-                fechaCadastro={() => null}
-                abreEntrar={() => null}
-                fechaEntrar={() => null}
-                toggleSidebar={() => setSidebar(anterior => !anterior)}
-            />
+            <Header/>
             <div className={styles.main_content}>
                 {sidebar && <Sidebar/>}
 

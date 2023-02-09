@@ -3,18 +3,29 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
+import { useSelector, useDispatch } from "react-redux";
+import { loga, desloga, setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar } from "../../store/pageInfoSlice";
+import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+
 import styles from "./index.module.css"
+import api from "../../services/api";
+import { AxiosError } from "axios";
 
-interface propsType {
-    fechaCadastro: () => void;
-}
-
-export const Cadastro = (props: propsType) => {
-    const { fechaCadastro } = props;
+export const Cadastro = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [idade, setIdade] = useState("");
     const navigate = useNavigate();
+
+    const logado = useSelector(selectLogin);
+    const showDropdown = useSelector(selectDropdown);
+    const showCadastro = useSelector(selectCadastro);
+    const showEntrar = useSelector(selectEntrar);
+    const showSidebar = useSelector(selectSidebar);
+
+    const nomeUsuario = useSelector(selectNomeUsuario);
+
+    const dispatch = useDispatch();
 
     const handleRegister = async (e:any) => {
         e.preventDefault();
@@ -28,10 +39,15 @@ export const Cadastro = (props: propsType) => {
         }
         const data = { email, senha, idade }
         try {
+            await api.post("/register", data);
+            dispatch(setCadastro(false));
+            dispatch(setEntrar(false));
             navigate("/cadastro", { state: data });
         }
-        catch (err){
-            alert("Erro ao iniciar criacao de conta");
+        catch (err:any){
+            console.error(err);
+            alert(err.response.data.error);
+            // alert("Erro ao iniciar criacao de conta");
         }
     }
 
@@ -77,18 +93,45 @@ export const Cadastro = (props: propsType) => {
                         min={0}
                     />
 
-                    <p className={styles.termos_condicoes}>Ao se inscrever, você concorda com os <Link to="/zumzumcapoeira">termos de serviço</Link>.</p>
+                    <p
+                        className={styles.termos_condicoes}
+                    >
+                        Ao se inscrever, você concorda com os&nbsp;
+                        <b
+                            onClick={() => {
+                                dispatch(setCadastro(false));
+                                dispatch(setEntrar(false));
+                                navigate("/zumzumcapoeira");
+                            }}
+                        >
+                            termos de serviço
+                        </b>
+                        
+                    </p>
 
                     <button type="submit">Começe já! &rarr;</button>
 
-                    <p className={styles.ja_investidor}>Já é um investidor? <a href=".logo">Entre</a>.</p>
+                    <p
+                        className={styles.ja_investidor}
+                    >
+                        Já é um investidor?&nbsp;
+                        <b
+                            onClick={() => {
+                                dispatch(setCadastro(false));
+                                dispatch(setEntrar(true));
+                            }}
+                        >
+                            Entre
+                        </b>
+                        .
+                    </p>
                 </form>
 
             </div>
 
         <CgClose 
             className={styles.x}
-            onClick={fechaCadastro}
+            onClick={() => dispatch(setCadastro(false))}
         />
         </div>
     );

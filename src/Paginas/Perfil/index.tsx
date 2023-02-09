@@ -1,24 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+import api from '../../services/api';
 
 import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { logaPrimeiraVez, desloga, selectLogin, selectDropdown } from "../../store/loginSlice";
+import { loga, desloga, selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
 import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
 
+interface investimentsType {
+    investimentId: string;
+    investmentOwner: string;
+    selectedNumber: string;
+    betType: string;
+    distribution: string;
+    value: number;
+    odds: number;
+    gameId: number;
+}
+
 export const Perfil = () => {
+    const investmentOwner = localStorage.getItem('profileId');
 
-	const [ showCadastro, setCadastro ] = useState(false);
-	const [ showEntrar, setEntrar ] = useState(false);
-    const [ sidebar, setSidebar ] = useState(true);
+    const initialInvestment: investimentsType[] = [{
+        investimentId: "",
+        investmentOwner: "",
+        selectedNumber: "",
+        betType: "",
+        distribution: "",
+        value: 0,
+        odds: 0,
+        gameId: 0,
+    }];
     
-    const logado = useSelector(selectLogin);
-    const showDropdown = useSelector(selectDropdown);
+    const [ investments, setInvestments ] = useState(initialInvestment);
 
+    useEffect(() => {
+        api.get('/tela-investimentos', {
+            headers: {
+                Authorization: investmentOwner,
+            }
+        }).then((response) => { setInvestments(response.data) });
+    }, []);
+
+    const logado = useSelector(selectLogin);
+	const showDropdown = useSelector(selectDropdown);
+    const showEntrar = useSelector(selectEntrar);
+    const showCadastro = useSelector(selectCadastro);
+    const showSidebar = useSelector(selectSidebar);
+    
     const nomeUsuario = useSelector(selectNomeUsuario);
     const saldo = useSelector(selectSaldo);
     
@@ -26,23 +60,15 @@ export const Perfil = () => {
 
 	return (
 		<div>
-			<Header
-				abreCadastro={ () => {setCadastro(true)}}
-                fechaCadastro={() => {setCadastro(false);}}
-                abreEntrar={() => {setEntrar(true);}}
-                fechaEntrar={() => {setEntrar(false);}}
-                toggleSidebar={() => setSidebar(anterior => !anterior)}
-			/>
+			<Header/>
 
             <main className={styles.main}>
-                { sidebar && <Sidebar/> }
+                { showSidebar && <Sidebar/> }
                 <section className={styles.conteudo_principal}>
                     <CardPerfil
                         nome={nomeUsuario}
                         saldo={saldo}
                         investimentos={10}
-                        lucrou={0}
-                        cartoes={["Cartão 1", "Cartão 2"]}
                     />
                     
                     <MeusInvestimentos
@@ -54,9 +80,9 @@ export const Perfil = () => {
                 </section>
             </main> 
             
-			{ showEntrar && <Entrar fechaEntrar={() => {setEntrar(false);}}/>}
-			{ showCadastro && <Cadastro fechaCadastro={() => {setCadastro(false);}}/> }
-            { showDropdown && <LoginDropdown sair={() => {}}/> }
+			{ showEntrar && <Entrar/> }
+			{ showCadastro && <Cadastro/> }
+            { showDropdown && <LoginDropdown/> }
 
 		</div>
 	);
