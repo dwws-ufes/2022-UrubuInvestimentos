@@ -135,7 +135,7 @@ export const TelaInvestimentoNumero = () => {
                                     max={10000.00}
                                     step={0.01} 
                                     placeholder="0.00"
-                                    value={value}
+                                    // value={value}
                                     onChange={e => setValue(Number(e.target.value))}
                                     required
                                 />
