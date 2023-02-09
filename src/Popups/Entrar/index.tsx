@@ -40,8 +40,6 @@ export const Entrar = () => {
         try{
             const loginInfo = await api.post("/sessions", dataLogin);
 
-            console.log(loginInfo.data)
-
             localStorage.setItem('profileId', loginInfo.data[0].id);
             localStorage.setItem('profileName', loginInfo.data[0].nickname);
 

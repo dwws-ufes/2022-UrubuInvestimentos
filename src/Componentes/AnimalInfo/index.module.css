@@ -1,23 +1,24 @@
 @import url("../../constantes.css");
 
-.ultimo_resultado {
-    width: var(--main-width);
+.animal_info {
+    width: 100%;
     max-width: var(--main-max-width);
     min-width: 700px;
 
-    height: 80%;
+    height: 25rem;
     min-height: 300px;
     
     margin: 0 auto;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     border-radius: var(--default-border-radius);
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
     box-shadow: 3px 3px 10px black;
 }
 
@@ -39,4 +40,27 @@
     font-weight: bold;
     margin: 0 auto;
     cursor: pointer;
+}
+
+.info {
+    width: 40%;
+    background-color: var(--fundo-secundario-transparente);
+    border-top-right-radius: var(--default-border-radius);
+    border-bottom-right-radius: var(--default-border-radius);
+    box-shadow: -3px 0px 5px black;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.info h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.info p {
+    text-align: justify;
+    font-size: 1rem;
 }

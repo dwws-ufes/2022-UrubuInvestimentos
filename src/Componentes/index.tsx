@@ -10,3 +10,4 @@ export * from './ResultadoPerfil';
 export * from './Searchbar';
 export * from './Sidebar';
 export * from './UltimoResultado';
+export * from './AnimalInfo';

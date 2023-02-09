@@ -6,7 +6,13 @@ import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
 
-export const Searchbar = () => {
+interface propsType {
+    placeholder: string;
+}
+
+export const Searchbar = (props: propsType) => {
+    const { placeholder } = props;
+
     const dispatch = useDispatch();
     
     return(
@@ -16,7 +22,7 @@ export const Searchbar = () => {
                 <HiMagnifyingGlass className={styles.lupa}/>
                 <input
                     type="text"
-                    placeholder="Procure jogos passados"
+                    placeholder={placeholder}
                     onChange={e => {
                         dispatch(setSearch(e.target.value));
                     }}

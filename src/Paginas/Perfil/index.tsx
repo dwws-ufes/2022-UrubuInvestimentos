@@ -59,8 +59,6 @@ export const Perfil = () => {
     const investimentos = useSelector(selectInvestimentos)
     
     const dispatch = useDispatch();
-    
-    console.log("investimentos", investimentos)
 
 	return (
 		<div>

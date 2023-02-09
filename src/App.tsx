@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { store } from "./store";
 
 // Importando as paginas
-import { Inicial, Perfil, Cadastro, Regras, Suporte, Urubuzado, TelaInvestimentoNumero} from "./Paginas";
+import { Inicial, Perfil, Cadastro, Regras, Suporte, Urubuzado, TelaInvestimentoNumero, Fauna } from "./Paginas";
 
 import "./index.css";
 
@@ -25,6 +25,7 @@ export const App = () => {
                     <Route path="/suporte" element={<Suporte/>}/>
                     <Route path="/zumzumcapoeira" element={<Urubuzado/>}/>
                     <Route path="/tela-investimentos" element={<TelaInvestimentoNumero/>}/>
+                    <Route path="/fauna" element={<Fauna/>}/>
                 </Routes>
             </BrowserRouter>
     </Provider>

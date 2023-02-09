@@ -84,6 +84,18 @@ export const Sidebar = () => {
                             onClick={() => {
                                 dispatch(setEntrar(false));
                                 dispatch(setCadastro(false));
+                                navigate("/fauna");
+                            }}        
+                        >
+                            FAUNA BRASILEIRA
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            className={styles.redirect}
+                            onClick={() => {
+                                dispatch(setEntrar(false));
+                                dispatch(setCadastro(false));
                                 navigate("/suporte");
                             }}
                         >

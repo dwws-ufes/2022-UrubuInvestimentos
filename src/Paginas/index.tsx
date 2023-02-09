@@ -5,3 +5,4 @@ export * from './Regras';
 export * from './Suporte';
 export * from './TelaInvestimentosNumero';
 export * from './Urubuzado';
+export * from './Fauna';
