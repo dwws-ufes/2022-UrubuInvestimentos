@@ -11,6 +11,7 @@ import { store } from "./store";
 import { Inicial, Perfil, Cadastro, Regras, Suporte, Urubuzado, TelaInvestimentoNumero, Fauna } from "./Paginas";
 
 import "./index.css";
+import JogosRDF from "./Paginas/JogosRDF";
 
 export const App = () => {
 
@@ -26,6 +27,7 @@ export const App = () => {
                     <Route path="/zumzumcapoeira" element={<Urubuzado/>}/>
                     <Route path="/tela-investimentos" element={<TelaInvestimentoNumero/>}/>
                     <Route path="/fauna" element={<Fauna/>}/>
+                    <Route path="/jogos.rdf" element={<JogosRDF/>}/>
                 </Routes>
             </BrowserRouter>
     </Provider>

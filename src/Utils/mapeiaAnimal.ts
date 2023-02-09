@@ -55,14 +55,14 @@ export const animais: animaisType[] = [
         src: "/imagens/animais/pavao.jpeg",
     },  
     {
-        nome: "Urubu rei",
+        nome: "Urubu-rei",
         nomeEn: "",
         descricao: "",
         src: "/imagens/animais/urubu-rei.jpeg",
     },  
     {
         nome: "Rato",
-        nomeEn: "Rat",
+        nomeEn: "Mouse",
         descricao: "",
         src: "/imagens/animais/rato.jpeg",
     },  

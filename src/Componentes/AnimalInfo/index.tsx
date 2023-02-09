@@ -38,7 +38,7 @@ export const AnimalInfo = (props: propsType) => {
             const animal = bindings.entries._root.entries[0][1]?.id.substring(1).split("\"@en")[0];
             const descricao = bindings.entries._root.entries[1][1].id.substring(1).split("\"@en")[0];
 
-            if(nomeEn === animal) {
+            if(nomeEn.toLowerCase() === animal.toLowerCase()){
                 const novaString = descricao.split(".")[0] + "." + descricao.split(".")[1] + ".";
                 setDescricaoAtual(novaString);
             }
