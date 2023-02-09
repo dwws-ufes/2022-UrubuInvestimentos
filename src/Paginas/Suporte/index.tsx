@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BotaoGenerico } from "../../Componentes/BotaoGenerico";
 
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
 

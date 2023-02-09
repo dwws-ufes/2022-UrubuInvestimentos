@@ -1,4 +1,3 @@
-export * from './BotaoGenerico';
 export * from './CardPerfil';
 export * from './Header';
 export * from './Logo';

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Logo, BotaoGenerico } from '../../Componentes';
+import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';

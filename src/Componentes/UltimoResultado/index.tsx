@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { BotaoGenerico, ProximoResultado } from "../";
+import { ProximoResultado } from "../";
 import { ResultadoInfo } from "./ResultadoInfo";
 
 import styles from "./index.module.css";

@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import { BotaoGenerico } from "../";
 import { GanheDinheiro } from './GanheDinheiro';
 
 import { FaMoneyCheckAlt } from 'react-icons/fa';

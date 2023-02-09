@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { ProximoResultado, BotaoGenerico } from "../";
+import { ProximoResultado } from "../";
 
 import Content from "../../Content/Components/MeusInvestimentos.json"
 import styles from "./index.module.css";
