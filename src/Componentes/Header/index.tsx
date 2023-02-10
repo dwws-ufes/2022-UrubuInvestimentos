@@ -23,22 +23,24 @@ export const Header = () => {
 
     return(
         <div className={styles.header}>
-            <FaBars
-                className={styles.bar_icon}
-                onClick={() => {dispatch(setSidebar(!showSidebar))}}
-            />
-            <div>
-                <select
-                    onChange={ e => { 
-                        dispatch(setLinguagem(e.target.value));
-                    }}
-                    required >
-                        <option value={useSelector(selectLinguagem)}>{Languages.Languages[useSelector(selectLinguagem)]}</option>
-                    {   
-                        Languages.Languages.map((element, index) => {
-                        return (<option key={index} value={index} >{element}</option>)
-                    })}
-                </select>
+            <div className={styles.header_esquerdo}>
+                <FaBars
+                    className={styles.bar_icon}
+                    onClick={() => {dispatch(setSidebar(!showSidebar))}}
+                />
+                <div className={styles.lingua}>
+                    <select
+                        onChange={ e => { 
+                            dispatch(setLinguagem(e.target.value));
+                        }}
+                        required >
+                            <option value={useSelector(selectLinguagem)}>{Languages.Languages[useSelector(selectLinguagem)]}</option>
+                        {   
+                            Languages.Languages.map((element, index) => {
+                            return (<option key={index} value={index} >{element}</option>)
+                        })}
+                    </select>
+                </div>
             </div>
 
             <div className={styles.header_centro}>

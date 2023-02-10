@@ -111,3 +111,17 @@
     margin: 0 auto;
     cursor: pointer;
 }
+
+.header_esquerdo {
+    display: flex;
+    justify-content: flex-start;
+    /* border: 3px solid green; */
+    gap: 1rem;
+}
+
+.lingua {
+    /* border: 2px solid red; */
+    margin: auto 0;
+    width: 5rem;
+    overflow: hidden;
+}
