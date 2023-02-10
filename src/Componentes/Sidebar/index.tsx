@@ -63,7 +63,18 @@ export const Sidebar = () => {
                         >
                             { Contents.Friend }
                         </div>
-
+                    </li>
+                    <li>
+                        <div
+                            className={styles.redirect}
+                            onClick={() => {
+                                dispatch(setEntrar(false));
+                                dispatch(setCadastro(false));
+                                navigate("/fauna");
+                            }}
+                        >
+                            { Contents.Fauna }
+                        </div>
                     </li>
                     <li>
                         <div

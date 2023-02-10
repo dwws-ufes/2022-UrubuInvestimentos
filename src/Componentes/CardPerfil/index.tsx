@@ -63,8 +63,8 @@ export const CardPerfil = (props: propsType) => {
             >
                 <input
                     placeholder="$0.00"
-                    type="text"
-                    inputMode="numeric"
+                    type="number"
+                    min={10}
                     onChange={e => setValor(Number(e.target.value))}
                 />
                 

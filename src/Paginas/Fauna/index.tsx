@@ -67,8 +67,8 @@ export const Fauna = () => {
                         const { nome, nomeEn } = animal;
 
                         if(
-                            nome.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-                            || nomeEn.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+                            nome.toLocaleLowerCase().includes(search.toLowerCase())
+                            || nomeEn.toLowerCase().includes(search.toLowerCase())
                         )
                             return true;
                         else

@@ -10,7 +10,8 @@
             ]
         },
         "DoInvestment": "Investir agora!",
-        "Friend": "INDIQUE UM AMIGO!",
+        "Friend": "INDIQUE UM AMIGO",
+        "Fauna": "SOBRE OS ANIMAIS",
         "Rules": "REGRAS DE INVESTIMENTO",
         "Help": "SUPORTE",
         "EarnMoney": "Ganhe $ grátis agora!"
@@ -26,7 +27,8 @@
             ]
         },
         "DoInvestment": "Invest now!",
-        "Friend": "REFER A FRIEND!",
+        "Friend": "REFER A FRIEND",
+        "Fauna": "ABOUT THE ANIMALS",
         "Rules": "INVESTMENT RULES",
         "Help": "SUPPORT",
         "EarnMoney": "Get Free $ Now!"
@@ -43,6 +45,7 @@
         },
         "DoInvestment": "AAAAAAAA AAAAAAAA!",
         "Friend": "AAAAAAAA AA AAAAAAA!",
+        "Fauna": "AAAAAAAA AA AAAAAAA!",
         "Rules": "AAAAAA AAA AAAAAAAAA",
         "Help": "AAAAAAAA",
         "EarnMoney": "AAAAAAAA A AAAAAA AAAAA!"

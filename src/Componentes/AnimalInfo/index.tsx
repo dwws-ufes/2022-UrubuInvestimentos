@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
+import { useSelector } from "react-redux";
+import { selectLinguagem } from "../../store/pageInfoSlice";
+import CONTENTS from "../../Content/Components/AnimalInfo.json";
 
 interface propsType {
     fotoSrc: string;
@@ -36,7 +39,8 @@ export const AnimalInfo = (props: propsType) => {
             const descricao = bindings.entries._root.entries[1][1].id.substring(1).split("\"@en")[0];
 
             if(nomeEn.toLowerCase() === animal.toLowerCase()){
-                const novaString = descricao.split(".")[0] + "." + descricao.split(".")[1] + ".";
+                let novaString = descricao.split(".")[0] + "." + descricao.split(".")[1];
+                novaString = novaString.substring(0, 250) + ".";
                 setDescricaoAtual(novaString);
             }
         });
@@ -46,6 +50,8 @@ export const AnimalInfo = (props: propsType) => {
 
     dbpediaSearch();
 
+    const linguagem = useSelector(selectLinguagem);    
+
     return(
         <div
             className={styles.animal_info}
@@ -53,10 +59,10 @@ export const AnimalInfo = (props: propsType) => {
         >
             <div className={styles.info}>
                 <h2>
-                    {nome.toUpperCase()}
+                    {linguagem === 0 ? nome.toUpperCase() : nomeEn.toUpperCase()}
                 </h2>
                 <p>
-                    {descricaoAtual == ""?"Description not found in dbpedia!":descricaoAtual}
+                    {descricaoAtual === "" ? CONTENTS[linguagem].erro : descricaoAtual}
                 </p>
             </div>
         </div>
