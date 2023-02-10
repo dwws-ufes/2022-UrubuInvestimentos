@@ -1,0 +1,44 @@
+@import url("../../constantes.css");
+
+.main {
+	position: relative;
+
+	height: calc(100vh - var(--altura-header));
+	width: 100vw;
+
+	margin-top: var(--altura-header);
+
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.conteudo_principal {
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 20px 0;
+}
+
+.resultados_anteriores {
+    width: var(--main-width); 
+	min-width: var(--main-min-width);
+    max-width: var(--main-max-width);
+
+    margin: 0 auto;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1em;
+
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.resultados_anteriores::-webkit-scrollbar {
+    display: none;
+}

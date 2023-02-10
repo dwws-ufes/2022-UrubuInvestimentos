@@ -1,0 +1,14 @@
+@import url("../../constantes.css");
+
+.main {
+	position: relative;
+
+	height: calc(100vh - var(--altura-header));
+	width: 100vw;
+
+	margin-top: var(--altura-header);
+
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

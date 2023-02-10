@@ -16,7 +16,6 @@ export const Cadastro = () => {
     const [senha, setSenha] = useState("");
     const [idade, setIdade] = useState("");
     const navigate = useNavigate();
-
     const dispatch = useDispatch();
     const Contents = CONTENTS[useSelector(selectLinguagem)];
 
@@ -98,7 +97,7 @@ export const Cadastro = () => {
                         >
                             { Contents.Terms[1] }
                         </b>
-                        
+                        .
                     </p>
 
                     <button type="submit">{ Contents.Begin } &rarr;</button>

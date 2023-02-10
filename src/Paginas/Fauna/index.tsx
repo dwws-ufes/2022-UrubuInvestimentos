@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import api from '../../services/api'
-import { Header, Sidebar, UltimoResultado, Searchbar, Resultado } from "../../Componentes";
+
+import { Header, Sidebar, Searchbar, AnimalInfo } from "../../Componentes";
 import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
-
 import { useSelector } from "react-redux";
 import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
-
-import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
+import { animais } from "../../Utils/mapeiaAnimal";
 
 import styles from "./index.module.css";
 
@@ -29,7 +28,7 @@ const jogosIniciais: jogosType[] = [{
     number4: ""
 }];
 
-export const Inicial = () => {
+export const Fauna = () => {
     const [ games, setGames ] = useState(jogosIniciais);
 
     useEffect(() => {
@@ -50,51 +49,41 @@ export const Inicial = () => {
 
         {showSidebar && <Sidebar />}
         <section className={styles.conteudo_principal}>
-            <UltimoResultado
-                fotoSrc={mapeiaSrcAnimal(games[0].number1)}
-                animal={mapeiaNomeAnimal(games[0].number1)}
-                dia={games[0].date}
-                milhares={[games[0].number1, games[0].number2, games[0].number3, games[0].number4]}
-            />
+            <h1
+                style={{
+                    textAlign: "center",
+                    fontSize: "2rem"
+                }}
+            >
+                Fauna Brasileira
+            </h1>
 
-            <Searchbar placeholder="Procure investimentos passados"/>
+            <Searchbar placeholder="Procure um animal"/>
 
             <div className={styles.resultados_anteriores}>
-
                 {/* Nao mostra o ultimo jogo nos resultados, pois ele ja eh mostrado no card inicial */}
-                {games
-                    .filter((game, index) => index !== 0)
-                    .filter(game => {
-                        const { date, number1, number2, number3, number4  } = game;
-
-                        const nome = mapeiaNomeAnimal(number1);
+                {animais
+                    .filter(animal => {
+                        const { nome, nomeEn } = animal;
 
                         if(
-                            date.includes(search)
-                            || number1.includes(search)
-                            || number2.includes(search)
-                            || number3.includes(search)
-                            || number4.includes(search)
-                            || nome.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+                            nome.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+                            || nomeEn.toLocaleLowerCase().includes(search.toLocaleLowerCase())
                         )
                             return true;
                         else
                             return false;
                     })
-                    .map( game => {
-                        const { gameId, date, number1, number2, number3, number4  } = game;
-                        
-                        const nome = mapeiaNomeAnimal(number1);
-                        const src = mapeiaSrcAnimal(number1);
+                    .map( (animal, index) => {
+                        const { nome, nomeEn, src, descricao } = animal;
 
                         return (
-                        <Resultado
-                            key={gameId}
-                            src={src}
-                            dia={date}
-                            animal={nome}
-                            milhares={[number1, number2, number3, number4]}
-                        />
+                            <AnimalInfo
+                                fotoSrc={src}
+                                nome={nome}
+                                nomeEn={nomeEn}
+                                key={index}
+                            />
                         );
                     })
                 }

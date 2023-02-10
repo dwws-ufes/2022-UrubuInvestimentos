@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { cartaoType, investimentosType, tiposApostas, tiposDistribuicao, userInfoType } from "../Utils/tipos";
+import { userInfoType } from "../Utils/tipos";
 
 const userInfoInitialState: userInfoType = {
     email: "",
     senha: "",
     nomeUsuario: "",
     saldo: 0,
-    investimenos: [],
+    investimentos: [],
     cartoes: [],
 };
 
@@ -18,7 +18,8 @@ export const userInfoSlice = createSlice({
         setSenha: (state, action) => {state.senha = action.payload},
         setNomeUsuario: (state, action) => {state.nomeUsuario = action.payload},
         setSaldo: (state, action) => {state.saldo = action.payload},
-        adicionaInvestimento: (state, action) => {state.investimenos.push(action.payload)},
+        adicionaInvestimento: (state, action) => {state.investimentos.push(action.payload)},
+        setInvestimentos: (state, action) => {state.investimentos = action.payload},
         adicionaCartao: (state, action) => {state.cartoes.push(action.payload)}
     }
 });
@@ -28,7 +29,8 @@ export const {  setEmail,
                 setNomeUsuario,
                 setSaldo,
                 adicionaInvestimento,
-                adicionaCartao
+                setInvestimentos,
+                adicionaCartao,
             } = userInfoSlice.actions;
 
 export const selectEmail = (state: any) => state.userInfo.email;

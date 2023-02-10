@@ -22,7 +22,7 @@ export const UltimoResultado = (props: propsType) => {
 
     if(milhares === undefined)
         milhares = [""];
-
+    
     const logado = useSelector(selectLogin);
 
     const dispatch = useDispatch();

@@ -1,4 +1,3 @@
-export * from './BotaoGenerico';
 export * from './CardPerfil';
 export * from './Header';
 export * from './Logo';
@@ -11,3 +10,4 @@ export * from './ResultadoPerfil';
 export * from './Searchbar';
 export * from './Sidebar';
 export * from './UltimoResultado';
+export * from './AnimalInfo';

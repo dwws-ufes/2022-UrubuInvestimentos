@@ -1,9 +1,11 @@
 import { FaRegUser, FaMoneyCheckAlt } from "react-icons/fa";
-
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/CardPerfil.json"
-import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectLinguagem} from "../../store/pageInfoSlice";
+import { useState } from "react";
+import api from "../../services/api";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSaldo, setSaldo } from "../../store/userInfoSlice";
 
 interface propsType {
     nome: string;
@@ -13,8 +15,34 @@ interface propsType {
 
 export const CardPerfil = (props: propsType) => {
 
+    const investmentOwner = localStorage.getItem("profileId");
+
     const { nome, saldo, investimentos } = props;
     const Contents = CONTENTS[useSelector(selectLinguagem)];
+
+    const [ valor, setValor ] = useState(0);
+
+    const dispatch = useDispatch();
+
+    async function handleAddValor(e:any){
+        e.preventDefault();
+        e.target.reset();
+
+        const diff = saldo + valor;
+
+        try{
+            await api.put('/perfil', { balance: diff }, {
+                headers: {
+                    Authorization: investmentOwner,
+                }
+            });
+            
+            dispatch(setSaldo(diff));
+        }catch(err){
+            alert(err); 
+        }
+        
+    }
 
     return(
         <div className={styles.card_perfil}>
@@ -29,19 +57,20 @@ export const CardPerfil = (props: propsType) => {
                    <p>{investimentos} { Contents.Investment }</p>
                 </div>
             </div>
-            <form className={styles.parte_inferior_perfil}>
+            <form
+                className={styles.parte_inferior_perfil}
+                onSubmit={handleAddValor}
+            >
                 <input
                     placeholder="$0.00"
                     type="text"
                     inputMode="numeric"
+                    onChange={e => setValor(Number(e.target.value))}
                 />
                 
                 <button
                     className={styles.btn}
                     type="submit"
-                    onClick={e => {
-                        e.preventDefault();
-                    }}
                 >
                     { Contents.Card }
                 </button>

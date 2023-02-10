@@ -11,11 +11,6 @@ interface propsType {
 export const ResultadoInfoPequeno = (props: propsType) => {
   const { dia, animal, milhares } = props;
 
-  const dataAtual = new Date();
-  const anoAtual = dataAtual.getFullYear();
-  const dataRecebidaSplitada = dia.split("/");
-  const anoRecebido = parseInt(dataRecebidaSplitada[dataRecebidaSplitada.length - 1]);
-
   const diaProcessado = processaData(dia);
 
   return (

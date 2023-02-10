@@ -14,6 +14,6 @@ export default async function randomNumbers(){
         number4: zeroPad(Math.floor(Math.random() * 10000),4),
     }
 
-    console.log(data);
+    //console.log(data);
     await generator.post('/', data);
 }   

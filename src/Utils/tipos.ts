@@ -18,12 +18,14 @@ export enum tiposDistribuicao {
 }
 
 export interface investimentosType {
-    tipo: tiposApostas;
-    distribuicao: tiposDistribuicao;
-    numero: string;
-    odd: number;
-    valor: number;
-    data: Date;
+    betType: string;
+    distribution: string;
+    gameIdAtual: number;
+    investmentId: number;
+    investmentOwner: string;
+    odds: number;
+    selectedNumber: string;
+    value: number;
 }
 
 export interface userInfoType {
@@ -31,6 +33,6 @@ export interface userInfoType {
     senha: string;
     nomeUsuario: string;
     saldo: number;
-    investimenos: investimentosType[];
+    investimentos: investimentosType[];
     cartoes: cartaoType[];
 }

@@ -7,7 +7,13 @@ import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/Searchbar.json"
 import { selectLinguagem } from "../../store/pageInfoSlice";
 
-export const Searchbar = () => {
+interface propsType {
+    placeholder: string;
+}
+
+export const Searchbar = (props: propsType) => {
+    const { placeholder } = props;
+
     const dispatch = useDispatch();
     const Contents = CONTENTS[useSelector(selectLinguagem)];
     
