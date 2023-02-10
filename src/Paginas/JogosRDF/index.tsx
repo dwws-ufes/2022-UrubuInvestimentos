@@ -25,6 +25,6 @@ export default function jogosRDF() {
     publishGames();
 
     return (
-        <div className="jogos.rdf"></div>
+        <div/>
     )
 }
