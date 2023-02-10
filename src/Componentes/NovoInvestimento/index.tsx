@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { BotaoGenerico } from "../";
-
 import { BsCreditCard } from "react-icons/bs";
 import { BsFillCaretDownFill } from "react-icons/bs";
 
@@ -35,7 +33,7 @@ export const NovoInvestimento = () => {
                         <BsFillCaretDownFill className={styles.icone_seta}/>
                     </div>
                 </div>
-                
+
                 <div className={styles.input_class}>
                     <label htmlFor="numero-jogado">{ Contents.Investment.Number }</label>
                     <input
@@ -44,7 +42,7 @@ export const NovoInvestimento = () => {
                         className={styles.input_field_novo_investimento}
                     />
                 </div>
-                
+
                 <div className={styles.input_class}>
                     <label htmlFor="distribuicao">{ Contents.Investment.Distribution.Title }</label>
                     <div className={styles.div_com_icone}>
@@ -59,7 +57,7 @@ export const NovoInvestimento = () => {
                     </div>
                 </div>
 
-                <p className={styles.odds_totais}>{ Contents.Investment.Proportion }: {odds}x</p>
+                <p>{ Contents.Investment.Proportion }: {odds}x</p>
                 <div className={styles.input_class}>
                     <label htmlFor="valor">{ Contents.Investment.Value }</label>
                     <div className={styles.div_com_icone}>
@@ -72,11 +70,11 @@ export const NovoInvestimento = () => {
                     </div>
                 </div>
 
-                <BotaoGenerico
-                    texto={ Contents.DoInvestment }
-                    fundo={true}
+                <button
                     className={styles.botao_novo_investimento}
-                />
+                >
+                    { Contents.DoInvestment }
+                </button>
             </form>
         </div>
     );

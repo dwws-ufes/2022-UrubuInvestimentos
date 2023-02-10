@@ -15,4 +15,6 @@
     border-radius: var(--default-border-radius);
 
     height: 15em;
+
+    box-shadow: 3px 3px 10px black;
 }

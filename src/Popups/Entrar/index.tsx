@@ -3,10 +3,9 @@ import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loga, setCadastro, setEntrar, selectLinguagem } from "../../store/pageInfoSlice";
-import { setNomeUsuario, setSaldo } from "../../store/userInfoSlice";
-
+import { setNomeUsuario, setSaldo, setInvestimentos } from "../../store/userInfoSlice";
 import CONTENTS from '../../Content/Popups/Entrar.json'
 
 import api from './../../services/api';
@@ -38,6 +37,14 @@ export const Entrar = () => {
             dispatch(setNomeUsuario(loginInfo.data[0].nickname));
             dispatch(setSaldo(loginInfo.data[0].balance));
             
+            const investmentsInfo = await api.get("/tela-investimentos", {
+                headers: {
+                    Authorization: loginInfo.data[0].id,
+                }
+            });
+
+            dispatch(setInvestimentos(investmentsInfo.data))
+
             dispatch(loga());
             dispatch(setCadastro(false));
             dispatch(setEntrar(false));

@@ -2,7 +2,7 @@ import { Header, Sidebar } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector } from "react-redux";
-import { selectLogin, selectDropdown, selectSidebar, selectCadastro, selectEntrar, selectLinguagem } from "../../store/pageInfoSlice";
+import { selectDropdown, selectSidebar, selectCadastro, selectEntrar, selectLinguagem } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Pages/Regras.json";
@@ -10,7 +10,6 @@ import { Entrar } from "../../Popups";
 import { Cadastro } from "../Cadastro";
 
 export const Regras = () => {
-	const logado = useSelector(selectLogin);
 	const showDropdown = useSelector(selectDropdown);
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);

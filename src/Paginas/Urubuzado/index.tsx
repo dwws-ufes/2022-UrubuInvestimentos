@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom';
-import { BotaoGenerico } from '../../Componentes';
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Pages/Urubuzado.json"

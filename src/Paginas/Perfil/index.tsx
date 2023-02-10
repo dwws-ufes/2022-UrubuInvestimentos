@@ -5,9 +5,10 @@ import api from '../../services/api';
 import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
-import { useSelector, useDispatch } from "react-redux";
-import { selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+
+import { useSelector } from "react-redux";
+import { selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
+import { selectInvestimentos, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
 
@@ -39,15 +40,13 @@ export const Perfil = () => {
     const [ investments, setInvestments ] = useState(initialInvestment);
 
     useEffect(() => {
-        console.log("useEffect do perfil chamado")
         api.get('/tela-investimentos', {
             headers: {
                 Authorization: investmentOwner,
             }
-        }).then((response) => { console.log(response);setInvestments(response.data) });
+        }).then((response) => { setInvestments(response.data) });
     }, []);
 
-    const logado = useSelector(selectLogin);
 	const showDropdown = useSelector(selectDropdown);
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);
@@ -55,8 +54,7 @@ export const Perfil = () => {
     
     const nomeUsuario = useSelector(selectNomeUsuario);
     const saldo = useSelector(selectSaldo);
-    
-    const dispatch = useDispatch();
+    const investimentos = useSelector(selectInvestimentos)
 
 	return (
 		<div>
@@ -68,15 +66,10 @@ export const Perfil = () => {
                     <CardPerfil
                         nome={nomeUsuario}
                         saldo={saldo}
-                        investimentos={10}
+                        investimentos={investimentos.length}
                     />
                     
-                    <MeusInvestimentos
-                        investimentos={[
-                            {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"},
-                            {dia: "HOJE", hora: "19:57", animal: "Tatú Bola", valor: "20,00"}
-                        ]}
-                    />
+                    <MeusInvestimentos/>
                 </section>
             </main> 
             

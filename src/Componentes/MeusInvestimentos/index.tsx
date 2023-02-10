@@ -5,27 +5,23 @@ import { ProximoResultado } from "../";
 import CONTENTS from "../../Content/Components/MeusInvestimentos.json"
 import { selectLinguagem } from "../../store/pageInfoSlice";
 import styles from "./index.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ConfirmacaoSaque } from "../../Popups";
-
-interface investimento {
-    dia: string;
-    hora: string;
-    animal: string;
-    valor: string;
-}
-
-interface propsType {
-    investimentos: investimento[] 
-}
-
-export const MeusInvestimentos = (props: propsType) => {
-    const { investimentos } = props;
+import { investimentosType } from "../../Utils/tipos"
+import { selectInvestimentos } from "../../store/userInfoSlice";
     
+export const MeusInvestimentos = () => {
     const Contents = CONTENTS[useSelector(selectLinguagem)];
+
     const navigate = useNavigate();
 
     const [ showSacarDinheiro, setSacarDinheiro ] = useState(false);
+    
+    const investimentos = useSelector(selectInvestimentos);
+    
+    useEffect(() => {
+
+    }, [investimentos]);
 
     return(
         <div className={styles.meus_investimentos}>
@@ -45,15 +41,23 @@ export const MeusInvestimentos = (props: propsType) => {
                 <h3>{ Contents.Investment }</h3>
                 
                 <div className={styles.div_investimentos}>
-                    {investimentos.map((investimento, index) => {
-                        const { dia, hora, animal, valor } = investimento;
+                    {[...investimentos].reverse().map((investimento: investimentosType, index: number) => {
+                        const {
+                            betType,
+                            distribution,
+                            gameIdAtual,
+                            investmentId,
+                            investmentOwner,
+                            odds,
+                            selectedNumber,
+                            value
+                        } = investimento;
                         return(
                             <div
                                 key={index}
                                 className={styles.investimento}
                             >
-                                <p>{dia.toUpperCase()} {hora}</p>
-                                <p>{animal} - ${valor}</p>
+                                <p>{selectedNumber} - ${value},00</p>
                             </div>
                         );
                     })}
