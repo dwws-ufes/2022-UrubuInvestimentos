@@ -1,45 +1,30 @@
-import api from '../../services/api'
+import api from '../../services/api';
 
-async function req(){
-    return await api.get('/');
-};
+import { DataFactory } from 'rdf-data-factory';
+const N3 = require('n3');
 
-
-const JogosRDF = () => {
+export default function jogosRDF() {
+    let games: any[];
+    (async function (){
+        games = await api.get('/');
+    })();
     
-    // const N3 = require('n3');
-    // const store = new N3.Store();
-    // const { DataFactory } = N3;
-    // const { namedNode, literal, defaultGraph, quad } = DataFactory;
+    const publishGames = async () => {
+        const store = new N3.Store();
+        const factory = new DataFactory();
 
-    req().then((data) => {
-        data.data.forEach((e: any) => {
-            // const myQuad = quad(
-            //     namedNode('localhost:3000'),
-            //     namedNode('foaf:weblog'),
-            //     literal(JSON.stringify(e), "en"),
-            // );
-            // console.log(myQuad.termType);              // Quad
-            // console.log(myQuad.value);                 // ''
-            // console.log(myQuad.subject.value);         // localhost:3000
-            // console.log(myQuad.object.value);          // foaf:weblog
-            // console.log(myQuad.object.datatype.value); // JSON
-            // console.log(myQuad.object.language);       // en
-            //store.addQuads([...quads, myQuad]);
-            //console.log(store); 
-        });
-    });
-    // const writer = new N3.Writer({ prefixes: { foaf: 'http://xmlns.com/foaf/0.1/' } });    
-    // for (const quad of store) {
-    //     console.log(quad);
-    // }
-    // writer.end((error:any, result:any) => console.log(result));
+        games.forEach((game:any) => {
+            store.addQuad(factory.quad(
+                factory.namedNode('localhost:3000/jogos.rdf'),
+                factory.namedNode('foaf:weblog'),
+                factory.literal(JSON.stringify(game))
+            ));
+        })
+    };
+
+    publishGames();
 
     return (
-        <div className="jogos.rdf">
-
-        </div>
+        <div className="jogos.rdf"></div>
     )
 }
-
-export default JogosRDF;
