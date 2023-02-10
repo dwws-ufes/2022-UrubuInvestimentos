@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, selectCadastro, selectDropdown, selectEntrar, selectLogin, selectSidebar, setCadastro, setEntrar } from "../../store/pageInfoSlice";
-import { setEmail, setSenha, setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo, setInvestimentos, selectInvestimentos } from "../../store/userInfoSlice";
+import { useDispatch } from "react-redux";
+import { loga, setCadastro, setEntrar } from "../../store/pageInfoSlice";
+import { setNomeUsuario, setSaldo, setInvestimentos } from "../../store/userInfoSlice";
 
 import api from './../../services/api';
 
@@ -17,16 +16,6 @@ export const Entrar = () => {
     const [ password, setPassword ] = useState("");
 
     const navigate = useNavigate();
-
-    const logado = useSelector(selectLogin);
-    const showDropdown = useSelector(selectDropdown);
-    const showCadastro = useSelector(selectCadastro);
-    const showEntrar = useSelector(selectEntrar);
-    const showSidebar = useSelector(selectSidebar);
-
-    const nomeUsuario = useSelector(selectNomeUsuario);
-    const investimentos = useSelector(selectInvestimentos);
-    
     const dispatch = useDispatch();
 
     async function loginHandler(e:any){

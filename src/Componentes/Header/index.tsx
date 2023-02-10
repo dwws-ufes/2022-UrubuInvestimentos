@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar } from "../../store/pageInfoSlice";
-import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar } from "../../store/pageInfoSlice";
+import { selectNomeUsuario } from "../../store/userInfoSlice";
 
 import { Logo } from "../";
 

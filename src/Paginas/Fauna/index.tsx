@@ -6,10 +6,9 @@ import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 import { useSelector } from "react-redux";
 import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
-import { animaisType, animais } from "../../Utils/mapeiaAnimal";
+import { animais } from "../../Utils/mapeiaAnimal";
 
 import styles from "./index.module.css";
-import { GiConsoleController } from "react-icons/gi";
 
 interface jogosType {
     gameId: number;
@@ -31,7 +30,6 @@ const jogosIniciais: jogosType[] = [{
 
 export const Fauna = () => {
     const [ games, setGames ] = useState(jogosIniciais);
-    const [ animaisRDF, setAnimaisRDF ] = useState(animais);
 
     useEffect(() => {
         api.get('/').then((request) => {setGames(request.data.reverse())});

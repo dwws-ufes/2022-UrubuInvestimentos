@@ -1,9 +1,7 @@
-import React from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, selectLogin, selectDropdown } from "../../store/pageInfoSlice";
-import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useDispatch } from "react-redux";
+import { desloga, setDropdown } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
 

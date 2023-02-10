@@ -7,18 +7,18 @@ async function req(){
 
 const JogosRDF = () => {
     
-    const N3 = require('n3');
-    const store = new N3.Store();
-    const { DataFactory } = N3;
-    const { namedNode, literal, defaultGraph, quad } = DataFactory;
+    // const N3 = require('n3');
+    // const store = new N3.Store();
+    // const { DataFactory } = N3;
+    // const { namedNode, literal, defaultGraph, quad } = DataFactory;
 
     req().then((data) => {
         data.data.forEach((e: any) => {
-            const myQuad = quad(
-                namedNode('localhost:3000'),
-                namedNode('foaf:weblog'),
-                literal(JSON.stringify(e), "en"),
-            );
+            // const myQuad = quad(
+            //     namedNode('localhost:3000'),
+            //     namedNode('foaf:weblog'),
+            //     literal(JSON.stringify(e), "en"),
+            // );
             // console.log(myQuad.termType);              // Quad
             // console.log(myQuad.value);                 // ''
             // console.log(myQuad.subject.value);         // localhost:3000
@@ -29,13 +29,11 @@ const JogosRDF = () => {
             //console.log(store); 
         });
     });
-    console.log(store);
-    
-    for (const quad of store) {
-        console.log(quad);
-    }
-    const writer = new N3.Writer({ prefixes: { foaf: 'http://xmlns.com/foaf/0.1/' } });
-    writer.end((error:any, result:any) => console.log(result));
+    // const writer = new N3.Writer({ prefixes: { foaf: 'http://xmlns.com/foaf/0.1/' } });    
+    // for (const quad of store) {
+    //     console.log(quad);
+    // }
+    // writer.end((error:any, result:any) => console.log(result));
 
     return (
         <div className="jogos.rdf">

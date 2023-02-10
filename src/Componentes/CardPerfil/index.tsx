@@ -1,8 +1,4 @@
 import { FaRegUser, FaMoneyCheckAlt } from "react-icons/fa";
-import { GiReceiveMoney } from "react-icons/gi";
-import { BsCreditCard } from "react-icons/bs";
-import { IoCloseSharp } from "react-icons/io5";
-
 import styles from "./index.module.css";
 import Content from "../../Content/Components/CardPerfil.json"
 import { useState } from "react";

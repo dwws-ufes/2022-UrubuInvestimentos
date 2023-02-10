@@ -52,7 +52,7 @@ export const MeusInvestimentos = () => {
                         } = investimento;
                         return(
                             <div
-                                key={gameIdAtual}
+                                key={index}
                                 className={styles.investimento}
                             >
                                 <p>{selectedNumber} - ${value},00</p>

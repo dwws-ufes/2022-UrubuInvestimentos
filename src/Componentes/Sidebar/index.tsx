@@ -1,24 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { GanheDinheiro } from './GanheDinheiro';
 
-import { FaMoneyCheckAlt } from 'react-icons/fa';
-
 import styles from './index.module.css';
-import { setEntrar, setCadastro, selectCadastro, selectDropdown, selectEntrar, selectLogin, selectSidebar } from "../../store/pageInfoSlice";
+import { setEntrar, setCadastro, selectLogin } from "../../store/pageInfoSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 export const Sidebar = () => {
 
-    const showDropdown = useSelector(selectDropdown);
-    const showEntrar = useSelector(selectEntrar);
-    const showCadastro = useSelector(selectCadastro);
-    const showSidebar = useSelector(selectSidebar);
-    
     const logado = useSelector(selectLogin);
-
     const dispatch = useDispatch();
-
     const navigate = useNavigate();
 
     return(

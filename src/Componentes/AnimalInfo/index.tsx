@@ -16,9 +16,6 @@ export const AnimalInfo = (props: propsType) => {
     const myEngine = new QueryEngine();
 
     const dbpediaSearch = async () => {
-        const { QueryEngine } = require('@comunica/query-sparql');
-        const myEngine = new QueryEngine();
-
         const query =  `
                         PREFIX dbc: <http://dbpedia.org/resource/Category:>
                         PREFIX dbo: <http://dbpedia.org/ontology/>

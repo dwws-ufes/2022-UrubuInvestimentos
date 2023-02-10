@@ -1,17 +1,13 @@
-import { useState } from "react";
-
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
-
 import Content from "../../Content/Pages/Suporte.json"
 import styles from "./index.module.css";
 import { useSelector } from "react-redux";
-import { selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar } from "../../store/pageInfoSlice";
+import { selectDropdown, selectEntrar, selectCadastro, selectSidebar } from "../../store/pageInfoSlice";
 import { Entrar } from "../../Popups";
 import { Cadastro } from "../Cadastro";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 export const Suporte = () => {
-	const logado = useSelector(selectLogin);
 	const showDropdown = useSelector(selectDropdown);
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);

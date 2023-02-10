@@ -3,8 +3,8 @@ import { ProximoResultado } from "../";
 import { ResultadoInfo } from "./ResultadoInfo";
 
 import styles from "./index.module.css";
-import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, setEntrar, selectLogin, setCadastro } from "../../store/pageInfoSlice";
-import { Navigate, useNavigate } from "react-router-dom";
+import { setEntrar, selectLogin, setCadastro } from "../../store/pageInfoSlice";
+import { useNavigate } from "react-router-dom";
 
 interface propsType {
     fotoSrc: string;
@@ -18,11 +18,6 @@ export const UltimoResultado = (props: propsType) => {
 
     if(milhares === undefined)
         milhares = [""];
-
-    const showDropdown = useSelector(selectDropdown);
-    const showEntrar = useSelector(selectEntrar);
-    const showCadastro = useSelector(selectCadastro);
-    const showSidebar = useSelector(selectSidebar);
     
     const logado = useSelector(selectLogin);
 

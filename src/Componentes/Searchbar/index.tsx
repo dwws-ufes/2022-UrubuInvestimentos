@@ -1,8 +1,7 @@
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, setSearch } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useDispatch } from "react-redux";
+import { setSearch } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
 

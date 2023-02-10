@@ -1,30 +1,19 @@
 import { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar } from "../../store/pageInfoSlice";
-import { setNomeUsuario, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useDispatch } from "react-redux";
+import { setCadastro, setEntrar } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css"
 import api from "../../services/api";
-import { AxiosError } from "axios";
 
 export const Cadastro = () => {
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [idade, setIdade] = useState("");
     const navigate = useNavigate();
-
-    const logado = useSelector(selectLogin);
-    const showDropdown = useSelector(selectDropdown);
-    const showCadastro = useSelector(selectCadastro);
-    const showEntrar = useSelector(selectEntrar);
-    const showSidebar = useSelector(selectSidebar);
-
-    const nomeUsuario = useSelector(selectNomeUsuario);
-
     const dispatch = useDispatch();
 
     const handleRegister = async (e:any) => {
@@ -106,7 +95,7 @@ export const Cadastro = () => {
                         >
                             termos de serviço
                         </b>
-                        
+                        .
                     </p>
 
                     <button type="submit">Começe já! &rarr;</button>

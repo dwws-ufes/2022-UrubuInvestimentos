@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
 import { loga, selectLogin } from "../../store/pageInfoSlice";
-import { setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { setNomeUsuario, setSaldo } from "../../store/userInfoSlice";
 
 import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';

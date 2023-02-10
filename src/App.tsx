@@ -1,8 +1,7 @@
-import React from "react";
 import { Provider } from "react-redux";
 
 //Importando as coisas do react-routers
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // Importando a store do redux, que gerencia o estado global da aplicacao
 import { store } from "./store";

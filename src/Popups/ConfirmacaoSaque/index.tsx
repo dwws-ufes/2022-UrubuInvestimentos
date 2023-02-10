@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./index.module.css";
 import { CgClose } from "react-icons/cg";
-import { setEntrar } from "../../store/pageInfoSlice";
 
 interface propsType {
     fechar: () => void;

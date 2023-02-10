@@ -5,9 +5,8 @@ import { Header, Sidebar, UltimoResultado, Searchbar, Resultado } from "../../Co
 import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
-import { useSelector, useDispatch } from "react-redux";
-import { loga, desloga, selectLogin, selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useSelector } from "react-redux";
+import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
 
 import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 

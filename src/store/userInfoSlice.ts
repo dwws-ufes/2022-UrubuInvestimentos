@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { cartaoType, investimentosType, tiposApostas, tiposDistribuicao, userInfoType } from "../Utils/tipos";
+import { userInfoType } from "../Utils/tipos";
 
 const userInfoInitialState: userInfoType = {
     email: "",

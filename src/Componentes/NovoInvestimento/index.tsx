@@ -30,7 +30,7 @@ export const NovoInvestimento = () => {
                         <BsFillCaretDownFill className={styles.icone_seta}/>
                     </div>
                 </div>
-                
+
                 <div className={styles.input_class}>
                     <label htmlFor="numero-jogado">{ Content.Investment.Number }</label>
                     <input
@@ -39,7 +39,7 @@ export const NovoInvestimento = () => {
                         className={styles.input_field_novo_investimento}
                     />
                 </div>
-                
+
                 <div className={styles.input_class}>
                     <label htmlFor="distribuicao">{ Content.Investment.Distribution.Title }</label>
                     <div className={styles.div_com_icone}>
